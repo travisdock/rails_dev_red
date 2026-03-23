@@ -129,9 +129,10 @@ class MenuBox {
       if (this.onSelect) {
         this.onSelect(this.options[this.selectedIndex], this.selectedIndex);
       }
+      return; // callback may have destroyed this menu
     }
 
-    if (Phaser.Input.Keyboard.JustDown(this.keys.cancel) || Phaser.Input.Keyboard.JustDown(this.keys.backspace)) {
+    if (this.keys && (Phaser.Input.Keyboard.JustDown(this.keys.cancel) || Phaser.Input.Keyboard.JustDown(this.keys.backspace))) {
       if (this.onCancel) {
         this.onCancel();
       }
@@ -142,9 +143,8 @@ class MenuBox {
     this.active = false;
     this.elements.forEach(e => e.destroy());
     this.elements = [];
-    // Remove key listeners
-    if (this.keys) {
-      Object.values(this.keys).forEach(k => k.destroy());
-    }
+    // Don't destroy key objects — they are shared across the scene.
+    // Just null the reference so this menu stops responding.
+    this.keys = null;
   }
 }

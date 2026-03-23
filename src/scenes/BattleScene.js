@@ -10,7 +10,26 @@ class BattleScene extends Phaser.Scene {
     this.trainerData = data.trainerData;
   }
 
+  log(action, detail) {
+    const entry = {
+      t: Date.now() - this._logStart,
+      action,
+      ...detail
+    };
+    window.BATTLE_LOG.push(entry);
+    console.log(`[battle +${entry.t}ms] ${action}`, detail || '');
+  }
+
   create() {
+    this._logStart = Date.now();
+    window.BATTLE_LOG = [];
+    this.log('battle_start', {
+      isWild: this.isWild,
+      trainer: this.trainerData?.name,
+      player: this.playerParty.map(g => `${g.name} Lv${g.level} HP:${g.currentHp}/${g.maxHp}`),
+      enemy: this.enemyParty.map(g => `${g.name} Lv${g.level} HP:${g.currentHp}/${g.maxHp}`)
+    });
+
     this.battleManager = new BattleManager();
     this.battleManager.init(this.playerParty, this.enemyParty, this.isWild, this.trainerData);
 
@@ -54,9 +73,12 @@ class BattleScene extends Phaser.Scene {
     this.messageBox.textObj.setDepth(801);
 
     // State machine
-    this.battleState = 'intro'; // intro, action_select, move_select, gem_select, processing, battle_end
+    this.battleState = 'intro';
     this.eventQueue = [];
     this.currentMenu = null;
+    this.battleOver = false;
+    this._waitingForInput = false;
+    this._messageCallback = null;
 
     // Intro message
     const introMsg = this.isWild
@@ -141,7 +163,7 @@ class BattleScene extends Phaser.Scene {
 
     if (this.currentMenu) this.currentMenu.destroy();
 
-    this.currentMenu = new MenuBox(this, 4, 4, gems, {
+    this.currentMenu = new MenuBox(this, 4, 52, gems, {
       itemWidth: 180,
       depth: 900,
       onSelect: (opt) => {
@@ -188,53 +210,98 @@ class BattleScene extends Phaser.Scene {
   }
 
   processEvents(events) {
+    this._waitingForInput = false;
     this.eventQueue = [...events];
-    this.processNextEvent();
+    this.log('processEvents', { count: events.length, types: events.map(e => e.type) });
+    this.drainQueue();
   }
 
-  processNextEvent() {
+  // Process events sequentially using a simple delay chain.
+  // Each event calls drainQueue() when done, either immediately or after a delay.
+  drainQueue() {
     if (this.eventQueue.length === 0) {
-      // Check if battle ended
-      if (this.battleOver) return;
+      if (this.battleOver) {
+        this.log('drainQueue', { status: 'empty, battle over' });
+        return;
+      }
+      this.log('drainQueue', { status: 'empty, showing action menu' });
       this.showActionMenu();
       return;
     }
 
     const event = this.eventQueue.shift();
+    this.log('drainQueue', { event: event.type, text: event.text, remaining: this.eventQueue.length });
+    const next = () => this.drainQueue();
+    const nextAfter = (ms) => this.time.delayedCall(ms, next);
 
     switch (event.type) {
       case 'message':
-        this.showMessage(event.text, () => this.processNextEvent());
+        this.messageBox.setText(event.text).setVisible(true);
+        if (this.currentMenu) {
+          this.currentMenu.destroy();
+          this.currentMenu = null;
+        }
+        // If more events follow, auto-advance; otherwise wait for input
+        if (this.eventQueue.length > 0) {
+          this.log('message_auto', { text: event.text, remaining: this.eventQueue.length });
+          nextAfter(800);
+        } else {
+          this.log('message_wait', { text: event.text });
+          this._messageCallback = next;
+          this._waitingForInput = true;
+        }
         break;
 
       case 'damage': {
         const side = event.side;
-        this.hud.updateHP(side, event.currentHp, event.maxHp, true).then(() => {
-          // Brief pause after HP drain
-          this.time.delayedCall(200, () => this.processNextEvent());
-        });
+        const targetWidth = Math.max(0.1, (event.currentHp / event.maxHp) * 72);
+        const hud = side === 'player' ? this.hud.playerHUD : this.hud.enemyHUD;
 
-        // Shake effect on the damaged sprite
-        const target = side === 'player' ? this.playerSprite : this.enemySprite;
-        this.tweens.add({
-          targets: target,
-          x: target.x + 3,
-          duration: 50,
-          yoyo: true,
-          repeat: 3
-        });
+        // Shake the damaged sprite
+        const sprite = side === 'player' ? this.playerSprite : this.enemySprite;
+        if (sprite && sprite.active) {
+          this.tweens.add({ targets: sprite, x: sprite.x + 3, duration: 50, yoyo: true, repeat: 3 });
+        }
+
+        // Animate HP bar, then advance
+        if (hud && hud.hpBar && hud.hpBar.active) {
+          this.log('damage_tween_start', { side, from: Math.round(hud.hpBar.displayWidth), to: Math.round(targetWidth) });
+          this.tweens.add({
+            targets: hud.hpBar,
+            displayWidth: targetWidth,
+            duration: 400,
+            ease: 'Linear',
+            onUpdate: () => {
+              if (hud.hpBar && hud.hpBar.active) {
+                const r = hud.hpBar.displayWidth / hud.barWidth;
+                hud.hpBar.setFillStyle(this.hud.hpColor(r));
+              }
+            },
+            onComplete: () => {
+              this.log('damage_tween_done', { side, hp: `${event.currentHp}/${event.maxHp}` });
+              if (hud.showHP && hud.hpText && hud.hpText.active) {
+                hud.hpText.setText(`${event.currentHp}/${event.maxHp}`);
+              }
+              nextAfter(300);
+            }
+          });
+        } else {
+          this.log('damage_no_hud', { side });
+          nextAfter(300);
+        }
         break;
       }
 
       case 'faint': {
         const sprite = event.side === 'player' ? this.playerSprite : this.enemySprite;
-        this.tweens.add({
-          targets: sprite,
-          alpha: 0,
-          y: sprite.y + 20,
-          duration: 500,
-          onComplete: () => this.processNextEvent()
-        });
+        if (sprite && sprite.active) {
+          this.tweens.add({
+            targets: sprite, alpha: 0, y: sprite.y + 20,
+            duration: 500, onComplete: next
+          });
+        } else {
+          next();
+        }
         break;
       }
 
@@ -242,18 +309,15 @@ class BattleScene extends Phaser.Scene {
         const gem = event.gem;
         const color = TYPE_COLORS[gem.type] || 0xcc4444;
         if (event.side === 'enemy') {
-          this.enemySprite.destroy();
+          if (this.enemySprite) this.enemySprite.destroy();
           this.enemySprite = this.add.rectangle(175, 38, 24, 24, color)
             .setStrokeStyle(2, 0x333333).setAlpha(0);
           this.tweens.add({
-            targets: this.enemySprite,
-            alpha: 1,
-            duration: 300,
-            onComplete: () => {
-              this.hud.updateGemInfo('enemy', gem);
-              this.processNextEvent();
-            }
+            targets: this.enemySprite, alpha: 1, duration: 300,
+            onComplete: () => { this.hud.updateGemInfo('enemy', gem); next(); }
           });
+        } else {
+          next();
         }
         break;
       }
@@ -262,15 +326,18 @@ class BattleScene extends Phaser.Scene {
         const gem = event.gem;
         const color = TYPE_COLORS[gem.type] || 0x44cc44;
         if (event.side === 'player') {
-          this.playerSprite.destroy();
+          if (this.playerSprite) this.playerSprite.destroy();
           this.playerSprite = this.add.rectangle(60, 88, 28, 28, color)
             .setStrokeStyle(2, 0x333333);
           this.add.text(60, 88, gem.name.substring(0, 3).toUpperCase(), {
             fontFamily: 'monospace', fontSize: '6px', color: '#ffffff'
           }).setOrigin(0.5).setDepth(1);
-          this.hud.updateGemInfo('player', gem);
+          // Use snapshotted HP (pre-enemy-attack) if available, otherwise live values
+          const hp = event.hp !== undefined ? event.hp : gem.currentHp;
+          const maxHp = event.maxHp !== undefined ? event.maxHp : gem.maxHp;
+          this.hud.updateGemInfo('player', { ...gem, currentHp: hp, maxHp: maxHp });
         }
-        this.processNextEvent();
+        next();
         break;
       }
 
@@ -280,31 +347,26 @@ class BattleScene extends Phaser.Scene {
 
       case 'level_up':
         this.hud.updateGemInfo('player', event.gem);
-        this.processNextEvent();
+        next();
         break;
 
       case 'money':
         InventoryManager.addMoney(event.amount);
-        this.processNextEvent();
+        next();
         break;
 
       case 'stat_change':
-        this.processNextEvent();
+        next();
         break;
 
       case 'battle_end':
         this.battleOver = true;
-        if (this.currentMenu) {
-          this.currentMenu.destroy();
-          this.currentMenu = null;
-        }
-        this.time.delayedCall(500, () => {
-          this.endBattle(event.result);
-        });
+        if (this.currentMenu) { this.currentMenu.destroy(); this.currentMenu = null; }
+        this.time.delayedCall(500, () => this.endBattle(event.result));
         break;
 
       default:
-        this.processNextEvent();
+        next();
     }
   }
 
@@ -321,6 +383,7 @@ class BattleScene extends Phaser.Scene {
     if (this._waitingForInput) {
       if (Phaser.Input.Keyboard.JustDown(this.keyZ) ||
           Phaser.Input.Keyboard.JustDown(this.keyEnter)) {
+        this.log('input_advance', { had_callback: !!this._messageCallback });
         this._waitingForInput = false;
         if (this._messageCallback) {
           const cb = this._messageCallback;

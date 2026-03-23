@@ -35,12 +35,7 @@ class OverworldScene extends Phaser.Scene {
     // Fade in
     TransitionFX.fadeIn(this, 300);
 
-    // Check for starter selection
-    if (!this.starterChosen && this.mapKey === 'localhost') {
-      this.time.delayedCall(500, () => this.showStarterSelection());
-    }
-
-    // Check for intro
+    // Intro and starter selection on new game
     if (!ProgressManager.hasSeenStory('intro') && this.mapKey === 'localhost') {
       ProgressManager.seeStory('intro');
       this.player.freeze();
@@ -57,16 +52,20 @@ class OverworldScene extends Phaser.Scene {
           }
         });
       });
+    } else if (!this.starterChosen && this.mapKey === 'localhost') {
+      // Edge case: intro seen but starter not chosen (e.g. refreshed mid-selection)
+      this.time.delayedCall(500, () => this.showStarterSelection());
     }
   }
 
   loadMap(mapKey) {
     const mapData = this.cache.json.get('map-' + mapKey);
-    if (!mapData) {
+    // Use procedural maps until Tiled maps are created
+    // (placeholder files contain empty objects)
+    if (!mapData || !mapData.layers) {
       this.createProceduralMap(mapKey);
       return;
     }
-    this.parseMapData(mapData);
   }
 
   createProceduralMap(mapKey) {
@@ -82,7 +81,7 @@ class OverworldScene extends Phaser.Scene {
         { type: 'gym_entrance', x: 7, y: 3, gymId: 'sarah_security', badge: 'ssl_badge', name: 'Security Gym' },
         { type: 'door', x: 10, y: 1, targetMap: 'route1', targetX: 5, targetY: 18, facing: 'up' }
       ]),
-      'route1': () => this.generateRoute('route1', 10, 20, 'Route 1', [
+      'route1': () => this.generateRoute('route_1', 10, 20, 'Route 1', [
         { type: 'trainer', x: 5, y: 10, trainerId: 'junior_dev_01', facing: 'left' },
         { type: 'door', x: 5, y: 19, targetMap: 'localhost', targetX: 10, targetY: 2, facing: 'down' },
         { type: 'door', x: 5, y: 0, targetMap: 'route2-split', targetX: 10, targetY: 18, facing: 'up' },
@@ -103,7 +102,7 @@ class OverworldScene extends Phaser.Scene {
         { type: 'door', x: 5, y: 0, targetMap: 'testing-terrace', targetX: 10, targetY: 14, facing: 'up' },
         { type: 'sign', x: 3, y: 17, text: 'Route 2 East\n"Untested Waters"' }
       ]),
-      'route3': () => this.generateRoute('route3', 10, 25, 'Route 3', [
+      'route3': () => this.generateRoute('route_3', 10, 25, 'Route 3', [
         { type: 'trainer', x: 5, y: 8, trainerId: 'senior_dev_01', facing: 'down' },
         { type: 'trainer', x: 5, y: 14, trainerId: 'senior_dev_02', facing: 'left' },
         { type: 'trainer', x: 5, y: 20, trainerId: 'senior_dev_03', facing: 'right' },
@@ -392,6 +391,10 @@ class OverworldScene extends Phaser.Scene {
             requiredBadges: obj.requiredBadges || 0,
             blockMessage: obj.blockMessage
           });
+          // Clear collision so player can walk onto the door tile
+          if (this.collisionMap[obj.y] !== undefined) {
+            this.collisionMap[obj.y][obj.x] = 0;
+          }
           break;
 
         case 'heal':
@@ -544,7 +547,7 @@ class OverworldScene extends Phaser.Scene {
         // Trainer battle check
         if (npc instanceof Trainer && !npc.defeated) {
           this.showDialog(messages, () => {
-            this.startTrainerBattle(npc);
+            this.startTrainerBattle(npc, true);
           });
           return;
         }
@@ -591,13 +594,10 @@ class OverworldScene extends Phaser.Scene {
     });
   }
 
-  startTrainerBattle(trainer) {
+  startTrainerBattle(trainer, skipDialog) {
     this.player.freeze();
-    const messages = trainer.interact(this.player.facing);
 
-    this.inDialog = true;
-    this.dialogManager.show(messages, () => {
-      this.inDialog = false;
+    const beginBattle = () => {
       TransitionFX.battleTransition(this, () => {
         this.scene.pause();
         this.scene.launch('BattleScene', {
@@ -615,7 +615,18 @@ class OverworldScene extends Phaser.Scene {
           }
         });
       });
-    });
+    };
+
+    if (skipDialog) {
+      beginBattle();
+    } else {
+      const messages = trainer.interact(this.player.facing);
+      this.inDialog = true;
+      this.dialogManager.show(messages, () => {
+        this.inDialog = false;
+        beginBattle();
+      });
+    }
   }
 
   openMenu() {

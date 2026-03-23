@@ -46,16 +46,25 @@ class BattleManager {
     }
 
     if (playerAction.type === 'switch') {
-      events.push({ type: 'message', text: `Come back, ${this.activePlayerGem.name}!` });
+      if (!this.activePlayerGem.isFainted) {
+        events.push({ type: 'message', text: `Come back, ${this.activePlayerGem.name}!` });
+      }
       this.playerGemIndex = playerAction.gemIndex;
       this.activePlayerGem = this.playerParty[playerAction.gemIndex];
       this.resetPlayerStages();
-      events.push({ type: 'switch', side: 'player', gem: this.activePlayerGem });
+      // Snapshot HP before enemy attacks so the HUD shows correct values on switch-in
+      events.push({ type: 'switch', side: 'player', gem: this.activePlayerGem,
+        hp: this.activePlayerGem.currentHp, maxHp: this.activePlayerGem.maxHp });
       events.push({ type: 'message', text: `Go, ${this.activePlayerGem.name}!` });
 
       // Enemy still attacks
       const enemyEvents = this.executeEnemyMove();
       events.push(...enemyEvents);
+
+      // Check if the switched-in gem was KO'd by the enemy's attack
+      if (this.activePlayerGem.isFainted) {
+        events.push(...this.handleFaint('player'));
+      }
       return events;
     }
 

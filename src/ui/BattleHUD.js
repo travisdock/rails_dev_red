@@ -84,41 +84,16 @@ class BattleHUD {
     return hud;
   }
 
-  updateHP(side, currentHp, maxHp, animate) {
+  updateHP(side, currentHp, maxHp) {
     const hud = side === 'player' ? this.playerHUD : this.enemyHUD;
-    if (!hud) return Promise.resolve();
+    if (!hud || !hud.hpBar || !hud.hpBar.active) return;
 
     const ratio = Math.max(0, currentHp / maxHp);
-    const targetWidth = hud.barWidth * ratio;
-    const color = this.hpColor(ratio);
-
-    if (animate) {
-      return new Promise(resolve => {
-        this.scene.tweens.add({
-          targets: hud.hpBar,
-          displayWidth: Math.max(0.1, targetWidth),
-          duration: 500,
-          ease: 'Linear',
-          onUpdate: () => {
-            const currentRatio = hud.hpBar.displayWidth / hud.barWidth;
-            hud.hpBar.setFillStyle(this.hpColor(currentRatio));
-          },
-          onComplete: () => {
-            hud.hpBar.setFillStyle(color);
-            if (hud.showHP && hud.hpText) {
-              hud.hpText.setText(`${currentHp}/${maxHp}`);
-            }
-            resolve();
-          }
-        });
-      });
-    } else {
-      hud.hpBar.displayWidth = Math.max(0.1, targetWidth);
-      hud.hpBar.setFillStyle(color);
-      if (hud.showHP && hud.hpText) {
-        hud.hpText.setText(`${currentHp}/${maxHp}`);
-      }
-      return Promise.resolve();
+    const targetWidth = Math.max(0.1, hud.barWidth * ratio);
+    hud.hpBar.displayWidth = targetWidth;
+    hud.hpBar.setFillStyle(this.hpColor(ratio));
+    if (hud.showHP && hud.hpText) {
+      hud.hpText.setText(`${currentHp}/${maxHp}`);
     }
   }
 
@@ -130,7 +105,7 @@ class BattleHUD {
     hud.levelText.setText(`Lv${gem.level}`);
     const typeColor = TYPE_COLORS[gem.type] || 0x888888;
     hud.typeBar.setFillStyle(typeColor);
-    this.updateHP(side, gem.currentHp, gem.maxHp, false);
+    this.updateHP(side, gem.currentHp, gem.maxHp);
   }
 
   hpColor(ratio) {
