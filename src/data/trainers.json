@@ -1,0 +1,81 @@
+{
+  "junior_dev_01": {
+    "id": "junior_dev_01", "name": "Junior Dev Alex", "class": "Junior Developer",
+    "dialogBefore": "Hey! I just learned about gems!\nLet me show you my setup!",
+    "dialogAfter": "Wow, your gems are way more\noptimized than mine...",
+    "party": [
+      { "gemId": "pry", "level": 5 }
+    ],
+    "prizeMoney": 120,
+    "lineOfSight": 3
+  },
+  "mid_dev_01": {
+    "id": "mid_dev_01", "name": "Developer Blake", "class": "Developer",
+    "dialogBefore": "I've been refactoring all day.\nBring it on!",
+    "dialogAfter": "Back to the drawing board...",
+    "party": [
+      { "gemId": "pry", "level": 8 },
+      { "gemId": "factory_bot", "level": 9 }
+    ],
+    "prizeMoney": 280,
+    "lineOfSight": 4
+  },
+  "mid_dev_02": {
+    "id": "mid_dev_02", "name": "Developer Casey", "class": "Developer",
+    "dialogBefore": "My test suite has 100% coverage!\nCan your gems keep up?",
+    "dialogAfter": "Maybe coverage isn't everything...",
+    "party": [
+      { "gemId": "rspec", "level": 9 },
+      { "gemId": "capybara", "level": 8 }
+    ],
+    "prizeMoney": 300,
+    "lineOfSight": 3
+  },
+  "mid_dev_03": {
+    "id": "mid_dev_03", "name": "Developer Dana", "class": "Developer",
+    "dialogBefore": "Performance is everything.\nLet me show you speed!",
+    "dialogAfter": "I need to optimize my approach...",
+    "party": [
+      { "gemId": "bullet", "level": 9 },
+      { "gemId": "puma", "level": 8 }
+    ],
+    "prizeMoney": 300,
+    "lineOfSight": 4
+  },
+  "senior_dev_01": {
+    "id": "senior_dev_01", "name": "Senior Dev Ellis", "class": "Senior Developer",
+    "dialogBefore": "I've reviewed thousands of PRs.\nYour code won't pass my review!",
+    "dialogAfter": "Clean code. I'll approve this PR.",
+    "party": [
+      { "gemId": "devise", "level": 13 },
+      { "gemId": "sidekiq", "level": 12 },
+      { "gemId": "active_record", "level": 14 }
+    ],
+    "prizeMoney": 560,
+    "lineOfSight": 5
+  },
+  "senior_dev_02": {
+    "id": "senior_dev_02", "name": "Senior Dev Frankie", "class": "Senior Developer",
+    "dialogBefore": "Full-stack means I have gems\nfor every situation!",
+    "dialogAfter": "Well-rounded team you've got there.",
+    "party": [
+      { "gemId": "turbo", "level": 13 },
+      { "gemId": "rspec", "level": 13 },
+      { "gemId": "bullet", "level": 14 }
+    ],
+    "prizeMoney": 560,
+    "lineOfSight": 4
+  },
+  "senior_dev_03": {
+    "id": "senior_dev_03", "name": "Senior Dev Gray", "class": "Senior Developer",
+    "dialogBefore": "The legacy codebase has taught me\nthings you can't learn in bootcamp.",
+    "dialogAfter": "Experience isn't everything, I see.",
+    "party": [
+      { "gemId": "active_record", "level": 14 },
+      { "gemId": "pundit", "level": 13 },
+      { "gemId": "rack_mini_profiler", "level": 15 }
+    ],
+    "prizeMoney": 600,
+    "lineOfSight": 5
+  }
+}

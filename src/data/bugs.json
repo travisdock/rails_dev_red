@@ -1,0 +1,72 @@
+{
+  "n_plus_one": {
+    "id": "n_plus_one", "name": "N+1 Query", "type": "database",
+    "description": "A sneaky performance killer lurking in your associations.",
+    "baseStats": { "hp": 35, "attack": 30, "defense": 25, "spAttack": 50, "spDefense": 30, "speed": 55 },
+    "baseXP": 52,
+    "moves": ["slow_query", "migration_run"]
+  },
+  "nil_reference": {
+    "id": "nil_reference", "name": "Nil Reference", "type": "testing",
+    "description": "NoMethodError: undefined method for nil:NilClass",
+    "baseStats": { "hp": 30, "attack": 40, "defense": 20, "spAttack": 35, "spDefense": 25, "speed": 60 },
+    "baseXP": 48,
+    "moves": ["assert_equal", "mock_object"]
+  },
+  "missing_template": {
+    "id": "missing_template", "name": "Missing Template", "type": "frontend",
+    "description": "ActionView::MissingTemplate. The view is nowhere to be found.",
+    "baseStats": { "hp": 25, "attack": 30, "defense": 20, "spAttack": 40, "spDefense": 30, "speed": 50 },
+    "baseXP": 44,
+    "moves": ["dom_manipulate", "bundle_compile"]
+  },
+  "sql_injection": {
+    "id": "sql_injection", "name": "SQL Injection", "type": "database",
+    "description": "Bobby Tables strikes again. Dangerous if unchecked.",
+    "baseStats": { "hp": 40, "attack": 65, "defense": 20, "spAttack": 60, "spDefense": 25, "speed": 45 },
+    "baseXP": 68,
+    "moves": ["raw_sql", "slow_query", "schema_dump"]
+  },
+  "memory_leak": {
+    "id": "memory_leak", "name": "Memory Leak", "type": "performance",
+    "description": "Slowly consumes all available memory. A silent killer.",
+    "baseStats": { "hp": 55, "attack": 35, "defense": 40, "spAttack": 45, "spDefense": 35, "speed": 25 },
+    "baseXP": 60,
+    "moves": ["benchmark", "cache_warm", "profile_analyze"]
+  },
+  "race_condition": {
+    "id": "race_condition", "name": "Race Condition", "type": "devops",
+    "description": "Two threads walk into a bar. The order is unpredictable.",
+    "baseStats": { "hp": 40, "attack": 50, "defense": 30, "spAttack": 50, "spDefense": 30, "speed": 65 },
+    "baseXP": 64,
+    "moves": ["thread_pool", "background_job", "ci_pipeline"]
+  },
+  "xss_attack": {
+    "id": "xss_attack", "name": "XSS Attack", "type": "auth",
+    "description": "Cross-Site Scripting. Injects malicious scripts.",
+    "baseStats": { "hp": 35, "attack": 55, "defense": 25, "spAttack": 55, "spDefense": 20, "speed": 60 },
+    "baseXP": 66,
+    "moves": ["dom_manipulate", "authenticate", "token_generate"]
+  },
+  "csrf_vuln": {
+    "id": "csrf_vuln", "name": "CSRF Vuln", "type": "auth",
+    "description": "Cross-Site Request Forgery. Tricks the server.",
+    "baseStats": { "hp": 45, "attack": 60, "defense": 30, "spAttack": 50, "spDefense": 25, "speed": 40 },
+    "baseXP": 62,
+    "moves": ["authenticate", "session_store", "token_generate"]
+  },
+  "circular_dependency": {
+    "id": "circular_dependency", "name": "Circular Dep", "type": "performance",
+    "description": "A requires B requires A. Stack overflow imminent.",
+    "baseStats": { "hp": 50, "attack": 30, "defense": 45, "spAttack": 40, "spDefense": 45, "speed": 20 },
+    "baseXP": 56,
+    "moves": ["benchmark", "slow_query"]
+  },
+  "unhandled_promise": {
+    "id": "unhandled_promise", "name": "Unhandled Promise", "type": "frontend",
+    "description": "A promise rejected with no handler. Chaos ensues.",
+    "baseStats": { "hp": 30, "attack": 45, "defense": 25, "spAttack": 50, "spDefense": 30, "speed": 55 },
+    "baseXP": 54,
+    "moves": ["dom_manipulate", "hotwire_stream", "stimulus_connect"]
+  }
+}

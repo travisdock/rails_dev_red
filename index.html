@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rails Dev: Red Edition</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+    canvas { image-rendering: pixelated; }
+  </style>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.min.js"></script>
+  <script src="src/constants.js"></script>
+  <script src="src/utils/math.js"></script>
+  <script src="src/utils/grid.js"></script>
+  <script src="src/utils/typeEffectiveness.js"></script>
+  <script src="src/entities/GemInstance.js"></script>
+  <script src="src/systems/SaveManager.js"></script>
+  <script src="src/systems/ProgressManager.js"></script>
+  <script src="src/systems/PartyManager.js"></script>
+  <script src="src/systems/InventoryManager.js"></script>
+  <script src="src/systems/DialogManager.js"></script>
+  <script src="src/systems/EncounterManager.js"></script>
+  <script src="src/systems/BattleManager.js"></script>
+  <script src="src/ui/TextBox.js"></script>
+  <script src="src/ui/MenuBox.js"></script>
+  <script src="src/ui/BattleHUD.js"></script>
+  <script src="src/ui/TransitionFX.js"></script>
+  <script src="src/entities/Player.js"></script>
+  <script src="src/entities/NPC.js"></script>
+  <script src="src/entities/Trainer.js"></script>
+  <script src="src/scenes/BootScene.js"></script>
+  <script src="src/scenes/PreloadScene.js"></script>
+  <script src="src/scenes/TitleScene.js"></script>
+  <script src="src/scenes/OverworldScene.js"></script>
+  <script src="src/scenes/BattleScene.js"></script>
+  <script src="src/scenes/BattleUIScene.js"></script>
+  <script src="src/scenes/DialogScene.js"></script>
+  <script src="src/scenes/MenuScene.js"></script>
+  <script src="src/scenes/PartyScene.js"></script>
+  <script src="src/scenes/MartScene.js"></script>
+  <script src="src/scenes/HealScene.js"></script>
+  <script src="src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "rails-dev-red-edition",
+  "version": "0.1.0",
+  "description": "Rails Dev: Red Edition - A Pokemon-style RPG themed around Ruby on Rails development",
+  "scripts": {
+    "dev": "npx serve . -p 8080 --no-clipboard",
+    "start": "npx serve . -p 8080 --no-clipboard"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,170 @@
+{
+  "devise": {
+    "id": "devise", "name": "Devise", "type": "auth",
+    "description": "A flexible authentication solution for Rails.",
+    "baseStats": { "hp": 50, "attack": 35, "defense": 55, "spAttack": 60, "spDefense": 65, "speed": 40 },
+    "baseXP": 64,
+    "learnset": [
+      { "level": 1, "move": "authenticate" },
+      { "level": 5, "move": "session_store" },
+      { "level": 10, "move": "token_generate" },
+      { "level": 16, "move": "omniauth_integrate" }
+    ],
+    "evolution": null
+  },
+  "pundit": {
+    "id": "pundit", "name": "Pundit", "type": "auth",
+    "description": "Minimal authorization through OO design.",
+    "baseStats": { "hp": 45, "attack": 30, "defense": 60, "spAttack": 55, "spDefense": 70, "speed": 35 },
+    "baseXP": 60,
+    "learnset": [
+      { "level": 1, "move": "policy_enforce" },
+      { "level": 6, "move": "session_store" },
+      { "level": 12, "move": "authenticate" },
+      { "level": 18, "move": "hash_strength" }
+    ],
+    "evolution": null
+  },
+  "bcrypt": {
+    "id": "bcrypt", "name": "Bcrypt", "type": "auth",
+    "description": "Rock-solid password hashing. Slow but unbreakable.",
+    "baseStats": { "hp": 65, "attack": 25, "defense": 80, "spAttack": 40, "spDefense": 75, "speed": 20 },
+    "baseXP": 70,
+    "learnset": [
+      { "level": 1, "move": "hash_strength" },
+      { "level": 4, "move": "authenticate" },
+      { "level": 9, "move": "session_store" },
+      { "level": 15, "move": "token_generate" }
+    ],
+    "evolution": null
+  },
+  "bullet": {
+    "id": "bullet", "name": "Bullet", "type": "performance",
+    "description": "Hunts down N+1 queries with precision.",
+    "baseStats": { "hp": 40, "attack": 55, "defense": 30, "spAttack": 65, "spDefense": 35, "speed": 70 },
+    "baseXP": 62,
+    "learnset": [
+      { "level": 1, "move": "query_detect" },
+      { "level": 5, "move": "benchmark" },
+      { "level": 11, "move": "eager_load" },
+      { "level": 17, "move": "profile_analyze" }
+    ],
+    "evolution": null
+  },
+  "rack_mini_profiler": {
+    "id": "rack_mini_profiler", "name": "Rack-Mini-Profiler", "type": "performance",
+    "description": "Profiles every request. Sees all.",
+    "baseStats": { "hp": 55, "attack": 40, "defense": 45, "spAttack": 60, "spDefense": 50, "speed": 55 },
+    "baseXP": 65,
+    "learnset": [
+      { "level": 1, "move": "profile_analyze" },
+      { "level": 6, "move": "cache_warm" },
+      { "level": 12, "move": "benchmark" },
+      { "level": 18, "move": "eager_load" }
+    ],
+    "evolution": null
+  },
+  "rspec": {
+    "id": "rspec", "name": "RSpec", "type": "testing",
+    "description": "Behavior-driven development for Ruby. The gold standard.",
+    "baseStats": { "hp": 50, "attack": 45, "defense": 50, "spAttack": 55, "spDefense": 55, "speed": 50 },
+    "baseXP": 64,
+    "learnset": [
+      { "level": 1, "move": "expect_matcher" },
+      { "level": 5, "move": "mock_object" },
+      { "level": 10, "move": "assert_equal" },
+      { "level": 16, "move": "integration_test" }
+    ],
+    "evolution": null
+  },
+  "capybara": {
+    "id": "capybara", "name": "Capybara", "type": "testing",
+    "description": "Simulates user interaction. Thorough and patient.",
+    "baseStats": { "hp": 60, "attack": 35, "defense": 55, "spAttack": 50, "spDefense": 60, "speed": 35 },
+    "baseXP": 63,
+    "learnset": [
+      { "level": 1, "move": "integration_test" },
+      { "level": 5, "move": "dom_manipulate" },
+      { "level": 11, "move": "expect_matcher" },
+      { "level": 17, "move": "assert_equal" }
+    ],
+    "evolution": null
+  },
+  "factory_bot": {
+    "id": "factory_bot", "name": "FactoryBot", "type": "testing",
+    "description": "Builds test data with precision strategies.",
+    "baseStats": { "hp": 45, "attack": 50, "defense": 40, "spAttack": 60, "spDefense": 45, "speed": 55 },
+    "baseXP": 58,
+    "learnset": [
+      { "level": 1, "move": "build_strategy" },
+      { "level": 4, "move": "assert_equal" },
+      { "level": 9, "move": "mock_object" },
+      { "level": 15, "move": "integration_test" }
+    ],
+    "evolution": null
+  },
+  "active_record": {
+    "id": "active_record", "name": "ActiveRecord", "type": "database",
+    "description": "The ORM at the heart of Rails. Powerful and versatile.",
+    "baseStats": { "hp": 70, "attack": 50, "defense": 50, "spAttack": 55, "spDefense": 50, "speed": 30 },
+    "baseXP": 72,
+    "learnset": [
+      { "level": 1, "move": "migration_run" },
+      { "level": 6, "move": "index_optimize" },
+      { "level": 12, "move": "schema_dump" },
+      { "level": 18, "move": "raw_sql" }
+    ],
+    "evolution": null
+  },
+  "sidekiq": {
+    "id": "sidekiq", "name": "Sidekiq", "type": "devops",
+    "description": "Simple, efficient background processing. Works hard so you don't have to.",
+    "baseStats": { "hp": 55, "attack": 60, "defense": 45, "spAttack": 50, "spDefense": 40, "speed": 55 },
+    "baseXP": 64,
+    "learnset": [
+      { "level": 1, "move": "background_job" },
+      { "level": 5, "move": "thread_pool" },
+      { "level": 10, "move": "ci_pipeline" },
+      { "level": 16, "move": "deploy_push" }
+    ],
+    "evolution": null
+  },
+  "puma": {
+    "id": "puma", "name": "Puma", "type": "devops",
+    "description": "A fast, concurrent web server for Ruby.",
+    "baseStats": { "hp": 60, "attack": 45, "defense": 50, "spAttack": 40, "spDefense": 50, "speed": 60 },
+    "baseXP": 62,
+    "learnset": [
+      { "level": 1, "move": "thread_pool" },
+      { "level": 5, "move": "background_job" },
+      { "level": 11, "move": "docker_build" },
+      { "level": 17, "move": "deploy_push" }
+    ],
+    "evolution": null
+  },
+  "turbo": {
+    "id": "turbo", "name": "Turbo", "type": "frontend",
+    "description": "The speed of a single-page app without the JavaScript.",
+    "baseStats": { "hp": 50, "attack": 55, "defense": 40, "spAttack": 55, "spDefense": 45, "speed": 65 },
+    "baseXP": 66,
+    "learnset": [
+      { "level": 1, "move": "hotwire_stream" },
+      { "level": 5, "move": "stimulus_connect" },
+      { "level": 11, "move": "dom_manipulate" },
+      { "level": 17, "move": "bundle_compile" }
+    ],
+    "evolution": null
+  },
+  "pry": {
+    "id": "pry", "name": "Pry", "type": "testing",
+    "description": "A runtime developer console. Peers into the unknown.",
+    "baseStats": { "hp": 35, "attack": 40, "defense": 30, "spAttack": 45, "spDefense": 35, "speed": 50 },
+    "baseXP": 45,
+    "learnset": [
+      { "level": 1, "move": "expect_matcher" },
+      { "level": 4, "move": "mock_object" },
+      { "level": 8, "move": "assert_equal" }
+    ],
+    "evolution": null
+  }
+}

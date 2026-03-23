@@ -1,0 +1,182 @@
+{
+  "authenticate": {
+    "id": "authenticate", "name": "Authenticate", "type": "auth",
+    "category": "special", "power": 40, "accuracy": 100, "pp": 35,
+    "description": "Verifies credentials. A basic but reliable attack.",
+    "effect": null
+  },
+  "token_generate": {
+    "id": "token_generate", "name": "Token Generate", "type": "auth",
+    "category": "special", "power": 65, "accuracy": 95, "pp": 15,
+    "description": "Generates a secure token. Packs a punch.",
+    "effect": null
+  },
+  "omniauth_integrate": {
+    "id": "omniauth_integrate", "name": "Omniauth Integrate", "type": "auth",
+    "category": "special", "power": 80, "accuracy": 90, "pp": 10,
+    "description": "Integrates multiple auth providers at once.",
+    "effect": null
+  },
+  "policy_enforce": {
+    "id": "policy_enforce", "name": "Policy Enforce", "type": "auth",
+    "category": "physical", "power": 70, "accuracy": 100, "pp": 15,
+    "description": "Enforces strict authorization policies.",
+    "effect": null
+  },
+  "hash_strength": {
+    "id": "hash_strength", "name": "Hash Strength", "type": "auth",
+    "category": "special", "power": 90, "accuracy": 85, "pp": 5,
+    "description": "Applies maximum-strength hashing. Devastating but unreliable.",
+    "effect": null
+  },
+  "session_store": {
+    "id": "session_store", "name": "Session Store", "type": "auth",
+    "category": "status", "power": 0, "accuracy": 100, "pp": 20,
+    "description": "Stores session data securely. Raises Sp. Defense.",
+    "effect": { "stat": "spDefense", "stages": 1, "target": "self" }
+  },
+  "query_detect": {
+    "id": "query_detect", "name": "Query Detect", "type": "performance",
+    "category": "special", "power": 60, "accuracy": 100, "pp": 20,
+    "description": "Detects inefficient queries in the codebase.",
+    "effect": null
+  },
+  "benchmark": {
+    "id": "benchmark", "name": "Benchmark", "type": "performance",
+    "category": "status", "power": 0, "accuracy": 100, "pp": 20,
+    "description": "Analyzes the opponent's weaknesses. Lowers Defense.",
+    "effect": { "stat": "defense", "stages": -1, "target": "enemy" }
+  },
+  "cache_warm": {
+    "id": "cache_warm", "name": "Cache Warm", "type": "performance",
+    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "description": "Warms the cache for maximum efficiency. Raises Sp. Attack.",
+    "effect": { "stat": "spAttack", "stages": 1, "target": "self" }
+  },
+  "profile_analyze": {
+    "id": "profile_analyze", "name": "Profile Analyze", "type": "performance",
+    "category": "special", "power": 75, "accuracy": 95, "pp": 15,
+    "description": "Deep performance profiling. Hits hard.",
+    "effect": null
+  },
+  "eager_load": {
+    "id": "eager_load", "name": "Eager Load", "type": "performance",
+    "category": "special", "power": 85, "accuracy": 90, "pp": 10,
+    "description": "Loads everything upfront. Massive damage.",
+    "effect": null
+  },
+  "expect_matcher": {
+    "id": "expect_matcher", "name": "Expect Matcher", "type": "testing",
+    "category": "special", "power": 50, "accuracy": 100, "pp": 25,
+    "description": "Sets an expectation and matches it precisely.",
+    "effect": null
+  },
+  "assert_equal": {
+    "id": "assert_equal", "name": "Assert Equal", "type": "testing",
+    "category": "physical", "power": 60, "accuracy": 100, "pp": 20,
+    "description": "Asserts equality with force.",
+    "effect": null
+  },
+  "integration_test": {
+    "id": "integration_test", "name": "Integration Test", "type": "testing",
+    "category": "special", "power": 80, "accuracy": 90, "pp": 10,
+    "description": "A full integration test. Thorough and powerful.",
+    "effect": null
+  },
+  "build_strategy": {
+    "id": "build_strategy", "name": "Build Strategy", "type": "testing",
+    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "description": "Builds a test strategy. Raises Attack.",
+    "effect": { "stat": "attack", "stages": 1, "target": "self" }
+  },
+  "mock_object": {
+    "id": "mock_object", "name": "Mock Object", "type": "testing",
+    "category": "status", "power": 0, "accuracy": 100, "pp": 20,
+    "description": "Creates a mock to confuse the enemy. Lowers Attack.",
+    "effect": { "stat": "attack", "stages": -1, "target": "enemy" }
+  },
+  "migration_run": {
+    "id": "migration_run", "name": "Migration Run", "type": "database",
+    "category": "special", "power": 55, "accuracy": 100, "pp": 25,
+    "description": "Runs a database migration. Reliable damage.",
+    "effect": null
+  },
+  "index_optimize": {
+    "id": "index_optimize", "name": "Index Optimize", "type": "database",
+    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "description": "Optimizes database indexes. Raises Speed.",
+    "effect": { "stat": "speed", "stages": 1, "target": "self" }
+  },
+  "schema_dump": {
+    "id": "schema_dump", "name": "Schema Dump", "type": "database",
+    "category": "special", "power": 70, "accuracy": 95, "pp": 15,
+    "description": "Dumps the schema with force.",
+    "effect": null
+  },
+  "raw_sql": {
+    "id": "raw_sql", "name": "Raw SQL", "type": "database",
+    "category": "special", "power": 90, "accuracy": 80, "pp": 5,
+    "description": "Executes raw SQL. High risk, high reward.",
+    "effect": null
+  },
+  "bundle_compile": {
+    "id": "bundle_compile", "name": "Bundle Compile", "type": "frontend",
+    "category": "special", "power": 60, "accuracy": 100, "pp": 20,
+    "description": "Compiles the asset bundle. Steady damage.",
+    "effect": null
+  },
+  "hotwire_stream": {
+    "id": "hotwire_stream", "name": "Hotwire Stream", "type": "frontend",
+    "category": "special", "power": 75, "accuracy": 95, "pp": 15,
+    "description": "Streams a Hotwire update. Fast and effective.",
+    "effect": null
+  },
+  "dom_manipulate": {
+    "id": "dom_manipulate", "name": "DOM Manipulate", "type": "frontend",
+    "category": "physical", "power": 50, "accuracy": 100, "pp": 25,
+    "description": "Directly manipulates the DOM.",
+    "effect": null
+  },
+  "stimulus_connect": {
+    "id": "stimulus_connect", "name": "Stimulus Connect", "type": "frontend",
+    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "description": "Connects a Stimulus controller. Raises Speed.",
+    "effect": { "stat": "speed", "stages": 1, "target": "self" }
+  },
+  "background_job": {
+    "id": "background_job", "name": "Background Job", "type": "devops",
+    "category": "special", "power": 65, "accuracy": 100, "pp": 20,
+    "description": "Queues a background job to deal damage.",
+    "effect": null
+  },
+  "docker_build": {
+    "id": "docker_build", "name": "Docker Build", "type": "devops",
+    "category": "special", "power": 80, "accuracy": 90, "pp": 10,
+    "description": "Builds a Docker container. Heavy hit.",
+    "effect": null
+  },
+  "ci_pipeline": {
+    "id": "ci_pipeline", "name": "CI Pipeline", "type": "devops",
+    "category": "special", "power": 55, "accuracy": 100, "pp": 25,
+    "description": "Runs the CI pipeline. Consistent damage.",
+    "effect": null
+  },
+  "thread_pool": {
+    "id": "thread_pool", "name": "Thread Pool", "type": "devops",
+    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "description": "Initializes a thread pool. Raises Defense.",
+    "effect": { "stat": "defense", "stages": 1, "target": "self" }
+  },
+  "deploy_push": {
+    "id": "deploy_push", "name": "Deploy Push", "type": "devops",
+    "category": "special", "power": 90, "accuracy": 85, "pp": 5,
+    "description": "Pushes to production. Massive damage, risky.",
+    "effect": null
+  },
+  "slow_query": {
+    "id": "slow_query", "name": "Slow Query", "type": "database",
+    "category": "special", "power": 45, "accuracy": 100, "pp": 30,
+    "description": "A painfully slow query. Lowers enemy Speed.",
+    "effect": { "stat": "speed", "stages": -1, "target": "enemy" }
+  }
+}

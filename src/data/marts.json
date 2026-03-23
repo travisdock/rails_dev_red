@@ -1,0 +1,29 @@
+{
+  "localhost": {
+    "name": "Localhost Gem Mart",
+    "inventory": [
+      { "gemId": "pry", "level": 5, "price": 200 }
+    ]
+  },
+  "staging_springs": {
+    "name": "Staging Springs Gem Mart",
+    "inventory": [
+      { "gemId": "bullet", "level": 12, "price": 800 },
+      { "gemId": "rack_mini_profiler", "level": 12, "price": 800 }
+    ]
+  },
+  "testing_terrace": {
+    "name": "Testing Terrace Gem Mart",
+    "inventory": [
+      { "gemId": "capybara", "level": 12, "price": 800 },
+      { "gemId": "factory_bot", "level": 12, "price": 800 }
+    ]
+  },
+  "production_city": {
+    "name": "Production City Gem Mart",
+    "inventory": [
+      { "gemId": "active_record", "level": 18, "price": 1500 },
+      { "gemId": "turbo", "level": 18, "price": 1500 }
+    ]
+  }
+}

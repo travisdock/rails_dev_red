@@ -1,0 +1,51 @@
+{
+  "sarah_security": {
+    "id": "sarah_security", "name": "Sarah Secure", "title": "Security Specialist",
+    "gymType": "auth", "badge": "ssl_badge", "badgeName": "SSL Badge",
+    "dialogBefore": "Security is no joke.\nLet's see if your gems can\nhandle a real audit.",
+    "dialogAfter": "Impressive. Your authentication\nis solid. Take the SSL Badge.",
+    "party": [
+      { "gemId": "pundit", "level": 14 },
+      { "gemId": "bcrypt", "level": 14 },
+      { "gemId": "devise", "level": 16 }
+    ],
+    "prizeMoney": 1600
+  },
+  "bench_mark": {
+    "id": "bench_mark", "name": "Bench Mark", "title": "Performance Engineer",
+    "gymType": "performance", "badge": "benchmark_badge", "badgeName": "Benchmark Badge",
+    "dialogBefore": "Every millisecond counts.\nCan your gems keep up\nwith my optimizations?",
+    "dialogAfter": "Fast and efficient.\nYou've earned the Benchmark Badge.",
+    "party": [
+      { "gemId": "rack_mini_profiler", "level": 18 },
+      { "gemId": "bullet", "level": 18 },
+      { "gemId": "puma", "level": 20 }
+    ],
+    "prizeMoney": 2000
+  },
+  "tess_driven": {
+    "id": "tess_driven", "name": "Tess Driven", "title": "QA Lead",
+    "gymType": "testing", "badge": "green_badge", "badgeName": "Green Badge",
+    "dialogBefore": "All tests must pass.\nNo exceptions. No flaky specs.\nLet's see your test suite.",
+    "dialogAfter": "All green. No failures.\nThe Green Badge is yours.",
+    "party": [
+      { "gemId": "factory_bot", "level": 18 },
+      { "gemId": "capybara", "level": 18 },
+      { "gemId": "rspec", "level": 20 }
+    ],
+    "prizeMoney": 2000
+  },
+  "dba_dan": {
+    "id": "dba_dan", "name": "DBA Dan", "title": "Database Architect",
+    "gymType": "database", "badge": "migration_badge", "badgeName": "Migration Badge",
+    "dialogBefore": "I've managed petabytes of data.\nYour little gems don't\nscare my schemas.",
+    "dialogAfter": "Your queries are optimized.\nTake the Migration Badge.\nYou've mastered Rails Dev: Red Edition!",
+    "party": [
+      { "gemId": "active_record", "level": 23 },
+      { "gemId": "bullet", "level": 22 },
+      { "gemId": "sidekiq", "level": 22 },
+      { "gemId": "active_record", "level": 25 }
+    ],
+    "prizeMoney": 3200
+  }
+}
