@@ -4,7 +4,24 @@
   "description": "Rails Dev: Red Edition - A Pokemon-style RPG themed around Ruby on Rails development",
   "scripts": {
     "dev": "npx serve . -p 8080 --no-clipboard",
-    "start": "npx serve . -p 8080 --no-clipboard"
+    "start": "npx serve . -p 8080 --no-clipboard",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/travisdock/rails_dev_red.git"
+  },
+  "keywords": [],
+  "author": "",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/travisdock/rails_dev_red/issues"
+  },
+  "homepage": "https://github.com/travisdock/rails_dev_red#readme",
+  "devDependencies": {
+    "vitest": "^4.1.0"
+  }
 }

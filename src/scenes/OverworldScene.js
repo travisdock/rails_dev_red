@@ -88,14 +88,14 @@ class OverworldScene extends Phaser.Scene {
         { type: 'sign', x: 3, y: 17, text: 'Route 1\n"The First Deployment"' }
       ]),
       'route2-split': () => this.generateSplitRoute(),
-      'route2-west': () => this.generateRoute('route2_west', 10, 20, 'Route 2 West', [
+      'route2-west': () => this.generateRoute('route_2_west', 10, 20, 'Route 2 West', [
         { type: 'trainer', x: 5, y: 8, trainerId: 'mid_dev_01', facing: 'right' },
         { type: 'trainer', x: 5, y: 14, trainerId: 'mid_dev_03', facing: 'left' },
         { type: 'door', x: 5, y: 19, targetMap: 'route2-split', targetX: 4, targetY: 2, facing: 'down' },
         { type: 'door', x: 5, y: 0, targetMap: 'staging-springs', targetX: 10, targetY: 14, facing: 'up' },
         { type: 'sign', x: 3, y: 17, text: 'Route 2 West\n"Spaghetti Code Trail"' }
       ]),
-      'route2-east': () => this.generateRoute('route2_east', 10, 20, 'Route 2 East', [
+      'route2-east': () => this.generateRoute('route_2_east', 10, 20, 'Route 2 East', [
         { type: 'trainer', x: 5, y: 8, trainerId: 'mid_dev_02', facing: 'left' },
         { type: 'trainer', x: 5, y: 14, trainerId: 'mid_dev_03', facing: 'right' },
         { type: 'door', x: 5, y: 19, targetMap: 'route2-split', targetX: 16, targetY: 2, facing: 'down' },
