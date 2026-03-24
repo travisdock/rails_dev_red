@@ -29,15 +29,44 @@ class PreloadScene extends Phaser.Scene {
     this.load.json('type-chart-data', 'src/data/type-chart.json');
     this.load.json('marts-data', 'src/data/marts.json');
 
+    // Load sprites
+    this.load.spritesheet('player', 'assets/sprites/player.png', {
+      frameWidth: 32, frameHeight: 32
+    });
+
+    // NPC sprites
+    const npcIds = ['01','02','03','04','05','06','07','09','10'];
+    for (const id of npcIds) {
+      this.load.spritesheet('npc' + id, 'assets/sprites/npc' + id + '.png', {
+        frameWidth: 32, frameHeight: 32
+      });
+    }
+
+    // Load tilesets
+    this.load.spritesheet('tiles-path', 'assets/tilesets/path.png', {
+      frameWidth: 16, frameHeight: 16
+    });
+    this.load.spritesheet('tiles-grass', 'assets/tilesets/grass.png', {
+      frameWidth: 16, frameHeight: 16
+    });
+    this.load.spritesheet('tiles-trees', 'assets/tilesets/trees.png', {
+      frameWidth: 16, frameHeight: 16
+    });
+    this.load.spritesheet('tiles-elements', 'assets/tilesets/elements.png', {
+      frameWidth: 16, frameHeight: 16
+    });
+    this.load.spritesheet('tiles-interior', 'assets/tilesets/interior.png', {
+      frameWidth: 16, frameHeight: 16
+    });
+    this.load.spritesheet('tiles-floor', 'assets/tilesets/floor.png', {
+      frameWidth: 16, frameHeight: 16
+    });
+
     // Load map data
-    this.load.json('map-localhost', 'assets/maps/localhost.json');
-    this.load.json('map-route1', 'assets/maps/route1.json');
-    this.load.json('map-route2-west', 'assets/maps/route2_west.json');
-    this.load.json('map-route2-east', 'assets/maps/route2_east.json');
-    this.load.json('map-route3', 'assets/maps/route3.json');
-    this.load.json('map-staging-springs', 'assets/maps/staging_springs.json');
-    this.load.json('map-testing-terrace', 'assets/maps/testing_terrace.json');
-    this.load.json('map-production-city', 'assets/maps/production_city.json');
+    this.load.json('map-hotel', 'assets/maps/hotel.json');
+    this.load.json('map-old-town', 'assets/maps/old_town.json');
+    this.load.json('map-park', 'assets/maps/park.json');
+    this.load.json('map-venue', 'assets/maps/venue.json');
   }
 
   create() {

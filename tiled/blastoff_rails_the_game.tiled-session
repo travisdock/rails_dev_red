@@ -1,0 +1,33 @@
+{
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "file.lastUsedOpenFilter": "All Files (*)",
+    "fileStates": {
+        "hotel.tmx": {
+            "scale": 0.9915624999999999,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 239.52095808383237,
+                "y": 160.35297825401824
+            }
+        },
+        "old_town.tmx": {
+            "scale": 0.743671875,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 319.36127744510975,
+                "y": 320.03361697657317
+            }
+        }
+    },
+    "last.exportedFilePath": "/home/travis/development/bor_the_game/rails-quest/assets/maps",
+    "last.externalTilesetPath": "/home/travis/development/bor_the_game/rails-quest/tiled",
+    "map.lastUsedExportFilter": "All Files (*)",
+    "openFiles": [
+    ],
+    "project": "blastoff_rails_the_game.tiled-project",
+    "recentFiles": [
+    ],
+    "tileset.lastUsedFilter": "Tiled tileset files (*.tsx *.xml)"
+}

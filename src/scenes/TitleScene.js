@@ -8,18 +8,18 @@ class TitleScene extends Phaser.Scene {
     this.add.rectangle(GAME_WIDTH / 2, GAME_HEIGHT / 2, GAME_WIDTH, GAME_HEIGHT, 0x111122);
 
     // Title
-    this.add.text(GAME_WIDTH / 2, 30, 'RAILS DEV', {
+    this.add.text(GAME_WIDTH / 2, 30, 'BLASTOFF RAILS', {
       fontFamily: 'monospace',
-      fontSize: '16px',
-      color: '#cc2222',
+      fontSize: '14px',
+      color: '#ff6633',
       fontStyle: 'bold'
     }).setOrigin(0.5);
 
     // Subtitle
-    this.add.text(GAME_WIDTH / 2, 50, 'Red Edition', {
+    this.add.text(GAME_WIDTH / 2, 48, 'The Game', {
       fontFamily: 'monospace',
       fontSize: '8px',
-      color: '#cc6666'
+      color: '#ff9966'
     }).setOrigin(0.5);
 
     // Decorative gem icon (diamond shape)
@@ -130,9 +130,9 @@ class TitleScene extends Phaser.Scene {
       PartyManager.init(null);
       InventoryManager.init(null);
       this.scene.start('OverworldScene', {
-        mapKey: 'localhost',
-        playerX: 10,
-        playerY: 12,
+        mapKey: 'hotel',
+        playerX: 1,
+        playerY: 17,
         facing: 'up',
         starterChosen: false
       });

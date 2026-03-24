@@ -1,4 +1,43 @@
 {
+  "rspec": {
+    "id": "rspec", "name": "RSpec", "type": "testing",
+    "description": "Behavior-driven development for Ruby. The gold standard.",
+    "baseStats": { "hp": 50, "attack": 45, "defense": 50, "spAttack": 55, "spDefense": 55, "speed": 50 },
+    "baseXP": 64,
+    "learnset": [
+      { "level": 1, "move": "expect_matcher" },
+      { "level": 5, "move": "mock_object" },
+      { "level": 10, "move": "assert_equal" },
+      { "level": 16, "move": "integration_test" }
+    ],
+    "evolution": null
+  },
+  "bullet": {
+    "id": "bullet", "name": "Bullet", "type": "performance",
+    "description": "Hunts down N+1 queries with precision.",
+    "baseStats": { "hp": 40, "attack": 55, "defense": 30, "spAttack": 65, "spDefense": 35, "speed": 70 },
+    "baseXP": 62,
+    "learnset": [
+      { "level": 1, "move": "query_detect" },
+      { "level": 5, "move": "benchmark" },
+      { "level": 11, "move": "eager_load" },
+      { "level": 17, "move": "profile_analyze" }
+    ],
+    "evolution": null
+  },
+  "brakeman": {
+    "id": "brakeman", "name": "Brakeman", "type": "auth",
+    "description": "A static analysis security scanner for Rails. Finds vulnerabilities before they find you.",
+    "baseStats": { "hp": 55, "attack": 30, "defense": 65, "spAttack": 55, "spDefense": 60, "speed": 40 },
+    "baseXP": 64,
+    "learnset": [
+      { "level": 1, "move": "authenticate" },
+      { "level": 5, "move": "policy_enforce" },
+      { "level": 10, "move": "token_generate" },
+      { "level": 16, "move": "hash_strength" }
+    ],
+    "evolution": null
+  },
   "devise": {
     "id": "devise", "name": "Devise", "type": "auth",
     "description": "A flexible authentication solution for Rails.",
@@ -38,19 +77,6 @@
     ],
     "evolution": null
   },
-  "bullet": {
-    "id": "bullet", "name": "Bullet", "type": "performance",
-    "description": "Hunts down N+1 queries with precision.",
-    "baseStats": { "hp": 40, "attack": 55, "defense": 30, "spAttack": 65, "spDefense": 35, "speed": 70 },
-    "baseXP": 62,
-    "learnset": [
-      { "level": 1, "move": "query_detect" },
-      { "level": 5, "move": "benchmark" },
-      { "level": 11, "move": "eager_load" },
-      { "level": 17, "move": "profile_analyze" }
-    ],
-    "evolution": null
-  },
   "rack_mini_profiler": {
     "id": "rack_mini_profiler", "name": "Rack-Mini-Profiler", "type": "performance",
     "description": "Profiles every request. Sees all.",
@@ -64,29 +90,16 @@
     ],
     "evolution": null
   },
-  "rspec": {
-    "id": "rspec", "name": "RSpec", "type": "testing",
-    "description": "Behavior-driven development for Ruby. The gold standard.",
-    "baseStats": { "hp": 50, "attack": 45, "defense": 50, "spAttack": 55, "spDefense": 55, "speed": 50 },
-    "baseXP": 64,
-    "learnset": [
-      { "level": 1, "move": "expect_matcher" },
-      { "level": 5, "move": "mock_object" },
-      { "level": 10, "move": "assert_equal" },
-      { "level": 16, "move": "integration_test" }
-    ],
-    "evolution": null
-  },
   "capybara": {
     "id": "capybara", "name": "Capybara", "type": "testing",
     "description": "Simulates user interaction. Thorough and patient.",
     "baseStats": { "hp": 60, "attack": 35, "defense": 55, "spAttack": 50, "spDefense": 60, "speed": 35 },
     "baseXP": 63,
     "learnset": [
-      { "level": 1, "move": "integration_test" },
-      { "level": 5, "move": "dom_manipulate" },
-      { "level": 11, "move": "expect_matcher" },
-      { "level": 17, "move": "assert_equal" }
+      { "level": 1, "move": "visit_page" },
+      { "level": 5, "move": "fill_in" },
+      { "level": 11, "move": "click_button" },
+      { "level": 17, "move": "selenium_driver" }
     ],
     "evolution": null
   },
@@ -96,10 +109,10 @@
     "baseStats": { "hp": 45, "attack": 50, "defense": 40, "spAttack": 60, "spDefense": 45, "speed": 55 },
     "baseXP": 58,
     "learnset": [
-      { "level": 1, "move": "build_strategy" },
-      { "level": 4, "move": "assert_equal" },
-      { "level": 9, "move": "mock_object" },
-      { "level": 15, "move": "integration_test" }
+      { "level": 1, "move": "build_stubbed" },
+      { "level": 4, "move": "override_attributes" },
+      { "level": 9, "move": "nested_factory" },
+      { "level": 15, "move": "transient_blast" }
     ],
     "evolution": null
   },
@@ -161,9 +174,10 @@
     "baseStats": { "hp": 35, "attack": 40, "defense": 30, "spAttack": 45, "spDefense": 35, "speed": 50 },
     "baseXP": 45,
     "learnset": [
-      { "level": 1, "move": "expect_matcher" },
-      { "level": 4, "move": "mock_object" },
-      { "level": 8, "move": "assert_equal" }
+      { "level": 1, "move": "binding_pry" },
+      { "level": 4, "move": "whereami" },
+      { "level": 8, "move": "show_source" },
+      { "level": 12, "move": "jump_to" }
     ],
     "evolution": null
   }

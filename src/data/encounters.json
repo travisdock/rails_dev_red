@@ -1,38 +1,39 @@
 {
-  "route_1": {
+  "hotel": {
+    "encounterRate": 0.12,
+    "encounters": [
+      { "bugId": "nil_reference", "levelRange": [3, 6], "weight": 40 },
+      { "bugId": "missing_template", "levelRange": [3, 5], "weight": 35 },
+      { "bugId": "n_plus_one", "levelRange": [3, 6], "weight": 25 }
+    ]
+  },
+  "old_town": {
     "encounterRate": 0.15,
     "encounters": [
-      { "bugId": "n_plus_one", "levelRange": [3, 6], "weight": 40 },
-      { "bugId": "nil_reference", "levelRange": [2, 5], "weight": 35 },
-      { "bugId": "missing_template", "levelRange": [3, 5], "weight": 25 }
+      { "bugId": "xss_attack", "levelRange": [8, 12], "weight": 25 },
+      { "bugId": "csrf_vuln", "levelRange": [8, 12], "weight": 25 },
+      { "bugId": "sql_injection", "levelRange": [9, 13], "weight": 20 },
+      { "bugId": "n_plus_one", "levelRange": [7, 11], "weight": 30 }
     ]
   },
-  "route_2_west": {
+  "park": {
     "encounterRate": 0.18,
     "encounters": [
-      { "bugId": "memory_leak", "levelRange": [7, 10], "weight": 30 },
-      { "bugId": "circular_dependency", "levelRange": [7, 9], "weight": 25 },
-      { "bugId": "n_plus_one", "levelRange": [6, 9], "weight": 25 },
-      { "bugId": "race_condition", "levelRange": [8, 11], "weight": 20 }
+      { "bugId": "memory_leak", "levelRange": [14, 18], "weight": 25 },
+      { "bugId": "circular_dependency", "levelRange": [13, 17], "weight": 20 },
+      { "bugId": "race_condition", "levelRange": [15, 19], "weight": 20 },
+      { "bugId": "n_plus_one", "levelRange": [13, 16], "weight": 20 },
+      { "bugId": "unhandled_promise", "levelRange": [14, 17], "weight": 15 }
     ]
   },
-  "route_2_east": {
-    "encounterRate": 0.18,
-    "encounters": [
-      { "bugId": "nil_reference", "levelRange": [7, 10], "weight": 30 },
-      { "bugId": "missing_template", "levelRange": [7, 10], "weight": 25 },
-      { "bugId": "unhandled_promise", "levelRange": [8, 11], "weight": 25 },
-      { "bugId": "memory_leak", "levelRange": [7, 9], "weight": 20 }
-    ]
-  },
-  "route_3": {
+  "venue": {
     "encounterRate": 0.20,
     "encounters": [
-      { "bugId": "sql_injection", "levelRange": [12, 15], "weight": 25 },
-      { "bugId": "xss_attack", "levelRange": [12, 15], "weight": 20 },
-      { "bugId": "csrf_vuln", "levelRange": [13, 16], "weight": 20 },
-      { "bugId": "race_condition", "levelRange": [12, 14], "weight": 20 },
-      { "bugId": "memory_leak", "levelRange": [11, 14], "weight": 15 }
+      { "bugId": "sql_injection", "levelRange": [20, 24], "weight": 20 },
+      { "bugId": "race_condition", "levelRange": [20, 24], "weight": 20 },
+      { "bugId": "memory_leak", "levelRange": [19, 23], "weight": 20 },
+      { "bugId": "xss_attack", "levelRange": [20, 24], "weight": 20 },
+      { "bugId": "circular_dependency", "levelRange": [19, 22], "weight": 20 }
     ]
   }
 }

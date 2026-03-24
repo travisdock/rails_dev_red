@@ -23,7 +23,9 @@ class OverworldScene extends Phaser.Scene {
     this.loadMap(this.mapKey);
     this.player = new Player(this, this.startX, this.startY);
     this.player.facing = this.startFacing;
-    this.player.updateDirectionIndicator();
+    if (this.player.hasSprite) {
+      this.player.sprite.play(`player-idle-${this.startFacing}`, true);
+    }
 
     // Camera
     this.cameras.main.startFollow(this.player.sprite, true);
@@ -36,15 +38,15 @@ class OverworldScene extends Phaser.Scene {
     TransitionFX.fadeIn(this, 300);
 
     // Intro and starter selection on new game
-    if (!ProgressManager.hasSeenStory('intro') && this.mapKey === 'localhost') {
+    if (!ProgressManager.hasSeenStory('intro') && this.mapKey === 'hotel') {
       ProgressManager.seeStory('intro');
       this.player.freeze();
       this.time.delayedCall(400, () => {
         this.dialogManager.show([
-          "Welcome to the world of Rails!",
-          "I'm Prof. Matz, the Ruby creator.",
-          "In this world, developers collect\ngems to battle bugs in codebases.",
-          "But first, you'll need your\nvery first gem!"
+          "Welcome to Albuquerque!",
+          "You're here for Blastoff Rails,\nthe conference that's literally\nout of this world!",
+          "To board the rocket, you'll\nneed to earn Boarding Passes\nfrom four challenge masters.",
+          "But first, you'll need\na gem to get started!"
         ], () => {
           this.player.unfreeze();
           if (!this.starterChosen) {
@@ -52,19 +54,218 @@ class OverworldScene extends Phaser.Scene {
           }
         });
       });
-    } else if (!this.starterChosen && this.mapKey === 'localhost') {
-      // Edge case: intro seen but starter not chosen (e.g. refreshed mid-selection)
+    } else if (!this.starterChosen && this.mapKey === 'hotel') {
       this.time.delayedCall(500, () => this.showStarterSelection());
     }
   }
 
   loadMap(mapKey) {
     const mapData = this.cache.json.get('map-' + mapKey);
-    // Use procedural maps until Tiled maps are created
-    // (placeholder files contain empty objects)
-    if (!mapData || !mapData.layers) {
-      this.createProceduralMap(mapKey);
+    // Use Tiled JSON if it has layers, otherwise fall back to procedural
+    if (mapData && mapData.layers) {
+      this.loadTiledMap(mapData, mapKey);
       return;
+    }
+    this.createProceduralMap(mapKey);
+  }
+
+  loadTiledMap(mapData, mapKey) {
+    const width = mapData.width;
+    const height = mapData.height;
+    this.mapWidth = width * TILE_SIZE;
+    this.mapHeight = height * TILE_SIZE;
+    this.collisionMap = [];
+    this.grassTiles = [];
+    this.encounterZone = null;
+    this.hasTiledObjects = false;
+
+    // Initialize collision map
+    for (let y = 0; y < height; y++) {
+      this.collisionMap[y] = new Array(width).fill(0);
+    }
+
+    // Build tileset lookup: GID -> { textureKey, frameIndex }
+    const tilesetLookup = {};
+    for (const ts of mapData.tilesets) {
+      // Determine which spritesheet this tileset maps to
+      let textureKey = null;
+      if (ts.source && ts.source.includes('grass')) textureKey = 'tiles-grass';
+      else if (ts.source && ts.source.includes('path')) textureKey = 'tiles-path';
+      else if (ts.source && ts.source.includes('trees')) textureKey = 'tiles-trees';
+      else if (ts.source && ts.source.includes('elements')) textureKey = 'tiles-elements';
+      else if (ts.source && ts.source.includes('interior')) textureKey = 'tiles-interior';
+      else if (ts.source && ts.source.includes('floor')) textureKey = 'tiles-floor';
+
+      if (textureKey && this.textures.exists(textureKey)) {
+        // Map each GID to the texture + local frame index
+        const firstgid = ts.firstgid;
+        // We need tilecount from the tileset; estimate from texture
+        const tex = this.textures.get(textureKey);
+        const frameNames = tex.getFrameNames();
+        const frameCount = frameNames.length || 100; // fallback
+        for (let i = 0; i < frameCount; i++) {
+          tilesetLookup[firstgid + i] = { key: textureKey, frame: i };
+        }
+      }
+    }
+
+    // Render tile layers
+    for (const layer of mapData.layers) {
+      if (layer.type === 'tilelayer' && layer.data) {
+        const depth = layer.name === 'world' ? 2 : (layer.name === 'above' ? 10 : 0);
+        const isCollision = layer.name === 'collisions';
+
+        for (let i = 0; i < layer.data.length; i++) {
+          const gid = layer.data[i];
+          if (gid === 0) continue; // empty tile
+
+          const x = i % width;
+          const y = Math.floor(i / width);
+
+          if (isCollision) {
+            // Any non-zero tile on collision layer = blocked
+            this.collisionMap[y][x] = 1;
+            continue;
+          }
+
+          const tileInfo = tilesetLookup[gid];
+          if (tileInfo) {
+            this.add.sprite(
+              x * TILE_SIZE + TILE_SIZE / 2,
+              y * TILE_SIZE + TILE_SIZE / 2,
+              tileInfo.key, tileInfo.frame
+            ).setDepth(depth);
+          }
+        }
+      }
+
+      // Parse object layers for encounters
+      if (layer.type === 'objectgroup' && layer.name === 'encounters') {
+        for (const obj of layer.objects) {
+          const startX = Math.floor(obj.x / TILE_SIZE);
+          const startY = Math.floor(obj.y / TILE_SIZE);
+          const endX = startX + Math.max(1, Math.ceil(obj.width / TILE_SIZE));
+          const endY = startY + Math.max(1, Math.ceil(obj.height / TILE_SIZE));
+          for (let gy = startY; gy < endY; gy++) {
+            for (let gx = startX; gx < endX; gx++) {
+              this.grassTiles.push({ x: gx, y: gy });
+            }
+          }
+          if (obj.properties) {
+            for (const prop of obj.properties) {
+              if (prop.name === 'encounterZone') {
+                this.encounterZone = prop.value;
+              }
+            }
+          }
+        }
+      }
+
+      // Parse object layers for NPCs, doors, trainers, etc.
+      if (layer.type === 'objectgroup' && layer.name === 'objects') {
+        const tiledObjects = [];
+        for (const obj of layer.objects) {
+          const tileX = Math.floor(obj.x / TILE_SIZE);
+          const tileY = Math.floor(obj.y / TILE_SIZE);
+
+          // Convert Tiled properties array to a flat object
+          const props = {};
+          if (obj.properties) {
+            for (const prop of obj.properties) {
+              props[prop.name] = prop.value;
+            }
+          }
+
+          const parsed = {
+            type: obj.type,
+            x: tileX,
+            y: tileY,
+            name: obj.name || props.name,
+            dialog: props.dialog ? props.dialog.split('|') : undefined,
+            facing: props.facing,
+            spriteKey: props.spriteKey,
+            trainerId: props.trainerId,
+            gymId: props.gymId,
+            badge: props.badge,
+            requiredBadges: props.requiredBadges ? parseInt(props.requiredBadges) : undefined,
+            targetMap: props.targetMap,
+            targetX: props.targetX ? parseInt(props.targetX) : undefined,
+            targetY: props.targetY ? parseInt(props.targetY) : undefined,
+            blockMessage: props.blockMessage,
+            martId: props.martId,
+            text: props.text
+          };
+
+          tiledObjects.push(parsed);
+        }
+
+        if (tiledObjects.length > 0) {
+          this.hasTiledObjects = true;
+          this.processObjects(tiledObjects);
+        }
+      }
+    }
+
+    // Fall back to procedural objects if no objects were defined in Tiled
+    if (!this.hasTiledObjects) {
+      this.loadProceduralObjects(mapKey);
+    }
+
+    // Town name label
+    const names = {
+      'hotel': 'The Hotel', 'old-town': 'Old Town',
+      'park': 'The Park', 'venue': 'The Venue'
+    };
+    const displayName = names[mapKey] || mapKey;
+    this.add.text(this.mapWidth / 2, 12, displayName, {
+      fontFamily: 'monospace', fontSize: '6px', color: '#ffffff',
+      backgroundColor: '#33333388', padding: { x: 4, y: 2 }
+    }).setOrigin(0.5).setDepth(100).setScrollFactor(0);
+  }
+
+  // Load NPC/door/trainer objects from the procedural definitions
+  // (used until objects are placed in Tiled)
+  loadProceduralObjects(mapKey) {
+    const objectDefs = {
+      // hotel: all objects defined in Tiled
+      'old-town': [
+        { type: 'npc', x: 5, y: 8, name: 'Local Guide', dialog: ["Old Town has been here\nsince 1706. Watch out for\nsecurity bugs in the\nold code!"], spriteKey: 'npc09' },
+        { type: 'npc', x: 15, y: 12, name: 'Souvenir Seller', dialog: ["Buy a gem, take on\nthe world!"], spriteKey: 'npc03' },
+        { type: 'heal', x: 3, y: 5, name: 'Old Town Clinic', spriteKey: 'npc05' },
+        { type: 'mart', x: 17, y: 5, name: 'Old Town Gem Shop', martId: 'old_town', spriteKey: 'npc04' },
+        { type: 'gym_entrance', x: 10, y: 3, gymId: 'greg_molnar', requiredBadges: 1, name: 'Security Audit', spriteKey: 'npc06' },
+        { type: 'door', x: 10, y: 19, targetMap: 'hotel', targetX: 10, targetY: 1, facing: 'down' },
+        { type: 'door', x: 10, y: 0, targetMap: 'park', targetX: 10, targetY: 18, facing: 'up' },
+        { type: 'sign', x: 10, y: 2, text: 'Security Audit Room\nChallenger: Greg Molnar' },
+        { type: 'trainer', x: 8, y: 10, trainerId: 'attendee_02', facing: 'right', spriteKey: 'npc01' },
+        { type: 'trainer', x: 14, y: 8, trainerId: 'attendee_03', facing: 'left', spriteKey: 'npc10' }
+      ],
+      'park': [
+        { type: 'npc', x: 6, y: 10, name: 'Jogger', dialog: ["Running in production\nis like running in the park.\nYou gotta go fast!"], spriteKey: 'npc09' },
+        { type: 'heal', x: 3, y: 5, name: 'Park First Aid', spriteKey: 'npc05' },
+        { type: 'mart', x: 17, y: 5, name: 'Park Vendor', martId: 'park', spriteKey: 'npc04' },
+        { type: 'gym_entrance', x: 10, y: 3, gymId: 'nate_berkopec', requiredBadges: 2, name: 'Performance Lab', spriteKey: 'npc10' },
+        { type: 'door', x: 10, y: 19, targetMap: 'old-town', targetX: 10, targetY: 1, facing: 'down' },
+        { type: 'door', x: 10, y: 0, targetMap: 'venue', targetX: 10, targetY: 18, facing: 'up' },
+        { type: 'sign', x: 10, y: 2, text: 'Performance Lab\nChallenger: Nate Berkopec' },
+        { type: 'trainer', x: 5, y: 8, trainerId: 'speaker_01', facing: 'right', spriteKey: 'npc02' },
+        { type: 'trainer', x: 15, y: 14, trainerId: 'speaker_02', facing: 'left', spriteKey: 'npc06' },
+        { type: 'trainer', x: 8, y: 16, trainerId: 'speaker_03', facing: 'down', spriteKey: 'npc10' }
+      ],
+      'venue': [
+        { type: 'npc', x: 6, y: 10, name: 'Volunteer', dialog: ["The rocket is almost ready!\nDefeat DHH to earn your\nCaptain's Pass!"], spriteKey: 'npc03' },
+        { type: 'npc', x: 16, y: 8, name: 'Mission Control', dialog: ["All systems nominal.\nAwaiting final passenger\nclearance..."], spriteKey: 'npc09' },
+        { type: 'heal', x: 3, y: 5, name: 'Venue Med Bay', spriteKey: 'npc05' },
+        { type: 'mart', x: 17, y: 5, name: 'Conference Merch Booth', martId: 'venue', spriteKey: 'npc04' },
+        { type: 'gym_entrance', x: 10, y: 3, gymId: 'dhh', requiredBadges: 3, name: 'The Launch Pad', spriteKey: 'npc06' },
+        { type: 'door', x: 10, y: 19, targetMap: 'park', targetX: 10, targetY: 1, facing: 'down' },
+        { type: 'sign', x: 10, y: 2, text: 'The Launch Pad\nFinal Challenge: DHH' },
+        { type: 'trainer', x: 7, y: 14, trainerId: 'organizer_01', facing: 'right', spriteKey: 'npc06' }
+      ]
+    };
+    const objects = objectDefs[mapKey];
+    if (objects) {
+      this.processObjects(objects);
     }
   }
 
@@ -81,60 +282,10 @@ class OverworldScene extends Phaser.Scene {
         { type: 'gym_entrance', x: 7, y: 3, gymId: 'sarah_security', badge: 'ssl_badge', name: 'Security Gym' },
         { type: 'door', x: 10, y: 1, targetMap: 'route1', targetX: 5, targetY: 18, facing: 'up' }
       ]),
-      'route1': () => this.generateRoute('route_1', 10, 20, 'Route 1', [
-        { type: 'trainer', x: 5, y: 10, trainerId: 'junior_dev_01', facing: 'left' },
-        { type: 'door', x: 5, y: 19, targetMap: 'localhost', targetX: 10, targetY: 2, facing: 'down' },
-        { type: 'door', x: 5, y: 0, targetMap: 'route2-split', targetX: 10, targetY: 18, facing: 'up' },
-        { type: 'sign', x: 3, y: 17, text: 'Route 1\n"The First Deployment"' }
-      ]),
-      'route2-split': () => this.generateSplitRoute(),
-      'route2-west': () => this.generateRoute('route_2_west', 10, 20, 'Route 2 West', [
-        { type: 'trainer', x: 5, y: 8, trainerId: 'mid_dev_01', facing: 'right' },
-        { type: 'trainer', x: 5, y: 14, trainerId: 'mid_dev_03', facing: 'left' },
-        { type: 'door', x: 5, y: 19, targetMap: 'route2-split', targetX: 4, targetY: 2, facing: 'down' },
-        { type: 'door', x: 5, y: 0, targetMap: 'staging-springs', targetX: 10, targetY: 14, facing: 'up' },
-        { type: 'sign', x: 3, y: 17, text: 'Route 2 West\n"Spaghetti Code Trail"' }
-      ]),
-      'route2-east': () => this.generateRoute('route_2_east', 10, 20, 'Route 2 East', [
-        { type: 'trainer', x: 5, y: 8, trainerId: 'mid_dev_02', facing: 'left' },
-        { type: 'trainer', x: 5, y: 14, trainerId: 'mid_dev_03', facing: 'right' },
-        { type: 'door', x: 5, y: 19, targetMap: 'route2-split', targetX: 16, targetY: 2, facing: 'down' },
-        { type: 'door', x: 5, y: 0, targetMap: 'testing-terrace', targetX: 10, targetY: 14, facing: 'up' },
-        { type: 'sign', x: 3, y: 17, text: 'Route 2 East\n"Untested Waters"' }
-      ]),
-      'route3': () => this.generateRoute('route_3', 10, 25, 'Route 3', [
-        { type: 'trainer', x: 5, y: 8, trainerId: 'senior_dev_01', facing: 'down' },
-        { type: 'trainer', x: 5, y: 14, trainerId: 'senior_dev_02', facing: 'left' },
-        { type: 'trainer', x: 5, y: 20, trainerId: 'senior_dev_03', facing: 'right' },
-        { type: 'door', x: 5, y: 24, targetMap: 'route2-split', targetX: 10, targetY: 2, facing: 'down' },
-        { type: 'door', x: 5, y: 0, targetMap: 'production-city', targetX: 10, targetY: 14, facing: 'up' },
-        { type: 'sign', x: 3, y: 22, text: 'Route 3\n"Legacy Monolith Path"' }
-      ]),
-      'staging-springs': () => this.generateTown('staging-springs', 20, 16, 'Staging Springs', [
-        { type: 'npc', x: 5, y: 8, name: 'Speed Freak', dialog: ["Benchmarks don't lie!\nBut they can be misleading..."] },
-        { type: 'heal', x: 3, y: 5, name: 'CI/CD Center' },
-        { type: 'mart', x: 17, y: 5, name: 'Gem Mart', martId: 'staging_springs' },
-        { type: 'gym_entrance', x: 10, y: 3, gymId: 'bench_mark', badge: 'benchmark_badge', requiredBadges: 1, name: 'Performance Gym' },
-        { type: 'door', x: 10, y: 15, targetMap: 'route2-west', targetX: 5, targetY: 1, facing: 'down' },
-        { type: 'sign', x: 10, y: 2, text: 'Performance Gym\nLeader: Bench Mark' }
-      ]),
-      'testing-terrace': () => this.generateTown('testing-terrace', 20, 16, 'Testing Terrace', [
-        { type: 'npc', x: 14, y: 8, name: 'QA Enthusiast', dialog: ["100% test coverage or bust!\n...Well, maybe 95% is fine."] },
-        { type: 'heal', x: 3, y: 5, name: 'CI/CD Center' },
-        { type: 'mart', x: 17, y: 5, name: 'Gem Mart', martId: 'testing_terrace' },
-        { type: 'gym_entrance', x: 10, y: 3, gymId: 'tess_driven', badge: 'green_badge', requiredBadges: 1, name: 'Testing Gym' },
-        { type: 'door', x: 10, y: 15, targetMap: 'route2-east', targetX: 5, targetY: 1, facing: 'down' },
-        { type: 'sign', x: 10, y: 2, text: 'Testing Gym\nLeader: Tess Driven' }
-      ]),
-      'production-city': () => this.generateTown('production-city', 24, 18, 'Production City', [
-        { type: 'npc', x: 6, y: 8, name: 'DevOps Engineer', dialog: ["Welcome to Production City!\nEverything runs at scale here."] },
-        { type: 'npc', x: 18, y: 10, name: 'Senior DBA', dialog: ["DBA Dan is the toughest\ngym leader around.\nMake sure you're prepared!"] },
-        { type: 'heal', x: 3, y: 5, name: 'CI/CD Center' },
-        { type: 'mart', x: 21, y: 5, name: 'Gem Mart', martId: 'production_city' },
-        { type: 'gym_entrance', x: 12, y: 3, gymId: 'dba_dan', badge: 'migration_badge', requiredBadges: 2, name: 'Database Gym' },
-        { type: 'door', x: 12, y: 17, targetMap: 'route3', targetX: 5, targetY: 1, facing: 'down' },
-        { type: 'sign', x: 12, y: 2, text: 'Database Gym\nLeader: DBA Dan' }
-      ])
+      'hotel': () => this.generateTown('hotel', 30, 20, 'The Hotel', []),
+      'old-town': () => this.generateTown('old-town', 40, 40, 'Old Town', []),
+      'park': () => this.generateTown('park', 40, 40, 'The Park', []),
+      'venue': () => this.generateTown('venue', 30, 30, 'The Venue', [])
     };
 
     const generator = maps[mapKey];
@@ -145,6 +296,68 @@ class OverworldScene extends Phaser.Scene {
     }
   }
 
+  // Tile indices in the path tileset (12 cols per row)
+  // We map based on which neighbors are path/dirt vs grass
+  getPathTileIndex(x, y, isPathFn) {
+    const up = isPathFn(x, y - 1);
+    const down = isPathFn(x, y + 1);
+    const left = isPathFn(x - 1, y);
+    const right = isPathFn(x + 1, y);
+
+    // Pure dirt (surrounded by path)
+    if (up && down && left && right) return 18; // row1,col6
+
+    // Edges (grass on one side)
+    if (!up && down && left && right) return 5;    // top edge
+    if (up && !down && left && right) return 29;   // bottom edge
+    if (up && down && !left && right) return 16;   // left edge
+    if (up && down && left && !right) return 8;    // right edge
+
+    // Corners
+    if (!up && !left && down && right) return 4;   // top-left corner
+    if (!up && !right && down && left) return 6;   // top-right corner
+    if (!down && !left && up && right) return 28;  // bottom-left corner
+    if (!down && !right && up && left) return 30;  // bottom-right corner
+
+    // Dead ends / single tiles
+    if (!up && !down && left && right) return 18;  // horizontal
+    if (up && down && !left && !right) return 18;  // vertical
+
+    // Fallback to plain dirt
+    return 18;
+  }
+
+  placeTile(x, y, frameIndex) {
+    if (this.textures.exists('tiles-path')) {
+      this.add.sprite(
+        x * TILE_SIZE + TILE_SIZE / 2,
+        y * TILE_SIZE + TILE_SIZE / 2,
+        'tiles-path', frameIndex
+      ).setDepth(0);
+    }
+  }
+
+  placeGrassTile(x, y) {
+    // Use grass tileset if available, with random variation
+    if (this.textures.exists('tiles-grass')) {
+      // Grass tiles: row1-4, cols 1-3 = indices 13,14,15, 25,26,27, 37,38,39, 49,50,51
+      // Use a few variations for visual interest, seeded by position for consistency
+      const variations = [13, 14, 25, 26, 37, 38];
+      const idx = variations[(x * 7 + y * 13) % variations.length];
+      this.add.sprite(
+        x * TILE_SIZE + TILE_SIZE / 2,
+        y * TILE_SIZE + TILE_SIZE / 2,
+        'tiles-grass', idx
+      ).setDepth(0);
+    } else if (this.textures.exists('tiles-path')) {
+      this.add.sprite(
+        x * TILE_SIZE + TILE_SIZE / 2,
+        y * TILE_SIZE + TILE_SIZE / 2,
+        'tiles-path', 3
+      ).setDepth(0);
+    }
+  }
+
   generateTown(mapKey, width, height, name, objects) {
     this.mapWidth = width * TILE_SIZE;
     this.mapHeight = height * TILE_SIZE;
@@ -152,36 +365,53 @@ class OverworldScene extends Phaser.Scene {
     this.grassTiles = [];
     this.encounterZone = null;
 
+    const hasTiles = this.textures.exists('tiles-path');
     const gfx = this.add.graphics();
+
+    const isPathTile = (tx, ty) => {
+      if (tx < 0 || ty < 0 || tx >= width || ty >= height) return false;
+      return (tx >= 9 && tx <= 11) || (ty >= 4 && ty <= 6);
+    };
 
     // Draw ground
     for (let y = 0; y < height; y++) {
       this.collisionMap[y] = [];
       for (let x = 0; x < width; x++) {
         const isBorder = x === 0 || y === 0 || x === width - 1 || y === height - 1;
-        const isPath = (x >= 9 && x <= 11) || (y >= 4 && y <= 6);
+        const isPath = isPathTile(x, y);
 
         if (isBorder) {
-          gfx.fillStyle(0x556655, 1);
-          this.collisionMap[y][x] = 1; // blocked
+          this.collisionMap[y][x] = 1;
+          if (hasTiles) {
+            this.placeGrassTile(x, y);
+          } else {
+            gfx.fillStyle(0x556655, 1);
+            gfx.fillRect(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE);
+          }
         } else if (isPath) {
-          gfx.fillStyle(0xddccaa, 1);
           this.collisionMap[y][x] = 0;
+          if (hasTiles) {
+            const tileIdx = this.getPathTileIndex(x, y, isPathTile);
+            this.placeTile(x, y, tileIdx);
+          } else {
+            gfx.fillStyle(0xddccaa, 1);
+            gfx.fillRect(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE);
+          }
         } else {
-          gfx.fillStyle(0x88bb66, 1);
           this.collisionMap[y][x] = 0;
+          if (hasTiles) {
+            this.placeGrassTile(x, y);
+          } else {
+            gfx.fillStyle(0x88bb66, 1);
+            gfx.fillRect(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE);
+          }
         }
-        gfx.fillRect(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE);
-
-        // Grid lines (subtle)
-        gfx.lineStyle(1, 0x000000, 0.05);
-        gfx.strokeRect(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE);
       }
     }
 
     // Draw buildings
-    this.drawBuilding(gfx, 2, 4, 3, 2, 0xee5544, 'CI/CD'); // CI/CD Center
-    this.drawBuilding(gfx, 15, 4, 3, 2, 0x4488ee, 'MART');  // Mart
+    this.drawBuilding(gfx, 2, 4, 3, 2, 0xee5544, 'CI/CD');
+    this.drawBuilding(gfx, 15, 4, 3, 2, 0x4488ee, 'MART');
 
     // Town name label
     this.add.text(width * TILE_SIZE / 2, 12, name, {
@@ -189,7 +419,6 @@ class OverworldScene extends Phaser.Scene {
       backgroundColor: '#33333388', padding: { x: 4, y: 2 }
     }).setOrigin(0.5).setDepth(100).setScrollFactor(0);
 
-    // Process objects
     this.processObjects(objects);
   }
 
@@ -200,43 +429,59 @@ class OverworldScene extends Phaser.Scene {
     this.grassTiles = [];
     this.encounterZone = encounterZone;
 
+    const hasTiles = this.textures.exists('tiles-path');
     const gfx = this.add.graphics();
+
+    const isPathTile = (tx, ty) => {
+      if (tx < 0 || ty < 0 || tx >= width || ty >= height) return false;
+      return tx >= 4 && tx <= 6;
+    };
 
     for (let y = 0; y < height; y++) {
       this.collisionMap[y] = [];
       for (let x = 0; x < width; x++) {
         const isBorder = x === 0 || x === width - 1;
-        const isPath = x >= 4 && x <= 6;
+        const isPath = isPathTile(x, y);
         const isGrass = !isBorder && !isPath;
 
         if (isBorder) {
-          gfx.fillStyle(0x446644, 1);
           this.collisionMap[y][x] = 1;
+          if (hasTiles) {
+            this.placeGrassTile(x, y);
+          } else {
+            gfx.fillStyle(0x446644, 1);
+            gfx.fillRect(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE);
+          }
         } else if (isPath) {
-          gfx.fillStyle(0xccbb99, 1);
           this.collisionMap[y][x] = 0;
+          if (hasTiles) {
+            const tileIdx = this.getPathTileIndex(x, y, isPathTile);
+            this.placeTile(x, y, tileIdx);
+          } else {
+            gfx.fillStyle(0xccbb99, 1);
+            gfx.fillRect(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE);
+          }
         } else if (isGrass) {
-          // Tall grass (encounter zone)
-          gfx.fillStyle(0x44aa33, 1);
           this.collisionMap[y][x] = 0;
           this.grassTiles.push({ x, y });
-          // Draw grass tufts
-          gfx.fillStyle(0x338822, 1);
-          gfx.fillRect(x * TILE_SIZE + 2, y * TILE_SIZE + 4, 2, 6);
-          gfx.fillRect(x * TILE_SIZE + 6, y * TILE_SIZE + 2, 2, 8);
-          gfx.fillRect(x * TILE_SIZE + 10, y * TILE_SIZE + 5, 2, 5);
-        }
-
-        gfx.fillRect(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE);
-        gfx.lineStyle(1, 0x000000, 0.05);
-        gfx.strokeRect(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE);
-
-        // Redraw grass tufts on top
-        if (isGrass) {
-          gfx.fillStyle(0x338822, 1);
-          gfx.fillRect(x * TILE_SIZE + 2, y * TILE_SIZE + 4, 2, 6);
-          gfx.fillRect(x * TILE_SIZE + 7, y * TILE_SIZE + 2, 2, 8);
-          gfx.fillRect(x * TILE_SIZE + 12, y * TILE_SIZE + 5, 2, 5);
+          if (hasTiles) {
+            // Use grass tile for encounter grass (darker or same grass for now)
+            this.placeGrassTile(x, y);
+            // Add a visual indicator for tall grass (tufts overlay)
+            const tufts = this.add.graphics();
+            tufts.fillStyle(0x338822, 1);
+            tufts.fillRect(x * TILE_SIZE + 3, y * TILE_SIZE + 6, 2, 5);
+            tufts.fillRect(x * TILE_SIZE + 7, y * TILE_SIZE + 4, 2, 7);
+            tufts.fillRect(x * TILE_SIZE + 11, y * TILE_SIZE + 7, 2, 4);
+            tufts.setDepth(1);
+          } else {
+            gfx.fillStyle(0x44aa33, 1);
+            gfx.fillRect(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE);
+            gfx.fillStyle(0x338822, 1);
+            gfx.fillRect(x * TILE_SIZE + 2, y * TILE_SIZE + 4, 2, 6);
+            gfx.fillRect(x * TILE_SIZE + 7, y * TILE_SIZE + 2, 2, 8);
+            gfx.fillRect(x * TILE_SIZE + 12, y * TILE_SIZE + 5, 2, 5);
+          }
         }
       }
     }
@@ -354,7 +599,8 @@ class OverworldScene extends Phaser.Scene {
             name: obj.name,
             dialog: obj.dialog,
             color: obj.color || 0x4488cc,
-            facing: obj.facing || 'down'
+            facing: obj.facing || 'down',
+            spriteKey: obj.spriteKey || null
           }));
           break;
 
@@ -363,7 +609,8 @@ class OverworldScene extends Phaser.Scene {
           if (trainerDef) {
             const t = new Trainer(this, obj.x, obj.y, {
               ...trainerDef,
-              facing: obj.facing || 'down'
+              facing: obj.facing || 'down',
+              spriteKey: obj.spriteKey || null
             });
             this.trainers.push(t);
             this.npcs.push(t);
@@ -398,49 +645,36 @@ class OverworldScene extends Phaser.Scene {
           break;
 
         case 'heal':
-          this.npcs.push(new NPC(this, obj.x, obj.y + 2, {
+          this.npcs.push(new NPC(this, obj.x, obj.y, {
             name: obj.name || 'Nurse',
             dialog: ['heal'],
             color: 0xff88aa,
-            facing: 'down'
+            facing: obj.facing || 'down',
+            spriteKey: obj.spriteKey || null
           }));
           break;
 
         case 'mart':
-          this.npcs.push(new NPC(this, obj.x, obj.y + 2, {
+          this.npcs.push(new NPC(this, obj.x, obj.y, {
             name: obj.name || 'Clerk',
             dialog: ['mart:' + (obj.martId || 'localhost')],
             color: 0x4488ee,
-            facing: 'down'
+            facing: obj.facing || 'down',
+            spriteKey: obj.spriteKey || null
           }));
           break;
 
         case 'gym_entrance': {
           const leaderDef = window.GAME_DATA.gymLeaders[obj.gymId];
           if (leaderDef) {
-            // Gym sign
-            this.signs.push({ x: obj.x - 1, y: obj.y, text: `${leaderDef.title} Gym\nLeader: ${leaderDef.name}` });
-
-            // Gym leader as trainer
-            const t = new Trainer(this, obj.x, obj.y + 1, {
+            const t = new Trainer(this, obj.x, obj.y, {
               ...leaderDef,
-              facing: 'down',
-              color: 0xffcc00
+              facing: obj.facing || 'down',
+              color: 0xffcc00,
+              spriteKey: obj.spriteKey || null
             });
             this.trainers.push(t);
             this.npcs.push(t);
-          }
-
-          // Draw gym building
-          const gymGfx = this.add.graphics();
-          gymGfx.fillStyle(0xddaa00, 1);
-          gymGfx.fillRect((obj.x - 1) * TILE_SIZE, (obj.y - 1) * TILE_SIZE, 3 * TILE_SIZE, TILE_SIZE);
-          gymGfx.lineStyle(2, 0x886600, 1);
-          gymGfx.strokeRect((obj.x - 1) * TILE_SIZE, (obj.y - 1) * TILE_SIZE, 3 * TILE_SIZE, TILE_SIZE);
-
-          // Block gym roof tiles
-          for (let tx = obj.x - 1; tx <= obj.x + 1; tx++) {
-            if (this.collisionMap[obj.y - 1]) this.collisionMap[obj.y - 1][tx] = 1;
           }
           break;
         }
@@ -620,7 +854,9 @@ class OverworldScene extends Phaser.Scene {
     if (skipDialog) {
       beginBattle();
     } else {
-      const messages = trainer.interact(this.player.facing);
+      // Get dialogue without turning the trainer (they spotted you, not the other way around)
+      const messages = trainer.defeated ? trainer.dialogAfter :
+        (typeof trainer.dialog === 'string' ? [trainer.dialog] : [...trainer.dialog]);
       this.inDialog = true;
       this.dialogManager.show(messages, () => {
         this.inDialog = false;
@@ -649,9 +885,9 @@ class OverworldScene extends Phaser.Scene {
     this.inDialog = true;
 
     const starters = [
-      { gemId: 'devise', name: 'Devise', type: 'Auth', desc: 'Balanced special attacker' },
       { gemId: 'rspec', name: 'RSpec', type: 'Testing', desc: 'All-around solid' },
-      { gemId: 'sidekiq', name: 'Sidekiq', type: 'DevOps', desc: 'Fast physical attacker' }
+      { gemId: 'bullet', name: 'Bullet', type: 'Performance', desc: 'Fast special attacker' },
+      { gemId: 'brakeman', name: 'Brakeman', type: 'Security', desc: 'Tough and defensive' }
     ];
 
     this.dialogManager.show([
@@ -674,7 +910,7 @@ class OverworldScene extends Phaser.Scene {
           this.dialogManager.show([
             `You chose ${opt.value.name}!`,
             `${opt.value.name} - ${opt.value.desc}.`,
-            "Now go explore and battle\nthose bugs!"
+            "Now explore Albuquerque and\nearn your Boarding Passes!"
           ], () => {
             this.inDialog = false;
             this.player.unfreeze();
@@ -733,9 +969,10 @@ class OverworldScene extends Phaser.Scene {
 
           // Check if all badges collected
           if (ProgressManager.badgeCount() >= 4) {
-            msgs.push("You've collected all 4 badges!");
-            msgs.push("Congratulations! You've mastered\nRails Dev: Red Edition!");
-            msgs.push("Your gems are battle-tested and\nproduction-ready!");
+            msgs.push("You have all 4 Boarding Passes!");
+            msgs.push("The rocket is ready.\nWelcome aboard, developer!");
+            msgs.push("3... 2... 1... BLASTOFF!");
+            msgs.push("Congratulations!\nYou've completed\nBlastoff Rails: The Game!");
           }
 
           this.showDialog(msgs);
@@ -751,9 +988,9 @@ class OverworldScene extends Phaser.Scene {
       InventoryManager.money = Math.floor(InventoryManager.money / 2);
       this.time.delayedCall(300, () => {
         this.scene.restart({
-          mapKey: 'localhost',
-          playerX: 4,
-          playerY: 7,
+          mapKey: 'hotel',
+          playerX: 27,
+          playerY: 13,
           facing: 'down',
           starterChosen: this.starterChosen
         });

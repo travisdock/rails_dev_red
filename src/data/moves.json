@@ -95,6 +95,78 @@
     "description": "Creates a mock to confuse the enemy. Lowers Attack.",
     "effect": { "stat": "attack", "stages": -1, "target": "enemy" }
   },
+  "binding_pry": {
+    "id": "binding_pry", "name": "Binding Pry", "type": "testing",
+    "category": "special", "power": 40, "accuracy": 100, "pp": 30,
+    "description": "Pauses the enemy in their tracks.",
+    "effect": null
+  },
+  "whereami": {
+    "id": "whereami", "name": "Whereami", "type": "testing",
+    "category": "status", "power": 0, "accuracy": 100, "pp": 20,
+    "description": "Scopes out the surroundings. Raises Defense.",
+    "effect": { "stat": "defense", "stages": 1, "target": "self" }
+  },
+  "show_source": {
+    "id": "show_source", "name": "Show Source", "type": "testing",
+    "category": "special", "power": 55, "accuracy": 100, "pp": 20,
+    "description": "Exposes the enemy's source code.",
+    "effect": null
+  },
+  "jump_to": {
+    "id": "jump_to", "name": "Jump To", "type": "testing",
+    "category": "physical", "power": 70, "accuracy": 90, "pp": 10,
+    "description": "Jumps straight to the problem. Hard-hitting.",
+    "effect": null
+  },
+  "visit_page": {
+    "id": "visit_page", "name": "Visit Page", "type": "testing",
+    "category": "special", "power": 45, "accuracy": 100, "pp": 30,
+    "description": "Navigates to the target. Reliable opener.",
+    "effect": null
+  },
+  "fill_in": {
+    "id": "fill_in", "name": "Fill In", "type": "testing",
+    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "description": "Fills in all the right fields. Prepares for attack.",
+    "effect": { "stat": "spAttack", "stages": 1, "target": "self" }
+  },
+  "click_button": {
+    "id": "click_button", "name": "Click Button", "type": "testing",
+    "category": "physical", "power": 65, "accuracy": 95, "pp": 15,
+    "description": "Clicks with precision. Solid hit.",
+    "effect": null
+  },
+  "selenium_driver": {
+    "id": "selenium_driver", "name": "Selenium Driver", "type": "testing",
+    "category": "special", "power": 90, "accuracy": 85, "pp": 5,
+    "description": "Fires up the full browser. Slow but devastating.",
+    "effect": null
+  },
+  "build_stubbed": {
+    "id": "build_stubbed", "name": "Build Stubbed", "type": "testing",
+    "category": "special", "power": 45, "accuracy": 100, "pp": 30,
+    "description": "Creates a stubbed object. Quick and light.",
+    "effect": null
+  },
+  "override_attributes": {
+    "id": "override_attributes", "name": "Override Attributes", "type": "testing",
+    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "description": "Overrides the defaults. Raises Sp. Attack.",
+    "effect": { "stat": "spAttack", "stages": 1, "target": "self" }
+  },
+  "nested_factory": {
+    "id": "nested_factory", "name": "Nested Factory", "type": "testing",
+    "category": "special", "power": 65, "accuracy": 95, "pp": 15,
+    "description": "Builds within builds. Layered damage.",
+    "effect": null
+  },
+  "transient_blast": {
+    "id": "transient_blast", "name": "Transient Blast", "type": "testing",
+    "category": "special", "power": 85, "accuracy": 90, "pp": 5,
+    "description": "Unleashes transient attributes. Devastating but burns through PP fast.",
+    "effect": null
+  },
   "migration_run": {
     "id": "migration_run", "name": "Migration Run", "type": "database",
     "category": "special", "power": 55, "accuracy": 100, "pp": 25,

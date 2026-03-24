@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="20">
+ <editorsettings>
+  <export target="../assets/maps/hotel.json" format="json"/>
+ </editorsettings>
+ <tileset firstgid="1" source="grass.tsx"/>
+ <tileset firstgid="73" source="path.tsx"/>
+ <tileset firstgid="121" source="trees.tsx"/>
+ <tileset firstgid="231" source="interior.tsx"/>
+ <tileset firstgid="551" source="elements.tsx"/>
+ <tileset firstgid="791" source="floor.tsx"/>
+ <layer id="1" name="ground" width="30" height="20">
+  <data encoding="csv">
+247,236,236,236,236,236,236,236,236,236,236,236,236,236,236,236,236,236,236,236,236,236,236,236,236,236,236,236,236,254,
+280,802,876,876,876,876,876,876,876,876,876,876,876,876,876,876,876,876,876,876,876,876,876,876,876,876,876,876,877,285,
+280,897,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,894,285,
+280,897,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,894,285,
+280,897,825,825,825,825,825,890,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,894,285,
+280,897,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,890,825,825,825,825,825,825,825,825,894,285,
+280,897,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,894,285,
+280,897,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,825,894,285,
+280,897,806,810,810,810,810,810,810,810,810,810,810,810,810,810,810,810,810,810,810,810,810,810,810,810,810,810,855,285,
+280,897,894,379,380,380,380,380,380,380,380,380,380,380,380,380,380,380,380,380,380,380,380,380,380,380,380,380,380,381,
+280,856,855,235,236,236,236,236,236,236,236,236,236,236,236,236,236,236,236,236,236,236,236,236,236,236,236,236,236,237,
+280,923,924,924,924,924,924,924,924,925,927,929,924,924,924,924,924,924,928,930,923,924,924,924,924,924,924,924,925,285,
+280,945,946,946,946,946,946,946,946,947,971,973,946,946,946,946,946,946,972,974,945,946,946,946,946,946,946,946,947,285,
+280,945,946,946,946,946,946,946,946,947,945,946,946,946,946,946,946,946,946,947,945,946,946,946,946,946,946,946,947,285,
+280,945,946,946,946,946,946,946,946,947,945,946,946,946,946,946,946,946,946,947,945,946,946,946,946,946,946,946,947,285,
+280,945,946,946,946,946,946,946,946,947,945,946,946,946,946,946,946,946,946,947,945,946,946,946,946,946,946,946,947,285,
+296,945,946,946,946,946,946,946,946,947,945,946,946,946,946,946,946,946,946,947,945,946,946,946,946,946,946,946,947,285,
+825,945,946,946,946,946,946,946,946,947,949,951,946,946,946,946,946,946,950,952,945,946,946,946,946,946,946,946,947,285,
+312,967,968,968,968,968,968,968,968,969,993,995,968,968,968,968,968,968,994,996,967,968,968,968,968,968,968,968,969,285,
+263,380,380,380,380,380,380,380,380,380,380,380,380,380,380,380,380,380,380,380,380,380,380,380,380,380,380,380,380,270
+</data>
+ </layer>
+ <layer id="2" name="world" width="30" height="20">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,671,672,673,674,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,554,687,688,689,690,554,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,713,714,714,714,715,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,628,629,629,629,630,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,644,645,645,645,646,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,660,661,661,661,662,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="3" name="collisions" width="30" height="20" visible="0">
+  <data encoding="csv">
+957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,
+957,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,957,
+957,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,957,
+957,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,957,
+957,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,957,
+957,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,957,
+957,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,957,
+957,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,957,
+957,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,957,
+957,0,0,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,
+957,0,0,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,
+957,0,0,0,0,0,0,0,0,0,0,0,957,957,957,957,957,957,0,0,0,0,957,957,957,957,957,0,0,957,
+957,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,957,
+957,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,957,
+957,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,957,
+957,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,957,
+957,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,957,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,957,
+957,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,957,
+957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957,957
+</data>
+ </layer>
+ <objectgroup id="4" name="objects">
+  <object id="1" name="hotel_clerk" type="npc" x="392" y="188">
+   <properties>
+    <property name="dialog" value="Welcome to Hotel Albuquerque! We hope you enjoy your stay."/>
+    <property name="facing" value="down"/>
+    <property name="name" value="Hotel Clerk"/>
+    <property name="spriteKey" value="npc06"/>
+   </properties>
+  </object>
+  <object id="5" name="heal" type="heal" x="440" y="200">
+   <properties>
+    <property name="facing" value="down"/>
+    <property name="spriteKey" value="npc06"/>
+   </properties>
+  </object>
+  <object id="7" name="swett_gym" type="gym_entrance" x="383.5" y="42.5" width="17.5" height="24">
+   <properties>
+    <property name="gymId" value="jason_swett"/>
+    <property name="spriteKey" value="npc06"/>
+   </properties>
+  </object>
+  <object id="9" name="trainer1" type="trainer" x="56.5" y="54.5">
+   <properties>
+    <property name="facing" value="down"/>
+    <property name="spriteKey" value="npc01"/>
+    <property name="trainerId" value="test_minion_05"/>
+   </properties>
+  </object>
+  <object id="10" name="trainer2" type="trainer" x="119.5" y="120.5">
+   <properties>
+    <property name="facing" value="up"/>
+    <property name="spriteKey" value="npc02"/>
+    <property name="trainerId" value="test_minion_01"/>
+   </properties>
+  </object>
+  <object id="11" name="trainer3" type="trainer" x="183.5" y="136">
+   <properties>
+    <property name="facing" value="up"/>
+    <property name="spriteKey" value="npc03"/>
+    <property name="trainerId" value="test_minion_02"/>
+   </properties>
+  </object>
+  <object id="12" name="trainer4" type="trainer" x="248" y="58">
+   <properties>
+    <property name="facing" value="down"/>
+    <property name="spriteKey" value="npc04"/>
+    <property name="trainerId" value="test_minion_03"/>
+   </properties>
+  </object>
+  <object id="13" name="trainer5" type="trainer" x="327.5" y="122">
+   <properties>
+    <property name="facing" value="up"/>
+    <property name="spriteKey" value="npc05"/>
+    <property name="trainerId" value="test_minion_04"/>
+   </properties>
+  </object>
+  <object id="14" name="Attendee1" type="npc" x="55.5" y="184.5">
+   <properties>
+    <property name="dialog" value="Be careful in there, I heard some of them talking about TDD..."/>
+    <property name="facing" value="down"/>
+    <property name="spriteKey" value="npc09"/>
+   </properties>
+  </object>
+  <object id="15" name="Attendee2" type="npc" x="229.5" y="199.5">
+   <properties>
+    <property name="dialog" value="Are you excited for the conference?! I can hardly wait to lift off."/>
+    <property name="facing" value="up"/>
+    <property name="spriteKey" value="npc04"/>
+   </properties>
+  </object>
+  <object id="16" name="Attendee4" type="npc" x="168.5" y="264">
+   <properties>
+    <property name="dialog" value="Pair programming is the only way to go!"/>
+    <property name="facing" value="left"/>
+    <property name="spriteKey" value="npc06"/>
+   </properties>
+  </object>
+  <object id="17" name="Attendee3" type="npc" x="148" y="264.5">
+   <properties>
+    <property name="dialog" value="I am going to take notes in all the talks and review them when I get home!"/>
+    <property name="facing" value="right"/>
+    <property name="spriteKey" value="npc07"/>
+   </properties>
+  </object>
+  <object id="18" name="Attendee5" type="npc" x="344.5" y="249">
+   <properties>
+    <property name="dialog" value="Which talk are you most excited for?"/>
+    <property name="facing" value="down"/>
+    <property name="spriteKey" value="npc05"/>
+   </properties>
+  </object>
+  <object id="19" name="Attendee6" type="npc" x="295" y="280">
+   <properties>
+    <property name="dialog" value="You will probably need to fix some bugs in the wild before challenging those testing enthusiasts. They are a wild bunch."/>
+    <property name="facing" value="left"/>
+    <property name="spriteKey" value="npc03"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="5" name="encounters" visible="0"/>
+</map>

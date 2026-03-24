@@ -181,7 +181,7 @@ class BattleScene extends Phaser.Scene {
       onCancel: () => this.showActionMenu()
     });
 
-    this.messageBox.setText('Choose a gem:').setVisible(true);
+    this.messageBox.setText('Choose a gem: (X to cancel)').setVisible(true);
   }
 
   handleAction(action) {

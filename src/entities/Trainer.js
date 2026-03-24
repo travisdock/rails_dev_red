@@ -4,7 +4,8 @@ class Trainer extends NPC {
       name: config.name,
       dialog: config.dialogBefore ? config.dialogBefore.split('\n') : ['Let\'s battle!'],
       color: config.color || 0xcc4444,
-      facing: config.facing || 'down'
+      facing: config.facing || 'down',
+      spriteKey: config.spriteKey || null
     });
 
     this.trainerId = config.id;
@@ -20,7 +21,11 @@ class Trainer extends NPC {
 
     // Change color if defeated
     if (this.defeated) {
-      this.sprite.setFillStyle(0x888888);
+      if (this.hasSprite) {
+        this.sprite.setTint(0x888888);
+      } else {
+        this.sprite.setFillStyle(0x888888);
+      }
     }
   }
 
@@ -33,6 +38,7 @@ class Trainer extends NPC {
 
   canSeeTile(tileX, tileY) {
     if (this.defeated) return false;
+    if (this.isGymLeader) return false; // Gym leaders only fight when talked to
 
     const dir = DIRECTIONS[this.facing];
     for (let i = 1; i <= this.lineOfSight; i++) {
@@ -53,7 +59,11 @@ class Trainer extends NPC {
   onDefeat() {
     this.defeated = true;
     ProgressManager.defeatTrainer(this.trainerId);
-    this.sprite.setFillStyle(0x888888);
+    if (this.hasSprite) {
+      this.sprite.setTint(0x888888);
+    } else {
+      this.sprite.setFillStyle(0x888888);
+    }
   }
 
   destroy() {

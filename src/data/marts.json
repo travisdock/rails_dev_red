@@ -1,29 +1,29 @@
 {
-  "localhost": {
-    "name": "Localhost Gem Mart",
+  "hotel": {
+    "name": "Hotel Gift Shop",
     "inventory": [
       { "gemId": "pry", "level": 5, "price": 200 }
     ]
   },
-  "staging_springs": {
-    "name": "Staging Springs Gem Mart",
+  "old_town": {
+    "name": "Old Town Gem Shop",
     "inventory": [
-      { "gemId": "bullet", "level": 12, "price": 800 },
-      { "gemId": "rack_mini_profiler", "level": 12, "price": 800 }
+      { "gemId": "devise", "level": 12, "price": 800 },
+      { "gemId": "bcrypt", "level": 12, "price": 800 }
     ]
   },
-  "testing_terrace": {
-    "name": "Testing Terrace Gem Mart",
+  "park": {
+    "name": "Park Vendor",
     "inventory": [
-      { "gemId": "capybara", "level": 12, "price": 800 },
-      { "gemId": "factory_bot", "level": 12, "price": 800 }
+      { "gemId": "rack_mini_profiler", "level": 16, "price": 1200 },
+      { "gemId": "capybara", "level": 16, "price": 1200 }
     ]
   },
-  "production_city": {
-    "name": "Production City Gem Mart",
+  "venue": {
+    "name": "Conference Merch Booth",
     "inventory": [
-      { "gemId": "active_record", "level": 18, "price": 1500 },
-      { "gemId": "turbo", "level": 18, "price": 1500 }
+      { "gemId": "active_record", "level": 22, "price": 2000 },
+      { "gemId": "turbo", "level": 22, "price": 2000 }
     ]
   }
 }

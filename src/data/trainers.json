@@ -1,29 +1,29 @@
 {
-  "junior_dev_01": {
-    "id": "junior_dev_01", "name": "Junior Dev Alex", "class": "Junior Developer",
-    "dialogBefore": "Hey! I just learned about gems!\nLet me show you my setup!",
-    "dialogAfter": "Wow, your gems are way more\noptimized than mine...",
+  "attendee_01": {
+    "id": "attendee_01", "name": "Attendee Jamie", "class": "Conference Attendee",
+    "dialogBefore": "This is my first Rails conf!\nI just learned about gems!",
+    "dialogAfter": "Wow, you really know\nyour gems...",
     "party": [
       { "gemId": "pry", "level": 5 }
     ],
     "prizeMoney": 120,
     "lineOfSight": 3
   },
-  "mid_dev_01": {
-    "id": "mid_dev_01", "name": "Developer Blake", "class": "Developer",
-    "dialogBefore": "I've been refactoring all day.\nBring it on!",
-    "dialogAfter": "Back to the drawing board...",
+  "attendee_02": {
+    "id": "attendee_02", "name": "Attendee Morgan", "class": "Conference Attendee",
+    "dialogBefore": "I've been writing Rails\nfor six months now.\nBring it on!",
+    "dialogAfter": "Back to the tutorials\nfor me...",
     "party": [
-      { "gemId": "pry", "level": 8 },
-      { "gemId": "factory_bot", "level": 9 }
+      { "gemId": "pry", "level": 7 },
+      { "gemId": "factory_bot", "level": 8 }
     ],
-    "prizeMoney": 280,
-    "lineOfSight": 4
+    "prizeMoney": 240,
+    "lineOfSight": 3
   },
-  "mid_dev_02": {
-    "id": "mid_dev_02", "name": "Developer Casey", "class": "Developer",
-    "dialogBefore": "My test suite has 100% coverage!\nCan your gems keep up?",
-    "dialogAfter": "Maybe coverage isn't everything...",
+  "attendee_03": {
+    "id": "attendee_03", "name": "Attendee Riley", "class": "Conference Attendee",
+    "dialogBefore": "My test suite has 100%\ncoverage! Can your gems\nkeep up?",
+    "dialogAfter": "Maybe coverage isn't\neverything...",
     "party": [
       { "gemId": "rspec", "level": 9 },
       { "gemId": "capybara", "level": 8 }
@@ -31,51 +31,105 @@
     "prizeMoney": 300,
     "lineOfSight": 3
   },
-  "mid_dev_03": {
-    "id": "mid_dev_03", "name": "Developer Dana", "class": "Developer",
-    "dialogBefore": "Performance is everything.\nLet me show you speed!",
-    "dialogAfter": "I need to optimize my approach...",
+  "speaker_01": {
+    "id": "speaker_01", "name": "Speaker Taylor", "class": "Conference Speaker",
+    "dialogBefore": "I'm giving a talk on\nperformance optimization.\nLet me show you speed!",
+    "dialogAfter": "I need to optimize\nmy approach...",
     "party": [
-      { "gemId": "bullet", "level": 9 },
-      { "gemId": "puma", "level": 8 }
+      { "gemId": "bullet", "level": 12 },
+      { "gemId": "puma", "level": 11 }
     ],
-    "prizeMoney": 300,
+    "prizeMoney": 400,
     "lineOfSight": 4
   },
-  "senior_dev_01": {
-    "id": "senior_dev_01", "name": "Senior Dev Ellis", "class": "Senior Developer",
-    "dialogBefore": "I've reviewed thousands of PRs.\nYour code won't pass my review!",
-    "dialogAfter": "Clean code. I'll approve this PR.",
+  "speaker_02": {
+    "id": "speaker_02", "name": "Speaker Alex", "class": "Conference Speaker",
+    "dialogBefore": "Full-stack means I have\ngems for every situation!",
+    "dialogAfter": "Well-rounded team\nyou've got there.",
     "party": [
+      { "gemId": "turbo", "level": 14 },
       { "gemId": "devise", "level": 13 },
-      { "gemId": "sidekiq", "level": 12 },
-      { "gemId": "active_record", "level": 14 }
-    ],
-    "prizeMoney": 560,
-    "lineOfSight": 5
-  },
-  "senior_dev_02": {
-    "id": "senior_dev_02", "name": "Senior Dev Frankie", "class": "Senior Developer",
-    "dialogBefore": "Full-stack means I have gems\nfor every situation!",
-    "dialogAfter": "Well-rounded team you've got there.",
-    "party": [
-      { "gemId": "turbo", "level": 13 },
-      { "gemId": "rspec", "level": 13 },
-      { "gemId": "bullet", "level": 14 }
+      { "gemId": "sidekiq", "level": 14 }
     ],
     "prizeMoney": 560,
     "lineOfSight": 4
   },
-  "senior_dev_03": {
-    "id": "senior_dev_03", "name": "Senior Dev Gray", "class": "Senior Developer",
-    "dialogBefore": "The legacy codebase has taught me\nthings you can't learn in bootcamp.",
-    "dialogAfter": "Experience isn't everything, I see.",
+  "speaker_03": {
+    "id": "speaker_03", "name": "Speaker Sam", "class": "Conference Speaker",
+    "dialogBefore": "I've been in the Rails\ncommunity for 15 years.\nYou won't pass my review!",
+    "dialogAfter": "Clean code. I'd approve\nthat PR.",
     "party": [
-      { "gemId": "active_record", "level": 14 },
-      { "gemId": "pundit", "level": 13 },
-      { "gemId": "rack_mini_profiler", "level": 15 }
+      { "gemId": "active_record", "level": 16 },
+      { "gemId": "pundit", "level": 15 },
+      { "gemId": "rack_mini_profiler", "level": 16 }
     ],
     "prizeMoney": 600,
+    "lineOfSight": 5
+  },
+  "test_minion_01": {
+    "id": "test_minion_01", "name": "TDD Enthusiast Pat", "class": "Testing Fanatic",
+    "dialogBefore": "Red, green, refactor!\nThat's all you need to know!",
+    "dialogAfter": "My tests failed...\nTime to refactor.",
+    "party": [
+      { "gemId": "rspec", "level": 6 }
+    ],
+    "prizeMoney": 150,
+    "lineOfSight": 3
+  },
+  "test_minion_05": {
+    "id": "test_minion_05", "name": "Attendee Avery", "class": "Conference Attendee",
+    "dialogBefore": "I just learned what RSpec is!\nWant to see my first spec?",
+    "dialogAfter": "Ok that spec definitely\nneeds some work...",
+    "party": [
+      { "gemId": "pry", "level": 4 }
+    ],
+    "prizeMoney": 100,
+    "lineOfSight": 3
+  },
+  "test_minion_02": {
+    "id": "test_minion_02", "name": "Attendee Quinn", "class": "Conference Attendee",
+    "dialogBefore": "I wrote my first test\nyesterday! Let me show you!",
+    "dialogAfter": "I guess I need more\ntest cases...",
+    "party": [
+      { "gemId": "pry", "level": 5 },
+      { "gemId": "factory_bot", "level": 6 }
+    ],
+    "prizeMoney": 180,
+    "lineOfSight": 3
+  },
+  "test_minion_03": {
+    "id": "test_minion_03", "name": "QA Advocate Lee", "class": "Testing Fanatic",
+    "dialogBefore": "No code ships without\nintegration tests.\nNot on my watch!",
+    "dialogAfter": "Your integration tests\nare impressive...",
+    "party": [
+      { "gemId": "capybara", "level": 8 },
+      { "gemId": "rspec", "level": 7 }
+    ],
+    "prizeMoney": 250,
+    "lineOfSight": 4
+  },
+  "test_minion_04": {
+    "id": "test_minion_04", "name": "Mock Master Drew", "class": "Testing Fanatic",
+    "dialogBefore": "Why test against real data\nwhen you can mock everything?\nLet me show you!",
+    "dialogAfter": "Maybe I mocked too much...\nMy tests passed but\nproduction broke.",
+    "party": [
+      { "gemId": "factory_bot", "level": 9 },
+      { "gemId": "capybara", "level": 8 },
+      { "gemId": "rspec", "level": 10 }
+    ],
+    "prizeMoney": 350,
+    "lineOfSight": 4
+  },
+  "organizer_01": {
+    "id": "organizer_01", "name": "Organizer Jordan", "class": "Conference Organizer",
+    "dialogBefore": "I organized this whole\nconference. Think you can\nhandle what I've built?",
+    "dialogAfter": "You're ready for\nthe rocket.",
+    "party": [
+      { "gemId": "sidekiq", "level": 20 },
+      { "gemId": "devise", "level": 20 },
+      { "gemId": "active_record", "level": 22 }
+    ],
+    "prizeMoney": 800,
     "lineOfSight": 5
   }
 }

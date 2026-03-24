@@ -1,51 +1,51 @@
 {
-  "sarah_security": {
-    "id": "sarah_security", "name": "Sarah Secure", "title": "Security Specialist",
-    "gymType": "auth", "badge": "ssl_badge", "badgeName": "SSL Badge",
-    "dialogBefore": "Security is no joke.\nLet's see if your gems can\nhandle a real audit.",
-    "dialogAfter": "Impressive. Your authentication\nis solid. Take the SSL Badge.",
+  "jason_swett": {
+    "id": "jason_swett", "name": "Jason Swett", "title": "Testing Expert",
+    "gymType": "testing", "badge": "test_pass", "badgeName": "Test Pass",
+    "dialogBefore": "Testing isn't optional.\nIt's the foundation of\neverything we build.\nLet me see your test suite!",
+    "dialogAfter": "Your tests are green across\nthe board. Take the Test Pass.\nYou've earned it!",
     "party": [
-      { "gemId": "pundit", "level": 14 },
-      { "gemId": "bcrypt", "level": 14 },
-      { "gemId": "devise", "level": 16 }
+      { "gemId": "factory_bot", "level": 12 },
+      { "gemId": "capybara", "level": 12 },
+      { "gemId": "rspec", "level": 14 }
     ],
-    "prizeMoney": 1600
+    "prizeMoney": 1400
   },
-  "bench_mark": {
-    "id": "bench_mark", "name": "Bench Mark", "title": "Performance Engineer",
-    "gymType": "performance", "badge": "benchmark_badge", "badgeName": "Benchmark Badge",
-    "dialogBefore": "Every millisecond counts.\nCan your gems keep up\nwith my optimizations?",
-    "dialogAfter": "Fast and efficient.\nYou've earned the Benchmark Badge.",
+  "greg_molnar": {
+    "id": "greg_molnar", "name": "Greg Molnar", "title": "Security Specialist",
+    "gymType": "auth", "badge": "security_pass", "badgeName": "Security Pass",
+    "dialogBefore": "Security isn't a feature.\nIt's a responsibility.\nLet's see if your gems can\nsurvive an audit.",
+    "dialogAfter": "Your defenses are solid.\nTake the Security Pass.\nKeep your apps safe out there.",
     "party": [
-      { "gemId": "rack_mini_profiler", "level": 18 },
-      { "gemId": "bullet", "level": 18 },
-      { "gemId": "puma", "level": 20 }
-    ],
-    "prizeMoney": 2000
-  },
-  "tess_driven": {
-    "id": "tess_driven", "name": "Tess Driven", "title": "QA Lead",
-    "gymType": "testing", "badge": "green_badge", "badgeName": "Green Badge",
-    "dialogBefore": "All tests must pass.\nNo exceptions. No flaky specs.\nLet's see your test suite.",
-    "dialogAfter": "All green. No failures.\nThe Green Badge is yours.",
-    "party": [
-      { "gemId": "factory_bot", "level": 18 },
-      { "gemId": "capybara", "level": 18 },
-      { "gemId": "rspec", "level": 20 }
+      { "gemId": "brakeman", "level": 18 },
+      { "gemId": "pundit", "level": 18 },
+      { "gemId": "devise", "level": 20 }
     ],
     "prizeMoney": 2000
   },
-  "dba_dan": {
-    "id": "dba_dan", "name": "DBA Dan", "title": "Database Architect",
-    "gymType": "database", "badge": "migration_badge", "badgeName": "Migration Badge",
-    "dialogBefore": "I've managed petabytes of data.\nYour little gems don't\nscare my schemas.",
-    "dialogAfter": "Your queries are optimized.\nTake the Migration Badge.\nYou've mastered Rails Dev: Red Edition!",
+  "nate_berkopec": {
+    "id": "nate_berkopec", "name": "Nate Berkopec", "title": "Performance Engineer",
+    "gymType": "performance", "badge": "speed_pass", "badgeName": "Speed Pass",
+    "dialogBefore": "Every millisecond matters.\nIf your app isn't fast,\nyour users are gone.\nShow me what your gems can do!",
+    "dialogAfter": "Fast and efficient.\nYou've earned the Speed Pass.\nNow make it even faster.",
     "party": [
-      { "gemId": "active_record", "level": 23 },
+      { "gemId": "rack_mini_profiler", "level": 22 },
       { "gemId": "bullet", "level": 22 },
-      { "gemId": "sidekiq", "level": 22 },
-      { "gemId": "active_record", "level": 25 }
+      { "gemId": "puma", "level": 24 }
     ],
-    "prizeMoney": 3200
+    "prizeMoney": 2400
+  },
+  "dhh": {
+    "id": "dhh", "name": "DHH", "title": "Rails Creator",
+    "gymType": "database", "badge": "captains_pass", "badgeName": "Captain's Pass",
+    "dialogBefore": "You've made it to the launch pad.\nBut the rocket only has room\nfor real Rails developers.\nConvince me you belong.",
+    "dialogAfter": "Welcome aboard.\nTake the Captain's Pass.\nThe rocket is waiting.\nSee you in space!",
+    "party": [
+      { "gemId": "active_record", "level": 26 },
+      { "gemId": "turbo", "level": 25 },
+      { "gemId": "sidekiq", "level": 25 },
+      { "gemId": "active_record", "level": 28 }
+    ],
+    "prizeMoney": 3500
   }
 }

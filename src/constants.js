@@ -1,7 +1,7 @@
 const TILE_SIZE = 16;
 const GAME_WIDTH = 240;
 const GAME_HEIGHT = 160;
-const ZOOM = 3;
+const ZOOM = 4;
 const MOVE_DURATION = 150; // ms per tile step
 const ENCOUNTER_RATE = 0.15;
 const MAX_PARTY_SIZE = 6;

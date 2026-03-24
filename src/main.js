@@ -1,10 +1,11 @@
 const config = {
-  type: Phaser.AUTO,
+  type: Phaser.CANVAS,
   width: GAME_WIDTH,
   height: GAME_HEIGHT,
   zoom: ZOOM,
   pixelArt: true,
   roundPixels: true,
+  antialias: false,
   parent: document.body,
   backgroundColor: '#111111',
   scene: [
@@ -64,5 +65,5 @@ window.DEBUG = {
   }
 };
 
-console.log('%cRails Dev: Red Edition v0.1.0', 'color: #cc2222; font-size: 16px; font-weight: bold');
+console.log('%cBlastoff Rails: The Game v0.2.0', 'color: #ff6633; font-size: 16px; font-weight: bold');
 console.log('Debug tools available: DEBUG.healParty(), DEBUG.addGem(id, level), DEBUG.setMoney(n), DEBUG.listGems(), DEBUG.gameState()');
