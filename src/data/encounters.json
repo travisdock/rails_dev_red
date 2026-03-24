@@ -26,6 +26,24 @@
       { "bugId": "unhandled_promise", "levelRange": [14, 17], "weight": 15 }
     ]
   },
+  "parking_lot_easy": {
+    "encounterRate": 0.15,
+    "encounters": [
+      { "bugId": "nil_reference", "levelRange": [2, 5], "weight": 35 },
+      { "bugId": "missing_template", "levelRange": [2, 5], "weight": 30 },
+      { "bugId": "n_plus_one", "levelRange": [3, 6], "weight": 35 }
+    ]
+  },
+  "parking_lot_hard": {
+    "encounterRate": 0.18,
+    "encounters": [
+      { "bugId": "n_plus_one", "levelRange": [6, 10], "weight": 25 },
+      { "bugId": "sql_injection", "levelRange": [8, 12], "weight": 20 },
+      { "bugId": "xss_attack", "levelRange": [7, 11], "weight": 20 },
+      { "bugId": "memory_leak", "levelRange": [7, 10], "weight": 20 },
+      { "bugId": "race_condition", "levelRange": [8, 12], "weight": 15 }
+    ]
+  },
   "venue": {
     "encounterRate": 0.20,
     "encounters": [
