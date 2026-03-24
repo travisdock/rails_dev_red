@@ -62,6 +62,10 @@ class PreloadScene extends Phaser.Scene {
       frameWidth: 16, frameHeight: 16
     });
 
+    // Load audio
+    this.load.audio('music-hotel', 'assets/audio/hotel.ogg');
+    this.load.audio('music-battle', 'assets/audio/battle.ogg');
+
     // Load map data
     this.load.json('map-hotel', 'assets/maps/hotel.json');
     this.load.json('map-old-town', 'assets/maps/old_town.json');

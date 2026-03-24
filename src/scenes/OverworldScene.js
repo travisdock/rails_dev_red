@@ -37,6 +37,9 @@ class OverworldScene extends Phaser.Scene {
     // Fade in
     TransitionFX.fadeIn(this, 300);
 
+    // Play map music
+    this.playMapMusic(this.mapKey);
+
     // Intro and starter selection on new game
     if (!ProgressManager.hasSeenStory('intro') && this.mapKey === 'hotel') {
       ProgressManager.seeStory('intro');
@@ -56,6 +59,35 @@ class OverworldScene extends Phaser.Scene {
       });
     } else if (!this.starterChosen && this.mapKey === 'hotel') {
       this.time.delayedCall(500, () => this.showStarterSelection());
+    }
+  }
+
+  playMapMusic(mapKey) {
+    if (this.currentMusic) {
+      this.currentMusic.stop();
+      this.currentMusic = null;
+    }
+
+    const musicKey = 'music-' + mapKey;
+    if (this.cache.audio.exists(musicKey)) {
+      this.time.delayedCall(500, () => {
+        this.currentMusic = this.sound.add(musicKey, { loop: true, volume: 0.3 });
+        this.currentMusic.play();
+      });
+    }
+  }
+
+  stopMusic() {
+    if (this.currentMusic) {
+      const music = this.currentMusic;
+      this.currentMusic = null;
+      this.tweens.add({
+        targets: music,
+        volume: 0,
+        duration: 500,
+        ease: 'Linear',
+        onComplete: () => music.stop()
+      });
     }
   }
 
@@ -817,6 +849,7 @@ class OverworldScene extends Phaser.Scene {
 
   startWildBattle(bug) {
     this.player.freeze();
+    this.stopMusic();
     TransitionFX.battleTransition(this, () => {
       this.scene.pause();
       this.scene.launch('BattleScene', {
@@ -830,6 +863,7 @@ class OverworldScene extends Phaser.Scene {
 
   startTrainerBattle(trainer, skipDialog) {
     this.player.freeze();
+    this.stopMusic();
 
     const beginBattle = () => {
       TransitionFX.battleTransition(this, () => {
@@ -945,6 +979,7 @@ class OverworldScene extends Phaser.Scene {
   handleBattleResult(result) {
     this.scene.resume();
     TransitionFX.fadeIn(this, 300);
+    this.playMapMusic(this.mapKey);
 
     if (result.result === 'win' && result.trainerData) {
       // Mark trainer defeated

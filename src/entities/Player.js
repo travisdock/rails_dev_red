@@ -22,21 +22,25 @@ class Player {
       // Row 0 = down, Row 1 = left, Row 2 = right, Row 3 = up
       const dirs = ['down', 'left', 'right', 'up'];
       dirs.forEach((dir, row) => {
-        // Idle frame = first frame of row
-        scene.anims.create({
-          key: `player-idle-${dir}`,
-          frames: [{ key: 'player', frame: row * 4 }],
-          frameRate: 1
-        });
-        // Walk animation = all 4 frames of the row
-        scene.anims.create({
-          key: `player-walk-${dir}`,
-          frames: scene.anims.generateFrameNumbers('player', {
-            start: row * 4, end: row * 4 + 3
-          }),
-          frameRate: 8,
-          repeat: -1
-        });
+        const idleKey = `player-idle-${dir}`;
+        const walkKey = `player-walk-${dir}`;
+        if (!scene.anims.exists(idleKey)) {
+          scene.anims.create({
+            key: idleKey,
+            frames: [{ key: 'player', frame: row * 4 }],
+            frameRate: 1
+          });
+        }
+        if (!scene.anims.exists(walkKey)) {
+          scene.anims.create({
+            key: walkKey,
+            frames: scene.anims.generateFrameNumbers('player', {
+              start: row * 4, end: row * 4 + 3
+            }),
+            frameRate: 8,
+            repeat: -1
+          });
+        }
       });
 
       this.sprite.play('player-idle-down');

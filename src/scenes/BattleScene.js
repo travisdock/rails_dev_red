@@ -33,6 +33,12 @@ class BattleScene extends Phaser.Scene {
     this.battleManager = new BattleManager();
     this.battleManager.init(this.playerParty, this.enemyParty, this.isWild, this.trainerData);
 
+    // Battle music
+    if (this.cache.audio.exists('music-battle')) {
+      this.battleMusic = this.sound.add('music-battle', { loop: true, volume: 0.3 });
+      this.battleMusic.play();
+    }
+
     // Background
     this.add.rectangle(GAME_WIDTH / 2, GAME_HEIGHT / 2, GAME_WIDTH, GAME_HEIGHT, 0xeeeedd);
 
@@ -371,6 +377,10 @@ class BattleScene extends Phaser.Scene {
   }
 
   endBattle(result) {
+    if (this.battleMusic) {
+      this.battleMusic.stop();
+      this.battleMusic = null;
+    }
     const overworldScene = this.scene.get('OverworldScene');
     this.scene.stop();
     overworldScene.handleBattleResult({
