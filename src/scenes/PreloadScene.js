@@ -71,6 +71,7 @@ class PreloadScene extends Phaser.Scene {
     this.load.json('map-old-town', 'assets/maps/old_town.json');
     this.load.json('map-park', 'assets/maps/park.json');
     this.load.json('map-venue', 'assets/maps/venue.json');
+    this.load.json('map-parking-lot', 'assets/maps/parking_lot.json');
   }
 
   create() {

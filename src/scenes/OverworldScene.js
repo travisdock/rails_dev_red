@@ -246,7 +246,8 @@ class OverworldScene extends Phaser.Scene {
     // Town name label
     const names = {
       'hotel': 'The Hotel', 'old-town': 'Old Town',
-      'park': 'The Park', 'venue': 'The Venue'
+      'park': 'The Park', 'venue': 'The Venue',
+      'parking-lot': 'Parking Lot'
     };
     const displayName = names[mapKey] || mapKey;
     this.add.text(this.mapWidth / 2, 12, displayName, {
@@ -317,7 +318,8 @@ class OverworldScene extends Phaser.Scene {
       'hotel': () => this.generateTown('hotel', 30, 20, 'The Hotel', []),
       'old-town': () => this.generateTown('old-town', 40, 40, 'Old Town', []),
       'park': () => this.generateTown('park', 40, 40, 'The Park', []),
-      'venue': () => this.generateTown('venue', 30, 30, 'The Venue', [])
+      'venue': () => this.generateTown('venue', 30, 30, 'The Venue', []),
+      'parking-lot': () => this.generateTown('parking-lot', 40, 30, 'Parking Lot', [])
     };
 
     const generator = maps[mapKey];
