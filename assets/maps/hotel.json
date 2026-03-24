@@ -486,8 +486,52 @@
                  "width":0,
                  "x":295,
                  "y":280
+                }, 
+                {
+                 "height":0,
+                 "id":20,
+                 "name":"Door",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"targetMap",
+                         "type":"string",
+                         "value":"park"
+                        }, 
+                        {
+                         "name":"targetX",
+                         "type":"string",
+                         "value":"1"
+                        }, 
+                        {
+                         "name":"targetY",
+                         "type":"string",
+                         "value":"1"
+                        }],
+                 "rotation":0,
+                 "type":"door",
+                 "visible":true,
+                 "width":0,
+                 "x":6.0510557831705,
+                 "y":279.357075323038
                 }],
          "opacity":1,
+         "properties":[
+                {
+                 "name":"targetMap",
+                 "type":"string",
+                 "value":"park"
+                }, 
+                {
+                 "name":"targetX",
+                 "type":"string",
+                 "value":"1"
+                }, 
+                {
+                 "name":"targetY",
+                 "type":"string",
+                 "value":"1"
+                }],
          "type":"objectgroup",
          "visible":true,
          "x":0,
@@ -505,7 +549,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":20,
+ "nextobjectid":21,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.12.0",

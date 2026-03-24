@@ -10,11 +10,14 @@
         "floor.tsx": {
             "scaleInDock": 1
         },
+        "grass.tsx": {
+            "scaleInDock": 1
+        },
         "hotel.tmx": {
             "scale": 0.9915624999999999,
-            "selectedLayer": 0,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 201.7018594390167,
+                "x": 97.82540182792312,
                 "y": 160.35297825401827
             }
         },
@@ -22,31 +25,48 @@
             "scaleInDock": 1
         },
         "old_town.tmx": {
-            "scale": 0.743671875,
-            "selectedLayer": 0,
+            "scale": 0.7312,
+            "selectedLayer": 4,
             "viewCenter": {
-                "x": 319.36127744510975,
-                "y": 320.03361697657317
+                "x": 315.9190371991248,
+                "y": 321.3894967177243
             }
         },
         "park.tmx": {
-            "scale": 0.75,
-            "selectedLayer": 2,
+            "expandedObjectLayers": [
+                5
+            ],
+            "scale": 0.9014,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 335.33333333333326,
-                "y": 332
+                "x": 241.84601730641222,
+                "y": 355.0033281562015
             }
         },
         "parking_lot.tmx": {
             "scale": 0.73328125,
-            "selectedLayer": 0,
+            "selectedLayer": 4,
             "viewCenter": {
-                "x": 479.35222672064776,
-                "y": 320.4773066268911
+                "x": 298.65757511186877,
+                "y": 330.02343916471335
+            }
+        },
+        "path.tsx": {
+            "scaleInDock": 1
+        },
+        "trees.tsx": {
+            "scaleInDock": 1
+        },
+        "venue.tmx": {
+            "scale": 0.9043,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 225.58885325666262,
+                "y": 259.869512329979
             }
         }
     },
-    "last.exportedFilePath": "/home/travis/development/bor_the_game/rails-quest/assets/maps",
+    "last.exportedFilePath": "/Users/travisdockter/development/rails_dev_red/assets/maps",
     "last.externalTilesetPath": "/home/travis/development/bor_the_game/rails-quest/tiled",
     "map.lastUsedExportFilter": "All Files (*)",
     "map.lastUsedFormat": "tmx",
@@ -54,8 +74,9 @@
     ],
     "project": "blastoff_rails_the_game.tiled-project",
     "recentFiles": [
-        "hotel.tmx",
-        "parking_lot.tmx"
+        "park.tmx",
+        "parking_lot.tmx",
+        "hotel.tmx"
     ],
     "tileset.lastUsedFilter": "Tiled tileset files (*.tsx *.xml)"
 }

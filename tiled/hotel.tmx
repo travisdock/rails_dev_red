@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="20">
+<map version="1.10" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="21">
  <editorsettings>
   <export target="../assets/maps/hotel.json" format="json"/>
  </editorsettings>
@@ -82,6 +82,11 @@
 </data>
  </layer>
  <objectgroup id="4" name="objects">
+  <properties>
+   <property name="targetMap" value="park"/>
+   <property name="targetX" value="1"/>
+   <property name="targetY" value="1"/>
+  </properties>
   <object id="1" name="hotel_clerk" type="npc" x="392" y="188">
    <properties>
     <property name="dialog" value="Welcome to Hotel Albuquerque! We hope you enjoy your stay."/>
@@ -177,6 +182,13 @@
     <property name="dialog" value="You will probably need to fix some bugs in the wild before challenging those testing enthusiasts. They are a wild bunch."/>
     <property name="facing" value="left"/>
     <property name="spriteKey" value="npc03"/>
+   </properties>
+  </object>
+  <object id="20" name="Door" type="door" x="6.05106" y="279.357">
+   <properties>
+    <property name="targetMap" value="park"/>
+    <property name="targetX" value="1"/>
+    <property name="targetY" value="1"/>
    </properties>
   </object>
  </objectgroup>
