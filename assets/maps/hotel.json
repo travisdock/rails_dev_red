@@ -494,26 +494,31 @@
                  "opacity":1,
                  "properties":[
                         {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"left"
+                        }, 
+                        {
                          "name":"targetMap",
                          "type":"string",
-                         "value":"park"
+                         "value":"parking-lot"
                         }, 
                         {
                          "name":"targetX",
                          "type":"string",
-                         "value":"1"
+                         "value":"39"
                         }, 
                         {
                          "name":"targetY",
                          "type":"string",
-                         "value":"1"
+                         "value":"13"
                         }],
                  "rotation":0,
                  "type":"door",
                  "visible":true,
                  "width":0,
-                 "x":6.0510557831705,
-                 "y":279.357075323038
+                 "x":6.05106,
+                 "y":279.357
                 }],
          "opacity":1,
          "properties":[

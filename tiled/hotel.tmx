@@ -186,9 +186,10 @@
   </object>
   <object id="20" name="Door" type="door" x="6.05106" y="279.357">
    <properties>
-    <property name="targetMap" value="park"/>
-    <property name="targetX" value="1"/>
-    <property name="targetY" value="1"/>
+    <property name="facing" value="left"/>
+    <property name="targetMap" value="parking-lot"/>
+    <property name="targetX" value="39"/>
+    <property name="targetY" value="13"/>
    </properties>
   </object>
  </objectgroup>

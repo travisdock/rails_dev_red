@@ -27,7 +27,7 @@
     ]
   },
   "parking_lot_easy": {
-    "encounterRate": 0.15,
+    "encounterRate": 0.14,
     "encounters": [
       { "bugId": "nil_reference", "levelRange": [2, 5], "weight": 35 },
       { "bugId": "missing_template", "levelRange": [2, 5], "weight": 30 },
@@ -35,7 +35,7 @@
     ]
   },
   "parking_lot_hard": {
-    "encounterRate": 0.18,
+    "encounterRate": 0.16,
     "encounters": [
       { "bugId": "n_plus_one", "levelRange": [6, 10], "weight": 25 },
       { "bugId": "sql_injection", "levelRange": [8, 12], "weight": 20 },

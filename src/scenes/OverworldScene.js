@@ -127,6 +127,7 @@ class OverworldScene extends Phaser.Scene {
       else if (ts.source && ts.source.includes('elements')) textureKey = 'tiles-elements';
       else if (ts.source && ts.source.includes('interior')) textureKey = 'tiles-interior';
       else if (ts.source && ts.source.includes('floor')) textureKey = 'tiles-floor';
+      else if (ts.source && ts.source.includes('city')) textureKey = 'tiles-city';
 
       if (textureKey && this.textures.exists(textureKey)) {
         // Map each GID to the texture + local frame index
@@ -174,21 +175,26 @@ class OverworldScene extends Phaser.Scene {
       // Parse object layers for encounters
       if (layer.type === 'objectgroup' && layer.name === 'encounters') {
         for (const obj of layer.objects) {
+          let zone = null;
+          if (obj.properties) {
+            for (const prop of obj.properties) {
+              if (prop.name === 'encounterZone') {
+                zone = prop.value;
+              }
+            }
+          }
           const startX = Math.floor(obj.x / TILE_SIZE);
           const startY = Math.floor(obj.y / TILE_SIZE);
           const endX = startX + Math.max(1, Math.ceil(obj.width / TILE_SIZE));
           const endY = startY + Math.max(1, Math.ceil(obj.height / TILE_SIZE));
           for (let gy = startY; gy < endY; gy++) {
             for (let gx = startX; gx < endX; gx++) {
-              this.grassTiles.push({ x: gx, y: gy });
+              this.grassTiles.push({ x: gx, y: gy, zone: zone });
             }
           }
-          if (obj.properties) {
-            for (const prop of obj.properties) {
-              if (prop.name === 'encounterZone') {
-                this.encounterZone = prop.value;
-              }
-            }
+          // Set a default encounter zone (used by procedural maps)
+          if (zone && !this.encounterZone) {
+            this.encounterZone = zone;
           }
         }
       }
@@ -762,10 +768,14 @@ class OverworldScene extends Phaser.Scene {
     }
 
     // Check wild encounter
-    if (this.encounterZone && this.isGrassTile(tileX, tileY)) {
-      const bug = EncounterManager.check(this.encounterZone);
-      if (bug) {
-        this.startWildBattle(bug);
+    const grassTile = this.grassTiles.find(g => g.x === tileX && g.y === tileY);
+    if (grassTile) {
+      const zone = grassTile.zone || this.encounterZone;
+      if (zone) {
+        const bug = EncounterManager.check(zone);
+        if (bug) {
+          this.startWildBattle(bug);
+        }
       }
     }
   }
