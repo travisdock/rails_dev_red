@@ -9,6 +9,18 @@ const MAX_MOVES = 4;
 
 const TYPES = ['auth', 'performance', 'testing', 'database', 'frontend', 'devops'];
 
+// Text style defaults for crisp pixel text
+const TEXT_STYLE = {
+  fontFamily: '"Press Start 2P", cursive',
+  fontSize: '8px',
+  color: '#111111'
+};
+const TEXT_STYLE_WHITE = {
+  fontFamily: '"Press Start 2P", cursive',
+  fontSize: '8px',
+  color: '#ffffff'
+};
+
 const TYPE_COLORS = {
   auth: 0xe74c3c,
   performance: 0xf39c12,

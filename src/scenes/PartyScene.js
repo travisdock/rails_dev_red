@@ -7,7 +7,7 @@ class PartyScene extends Phaser.Scene {
     this.add.rectangle(GAME_WIDTH / 2, GAME_HEIGHT / 2, GAME_WIDTH, GAME_HEIGHT, 0x222233);
 
     this.add.text(GAME_WIDTH / 2, 6, 'YOUR GEMS', {
-      fontFamily: 'monospace', fontSize: '8px', color: '#ffffff'
+      ...TEXT_STYLE_WHITE
     }).setOrigin(0.5);
 
     // List party gems
@@ -20,7 +20,7 @@ class PartyScene extends Phaser.Scene {
 
       // Name and level
       this.add.text(16, y, `${gem.name} Lv${gem.level}`, {
-        fontFamily: 'monospace', fontSize: '8px', color: '#ffffff'
+        ...TEXT_STYLE_WHITE
       });
 
       // HP bar
@@ -34,12 +34,12 @@ class PartyScene extends Phaser.Scene {
 
       // HP text
       this.add.text(barX + barWidth + 4, barY - 2, `${gem.currentHp}/${gem.maxHp}`, {
-        fontFamily: 'monospace', fontSize: '6px', color: '#aaaaaa'
+        ...TEXT_STYLE, fontSize: '6px', color: '#aaaaaa'
       });
 
       // Type
       this.add.text(160, y, gem.type.toUpperCase(), {
-        fontFamily: 'monospace', fontSize: '6px', color: '#aaaaaa'
+        ...TEXT_STYLE, fontSize: '6px', color: '#aaaaaa'
       });
 
       // Moves
@@ -48,13 +48,13 @@ class PartyScene extends Phaser.Scene {
         return def ? def.name : m;
       }).join(', ');
       this.add.text(16, y + 14, moveNames, {
-        fontFamily: 'monospace', fontSize: '5px', color: '#777777'
+        ...TEXT_STYLE, fontSize: '5px', color: '#777777'
       });
     });
 
     // Back prompt
     this.add.text(GAME_WIDTH / 2, GAME_HEIGHT - 8, 'Press X or BACKSPACE to go back', {
-      fontFamily: 'monospace', fontSize: '6px', color: '#888888'
+      ...TEXT_STYLE, fontSize: '6px', color: '#888888'
     }).setOrigin(0.5);
 
     this.keyX = this.input.keyboard.addKey('X');

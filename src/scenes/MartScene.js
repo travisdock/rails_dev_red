@@ -18,12 +18,12 @@ class MartScene extends Phaser.Scene {
 
     // Title
     this.add.text(GAME_WIDTH / 2, 8, martData.name, {
-      fontFamily: 'monospace', fontSize: '8px', color: '#ffffff'
+      ...TEXT_STYLE_WHITE
     }).setOrigin(0.5).setDepth(1000);
 
     // Money display
     this.moneyText = this.add.text(GAME_WIDTH - 8, 8, `$${InventoryManager.money}`, {
-      fontFamily: 'monospace', fontSize: '8px', color: '#ffcc00'
+      ...TEXT_STYLE, fontSize: '8px', color: '#ffcc00'
     }).setOrigin(1, 0).setDepth(1000);
 
     // Build options
@@ -71,7 +71,7 @@ class MartScene extends Phaser.Scene {
   showMessage(text) {
     if (this._msgText) this._msgText.destroy();
     this._msgText = this.add.text(GAME_WIDTH / 2, GAME_HEIGHT - 16, text, {
-      fontFamily: 'monospace', fontSize: '8px', color: '#ffffff',
+      ...TEXT_STYLE_WHITE,
       backgroundColor: '#333333', padding: { x: 4, y: 2 }
     }).setOrigin(0.5).setDepth(1100);
 

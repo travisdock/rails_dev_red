@@ -9,17 +9,12 @@ class TitleScene extends Phaser.Scene {
 
     // Title
     this.add.text(GAME_WIDTH / 2, 30, 'BLASTOFF RAILS', {
-      fontFamily: 'monospace',
-      fontSize: '14px',
-      color: '#ff6633',
-      fontStyle: 'bold'
+      ...TEXT_STYLE, fontSize: '10px', color: '#ff6633'
     }).setOrigin(0.5);
 
     // Subtitle
     this.add.text(GAME_WIDTH / 2, 48, 'The Game', {
-      fontFamily: 'monospace',
-      fontSize: '8px',
-      color: '#ff9966'
+      ...TEXT_STYLE, color: '#ff9966'
     }).setOrigin(0.5);
 
     // Decorative gem icon (diamond shape)
@@ -52,17 +47,13 @@ class TitleScene extends Phaser.Scene {
 
     this.menuTexts = this.menuItems.map((item, i) => {
       return this.add.text(GAME_WIDTH / 2, menuY + i * 14, item.text, {
-        fontFamily: 'monospace',
-        fontSize: '8px',
-        color: '#ffffff'
+        ...TEXT_STYLE_WHITE
       }).setOrigin(0.5);
     });
 
     // Cursor
     this.cursor = this.add.text(GAME_WIDTH / 2 - 40, menuY, '>', {
-      fontFamily: 'monospace',
-      fontSize: '8px',
-      color: '#ffffff'
+      ...TEXT_STYLE_WHITE
     }).setOrigin(0.5);
 
     // Blinking prompt
@@ -76,9 +67,7 @@ class TitleScene extends Phaser.Scene {
 
     // Version text
     this.add.text(GAME_WIDTH / 2, GAME_HEIGHT - 8, 'v0.1.0', {
-      fontFamily: 'monospace',
-      fontSize: '6px',
-      color: '#555555'
+      ...TEXT_STYLE, fontSize: '6px', color: '#555555'
     }).setOrigin(0.5);
 
     // Input

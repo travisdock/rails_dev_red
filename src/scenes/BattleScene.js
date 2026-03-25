@@ -54,7 +54,7 @@ class BattleScene extends Phaser.Scene {
     this.enemySprite = this.add.rectangle(175, 38, 24, 24, enemyColor)
       .setStrokeStyle(2, 0x333333);
     this.add.text(175, 38, enemy.isBug ? 'BUG' : 'GEM', {
-      fontFamily: 'monospace', fontSize: '6px', color: '#ffffff'
+      ...TEXT_STYLE_WHITE, fontSize: '6px'
     }).setOrigin(0.5).setDepth(1);
 
     // Player sprite (back view - slightly larger)
@@ -63,7 +63,7 @@ class BattleScene extends Phaser.Scene {
     this.playerSprite = this.add.rectangle(60, 88, 28, 28, playerColor)
       .setStrokeStyle(2, 0x333333);
     this.add.text(60, 88, player.name.substring(0, 3).toUpperCase(), {
-      fontFamily: 'monospace', fontSize: '6px', color: '#ffffff'
+      ...TEXT_STYLE_WHITE, fontSize: '6px'
     }).setOrigin(0.5).setDepth(1);
 
     // HUD
@@ -72,7 +72,7 @@ class BattleScene extends Phaser.Scene {
     this.hud.createPlayerHUD(player);
 
     // Message box at bottom
-    this.messageBox = new TextBox(this, 4, GAME_HEIGHT - 42, GAME_WIDTH - 8, 38);
+    this.messageBox = new TextBox(this, 4, GAME_HEIGHT - 50, GAME_WIDTH - 8, 46);
     this.messageBox.create().setVisible(true);
     this.messageBox.depth = 800;
     this.messageBox.bg.setDepth(800);
@@ -127,7 +127,7 @@ class BattleScene extends Phaser.Scene {
       options.push({ text: 'RUN', value: 'run' });
     }
 
-    this.currentMenu = new MenuBox(this, GAME_WIDTH / 2, GAME_HEIGHT - 42, options, {
+    this.currentMenu = new MenuBox(this, GAME_WIDTH / 2, GAME_HEIGHT - 30, options, {
       columns: 2,
       itemWidth: 55,
       depth: 900,
@@ -142,16 +142,17 @@ class BattleScene extends Phaser.Scene {
     const moves = gem.moves.map((moveId, i) => {
       const moveDef = window.GAME_DATA.moves[moveId];
       return {
-        text: `${moveDef.name} ${gem.pp[i]}/${moveDef.pp}`,
+        text: `${moveDef.name} ${gem.pp[i]}`,
         value: moveId
       };
     });
 
     if (this.currentMenu) this.currentMenu.destroy();
 
-    this.currentMenu = new MenuBox(this, 4, GAME_HEIGHT - 42, moves, {
+    // Position menu higher to fit up to 4 moves in 2 columns
+    this.currentMenu = new MenuBox(this, 4, GAME_HEIGHT - 50, moves, {
       columns: 2,
-      itemWidth: 110,
+      itemWidth: 115,
       depth: 900,
       onSelect: (opt) => this.handleMove(opt.value),
       onCancel: () => this.showActionMenu()
@@ -336,7 +337,7 @@ class BattleScene extends Phaser.Scene {
           this.playerSprite = this.add.rectangle(60, 88, 28, 28, color)
             .setStrokeStyle(2, 0x333333);
           this.add.text(60, 88, gem.name.substring(0, 3).toUpperCase(), {
-            fontFamily: 'monospace', fontSize: '6px', color: '#ffffff'
+            ...TEXT_STYLE_WHITE, fontSize: '6px'
           }).setOrigin(0.5).setDepth(1);
           // Use snapshotted HP (pre-enemy-attack) if available, otherwise live values
           const hp = event.hp !== undefined ? event.hp : gem.currentHp;

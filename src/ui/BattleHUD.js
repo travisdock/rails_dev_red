@@ -6,7 +6,7 @@ class BattleHUD {
 
   createPlayerHUD(gem) {
     const x = 125;
-    const y = 88;
+    const y = 76;
     this.playerHUD = this.createGemHUD(x, y, gem, true);
   }
 
@@ -28,12 +28,12 @@ class BattleHUD {
 
     // Name and level
     hud.nameText = this.scene.add.text(x + 4, y + 2, `${gem.name}`, {
-      fontFamily: 'monospace', fontSize: '8px', color: '#333333'
+      ...TEXT_STYLE
     }).setScrollFactor(0).setDepth(901);
     this.elements.push(hud.nameText);
 
     hud.levelText = this.scene.add.text(x + width - 4, y + 2, `Lv${gem.level}`, {
-      fontFamily: 'monospace', fontSize: '8px', color: '#333333'
+      ...TEXT_STYLE
     }).setOrigin(1, 0).setScrollFactor(0).setDepth(901);
     this.elements.push(hud.levelText);
 
@@ -61,14 +61,14 @@ class BattleHUD {
 
     // HP label
     hud.hpLabel = this.scene.add.text(x + 4, y + 18, 'HP', {
-      fontFamily: 'monospace', fontSize: '7px', color: '#333333'
+      ...TEXT_STYLE, fontSize: '7px'
     }).setScrollFactor(0).setDepth(901);
     this.elements.push(hud.hpLabel);
 
     // HP numbers (player only)
     if (showHP) {
       hud.hpText = this.scene.add.text(x + width - 4, y + 25, `${gem.currentHp}/${gem.maxHp}`, {
-        fontFamily: 'monospace', fontSize: '7px', color: '#333333'
+        ...TEXT_STYLE, fontSize: '7px'
       }).setOrigin(1, 0).setScrollFactor(0).setDepth(901);
       this.elements.push(hud.hpText);
     }

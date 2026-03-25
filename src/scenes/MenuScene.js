@@ -21,11 +21,11 @@ class MenuScene extends Phaser.Scene {
 
     // Show player info
     this.add.text(8, 8, `$${InventoryManager.money}`, {
-      fontFamily: 'monospace', fontSize: '8px', color: '#ffffff'
+      ...TEXT_STYLE_WHITE
     }).setDepth(1000);
 
     this.add.text(8, 18, `Badges: ${ProgressManager.badgeCount()}`, {
-      fontFamily: 'monospace', fontSize: '8px', color: '#ffffff'
+      ...TEXT_STYLE_WHITE
     }).setDepth(1000);
   }
 
@@ -67,7 +67,7 @@ class MenuScene extends Phaser.Scene {
     this.menu.destroy();
     const msg = success ? 'Game saved!' : 'Save failed!';
     this.add.text(GAME_WIDTH / 2, GAME_HEIGHT / 2, msg, {
-      fontFamily: 'monospace', fontSize: '10px', color: '#ffffff',
+      ...TEXT_STYLE_WHITE, fontSize: '10px',
       backgroundColor: '#333333', padding: { x: 8, y: 4 }
     }).setOrigin(0.5).setDepth(1100);
 

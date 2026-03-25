@@ -11,7 +11,7 @@ class MenuBox {
     this.depth = config?.depth || 1000;
     this.active = true;
 
-    this.itemHeight = 12;
+    this.itemHeight = 14;
     this.itemWidth = config?.itemWidth || 80;
     this.padding = 4;
 
@@ -46,9 +46,7 @@ class MenuBox {
       const ty = this.y + this.padding + row * this.itemHeight;
 
       const text = this.scene.add.text(tx, ty, opt.text, {
-        fontFamily: 'monospace',
-        fontSize: '8px',
-        color: '#333333'
+        ...TEXT_STYLE
       }).setScrollFactor(0).setDepth(this.depth + 1);
 
       this.textObjs.push(text);
@@ -57,9 +55,7 @@ class MenuBox {
 
     // Cursor
     this.cursor = this.scene.add.text(0, 0, '>', {
-      fontFamily: 'monospace',
-      fontSize: '8px',
-      color: '#333333'
+      ...TEXT_STYLE
     }).setScrollFactor(0).setDepth(this.depth + 1);
     this.elements.push(this.cursor);
 

@@ -6,9 +6,7 @@ class PreloadScene extends Phaser.Scene {
   preload() {
     // Show loading text
     const text = this.add.text(GAME_WIDTH / 2, GAME_HEIGHT / 2, 'Loading...', {
-      fontFamily: 'monospace',
-      fontSize: '8px',
-      color: '#ffffff'
+      ...TEXT_STYLE_WHITE
     }).setOrigin(0.5);
 
     // Progress bar

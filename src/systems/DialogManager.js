@@ -23,7 +23,7 @@ class DialogManager {
 
     // Create text box
     const cam = this.scene.cameras.main;
-    const boxHeight = 40;
+    const boxHeight = 48;
     const boxY = GAME_HEIGHT - boxHeight - 2;
 
     this.bg = this.scene.add.rectangle(GAME_WIDTH / 2, boxY + boxHeight / 2, GAME_WIDTH - 8, boxHeight, 0xffffff)
@@ -32,17 +32,13 @@ class DialogManager {
       .setDepth(1000);
 
     this.text = this.scene.add.text(8, boxY + 4, '', {
-      fontFamily: 'monospace',
-      fontSize: '8px',
-      color: '#333333',
+      ...TEXT_STYLE,
       wordWrap: { width: GAME_WIDTH - 20 },
       lineSpacing: 2
     }).setScrollFactor(0).setDepth(1001);
 
     this.indicator = this.scene.add.text(GAME_WIDTH - 14, boxY + boxHeight - 10, '>', {
-      fontFamily: 'monospace',
-      fontSize: '8px',
-      color: '#333333'
+      ...TEXT_STYLE
     }).setScrollFactor(0).setDepth(1001).setVisible(false);
 
     this.showMessage(this.messages[0]);

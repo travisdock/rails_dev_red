@@ -27,9 +27,7 @@ class TextBox {
       this.x + this.padding,
       this.y + this.padding,
       '', {
-        fontFamily: 'monospace',
-        fontSize: '8px',
-        color: '#333333',
+        ...TEXT_STYLE,
         wordWrap: { width: this.width - this.padding * 2 },
         lineSpacing: 2
       }

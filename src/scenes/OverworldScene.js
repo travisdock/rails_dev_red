@@ -257,7 +257,7 @@ class OverworldScene extends Phaser.Scene {
     };
     const displayName = names[mapKey] || mapKey;
     this.add.text(this.mapWidth / 2, 12, displayName, {
-      fontFamily: 'monospace', fontSize: '6px', color: '#ffffff',
+      ...TEXT_STYLE_WHITE, fontSize: '6px',
       backgroundColor: '#33333388', padding: { x: 4, y: 2 }
     }).setOrigin(0.5).setDepth(100).setScrollFactor(0);
   }
@@ -455,7 +455,7 @@ class OverworldScene extends Phaser.Scene {
 
     // Town name label
     this.add.text(width * TILE_SIZE / 2, 12, name, {
-      fontFamily: 'monospace', fontSize: '6px', color: '#ffffff',
+      ...TEXT_STYLE_WHITE, fontSize: '6px',
       backgroundColor: '#33333388', padding: { x: 4, y: 2 }
     }).setOrigin(0.5).setDepth(100).setScrollFactor(0);
 
@@ -528,7 +528,7 @@ class OverworldScene extends Phaser.Scene {
 
     // Route name label
     this.add.text(GAME_WIDTH / 2, 12, name, {
-      fontFamily: 'monospace', fontSize: '6px', color: '#ffffff',
+      ...TEXT_STYLE_WHITE, fontSize: '6px',
       backgroundColor: '#33333388', padding: { x: 4, y: 2 }
     }).setOrigin(0.5).setDepth(100).setScrollFactor(0);
 
@@ -585,7 +585,7 @@ class OverworldScene extends Phaser.Scene {
 
     // Label
     this.add.text(GAME_WIDTH / 2, 12, 'Crossroads', {
-      fontFamily: 'monospace', fontSize: '6px', color: '#ffffff',
+      ...TEXT_STYLE_WHITE, fontSize: '6px',
       backgroundColor: '#33333388', padding: { x: 4, y: 2 }
     }).setOrigin(0.5).setDepth(100).setScrollFactor(0);
 
@@ -619,7 +619,7 @@ class OverworldScene extends Phaser.Scene {
 
     if (label) {
       this.add.text(px + pw / 2, py + ph / 2, label, {
-        fontFamily: 'monospace', fontSize: '6px', color: '#ffffff'
+        ...TEXT_STYLE_WHITE, fontSize: '6px'
       }).setOrigin(0.5).setDepth(10);
     }
 
