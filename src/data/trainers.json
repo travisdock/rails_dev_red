@@ -1,133 +1,133 @@
 {
   "attendee_01": {
     "id": "attendee_01", "name": "Attendee Jamie", "class": "Conference Attendee",
-    "dialogBefore": "This is my first Rails conf!\nI just learned about gems!",
-    "dialogAfter": "Wow, you really know\nyour gems...",
+    "dialogBefore": "This is my first Rails conf!\nI keep running into bugs!",
+    "dialogAfter": "Wow, you really squashed\nthat bug...",
     "party": [
-      { "gemId": "pry", "level": 5 }
+      { "bugId": "brittle_spec", "level": 5 }
     ],
     "prizeMoney": 120,
     "lineOfSight": 3
   },
   "attendee_02": {
     "id": "attendee_02", "name": "Attendee Morgan", "class": "Conference Attendee",
-    "dialogBefore": "I've been writing Rails\nfor six months now.\nBring it on!",
+    "dialogBefore": "I've been writing Rails\nfor six months now.\nCan you handle my bugs?",
     "dialogAfter": "Back to the tutorials\nfor me...",
     "party": [
-      { "gemId": "pry", "level": 7 },
-      { "gemId": "factory_bot", "level": 8 }
+      { "bugId": "brittle_spec", "level": 7 },
+      { "bugId": "missing_template", "level": 8 }
     ],
     "prizeMoney": 240,
     "lineOfSight": 3
   },
   "attendee_03": {
     "id": "attendee_03", "name": "Attendee Riley", "class": "Conference Attendee",
-    "dialogBefore": "My test suite has 100%\ncoverage! Can your gems\nkeep up?",
+    "dialogBefore": "My code has 100% coverage\nbut bugs keep slipping through!\nCan your gems squash them?",
     "dialogAfter": "Maybe coverage isn't\neverything...",
     "party": [
-      { "gemId": "rspec", "level": 9 },
-      { "gemId": "capybara", "level": 8 }
+      { "bugId": "nil_reference", "level": 9 },
+      { "bugId": "flaky_test", "level": 8 }
     ],
     "prizeMoney": 300,
     "lineOfSight": 3
   },
   "speaker_01": {
     "id": "speaker_01", "name": "Speaker Taylor", "class": "Conference Speaker",
-    "dialogBefore": "I'm giving a talk on\nperformance optimization.\nLet me show you speed!",
-    "dialogAfter": "I need to optimize\nmy approach...",
+    "dialogBefore": "I'm giving a talk on\nperformance optimization.\nCheck out these nasty bugs!",
+    "dialogAfter": "You optimized your way\nright through those...",
     "party": [
-      { "gemId": "bullet", "level": 12 },
-      { "gemId": "puma", "level": 11 }
+      { "bugId": "n_plus_one", "level": 12 },
+      { "bugId": "memory_leak", "level": 11 }
     ],
     "prizeMoney": 400,
     "lineOfSight": 4
   },
   "speaker_02": {
     "id": "speaker_02", "name": "Speaker Alex", "class": "Conference Speaker",
-    "dialogBefore": "Full-stack means I have\ngems for every situation!",
+    "dialogBefore": "Full-stack means I've got\nbugs for every layer!",
     "dialogAfter": "Well-rounded team\nyou've got there.",
     "party": [
-      { "gemId": "turbo", "level": 14 },
-      { "gemId": "devise", "level": 13 },
-      { "gemId": "sidekiq", "level": 14 }
+      { "bugId": "unhandled_promise", "level": 14 },
+      { "bugId": "exposed_secret", "level": 13 },
+      { "bugId": "ci_failure", "level": 14 }
     ],
     "prizeMoney": 560,
     "lineOfSight": 4
   },
   "speaker_03": {
     "id": "speaker_03", "name": "Speaker Sam", "class": "Conference Speaker",
-    "dialogBefore": "I've been in the Rails\ncommunity for 15 years.\nYou won't pass my review!",
+    "dialogBefore": "I've been in the Rails\ncommunity for 15 years.\nThese bugs will crush you!",
     "dialogAfter": "Clean code. I'd approve\nthat PR.",
     "party": [
-      { "gemId": "active_record", "level": 16 },
-      { "gemId": "pundit", "level": 15 },
-      { "gemId": "rack_mini_profiler", "level": 16 }
+      { "bugId": "deadlock", "level": 16 },
+      { "bugId": "xss_attack", "level": 15 },
+      { "bugId": "circular_dependency", "level": 16 }
     ],
     "prizeMoney": 600,
     "lineOfSight": 5
   },
   "test_minion_01": {
     "id": "test_minion_01", "name": "TDD Enthusiast Pat", "class": "Testing Fanatic",
-    "dialogBefore": "Red, green, refactor!\nThat's all you need to know!",
-    "dialogAfter": "My tests failed...\nTime to refactor.",
+    "dialogBefore": "Red, green, refactor!\nBut first, squash this bug!",
+    "dialogAfter": "My bug got squashed...\nTime to refactor.",
     "party": [
-      { "gemId": "rspec", "level": 6 }
+      { "bugId": "flaky_test", "level": 6 }
     ],
     "prizeMoney": 150,
     "lineOfSight": 3
   },
   "test_minion_05": {
     "id": "test_minion_05", "name": "Attendee Avery", "class": "Conference Attendee",
-    "dialogBefore": "I just learned what RSpec is!\nWant to see my first spec?",
-    "dialogAfter": "Ok that spec definitely\nneeds some work...",
+    "dialogBefore": "I just found my first bug!\nWant to see it?",
+    "dialogAfter": "Ok that bug didn't\nstand a chance...",
     "party": [
-      { "gemId": "pry", "level": 4 }
+      { "bugId": "flaky_test", "level": 4 }
     ],
     "prizeMoney": 100,
     "lineOfSight": 3
   },
   "test_minion_02": {
     "id": "test_minion_02", "name": "Attendee Quinn", "class": "Conference Attendee",
-    "dialogBefore": "I wrote my first test\nyesterday! Let me show you!",
-    "dialogAfter": "I guess I need more\ntest cases...",
+    "dialogBefore": "I found some bugs in\nmy code! Let me throw\nthem at you!",
+    "dialogAfter": "I guess I need better\ngems to squash those...",
     "party": [
-      { "gemId": "pry", "level": 5 },
-      { "gemId": "factory_bot", "level": 6 }
+      { "bugId": "flaky_test", "level": 5 },
+      { "bugId": "nil_reference", "level": 6 }
     ],
     "prizeMoney": 180,
     "lineOfSight": 3
   },
   "test_minion_03": {
     "id": "test_minion_03", "name": "QA Advocate Lee", "class": "Testing Fanatic",
-    "dialogBefore": "No code ships without\nintegration tests.\nNot on my watch!",
-    "dialogAfter": "Your integration tests\nare impressive...",
+    "dialogBefore": "No code ships without\nfixing these bugs first.\nNot on my watch!",
+    "dialogAfter": "Your gems handled those\nbugs impressively...",
     "party": [
-      { "gemId": "capybara", "level": 8 },
-      { "gemId": "rspec", "level": 7 }
+      { "bugId": "external_dependency", "level": 8 },
+      { "bugId": "brittle_spec", "level": 7 }
     ],
     "prizeMoney": 250,
     "lineOfSight": 4
   },
   "test_minion_04": {
     "id": "test_minion_04", "name": "Mock Master Drew", "class": "Testing Fanatic",
-    "dialogBefore": "Why test against real data\nwhen you can mock everything?\nLet me show you!",
-    "dialogAfter": "Maybe I mocked too much...\nMy tests passed but\nproduction broke.",
+    "dialogBefore": "I've collected the nastiest\ntesting bugs around.\nLet me unleash them!",
+    "dialogAfter": "You squashed them all...\nMaybe I mocked too much\nand missed real bugs.",
     "party": [
-      { "gemId": "factory_bot", "level": 9 },
-      { "gemId": "capybara", "level": 8 },
-      { "gemId": "rspec", "level": 10 }
+      { "bugId": "flaky_test", "level": 9 },
+      { "bugId": "external_dependency", "level": 8 },
+      { "bugId": "slow_test_suite", "level": 10 }
     ],
     "prizeMoney": 350,
     "lineOfSight": 4
   },
   "organizer_01": {
     "id": "organizer_01", "name": "Organizer Jordan", "class": "Conference Organizer",
-    "dialogBefore": "I organized this whole\nconference. Think you can\nhandle what I've built?",
+    "dialogBefore": "I organized this whole\nconference. Think your gems\ncan handle the worst bugs?",
     "dialogAfter": "You're ready for\nthe rocket.",
     "party": [
-      { "gemId": "sidekiq", "level": 20 },
-      { "gemId": "devise", "level": 20 },
-      { "gemId": "active_record", "level": 22 }
+      { "bugId": "race_condition", "level": 20 },
+      { "bugId": "csrf_vuln", "level": 20 },
+      { "bugId": "sql_injection", "level": 22 }
     ],
     "prizeMoney": 800,
     "lineOfSight": 5

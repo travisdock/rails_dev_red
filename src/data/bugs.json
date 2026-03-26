@@ -68,5 +68,117 @@
     "baseStats": { "hp": 30, "attack": 45, "defense": 25, "spAttack": 50, "spDefense": 30, "speed": 55 },
     "baseXP": 54,
     "moves": ["dom_manipulate", "hotwire_stream", "stimulus_connect"]
+  },
+  "flaky_test": {
+    "id": "flaky_test", "name": "Flaky Test", "type": "testing",
+    "description": "Passes on Monday, fails on Tuesday. Nobody knows why.",
+    "baseStats": { "hp": 30, "attack": 30, "defense": 25, "spAttack": 35, "spDefense": 30, "speed": 40 },
+    "baseXP": 42,
+    "moves": ["expect_matcher", "mock_object"]
+  },
+  "brittle_spec": {
+    "id": "brittle_spec", "name": "Brittle Spec", "type": "testing",
+    "description": "One tiny change and the whole spec explodes.",
+    "baseStats": { "hp": 30, "attack": 35, "defense": 25, "spAttack": 35, "spDefense": 30, "speed": 40 },
+    "baseXP": 44,
+    "moves": ["assert_equal", "binding_pry"]
+  },
+  "slow_test_suite": {
+    "id": "slow_test_suite", "name": "Slow Test Suite", "type": "testing",
+    "description": "20 minutes to run. Better grab some coffee.",
+    "baseStats": { "hp": 45, "attack": 30, "defense": 35, "spAttack": 40, "spDefense": 35, "speed": 35 },
+    "baseXP": 52,
+    "moves": ["integration_test", "build_strategy", "selenium_driver"]
+  },
+  "external_dependency": {
+    "id": "external_dependency", "name": "External Dep", "type": "testing",
+    "description": "Tests fail whenever the third-party API goes down.",
+    "baseStats": { "hp": 40, "attack": 35, "defense": 30, "spAttack": 40, "spDefense": 40, "speed": 45 },
+    "baseXP": 50,
+    "moves": ["mock_object", "show_source", "integration_test"]
+  },
+  "test_pollution": {
+    "id": "test_pollution", "name": "Test Pollution", "type": "testing",
+    "description": "Shared state leaking between tests. Order-dependent failures.",
+    "baseStats": { "hp": 40, "attack": 40, "defense": 35, "spAttack": 45, "spDefense": 40, "speed": 55 },
+    "baseXP": 58,
+    "moves": ["transient_blast", "nested_factory", "mock_object"]
+  },
+  "phantom_failure": {
+    "id": "phantom_failure", "name": "Phantom Failure", "type": "testing",
+    "description": "The test fails in CI but passes locally. Every. Single. Time.",
+    "baseStats": { "hp": 40, "attack": 40, "defense": 35, "spAttack": 45, "spDefense": 40, "speed": 55 },
+    "baseXP": 58,
+    "moves": ["selenium_driver", "click_button", "visit_page"]
+  },
+  "auth_bypass": {
+    "id": "auth_bypass", "name": "Auth Bypass", "type": "auth",
+    "description": "Skips authentication entirely. Admin access for everyone!",
+    "baseStats": { "hp": 40, "attack": 50, "defense": 35, "spAttack": 45, "spDefense": 35, "speed": 50 },
+    "baseXP": 62,
+    "moves": ["authenticate", "token_generate", "policy_enforce"]
+  },
+  "exposed_secret": {
+    "id": "exposed_secret", "name": "Exposed Secret", "type": "auth",
+    "description": "API keys committed to the repo. Oops.",
+    "baseStats": { "hp": 40, "attack": 40, "defense": 30, "spAttack": 40, "spDefense": 35, "speed": 45 },
+    "baseXP": 54,
+    "moves": ["authenticate", "session_store"]
+  },
+  "insecure_redirect": {
+    "id": "insecure_redirect", "name": "Insecure Redirect", "type": "auth",
+    "description": "Open redirect lets attackers phish your users.",
+    "baseStats": { "hp": 35, "attack": 40, "defense": 30, "spAttack": 45, "spDefense": 40, "speed": 45 },
+    "baseXP": 54,
+    "moves": ["authenticate", "hash_strength"]
+  },
+  "infinite_loop": {
+    "id": "infinite_loop", "name": "Infinite Loop", "type": "performance",
+    "description": "while(true) { /* help */ }",
+    "baseStats": { "hp": 50, "attack": 40, "defense": 35, "spAttack": 50, "spDefense": 40, "speed": 45 },
+    "baseXP": 62,
+    "moves": ["profile_analyze", "cache_warm", "eager_load"]
+  },
+  "cache_stampede": {
+    "id": "cache_stampede", "name": "Cache Stampede", "type": "performance",
+    "description": "Cache expires. A thousand requests hit the DB at once.",
+    "baseStats": { "hp": 45, "attack": 40, "defense": 35, "spAttack": 50, "spDefense": 40, "speed": 45 },
+    "baseXP": 60,
+    "moves": ["benchmark", "eager_load", "profile_analyze"]
+  },
+  "schema_mismatch": {
+    "id": "schema_mismatch", "name": "Schema Mismatch", "type": "database",
+    "description": "The migration ran in staging but not production.",
+    "baseStats": { "hp": 40, "attack": 35, "defense": 30, "spAttack": 40, "spDefense": 35, "speed": 40 },
+    "baseXP": 50,
+    "moves": ["migration_run", "schema_dump"]
+  },
+  "deadlock": {
+    "id": "deadlock", "name": "Deadlock", "type": "database",
+    "description": "Two transactions waiting on each other. Forever.",
+    "baseStats": { "hp": 50, "attack": 45, "defense": 40, "spAttack": 45, "spDefense": 40, "speed": 40 },
+    "baseXP": 64,
+    "moves": ["raw_sql", "slow_query", "index_optimize"]
+  },
+  "ci_failure": {
+    "id": "ci_failure", "name": "CI Failure", "type": "devops",
+    "description": "The build is red. Again. Nobody knows what changed.",
+    "baseStats": { "hp": 40, "attack": 40, "defense": 35, "spAttack": 45, "spDefense": 35, "speed": 45 },
+    "baseXP": 56,
+    "moves": ["ci_pipeline", "background_job", "thread_pool"]
+  },
+  "z_index_hell": {
+    "id": "z_index_hell", "name": "Z-Index Hell", "type": "frontend",
+    "description": "z-index: 99999. Still behind the modal.",
+    "baseStats": { "hp": 35, "attack": 35, "defense": 30, "spAttack": 45, "spDefense": 35, "speed": 40 },
+    "baseXP": 50,
+    "moves": ["dom_manipulate", "hotwire_stream", "stimulus_connect"]
+  },
+  "docker_drift": {
+    "id": "docker_drift", "name": "Docker Drift", "type": "devops",
+    "description": "Works in Docker. Doesn't work in Docker anymore.",
+    "baseStats": { "hp": 40, "attack": 35, "defense": 35, "spAttack": 40, "spDefense": 40, "speed": 40 },
+    "baseXP": 52,
+    "moves": ["docker_build", "background_job"]
   }
 }

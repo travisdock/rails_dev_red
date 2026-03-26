@@ -2,7 +2,7 @@
 
 ## What Is This?
 
-A Pokemon Red/Blue-style web RPG built with Phaser.js, themed around Ruby on Rails development. Players collect Ruby gems and battle software bugs. Being built for the **Blastoff Rails** conference in Albuquerque, NM (summer 2026).
+A Pokemon Red/Blue-style web RPG built with Phaser.js, themed around Ruby on Rails development. Players collect Ruby gems (dev tools) and use them to squash software bugs. Trainers and gym leaders throw themed bugs at the player. Being built for the **Blastoff Rails** conference in Albuquerque, NM (summer 2026).
 
 The game is fully client-side (no backend). Maps are designed in the Tiled map editor and exported as JSON. All game content (gems, bugs, moves, trainers, encounters) is data-driven via JSON config files.
 
@@ -56,14 +56,14 @@ npm run test:watch # watch mode
 │   ├── entities/
 │   │   ├── Player.js           # Grid movement via tweens, sprite animations
 │   │   ├── NPC.js              # Sprite + dialog, faces player on interact
-│   │   ├── Trainer.js          # Extends NPC: line-of-sight, battle, defeated state
-│   │   └── GemInstance.js      # Runtime gem/bug state (HP, XP, moves, serialize)
+│   │   ├── Trainer.js          # Extends NPC: line-of-sight, battle (uses BugInstance), defeated state
+│   │   └── GemInstance.js      # Runtime gem/bug state (HP, XP, moves, serialize); also defines BugInstance
 │   ├── data/                   # JSON config files (the game's content)
 │   │   ├── gems.json           # All gem definitions
-│   │   ├── bugs.json           # Wild encounter bug definitions
+│   │   ├── bugs.json           # Bug definitions (wild encounters + trainer/gym leader parties)
 │   │   ├── moves.json          # Move definitions (power, type, effects)
-│   │   ├── trainers.json       # Trainer parties and dialogue
-│   │   ├── gym-leaders.json    # Boss definitions
+│   │   ├── trainers.json       # Trainer bug parties and dialogue
+│   │   ├── gym-leaders.json    # Boss bug parties and dialogue
 │   │   ├── encounters.json     # Per-zone encounter tables
 │   │   ├── type-chart.json     # 6x6 type effectiveness matrix
 │   │   └── marts.json          # Shop inventories per location
@@ -216,7 +216,7 @@ Tests use Vitest. Source files are loaded into Node via `vm.runInThisContext` (s
 ### Test Categories
 - **Unit tests**: GameMath, TypeChart, GemInstance, BattleManager, managers
 - **Integration tests**: Save/load round-trip
-- **Data integrity tests**: All JSON cross-references (gems in trainer parties exist, moves in learnsets exist, encounter zones match, etc.)
+- **Data integrity tests**: All JSON cross-references (bugs in trainer/gym leader parties exist, moves in learnsets exist, encounter zones match, etc.)
 
 ### Running Tests
 ```bash
@@ -249,6 +249,9 @@ copy(JSON.stringify(BATTLE_LOG, null, 2))  // Copy log to clipboard
 
 ### Gem IDs
 `rspec`, `bullet`, `brakeman`, `devise`, `pundit`, `bcrypt`, `rack_mini_profiler`, `capybara`, `factory_bot`, `active_record`, `sidekiq`, `puma`, `turbo`, `pry`
+
+### Bug IDs
+`n_plus_one`, `nil_reference`, `missing_template`, `sql_injection`, `memory_leak`, `race_condition`, `xss_attack`, `csrf_vuln`, `circular_dependency`, `unhandled_promise`, `flaky_test`, `brittle_spec`, `slow_test_suite`, `external_dependency`, `test_pollution`, `phantom_failure`, `auth_bypass`, `exposed_secret`, `insecure_redirect`, `infinite_loop`, `cache_stampede`, `schema_mismatch`, `deadlock`, `ci_failure`, `z_index_hell`, `docker_drift`
 
 ### Trainer IDs
 `test_minion_01`-`05`, `attendee_01`-`03`, `speaker_01`-`03`, `organizer_01`

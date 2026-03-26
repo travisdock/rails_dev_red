@@ -2,7 +2,7 @@ class Trainer extends NPC {
   constructor(scene, tileX, tileY, config) {
     super(scene, tileX, tileY, {
       name: config.name,
-      dialog: config.dialogBefore ? config.dialogBefore.split('\n') : ['Let\'s battle!'],
+      dialog: config.dialogBefore ? config.dialogBefore.split('\n') : ['Time for a code review!'],
       color: config.color || 0xcc4444,
       facing: config.facing || 'down',
       spriteKey: config.spriteKey || null
@@ -10,8 +10,8 @@ class Trainer extends NPC {
 
     this.trainerId = config.id;
     this.trainerData = config;
-    this.dialogAfter = config.dialogAfter ? config.dialogAfter.split('\n') : ['Good battle!'];
-    this.party = (config.party || []).map(p => new GemInstance(p.gemId, p.level));
+    this.dialogAfter = config.dialogAfter ? config.dialogAfter.split('\n') : ['Good code review!'];
+    this.party = (config.party || []).map(p => new BugInstance(p.bugId, p.level));
     this.prizeMoney = config.prizeMoney || 100;
     this.lineOfSight = config.lineOfSight || 3;
     this.defeated = ProgressManager.isTrainerDefeated(this.trainerId);
@@ -53,7 +53,7 @@ class Trainer extends NPC {
 
   getBattleParty() {
     // Create fresh copies for battle
-    return this.trainerData.party.map(p => new GemInstance(p.gemId, p.level));
+    return this.trainerData.party.map(p => new BugInstance(p.bugId, p.level));
   }
 
   onDefeat() {

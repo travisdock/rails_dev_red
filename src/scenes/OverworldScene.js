@@ -1011,7 +1011,7 @@ class OverworldScene extends Phaser.Scene {
         ProgressManager.completeGym(result.trainerData.id);
 
         this.time.delayedCall(500, () => {
-          const msgs = [...(result.trainerData.dialogAfter || ['Great battle!'])];
+          const msgs = [...(result.trainerData.dialogAfter || ['Great code review!'])];
           msgs.push(`You got the ${result.trainerData.badgeName}!`);
 
           // Check if all badges collected

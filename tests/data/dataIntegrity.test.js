@@ -70,21 +70,21 @@ describe('Data Integrity', () => {
     }
   });
 
-  describe('trainer parties reference valid gems', () => {
+  describe('trainer parties reference valid bugs', () => {
     for (const [trainerId, trainer] of Object.entries(trainers)) {
       for (const p of trainer.party) {
-        it(`${trainerId} party gem "${p.gemId}" exists`, () => {
-          expect(gems[p.gemId]).toBeDefined();
+        it(`${trainerId} party bug "${p.bugId}" exists`, () => {
+          expect(bugs[p.bugId]).toBeDefined();
         });
       }
     }
   });
 
-  describe('gym leader parties reference valid gems', () => {
+  describe('gym leader parties reference valid bugs', () => {
     for (const [leaderId, leader] of Object.entries(gymLeaders)) {
       for (const p of leader.party) {
-        it(`${leaderId} party gem "${p.gemId}" exists`, () => {
-          expect(gems[p.gemId]).toBeDefined();
+        it(`${leaderId} party bug "${p.bugId}" exists`, () => {
+          expect(bugs[p.bugId]).toBeDefined();
         });
       }
     }

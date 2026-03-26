@@ -89,7 +89,7 @@ class BattleScene extends Phaser.Scene {
     // Intro message
     const introMsg = this.isWild
       ? `A wild ${enemy.name} appeared!`
-      : `${this.trainerData.name} wants to battle!`;
+      : `${this.trainerData.name} wants a code review!`;
     this.showMessage(introMsg, () => {
       this.showActionMenu();
     });

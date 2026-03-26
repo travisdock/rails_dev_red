@@ -2,49 +2,49 @@
   "jason_swett": {
     "id": "jason_swett", "name": "Jason Swett", "title": "Testing Expert",
     "gymType": "testing", "badge": "test_pass", "badgeName": "Test Pass",
-    "dialogBefore": "Testing isn't optional.\nIt's the foundation of\neverything we build.\nLet me see your test suite!",
+    "dialogBefore": "Testing isn't optional.\nIt's the foundation of\neverything we build.\nLet's see if your gems can\nsquash these testing bugs!",
     "dialogAfter": "Your tests are green across\nthe board. Take the Test Pass.\nYou've earned it!",
     "party": [
-      { "gemId": "factory_bot", "level": 12 },
-      { "gemId": "capybara", "level": 12 },
-      { "gemId": "rspec", "level": 14 }
+      { "bugId": "external_dependency", "level": 12 },
+      { "bugId": "phantom_failure", "level": 12 },
+      { "bugId": "test_pollution", "level": 14 }
     ],
     "prizeMoney": 1400
   },
   "greg_molnar": {
     "id": "greg_molnar", "name": "Greg Molnar", "title": "Security Specialist",
     "gymType": "auth", "badge": "security_pass", "badgeName": "Security Pass",
-    "dialogBefore": "Security isn't a feature.\nIt's a responsibility.\nLet's see if your gems can\nsurvive an audit.",
+    "dialogBefore": "Security isn't a feature.\nIt's a responsibility.\nLet's see if your gems can\nsurvive these security bugs.",
     "dialogAfter": "Your defenses are solid.\nTake the Security Pass.\nKeep your apps safe out there.",
     "party": [
-      { "gemId": "brakeman", "level": 18 },
-      { "gemId": "pundit", "level": 18 },
-      { "gemId": "devise", "level": 20 }
+      { "bugId": "exposed_secret", "level": 18 },
+      { "bugId": "xss_attack", "level": 18 },
+      { "bugId": "auth_bypass", "level": 20 }
     ],
     "prizeMoney": 2000
   },
   "nate_berkopec": {
     "id": "nate_berkopec", "name": "Nate Berkopec", "title": "Performance Engineer",
     "gymType": "performance", "badge": "speed_pass", "badgeName": "Speed Pass",
-    "dialogBefore": "Every millisecond matters.\nIf your app isn't fast,\nyour users are gone.\nShow me what your gems can do!",
+    "dialogBefore": "Every millisecond matters.\nIf your app isn't fast,\nyour users are gone.\nCan your gems squash\nthese performance bugs?",
     "dialogAfter": "Fast and efficient.\nYou've earned the Speed Pass.\nNow make it even faster.",
     "party": [
-      { "gemId": "rack_mini_profiler", "level": 22 },
-      { "gemId": "bullet", "level": 22 },
-      { "gemId": "puma", "level": 24 }
+      { "bugId": "cache_stampede", "level": 22 },
+      { "bugId": "infinite_loop", "level": 22 },
+      { "bugId": "memory_leak", "level": 24 }
     ],
     "prizeMoney": 2400
   },
   "dhh": {
     "id": "dhh", "name": "DHH", "title": "Rails Creator",
     "gymType": "database", "badge": "captains_pass", "badgeName": "Captain's Pass",
-    "dialogBefore": "You've made it to the launch pad.\nBut the rocket only has room\nfor real Rails developers.\nConvince me you belong.",
+    "dialogBefore": "You've made it to the launch pad.\nBut the rocket only has room\nfor real Rails developers.\nLet's see if your gems can\nhandle the nastiest bugs.",
     "dialogAfter": "Welcome aboard.\nTake the Captain's Pass.\nThe rocket is waiting.\nSee you in space!",
     "party": [
-      { "gemId": "active_record", "level": 26 },
-      { "gemId": "turbo", "level": 25 },
-      { "gemId": "sidekiq", "level": 25 },
-      { "gemId": "active_record", "level": 28 }
+      { "bugId": "deadlock", "level": 26 },
+      { "bugId": "z_index_hell", "level": 25 },
+      { "bugId": "race_condition", "level": 25 },
+      { "bugId": "sql_injection", "level": 28 }
     ],
     "prizeMoney": 3500
   }
