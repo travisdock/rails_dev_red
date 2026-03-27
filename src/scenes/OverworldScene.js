@@ -812,7 +812,7 @@ class OverworldScene extends Phaser.Scene {
         if (messages[0] === 'heal') {
           this.showDialog(['Welcome to the CI/CD Center!', 'Let me heal your gems...', 'Your gems are fully restored!'], () => {
             PartyManager.healAll();
-          });
+          }, npc.name);
           return;
         }
 
@@ -826,24 +826,24 @@ class OverworldScene extends Phaser.Scene {
         if (npc instanceof Trainer && !npc.defeated) {
           this.showDialog(messages, () => {
             this.startTrainerBattle(npc, true);
-          });
+          }, npc.name);
           return;
         }
 
-        this.showDialog(messages);
+        this.showDialog(messages, null, npc.name);
         return;
       }
     }
   }
 
-  showDialog(messages, onComplete) {
+  showDialog(messages, onComplete, speakerName) {
     this.inDialog = true;
     this.player.freeze();
     this.dialogManager.show(messages, () => {
       this.inDialog = false;
       this.player.unfreeze();
       if (onComplete) onComplete();
-    });
+    }, speakerName);
   }
 
   transitionToMap(mapKey, targetX, targetY, facing) {
@@ -907,7 +907,7 @@ class OverworldScene extends Phaser.Scene {
       this.dialogManager.show(messages, () => {
         this.inDialog = false;
         beginBattle();
-      });
+      }, trainer.name);
     }
   }
 
@@ -1022,7 +1022,7 @@ class OverworldScene extends Phaser.Scene {
             msgs.push("Congratulations!\nYou've completed\nBlastoff Rails: The Game!");
           }
 
-          this.showDialog(msgs);
+          this.showDialog(msgs, null, result.trainerData.name);
         });
       } else {
         this.time.delayedCall(300, () => {

@@ -14,7 +14,7 @@ class DialogManager {
     this.CHAR_DELAY = 30; // ms per character
   }
 
-  show(messages, onComplete) {
+  show(messages, onComplete, speakerName) {
     if (typeof messages === 'string') messages = [messages];
     this.messages = messages;
     this.currentIndex = 0;
@@ -40,6 +40,26 @@ class DialogManager {
     this.indicator = this.scene.add.text(GAME_WIDTH - 14, boxY + boxHeight - 10, '>', {
       ...TEXT_STYLE
     }).setScrollFactor(0).setDepth(1001).setVisible(false);
+
+    // Speaker name label above dialog box
+    this.nameBg = null;
+    this.nameText = null;
+    if (speakerName) {
+      const nameHeight = 14;
+      const namePadding = 4;
+      const nameTextObj = this.scene.add.text(8 + namePadding, boxY - nameHeight + 3, speakerName, {
+        ...TEXT_STYLE
+      }).setScrollFactor(0).setDepth(1001);
+      const nameWidth = nameTextObj.width + namePadding * 2;
+      this.nameBg = this.scene.add.rectangle(
+        8 + nameWidth / 2, boxY - nameHeight / 2,
+        nameWidth, nameHeight,
+        0xffffff
+      ).setStrokeStyle(2, 0x333333)
+       .setScrollFactor(0)
+       .setDepth(1000);
+      this.nameText = nameTextObj;
+    }
 
     this.showMessage(this.messages[0]);
   }
@@ -100,6 +120,8 @@ class DialogManager {
     if (this.bg) this.bg.destroy();
     if (this.text) this.text.destroy();
     if (this.indicator) this.indicator.destroy();
+    if (this.nameBg) this.nameBg.destroy();
+    if (this.nameText) this.nameText.destroy();
     if (this.onComplete) this.onComplete();
   }
 
@@ -108,5 +130,7 @@ class DialogManager {
     if (this.bg) this.bg.destroy();
     if (this.text) this.text.destroy();
     if (this.indicator) this.indicator.destroy();
+    if (this.nameBg) this.nameBg.destroy();
+    if (this.nameText) this.nameText.destroy();
   }
 }
