@@ -4,11 +4,14 @@ class BootScene extends Phaser.Scene {
   }
 
   create() {
-    // Wait for Press Start 2P font to load before proceeding
-    document.fonts.load('10px "Press Start 2P"').then(() => {
+    // Wait for fonts to load before proceeding
+    Promise.all([
+      document.fonts.load('10px "Press Start 2P"'),
+      document.fonts.load('10px "Tiny5"')
+    ]).then(() => {
       this.scene.start('PreloadScene');
     }).catch(() => {
-      // Font failed to load, proceed anyway with fallback
+      // Fonts failed to load, proceed anyway with fallback
       this.scene.start('PreloadScene');
     });
   }

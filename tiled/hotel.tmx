@@ -179,7 +179,8 @@
   </object>
   <object id="19" name="Attendee6" type="npc" x="295" y="280">
    <properties>
-    <property name="dialog" value="You will probably need to fix some bugs in the wild before challenging those testing enthusiasts. They are a wild bunch."/>
+    <property name="dialog">You will probably need to fix some bugs in the wild before challenging those testing enthusiasts.
+ They are a wild bunch.</property>
     <property name="facing" value="left"/>
     <property name="spriteKey" value="npc03"/>
    </properties>

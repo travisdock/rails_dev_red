@@ -7,18 +7,17 @@ class BattleHUD {
   createPlayerHUD(gem) {
     const x = 125;
     const y = 76;
-    this.playerHUD = this.createGemHUD(x, y, gem, true);
+    this.playerHUD = this.createGemHUD(x, y, gem, true, 105);
   }
 
   createEnemyHUD(gem) {
     const x = 8;
     const y = 16;
-    this.enemyHUD = this.createGemHUD(x, y, gem, false);
+    this.enemyHUD = this.createGemHUD(x, y, gem, false, 120);
   }
 
-  createGemHUD(x, y, gem, showHP) {
+  createGemHUD(x, y, gem, showHP, width) {
     const hud = {};
-    const width = 105;
 
     // Background box
     hud.bg = this.scene.add.rectangle(x + width / 2, y + 16, width, 32, 0xf8f8f8)
@@ -26,27 +25,24 @@ class BattleHUD {
       .setScrollFactor(0).setDepth(900);
     this.elements.push(hud.bg);
 
-    // Name and level
+    // Name
     hud.nameText = this.scene.add.text(x + 4, y + 2, `${gem.name}`, {
       ...TEXT_STYLE
     }).setScrollFactor(0).setDepth(901);
     this.elements.push(hud.nameText);
 
-    hud.levelText = this.scene.add.text(x + width - 4, y + 2, `Lv${gem.level}`, {
-      ...TEXT_STYLE
-    }).setOrigin(1, 0).setScrollFactor(0).setDepth(901);
+    // Level (second line, compact font)
+    hud.levelText = this.scene.add.text(x + 4, y + 12, `Lv${gem.level}`, {
+      fontFamily: '"Tiny5", cursive',
+      fontSize: '8px',
+      color: '#111111'
+    }).setScrollFactor(0).setDepth(901);
     this.elements.push(hud.levelText);
-
-    // Type indicator
-    const typeColor = TYPE_COLORS[gem.type] || 0x888888;
-    hud.typeBar = this.scene.add.rectangle(x + 4, y + 13, 40, 3, typeColor)
-      .setOrigin(0, 0).setScrollFactor(0).setDepth(901);
-    this.elements.push(hud.typeBar);
 
     // HP bar background
     const barX = x + 24;
-    const barY = y + 19;
-    const barWidth = 72;
+    const barY = y + 22;
+    const barWidth = width - 32;
     const barHeight = 4;
 
     hud.hpBarBg = this.scene.add.rectangle(barX, barY, barWidth, barHeight, 0x444444)
@@ -60,15 +56,19 @@ class BattleHUD {
     this.elements.push(hud.hpBar);
 
     // HP label
-    hud.hpLabel = this.scene.add.text(x + 4, y + 18, 'HP', {
-      ...TEXT_STYLE, fontSize: '7px'
+    hud.hpLabel = this.scene.add.text(x + 4, y + 21, 'HP', {
+      fontFamily: '"Tiny5", cursive',
+      fontSize: '8px',
+      color: '#111111'
     }).setScrollFactor(0).setDepth(901);
     this.elements.push(hud.hpLabel);
 
     // HP numbers (player only)
     if (showHP) {
-      hud.hpText = this.scene.add.text(x + width - 4, y + 25, `${gem.currentHp}/${gem.maxHp}`, {
-        ...TEXT_STYLE, fontSize: '7px'
+      hud.hpText = this.scene.add.text(x + width - 4, y + 27, `${gem.currentHp}/${gem.maxHp}`, {
+        fontFamily: '"Tiny5", cursive',
+        fontSize: '8px',
+        color: '#111111'
       }).setOrigin(1, 0).setScrollFactor(0).setDepth(901);
       this.elements.push(hud.hpText);
     }
@@ -103,8 +103,6 @@ class BattleHUD {
 
     hud.nameText.setText(gem.name);
     hud.levelText.setText(`Lv${gem.level}`);
-    const typeColor = TYPE_COLORS[gem.type] || 0x888888;
-    hud.typeBar.setFillStyle(typeColor);
     this.updateHP(side, gem.currentHp, gem.maxHp);
   }
 

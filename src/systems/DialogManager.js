@@ -16,7 +16,7 @@ class DialogManager {
 
   show(messages, onComplete, speakerName) {
     if (typeof messages === 'string') messages = [messages];
-    this.messages = messages;
+    this.messages = this.paginateMessages(messages);
     this.currentIndex = 0;
     this.isActive = true;
     this.onComplete = onComplete || null;
@@ -112,6 +112,48 @@ class DialogManager {
     } else {
       this.close();
     }
+  }
+
+  // Split messages that are too long into multiple pages
+  paginateMessages(messages) {
+    const maxLines = 4;
+    const maxCharsPerLine = 27; // approximate chars per line at 8px in 220px width
+    const result = [];
+
+    for (const msg of messages) {
+      // Split message into visual lines (accounting for explicit \n and word wrap)
+      const visualLines = [];
+      const paragraphs = msg.split('\n');
+      for (const para of paragraphs) {
+        if (para.length <= maxCharsPerLine) {
+          visualLines.push(para);
+        } else {
+          // Simulate word wrap
+          const words = para.split(' ');
+          let line = '';
+          for (const word of words) {
+            const test = line ? line + ' ' + word : word;
+            if (test.length > maxCharsPerLine && line) {
+              visualLines.push(line);
+              line = word;
+            } else {
+              line = test;
+            }
+          }
+          if (line) visualLines.push(line);
+        }
+      }
+
+      // Split visual lines into pages of maxLines each
+      if (visualLines.length <= maxLines) {
+        result.push(msg);
+      } else {
+        for (let i = 0; i < visualLines.length; i += maxLines) {
+          result.push(visualLines.slice(i, i + maxLines).join('\n'));
+        }
+      }
+    }
+    return result;
   }
 
   close() {

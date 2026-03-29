@@ -468,7 +468,7 @@
                         {
                          "name":"dialog",
                          "type":"string",
-                         "value":"You will probably need to fix some bugs in the wild before challenging those testing enthusiasts. They are a wild bunch."
+                         "value":"You will probably need to fix some bugs in the wild before challenging those testing enthusiasts.|They are a wild bunch."
                         }, 
                         {
                          "name":"facing",
