@@ -17,41 +17,37 @@
             "expandedObjectLayers": [
                 4
             ],
-            "scale": 0.9977,
+            "scale": 8,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 232.5348301092513,
-                "y": 194.4472286258394
+                "x": 49,
+                "y": 236.1875
             }
         },
         "interior.tsx": {
             "scaleInDock": 1
         },
         "old_town.tmx": {
-            "scale": 1.0146,
+            "expandedObjectLayers": [
+                4
+            ],
+            "scale": 2,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 115.3163808397398,
-                "y": 332.1506012221565
-            }
-        },
-        "park.tmx": {
-            "expandedObjectLayers": [
-                5
-            ],
-            "scale": 0.9014,
-            "selectedLayer": 3,
-            "viewCenter": {
-                "x": 241.84601730641222,
-                "y": 355.0033281562015
+                "x": 273,
+                "y": 115.75
             }
         },
         "parking_lot.tmx": {
-            "scale": 0.8461,
-            "selectedLayer": 4,
+            "expandedObjectLayers": [
+                4,
+                5
+            ],
+            "scale": 3,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 373.47831225623446,
-                "y": 301.3828152700627
+                "x": 539.6666666666666,
+                "y": 223.16666666666669
             }
         },
         "path.tsx": {
@@ -59,17 +55,9 @@
         },
         "trees.tsx": {
             "scaleInDock": 1
-        },
-        "venue.tmx": {
-            "scale": 0.9043,
-            "selectedLayer": 4,
-            "viewCenter": {
-                "x": 225.58885325666262,
-                "y": 259.869512329979
-            }
         }
     },
-    "last.exportedFilePath": "/Users/travisdockter/development/rails_dev_red/assets/maps",
+    "last.exportedFilePath": "/home/travis/development/bor_the_game/rails-quest/assets/maps",
     "last.externalTilesetPath": "/home/travis/development/bor_the_game/rails-quest/tiled",
     "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
     "map.lastUsedFormat": "tmx",
@@ -77,9 +65,8 @@
     ],
     "project": "blastoff_rails_the_game.tiled-project",
     "recentFiles": [
-        "parking_lot.tmx",
-        "park.tmx",
-        "hotel.tmx"
+        "hotel.tmx",
+        "old_town.tmx"
     ],
     "tileset.lastUsedFilter": "Tiled tileset files (*.tsx *.xml)"
 }

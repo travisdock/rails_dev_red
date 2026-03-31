@@ -62,6 +62,15 @@ class PreloadScene extends Phaser.Scene {
     this.load.spritesheet('tiles-city', 'assets/tilesets/city.png', {
       frameWidth: 16, frameHeight: 16
     });
+    this.load.spritesheet('tiles-house', 'assets/tilesets/TilesetHouse.png', {
+      frameWidth: 16, frameHeight: 16
+    });
+    this.load.spritesheet('tiles-path_06', 'assets/tilesets/path_06.png', {
+      frameWidth: 16, frameHeight: 16
+    });
+    this.load.spritesheet('tiles-general_UI', 'assets/tilesets/general_UI.png', {
+      frameWidth: 16, frameHeight: 16
+    });
 
     // Load audio
     this.load.audio('music-hotel', 'assets/audio/hotel.ogg');

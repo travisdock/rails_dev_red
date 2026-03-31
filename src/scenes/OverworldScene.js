@@ -122,12 +122,15 @@ class OverworldScene extends Phaser.Scene {
       // Determine which spritesheet this tileset maps to
       let textureKey = null;
       if (ts.source && ts.source.includes('grass')) textureKey = 'tiles-grass';
+      else if (ts.source && ts.source.includes('path_06')) textureKey = 'tiles-path_06';
       else if (ts.source && ts.source.includes('path')) textureKey = 'tiles-path';
       else if (ts.source && ts.source.includes('trees')) textureKey = 'tiles-trees';
       else if (ts.source && ts.source.includes('elements')) textureKey = 'tiles-elements';
       else if (ts.source && ts.source.includes('interior')) textureKey = 'tiles-interior';
       else if (ts.source && ts.source.includes('floor')) textureKey = 'tiles-floor';
       else if (ts.source && ts.source.includes('city')) textureKey = 'tiles-city';
+      else if (ts.source && ts.source.includes('house')) textureKey = 'tiles-house';
+      else if (ts.source && ts.source.includes('general_UI')) textureKey = 'tiles-general_UI';
 
       if (textureKey && this.textures.exists(textureKey)) {
         // Map each GID to the texture + local frame index
@@ -149,8 +152,17 @@ class OverworldScene extends Phaser.Scene {
         const isCollision = layer.name === 'collisions';
 
         for (let i = 0; i < layer.data.length; i++) {
-          const gid = layer.data[i];
-          if (gid === 0) continue; // empty tile
+          const rawGid = layer.data[i];
+          if (rawGid === 0) continue; // empty tile
+
+          // Tiled stores flip/rotation flags in the high bits of the GID
+          const FLIPPED_H = 0x80000000;
+          const FLIPPED_V = 0x40000000;
+          const FLIPPED_D = 0x20000000;
+          const flipH = !!(rawGid & FLIPPED_H);
+          const flipV = !!(rawGid & FLIPPED_V);
+          const flipD = !!(rawGid & FLIPPED_D);
+          const gid = rawGid & ~(FLIPPED_H | FLIPPED_V | FLIPPED_D);
 
           const x = i % width;
           const y = Math.floor(i / width);
@@ -163,11 +175,29 @@ class OverworldScene extends Phaser.Scene {
 
           const tileInfo = tilesetLookup[gid];
           if (tileInfo) {
-            this.add.sprite(
+            const sprite = this.add.sprite(
               x * TILE_SIZE + TILE_SIZE / 2,
               y * TILE_SIZE + TILE_SIZE / 2,
               tileInfo.key, tileInfo.frame
             ).setDepth(depth);
+
+            // Apply Tiled flip/rotation flags
+            if (flipD) {
+              if (flipH && flipV) {
+                sprite.setAngle(-90);
+                sprite.setFlipX(true);
+              } else if (flipH) {
+                sprite.setAngle(90);
+              } else if (flipV) {
+                sprite.setAngle(-90);
+              } else {
+                sprite.setAngle(90);
+                sprite.setFlipX(true);
+              }
+            } else {
+              if (flipH) sprite.setFlipX(true);
+              if (flipV) sprite.setFlipY(true);
+            }
           }
         }
       }
