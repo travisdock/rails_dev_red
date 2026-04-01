@@ -40,11 +40,11 @@
             "expandedObjectLayers": [
                 4
             ],
-            "scale": 2,
+            "scale": 1.1595,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 589.5,
-                "y": 55.75
+                "x": 357.91289348857265,
+                "y": 268.2190599396291
             }
         },
         "park.tmx": {
@@ -112,7 +112,7 @@
             }
         }
     },
-    "last.exportedFilePath": "/home/travis/development/bor_the_game/rails-quest/assets/maps",
+    "last.exportedFilePath": "/Users/travisdockter/development/rails_dev_red/assets/maps",
     "last.externalTilesetPath": "/home/travis/development/bor_the_game/rails-quest/tiled",
     "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
     "map.lastUsedFormat": "tmx",
