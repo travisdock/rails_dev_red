@@ -276,10 +276,43 @@
                  "width":0,
                  "x":163.666666666667,
                  "y":3.66666666666667
+                }, 
+                {
+                 "height":0,
+                 "id":3,
+                 "name":"VenueDoor",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"right"
+                        }, 
+                        {
+                         "name":"targetMap",
+                         "type":"string",
+                         "value":"venue"
+                        }, 
+                        {
+                         "name":"targetX",
+                         "type":"string",
+                         "value":"2"
+                        }, 
+                        {
+                         "name":"targetY",
+                         "type":"string",
+                         "value":"18"
+                        }],
+                 "rotation":0,
+                 "type":"door",
+                 "visible":true,
+                 "width":0,
+                 "x":637,
+                 "y":144.5
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "x":0,
          "y":0
         }, 
@@ -295,7 +328,7 @@
          "y":0
         }],
  "nextlayerid":8,
- "nextobjectid":3,
+ "nextobjectid":4,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.12.0",

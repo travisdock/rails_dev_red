@@ -131,6 +131,7 @@ class OverworldScene extends Phaser.Scene {
       else if (ts.source && ts.source.includes('city')) textureKey = 'tiles-city';
       else if (ts.source && ts.source.includes('house')) textureKey = 'tiles-house';
       else if (ts.source && ts.source.includes('general_UI')) textureKey = 'tiles-general_UI';
+      else if (ts.source && ts.source.includes('rocket2')) textureKey = 'tiles-rocket2';
 
       if (textureKey && this.textures.exists(textureKey)) {
         // Map each GID to the texture + local frame index

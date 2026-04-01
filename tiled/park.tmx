@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="5">
+<map version="1.10" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="7">
  <editorsettings>
   <export target="../assets/maps/park.json" format="json"/>
  </editorsettings>
  <tileset firstgid="1" source="grass.tsx"/>
  <tileset firstgid="73" source="path.tsx"/>
  <tileset firstgid="121" source="trees.tsx"/>
+ <tileset firstgid="231" source="general_UI.tsx"/>
  <layer id="1" name="ground" width="40" height="40">
   <data encoding="csv">
 52,52,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -68,8 +69,8 @@
 0,0,0,0,0,0,0,142,143,0,0,0,0,0,0,0,0,142,143,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,152,153,0,0,0,0,0,0,0,0,152,153,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1610613002,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1610613002,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,138,139,138,139,138,139,138,139,
 0,132,133,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,148,149,148,149,148,149,148,149,
@@ -138,7 +139,24 @@
 0,0,0,0,0,0,50,50,50,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup id="4" name="objects"/>
+ <objectgroup id="4" name="objects">
+  <object id="5" name="venueDoor" type="door" x="2.66667" y="267.667">
+   <properties>
+    <property name="facing" value="left"/>
+    <property name="targetMap" value="venue"/>
+    <property name="targetX" value="28"/>
+    <property name="targetY" value="16"/>
+   </properties>
+  </object>
+  <object id="6" name="venueDoor" type="door" x="2" y="275.333">
+   <properties>
+    <property name="facing" value="left"/>
+    <property name="targetMap" value="venue"/>
+    <property name="targetX" value="28"/>
+    <property name="targetY" value="16"/>
+   </properties>
+  </object>
+ </objectgroup>
  <objectgroup id="5" name="encounters">
   <object id="3" name="Zone" type="encounter" x="143.992" y="240.578" width="160.05" height="61.9152" rotation="0.376173">
    <properties>

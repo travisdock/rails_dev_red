@@ -32,10 +32,21 @@
                 4
             ],
             "scale": 2,
-            "selectedLayer": 1,
+            "selectedLayer": 4,
             "viewCenter": {
-                "x": 273,
-                "y": 115.75
+                "x": 589.5,
+                "y": 55.75
+            }
+        },
+        "park.tmx": {
+            "expandedObjectLayers": [
+                4
+            ],
+            "scale": 3,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 135,
+                "y": 287.16666666666663
             }
         },
         "parking_lot.tmx": {
@@ -43,11 +54,11 @@
                 4,
                 5
             ],
-            "scale": 3,
-            "selectedLayer": 0,
+            "scale": 1,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 539.6666666666666,
-                "y": 223.16666666666669
+                "x": 308,
+                "y": 300.5
             }
         },
         "path.tsx": {
@@ -55,6 +66,17 @@
         },
         "trees.tsx": {
             "scaleInDock": 1
+        },
+        "venue.tmx": {
+            "expandedObjectLayers": [
+                4
+            ],
+            "scale": 5.5,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 450.72727272727275,
+                "y": 269.9090909090909
+            }
         }
     },
     "last.exportedFilePath": "/home/travis/development/bor_the_game/rails-quest/assets/maps",
