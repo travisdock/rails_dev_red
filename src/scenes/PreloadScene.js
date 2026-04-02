@@ -71,6 +71,18 @@ class PreloadScene extends Phaser.Scene {
     this.load.spritesheet('tiles-general_UI', 'assets/tilesets/general_UI.png', {
       frameWidth: 16, frameHeight: 16
     });
+    this.load.spritesheet('tiles-rocket_new', 'assets/tilesets/rocket_new.png', {
+      frameWidth: 16, frameHeight: 16
+    });
+    this.load.spritesheet('tiles-rocket3', 'assets/tilesets/rocket3.png', {
+      frameWidth: 16, frameHeight: 16
+    });
+    this.load.spritesheet('tiles-rocket4', 'assets/tilesets/rocket4.png', {
+      frameWidth: 16, frameHeight: 16
+    });
+    this.load.spritesheet('tiles-rocket5', 'assets/tilesets/rocket5.png', {
+      frameWidth: 16, frameHeight: 16
+    });
     this.load.spritesheet('tiles-rocket2', 'assets/tilesets/rocket2.png', {
       frameWidth: 16, frameHeight: 16
     });
