@@ -150,13 +150,28 @@
   <script src="src/main.js"></script>
   <script>
   let isMuted = true;
+  let silentAudio = null;
 
   function toggleMute() {
     if (!window.game) return;
     isMuted = !isMuted;
     window.game.sound.mute = isMuted;
-    if (!isMuted && window.game.sound.context && window.game.sound.context.state === 'suspended') {
-      window.game.sound.context.resume();
+
+    if (!isMuted) {
+      // Resume Web Audio context
+      if (window.game.sound.context && window.game.sound.context.state === 'suspended') {
+        window.game.sound.context.resume();
+      }
+      // Play silent <audio> element to force iOS media channel (bypasses silent switch)
+      if (!silentAudio) {
+        silentAudio = new Audio('assets/audio/silence.wav');
+        silentAudio.loop = true;
+      }
+      silentAudio.play().catch(() => {});
+    } else {
+      if (silentAudio) {
+        silentAudio.pause();
+      }
     }
     document.getElementById('mute-btn').textContent = isMuted ? '\u{1F507}' : '\u{1F50A}';
   }
