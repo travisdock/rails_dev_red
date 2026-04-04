@@ -34,27 +34,18 @@ class PartyScene extends Phaser.Scene {
 
       // HP text
       this.add.text(barX + barWidth + 4, barY - 2, `${gem.currentHp}/${gem.maxHp}`, {
-        ...TEXT_STYLE, fontSize: '6px', color: '#aaaaaa'
+        fontFamily: '"Tiny5", cursive', fontSize: '8px', color: '#aaaaaa'
       });
 
       // Type
       this.add.text(160, y, gem.type.toUpperCase(), {
-        ...TEXT_STYLE, fontSize: '6px', color: '#aaaaaa'
-      });
-
-      // Moves
-      const moveNames = gem.moves.map(m => {
-        const def = window.GAME_DATA.moves[m];
-        return def ? def.name : m;
-      }).join(', ');
-      this.add.text(16, y + 14, moveNames, {
-        ...TEXT_STYLE, fontSize: '5px', color: '#777777'
+        fontFamily: '"Tiny5", cursive', fontSize: '8px', color: '#aaaaaa'
       });
     });
 
     // Back prompt
-    this.add.text(GAME_WIDTH / 2, GAME_HEIGHT - 8, 'Press X or BACKSPACE to go back', {
-      ...TEXT_STYLE, fontSize: '6px', color: '#888888'
+    this.add.text(GAME_WIDTH / 2, GAME_HEIGHT - 8, 'Press X / B to go back', {
+      fontFamily: '"Tiny5", cursive', fontSize: '8px', color: '#888888'
     }).setOrigin(0.5);
 
     this.keyX = this.input.keyboard.addKey('X');
