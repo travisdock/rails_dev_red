@@ -154,6 +154,16 @@ class BattleScene extends Phaser.Scene {
   showMoveMenu() {
     this.battleState = 'move_select';
     const gem = this.battleManager.activePlayerGem;
+
+    // If all moves are out of PP, use Struggle
+    const allOutOfPP = gem.pp.every(pp => pp <= 0);
+    if (allOutOfPP) {
+      this.showMessage(`${gem.name} has no moves left!`, () => {
+        this.processEvents(this.battleManager.executeTurn({ type: 'fight', moveId: '__struggle' }));
+      });
+      return;
+    }
+
     const moves = gem.moves.map((moveId, i) => {
       const moveDef = window.GAME_DATA.moves[moveId];
       return {

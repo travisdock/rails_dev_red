@@ -1,36 +1,36 @@
 {
   "authenticate": {
-    "id": "authenticate", "name": "Authenticate", "type": "auth",
+    "id": "authenticate", "name": "Authenticate", "type": "security",
     "category": "special", "power": 40, "accuracy": 100, "pp": 35,
     "description": "Verifies credentials. A basic but reliable attack.",
     "effect": null
   },
   "token_generate": {
-    "id": "token_generate", "name": "Token Generate", "type": "auth",
+    "id": "token_generate", "name": "Token Generate", "type": "security",
     "category": "special", "power": 65, "accuracy": 95, "pp": 15,
     "description": "Generates a secure token. Packs a punch.",
     "effect": null
   },
   "omniauth_integrate": {
-    "id": "omniauth_integrate", "name": "Omniauth Integrate", "type": "auth",
+    "id": "omniauth_integrate", "name": "Omniauth Integrate", "type": "security",
     "category": "special", "power": 80, "accuracy": 90, "pp": 10,
     "description": "Integrates multiple auth providers at once.",
     "effect": null
   },
   "policy_enforce": {
-    "id": "policy_enforce", "name": "Policy Enforce", "type": "auth",
+    "id": "policy_enforce", "name": "Policy Enforce", "type": "security",
     "category": "physical", "power": 70, "accuracy": 100, "pp": 15,
     "description": "Enforces strict authorization policies.",
     "effect": null
   },
   "hash_strength": {
-    "id": "hash_strength", "name": "Hash Strength", "type": "auth",
+    "id": "hash_strength", "name": "Hash Strength", "type": "security",
     "category": "special", "power": 90, "accuracy": 85, "pp": 5,
     "description": "Applies maximum-strength hashing. Devastating but unreliable.",
     "effect": null
   },
   "session_store": {
-    "id": "session_store", "name": "Session Store", "type": "auth",
+    "id": "session_store", "name": "Session Store", "type": "security",
     "category": "status", "power": 0, "accuracy": 100, "pp": 20,
     "description": "Stores session data securely. Raises Sp. Defense.",
     "effect": { "stat": "spDefense", "stages": 1, "target": "self" }
@@ -54,13 +54,13 @@
     "effect": { "stat": "spAttack", "stages": 1, "target": "self" }
   },
   "profile_analyze": {
-    "id": "profile_analyze", "name": "Profile Analyze", "type": "performance",
+    "id": "profile_analyze", "name": "Profile", "type": "performance",
     "category": "special", "power": 75, "accuracy": 95, "pp": 15,
     "description": "Deep performance profiling. Hits hard.",
     "effect": null
   },
   "eager_load": {
-    "id": "eager_load", "name": "Eager Load", "type": "performance",
+    "id": "eager_load", "name": "Preload", "type": "performance",
     "category": "special", "power": 85, "accuracy": 90, "pp": 10,
     "description": "Loads everything upfront. Massive damage.",
     "effect": null
@@ -264,9 +264,9 @@
     "effect": { "stat": "speed", "stages": -1, "target": "self" }
   },
   "external_dep": {
-    "id": "external_dep", "name": "External Dep", "type": "performance",
+    "id": "external_dep", "name": "HTTP 504 Response", "type": "performance",
     "category": "special", "power": 65, "accuracy": 85, "pp": 15,
-    "description": "Calls a third-party API. Powerful but unreliable.",
+    "description": "Gateway Timeout. The server gave up waiting.",
     "effect": null
   },
   "spinner": {
@@ -276,19 +276,19 @@
     "effect": { "stat": "speed", "stages": -1, "target": "enemy" }
   },
   "scan": {
-    "id": "scan", "name": "Scan", "type": "auth",
+    "id": "scan", "name": "Scan", "type": "security",
     "category": "special", "power": 50, "accuracy": 100, "pp": 25,
     "description": "Scans for vulnerabilities. Reliable.",
     "effect": null
   },
   "warn": {
-    "id": "warn", "name": "Warn", "type": "auth",
+    "id": "warn", "name": "Warn", "type": "security",
     "category": "special", "power": 70, "accuracy": 95, "pp": 15,
     "description": "Flags a critical warning. Hits hard.",
     "effect": null
   },
   "ignore": {
-    "id": "ignore", "name": "Ignore", "type": "auth",
+    "id": "ignore", "name": "Ignore", "type": "security",
     "category": "status", "power": 0, "accuracy": 100, "pp": 15,
     "description": "Ignores the warning to move faster. Raises Speed.",
     "effect": { "stat": "speed", "stages": 1, "target": "self" }
@@ -378,13 +378,13 @@
     "effect": { "stat": "defense", "stages": -1, "target": "enemy" }
   },
   "script_inject": {
-    "id": "script_inject", "name": "Script Inject", "type": "auth",
+    "id": "script_inject", "name": "Script Inject", "type": "security",
     "category": "special", "power": 70, "accuracy": 95, "pp": 15,
     "description": "Injects a malicious <script> tag. Hits hard.",
     "effect": null
   },
   "cookie_steal": {
-    "id": "cookie_steal", "name": "Cookie Steal", "type": "auth",
+    "id": "cookie_steal", "name": "Cookie Steal", "type": "security",
     "category": "special", "power": 55, "accuracy": 100, "pp": 20,
     "description": "Steals session cookies. Weakens enemy defenses.",
     "effect": { "stat": "spDefense", "stages": -1, "target": "enemy" }

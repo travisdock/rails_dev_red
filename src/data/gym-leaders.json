@@ -13,7 +13,7 @@
   },
   "greg_molnar": {
     "id": "greg_molnar", "name": "Greg Molnar", "title": "Security Specialist",
-    "gymType": "auth", "badge": "security_pass", "badgeName": "Security Pass",
+    "gymType": "security", "badge": "security_pass", "badgeName": "Security Pass",
     "dialogBefore": "Security isn't a feature.\nIt's a responsibility.\nLet's see if your gems can\nsurvive these security bugs.",
     "dialogAfter": "Your defenses are solid.\nTake the Security Pass.\nKeep your apps safe out there.",
     "party": [

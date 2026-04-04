@@ -47,9 +47,9 @@ class OverworldScene extends Phaser.Scene {
       this.time.delayedCall(400, () => {
         this.dialogManager.show([
           "Welcome to Albuquerque!",
-          "You're here for Blastoff Rails,\nthe conference that's literally\nout of this world!",
-          "To board the rocket, you'll\nneed to earn Boarding Passes\nfrom four challenge masters.",
-          "But first, you'll need\na gem to get started!"
+          "You're here for Blastoff Rails, the conference that's literally out of this world!",
+          "To board the rocket, you'll need to earn Boarding Passes from four elite devs.",
+          "But first, you'll need a gem to get started!"
         ], () => {
           this.player.unfreeze();
           if (!this.starterChosen) {
@@ -935,7 +935,7 @@ class OverworldScene extends Phaser.Scene {
     const starters = [
       { gemId: 'rspec', name: 'RSpec', type: 'Testing', desc: 'All-around solid' },
       { gemId: 'bullet', name: 'Bullet', type: 'Performance', desc: 'Fast special attacker' },
-      { gemId: 'brakeman', name: 'Brakeman', type: 'Security', desc: 'Tough and defensive' }
+      { gemId: 'brakeman', name: 'Brakeman', type: 'security', desc: 'Tough and defensive' }
     ];
 
     this.dialogManager.show([

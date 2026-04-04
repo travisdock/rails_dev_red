@@ -5,7 +5,7 @@ describe('GemInstance', () => {
     it('creates a gem with correct stats at level', () => {
       const gem = new GemInstance('devise', 5);
       expect(gem.name).toBe('Devise');
-      expect(gem.type).toBe('auth');
+      expect(gem.type).toBe('security');
       expect(gem.level).toBe(5);
       expect(gem.currentHp).toBe(gem.maxHp);
       expect(gem.maxHp).toBeGreaterThan(0);
@@ -144,7 +144,7 @@ describe('BugInstance', () => {
   it('creates with correct stats', () => {
     const bug = new BugInstance('n_plus_one', 5);
     expect(bug.name).toBe('N+1 Query');
-    expect(bug.type).toBe('database');
+    expect(bug.type).toBe('performance');
     expect(bug.level).toBe(5);
     expect(bug.isBug).toBe(true);
     expect(bug.currentHp).toBe(bug.maxHp);

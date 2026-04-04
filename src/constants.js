@@ -7,7 +7,7 @@ const ENCOUNTER_RATE = 0.15;
 const MAX_PARTY_SIZE = 6;
 const MAX_MOVES = 4;
 
-const TYPES = ['auth', 'performance', 'testing', 'database', 'frontend', 'devops', 'runtime'];
+const TYPES = ['security', 'performance', 'testing', 'database', 'frontend', 'devops', 'runtime'];
 
 // Text style defaults for crisp pixel text
 const TEXT_STYLE = {
@@ -22,7 +22,7 @@ const TEXT_STYLE_WHITE = {
 };
 
 const TYPE_COLORS = {
-  auth: 0xe74c3c,
+  security: 0xe74c3c,
   performance: 0xf39c12,
   testing: 0x2ecc71,
   database: 0x3498db,

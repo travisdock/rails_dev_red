@@ -68,8 +68,10 @@ class BattleManager {
       return events;
     }
 
-    // Fight action
-    const playerMove = window.GAME_DATA.moves[playerAction.moveId];
+    // Fight action — use Struggle if out of PP
+    const playerMove = playerAction.moveId === '__struggle'
+      ? { name: 'Struggle', type: 'testing', category: 'physical', power: 30, accuracy: 100, effect: null, _isStruggle: true }
+      : window.GAME_DATA.moves[playerAction.moveId];
     const enemyMove = this.pickEnemyMove();
 
     // Determine order by speed
@@ -150,6 +152,14 @@ class BattleManager {
 
     if (effText) {
       events.push({ type: 'message', text: effText });
+    }
+
+    // Struggle recoil
+    if (move._isStruggle) {
+      const recoil = Math.max(1, Math.floor(attacker.maxHp / 4));
+      attacker.takeDamage(recoil);
+      events.push({ type: 'message', text: `${attacker.name} is hurt by recoil!` });
+      events.push({ type: 'damage', side: attackerSide, damage: recoil, currentHp: attacker.currentHp, maxHp: attacker.maxHp });
     }
 
     return events;

@@ -7,16 +7,16 @@ class BattleHUD {
   createPlayerHUD(gem) {
     const x = 125;
     const y = 76;
-    this.playerHUD = this.createGemHUD(x, y, gem, true, 105);
+    this.playerHUD = this.createGemHUD(x, y, gem, false, 105);
   }
 
   createEnemyHUD(gem) {
     const x = 8;
     const y = 16;
-    this.enemyHUD = this.createGemHUD(x, y, gem, false, 120);
+    this.enemyHUD = this.createGemHUD(x, y, gem, false, 135, 73);
   }
 
-  createGemHUD(x, y, gem, showHP, width) {
+  createGemHUD(x, y, gem, showHP, width, barWidth) {
     const hud = {};
 
     // Background box
@@ -42,7 +42,7 @@ class BattleHUD {
     // HP bar background
     const barX = x + 24;
     const barY = y + 22;
-    const barWidth = width - 32;
+    barWidth = barWidth || (width - 32);
     const barHeight = 4;
 
     hud.hpBarBg = this.scene.add.rectangle(barX, barY, barWidth, barHeight, 0x444444)

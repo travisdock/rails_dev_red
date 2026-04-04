@@ -18,15 +18,14 @@
     "baseStats": { "hp": 40, "attack": 55, "defense": 30, "spAttack": 65, "spDefense": 35, "speed": 70 },
     "baseXP": 62,
     "learnset": [
-      { "level": 1, "move": "query_detect" },
-      { "level": 5, "move": "benchmark" },
-      { "level": 11, "move": "eager_load" },
+      { "level": 1, "move": "eager_load" },
+      { "level": 11, "move": "benchmark" },
       { "level": 17, "move": "profile_analyze" }
     ],
     "evolution": null
   },
   "brakeman": {
-    "id": "brakeman", "name": "Brakeman", "type": "auth",
+    "id": "brakeman", "name": "Brakeman", "type": "security",
     "description": "A static analysis security scanner for Rails. Finds vulnerabilities before they find you.",
     "baseStats": { "hp": 55, "attack": 30, "defense": 65, "spAttack": 55, "spDefense": 60, "speed": 40 },
     "baseXP": 64,
@@ -38,7 +37,7 @@
     "evolution": null
   },
   "devise": {
-    "id": "devise", "name": "Devise", "type": "auth",
+    "id": "devise", "name": "Devise", "type": "security",
     "description": "A flexible authentication solution for Rails.",
     "baseStats": { "hp": 50, "attack": 35, "defense": 55, "spAttack": 60, "spDefense": 65, "speed": 40 },
     "baseXP": 64,
@@ -51,7 +50,7 @@
     "evolution": null
   },
   "pundit": {
-    "id": "pundit", "name": "Pundit", "type": "auth",
+    "id": "pundit", "name": "Pundit", "type": "security",
     "description": "Minimal authorization through OO design.",
     "baseStats": { "hp": 45, "attack": 30, "defense": 60, "spAttack": 55, "spDefense": 70, "speed": 35 },
     "baseXP": 60,
@@ -64,7 +63,7 @@
     "evolution": null
   },
   "bcrypt": {
-    "id": "bcrypt", "name": "Bcrypt", "type": "auth",
+    "id": "bcrypt", "name": "Bcrypt", "type": "security",
     "description": "Rock-solid password hashing. Slow but unbreakable.",
     "baseStats": { "hp": 65, "attack": 25, "defense": 80, "spAttack": 40, "spDefense": 75, "speed": 20 },
     "baseXP": 70,

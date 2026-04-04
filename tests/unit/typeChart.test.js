@@ -2,21 +2,21 @@ import { describe, it, expect } from 'vitest';
 
 describe('TypeChart', () => {
   it('returns super effective for known pairs', () => {
-    expect(TypeChart.getEffectiveness('auth', 'database')).toBe(2);
-    expect(TypeChart.getEffectiveness('testing', 'auth')).toBe(2);
-    expect(TypeChart.getEffectiveness('performance', 'testing')).toBe(2);
-    expect(TypeChart.getEffectiveness('database', 'devops')).toBe(2);
+    expect(TypeChart.getEffectiveness('security', 'security')).toBe(2);
+    expect(TypeChart.getEffectiveness('security', 'database')).toBe(2);
+    expect(TypeChart.getEffectiveness('testing', 'testing')).toBe(2);
+    expect(TypeChart.getEffectiveness('runtime', 'frontend')).toBe(2);
   });
 
   it('returns not very effective for known pairs', () => {
-    expect(TypeChart.getEffectiveness('auth', 'testing')).toBe(0.5);
-    expect(TypeChart.getEffectiveness('testing', 'performance')).toBe(0.5);
-    expect(TypeChart.getEffectiveness('performance', 'performance')).toBe(0.5);
+    expect(TypeChart.getEffectiveness('security', 'performance')).toBe(1);
+    expect(TypeChart.getEffectiveness('database', 'security')).toBe(0.5);
+    expect(TypeChart.getEffectiveness('performance', 'devops')).toBe(1);
   });
 
   it('returns neutral for neutral pairs', () => {
-    expect(TypeChart.getEffectiveness('auth', 'auth')).toBe(1);
-    expect(TypeChart.getEffectiveness('auth', 'performance')).toBe(1);
+    expect(TypeChart.getEffectiveness('security', 'performance')).toBe(1);
+    expect(TypeChart.getEffectiveness('testing', 'security')).toBe(1);
   });
 
   it('covers all 36 type combinations', () => {
