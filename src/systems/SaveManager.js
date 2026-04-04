@@ -1,6 +1,11 @@
 const SaveManager = {
-  SAVE_KEY: 'rails_quest_save',
+  SAVE_KEY_PREFIX: 'rails_quest_save_',
   SAVE_VERSION: 1,
+  activeSlot: 1,
+
+  _key(slot) {
+    return this.SAVE_KEY_PREFIX + (slot || this.activeSlot);
+  },
 
   save(gameState) {
     const data = {
@@ -20,7 +25,7 @@ const SaveManager = {
       }
     };
     try {
-      localStorage.setItem(this.SAVE_KEY, JSON.stringify(data));
+      localStorage.setItem(this._key(), JSON.stringify(data));
       return true;
     } catch (e) {
       console.error('Save failed:', e);
@@ -28,9 +33,9 @@ const SaveManager = {
     }
   },
 
-  load() {
+  load(slot) {
     try {
-      const raw = localStorage.getItem(this.SAVE_KEY);
+      const raw = localStorage.getItem(this._key(slot));
       if (!raw) return null;
       const data = JSON.parse(raw);
       if (data.version !== this.SAVE_VERSION) {
@@ -44,11 +49,26 @@ const SaveManager = {
     }
   },
 
-  hasSave() {
-    return localStorage.getItem(this.SAVE_KEY) !== null;
+  hasSave(slot) {
+    return localStorage.getItem(this._key(slot)) !== null;
   },
 
-  deleteSave() {
-    localStorage.removeItem(this.SAVE_KEY);
+  deleteSave(slot) {
+    localStorage.removeItem(this._key(slot));
+  },
+
+  // Get display info for a slot without full deserialization
+  slotInfo(slot) {
+    const data = this.load(slot);
+    if (!data) return null;
+    const party = data.player.party || [];
+    const firstGem = party[0];
+    let gemName = '???';
+    if (firstGem) {
+      const gemDef = window.GAME_DATA && window.GAME_DATA.gems[firstGem.gemId];
+      gemName = gemDef ? gemDef.name : (firstGem.gemId || '???');
+    }
+    const badges = (data.player.badges || []).length;
+    return { gemName, badges };
   }
 };

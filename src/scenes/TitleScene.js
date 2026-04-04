@@ -33,17 +33,19 @@ class TitleScene extends Phaser.Scene {
       { x: GAME_WIDTH / 2, y: 80 }
     ], true);
 
-    // Menu options
-    const menuY = 110;
+    // Save slots
+    const menuY = 105;
     this.menuItems = [];
     this.selectedIndex = 0;
 
-    const hasSave = SaveManager.hasSave();
-
-    if (hasSave) {
-      this.menuItems.push({ text: 'CONTINUE', action: 'continue' });
+    for (let slot = 1; slot <= 3; slot++) {
+      const info = SaveManager.slotInfo(slot);
+      if (info) {
+        this.menuItems.push({ text: `${info.gemName}`, action: 'continue', slot });
+      } else {
+        this.menuItems.push({ text: 'New Game Here', action: 'new', slot });
+      }
     }
-    this.menuItems.push({ text: 'NEW GAME', action: 'new' });
 
     this.menuTexts = this.menuItems.map((item, i) => {
       return this.add.text(GAME_WIDTH / 2, menuY + i * 14, item.text, {
@@ -52,7 +54,7 @@ class TitleScene extends Phaser.Scene {
     });
 
     // Cursor
-    this.cursor = this.add.text(GAME_WIDTH / 2 - 40, menuY, '>', {
+    this.cursor = this.add.text(GAME_WIDTH / 2 - 60, menuY, '>', {
       ...TEXT_STYLE_WHITE
     }).setOrigin(0.5);
 
@@ -92,14 +94,15 @@ class TitleScene extends Phaser.Scene {
   }
 
   updateCursor() {
-    const menuY = 110;
+    const menuY = 105;
     this.cursor.setY(menuY + this.selectedIndex * 14);
   }
 
   selectOption() {
-    const action = this.menuItems[this.selectedIndex].action;
+    const item = this.menuItems[this.selectedIndex];
+    SaveManager.activeSlot = item.slot;
 
-    if (action === 'continue') {
+    if (item.action === 'continue') {
       const saveData = SaveManager.load();
       if (saveData) {
         ProgressManager.init(saveData);
