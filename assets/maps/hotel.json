@@ -186,13 +186,13 @@
                  "type":"gym_entrance",
                  "visible":true,
                  "width":17.5,
-                 "x":383.5,
-                 "y":42.5
+                 "x":415.5,
+                 "y":74.5
                 }, 
                 {
                  "height":0,
                  "id":9,
-                 "name":"trainer1",
+                 "name":"minion5",
                  "opacity":1,
                  "properties":[
                         {
@@ -220,7 +220,7 @@
                 {
                  "height":0,
                  "id":10,
-                 "name":"trainer2",
+                 "name":"minion1",
                  "opacity":1,
                  "properties":[
                         {
@@ -248,13 +248,13 @@
                 {
                  "height":0,
                  "id":11,
-                 "name":"trainer3",
+                 "name":"minion2",
                  "opacity":1,
                  "properties":[
                         {
                          "name":"facing",
                          "type":"string",
-                         "value":"up"
+                         "value":"down"
                         }, 
                         {
                          "name":"spriteKey",
@@ -270,19 +270,19 @@
                  "type":"trainer",
                  "visible":true,
                  "width":0,
-                 "x":183.5,
-                 "y":136
+                 "x":184,
+                 "y":56
                 }, 
                 {
                  "height":0,
                  "id":12,
-                 "name":"trainer4",
+                 "name":"minion3",
                  "opacity":1,
                  "properties":[
                         {
                          "name":"facing",
                          "type":"string",
-                         "value":"down"
+                         "value":"up"
                         }, 
                         {
                          "name":"spriteKey",
@@ -299,18 +299,18 @@
                  "visible":true,
                  "width":0,
                  "x":248,
-                 "y":58
+                 "y":118.5
                 }, 
                 {
                  "height":0,
                  "id":13,
-                 "name":"trainer5",
+                 "name":"minion4",
                  "opacity":1,
                  "properties":[
                         {
                          "name":"facing",
                          "type":"string",
-                         "value":"up"
+                         "value":"down"
                         }, 
                         {
                          "name":"spriteKey",
@@ -326,8 +326,8 @@
                  "type":"trainer",
                  "visible":true,
                  "width":0,
-                 "x":327.5,
-                 "y":122
+                 "x":312,
+                 "y":55
                 }, 
                 {
                  "height":0,

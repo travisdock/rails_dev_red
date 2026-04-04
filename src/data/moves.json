@@ -252,7 +252,7 @@
     "effect": { "stat": "speed", "stages": -1, "target": "enemy" }
   },
   "safe_navigate": {
-    "id": "safe_navigate", "name": "Safe Navigate", "type": "testing",
+    "id": "safe_navigate", "name": "Safe Navigate", "type": "runtime",
     "category": "status", "power": 0, "accuracy": 100, "pp": 20,
     "description": "Uses the &. operator to guard against nil. Raises Defense.",
     "effect": { "stat": "defense", "stages": 1, "target": "self" }
@@ -274,6 +274,78 @@
     "category": "status", "power": 0, "accuracy": 100, "pp": 20,
     "description": "An endless loading spinner. Lowers enemy Speed.",
     "effect": { "stat": "speed", "stages": -1, "target": "enemy" }
+  },
+  "works_on_my_machine": {
+    "id": "works_on_my_machine", "name": "Works On My Machine", "type": "testing",
+    "category": "special", "power": 70, "accuracy": 95, "pp": 15,
+    "description": "It passes locally. Not my problem. Solid hit.",
+    "effect": null
+  },
+  "heisenbug": {
+    "id": "heisenbug", "name": "Heisenbug", "type": "testing",
+    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "description": "Disappears when you try to observe it. Raises Sp. Defense.",
+    "effect": { "stat": "spDefense", "stages": 1, "target": "self" }
+  },
+  "shared_state": {
+    "id": "shared_state", "name": "Shared State", "type": "testing",
+    "category": "special", "power": 65, "accuracy": 100, "pp": 20,
+    "description": "Mutable state leaking between tests. Steady damage.",
+    "effect": null
+  },
+  "global_mutate": {
+    "id": "global_mutate", "name": "Global Variable", "type": "testing",
+    "category": "special", "power": 50, "accuracy": 100, "pp": 20,
+    "description": "Modifies a global without resetting it. Corrupts defenses.",
+    "effect": { "stat": "spDefense", "stages": -1, "target": "enemy" }
+  },
+  "api_down": {
+    "id": "api_down", "name": "API Down", "type": "testing",
+    "category": "special", "power": 80, "accuracy": 75, "pp": 10,
+    "description": "The third-party service is gone. Devastating but unreliable.",
+    "effect": null
+  },
+  "version_conflict": {
+    "id": "version_conflict", "name": "Version Conflict", "type": "testing",
+    "category": "status", "power": 0, "accuracy": 100, "pp": 20,
+    "description": "Incompatible dependency versions. Lowers enemy Defense.",
+    "effect": { "stat": "defense", "stages": -1, "target": "enemy" }
+  },
+  "single_core": {
+    "id": "single_core", "name": "Single Core CPU", "type": "testing",
+    "category": "special", "power": 60, "accuracy": 100, "pp": 20,
+    "description": "Tests running on a single core. Slow but steady damage.",
+    "effect": null
+  },
+  "coffee_break": {
+    "id": "coffee_break", "name": "Coffee Break", "type": "testing",
+    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "description": "20 minutes to run. Go grab a coffee. Lowers enemy Attack.",
+    "effect": { "stat": "attack", "stages": -1, "target": "enemy" }
+  },
+  "hardcode": {
+    "id": "hardcode", "name": "Hard Coded Values", "type": "testing",
+    "category": "special", "power": 65, "accuracy": 100, "pp": 20,
+    "description": "Hardcoded values. Reliable but breaks on any change.",
+    "effect": null
+  },
+  "tight_coupling": {
+    "id": "tight_coupling", "name": "Tight Coupling", "type": "testing",
+    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "description": "Coupled to implementation details. Raises Attack but lowers Speed.",
+    "effect": { "stat": "attack", "stages": 1, "target": "self" }
+  },
+  "sleep_2": {
+    "id": "sleep_2", "name": "sleep(2)", "type": "testing",
+    "category": "status", "power": 0, "accuracy": 100, "pp": 20,
+    "description": "Sleeps and prays the race condition resolves. Lowers own Speed.",
+    "effect": { "stat": "speed", "stages": -1, "target": "self" }
+  },
+  "retry": {
+    "id": "retry", "name": "Retry", "type": "testing",
+    "category": "special", "power": 55, "accuracy": 80, "pp": 25,
+    "description": "Just rerun it. Maybe it'll pass this time.",
+    "effect": null
   },
   "bobby_tables": {
     "id": "bobby_tables", "name": "Bobby Tables", "type": "database",
@@ -342,7 +414,7 @@
     "effect": null
   },
   "dot_lenght": {
-    "id": "dot_lenght", "name": ".lenght", "type": "testing",
+    "id": "dot_lenght", "name": ".lenght", "type": "runtime",
     "category": "special", "power": 75, "accuracy": 80, "pp": 15,
     "description": "Calls a misspelled method with confidence. Hits hard but often misses.",
     "effect": null

@@ -7,7 +7,7 @@
     "moves": ["slow_query", "lazy_load"]
   },
   "no_method_error": {
-    "id": "no_method_error", "name": "NoMethodError", "type": "testing",
+    "id": "no_method_error", "name": "NoMethodError", "type": "runtime",
     "description": "NoMethodError: undefined method for nil:NilClass",
     "baseStats": { "hp": 30, "attack": 40, "defense": 20, "spAttack": 35, "spDefense": 25, "speed": 60 },
     "baseXP": 48,
@@ -74,42 +74,42 @@
     "description": "Passes on Monday, fails on Tuesday. Nobody knows why.",
     "baseStats": { "hp": 30, "attack": 30, "defense": 25, "spAttack": 35, "spDefense": 30, "speed": 40 },
     "baseXP": 42,
-    "moves": ["expect_matcher", "mock_object"]
+    "moves": ["sleep_2", "retry"]
   },
   "brittle_spec": {
     "id": "brittle_spec", "name": "Brittle Spec", "type": "testing",
     "description": "One tiny change and the whole spec explodes.",
     "baseStats": { "hp": 30, "attack": 35, "defense": 25, "spAttack": 35, "spDefense": 30, "speed": 40 },
     "baseXP": 44,
-    "moves": ["assert_equal", "binding_pry"]
+    "moves": ["hardcode", "tight_coupling"]
   },
   "slow_test_suite": {
     "id": "slow_test_suite", "name": "Slow Test Suite", "type": "testing",
     "description": "20 minutes to run. Better grab some coffee.",
     "baseStats": { "hp": 45, "attack": 30, "defense": 35, "spAttack": 40, "spDefense": 35, "speed": 35 },
     "baseXP": 52,
-    "moves": ["integration_test", "build_strategy", "selenium_driver"]
+    "moves": ["single_core", "coffee_break"]
   },
   "external_dependency": {
     "id": "external_dependency", "name": "External Dep", "type": "testing",
     "description": "Tests fail whenever the third-party API goes down.",
     "baseStats": { "hp": 40, "attack": 35, "defense": 30, "spAttack": 40, "spDefense": 40, "speed": 45 },
     "baseXP": 50,
-    "moves": ["mock_object", "show_source", "integration_test"]
+    "moves": ["api_down", "version_conflict"]
   },
   "test_pollution": {
     "id": "test_pollution", "name": "Test Pollution", "type": "testing",
     "description": "Shared state leaking between tests. Order-dependent failures.",
     "baseStats": { "hp": 40, "attack": 40, "defense": 35, "spAttack": 45, "spDefense": 40, "speed": 55 },
     "baseXP": 58,
-    "moves": ["transient_blast", "nested_factory", "mock_object"]
+    "moves": ["shared_state", "global_mutate"]
   },
   "phantom_failure": {
     "id": "phantom_failure", "name": "Phantom Failure", "type": "testing",
     "description": "The test fails in CI but passes locally. Every. Single. Time.",
     "baseStats": { "hp": 40, "attack": 40, "defense": 35, "spAttack": 45, "spDefense": 40, "speed": 55 },
     "baseXP": 58,
-    "moves": ["selenium_driver", "click_button", "visit_page"]
+    "moves": ["works_on_my_machine", "heisenbug"]
   },
   "auth_bypass": {
     "id": "auth_bypass", "name": "Auth Bypass", "type": "auth",

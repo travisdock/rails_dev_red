@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bug Reference</title>
+  <style>
+    body {
+      background: #1a1a2e;
+      color: #eee;
+      font-family: monospace;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    h1 { color: #e94560; }
+    h2 { color: #e94560; margin-top: 40px; border-bottom: 1px solid #0f3460; padding-bottom: 8px; }
+    .type-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: bold;
+      color: #fff;
+    }
+    .bug-card {
+      background: #16213e;
+      border: 2px solid #0f3460;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 12px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .bug-sprite {
+      image-rendering: pixelated;
+      width: 64px;
+      height: 64px;
+      flex-shrink: 0;
+      background: #0f3460;
+      border-radius: 4px;
+    }
+    .bug-sprite.missing {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      color: #555;
+    }
+    .bug-info { flex: 1; min-width: 0; }
+    .bug-name { font-size: 16px; font-weight: bold; color: #53d8fb; }
+    .bug-id { font-size: 11px; color: #666; margin-left: 8px; }
+    .bug-desc { font-size: 12px; color: #aaa; margin: 4px 0 8px; font-style: italic; }
+    .stats {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+    .stat {
+      background: #0f3460;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 11px;
+    }
+    .stat-label { color: #888; }
+    .stat-val { color: #53d8fb; font-weight: bold; }
+    .moves-list { display: flex; gap: 6px; flex-wrap: wrap; }
+    .move-tag {
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      border: 1px solid #333;
+    }
+    .move-name { font-weight: bold; color: #fff; }
+    .move-detail { color: #aaa; font-size: 10px; }
+    .nav { margin-bottom: 20px; }
+    .nav a { color: #53d8fb; margin-right: 16px; }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <a href="sprites.html">Sprites</a>
+    <a href="bugs.html">Bugs</a>
+  </div>
+  <h1>Bug Reference</h1>
+  <div id="content"></div>
+
+  <script>
+    const TYPE_COLORS = {
+      auth: '#e74c3c',
+      performance: '#f39c12',
+      testing: '#2ecc71',
+      database: '#3498db',
+      frontend: '#9b59b6',
+      devops: '#1abc9c',
+      runtime: '#e67e22'
+    };
+
+    async function load(url) {
+      const r = await fetch(url);
+      return r.json();
+    }
+
+    async function init() {
+      const [bugs, moves] = await Promise.all([
+        load('src/data/bugs.json'),
+        load('src/data/moves.json')
+      ]);
+
+      // Group by type
+      const byType = {};
+      for (const [id, bug] of Object.entries(bugs)) {
+        const t = bug.type;
+        if (!byType[t]) byType[t] = [];
+        byType[t].push({ ...bug, _id: id });
+      }
+
+      const content = document.getElementById('content');
+      const typeOrder = ['runtime', 'testing', 'auth', 'database', 'performance', 'frontend', 'devops'];
+
+      for (const type of typeOrder) {
+        const group = byType[type];
+        if (!group) continue;
+
+        const h2 = document.createElement('h2');
+        h2.innerHTML = `<span class="type-badge" style="background:${TYPE_COLORS[type]}">${type.toUpperCase()}</span> (${group.length})`;
+        content.appendChild(h2);
+
+        for (const bug of group) {
+          const card = document.createElement('div');
+          card.className = 'bug-card';
+
+          // Sprite
+          const img = new Image();
+          img.className = 'bug-sprite';
+          img.src = `assets/sprites/bugs/${bug._id}.png`;
+          img.onerror = () => {
+            const placeholder = document.createElement('div');
+            placeholder.className = 'bug-sprite missing';
+            placeholder.textContent = 'no sprite';
+            card.replaceChild(placeholder, img);
+          };
+          card.appendChild(img);
+
+          // Info
+          const info = document.createElement('div');
+          info.className = 'bug-info';
+
+          const s = bug.baseStats;
+          const statTotal = s.hp + s.attack + s.defense + s.spAttack + s.spDefense + s.speed;
+
+          info.innerHTML = `
+            <div>
+              <span class="bug-name">${bug.name}</span>
+              <span class="bug-id">${bug._id}</span>
+              <span class="type-badge" style="background:${TYPE_COLORS[bug.type]}">${bug.type}</span>
+            </div>
+            <div class="bug-desc">${bug.description}</div>
+            <div class="stats">
+              <span class="stat"><span class="stat-label">HP</span> <span class="stat-val">${s.hp}</span></span>
+              <span class="stat"><span class="stat-label">ATK</span> <span class="stat-val">${s.attack}</span></span>
+              <span class="stat"><span class="stat-label">DEF</span> <span class="stat-val">${s.defense}</span></span>
+              <span class="stat"><span class="stat-label">SPA</span> <span class="stat-val">${s.spAttack}</span></span>
+              <span class="stat"><span class="stat-label">SPD</span> <span class="stat-val">${s.spDefense}</span></span>
+              <span class="stat"><span class="stat-label">SPE</span> <span class="stat-val">${s.speed}</span></span>
+              <span class="stat"><span class="stat-label">TOT</span> <span class="stat-val">${statTotal}</span></span>
+              <span class="stat"><span class="stat-label">XP</span> <span class="stat-val">${bug.baseXP}</span></span>
+            </div>
+            <div class="moves-list">
+              ${bug.moves.map(mId => {
+                const m = moves[mId];
+                if (!m) return `<span class="move-tag"><span class="move-name">???</span></span>`;
+                const pow = m.power > 0 ? `${m.power}pw` : 'status';
+                const color = TYPE_COLORS[m.type] || '#333';
+                return `<span class="move-tag" style="border-color:${color}">
+                  <span class="move-name">${m.name}</span>
+                  <span class="move-detail">${pow} ${m.accuracy}acc ${m.pp}pp</span>
+                </span>`;
+              }).join('')}
+            </div>
+          `;
+          card.appendChild(info);
+          content.appendChild(card);
+        }
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>

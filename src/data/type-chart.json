@@ -1,8 +1,9 @@
 {
-  "auth":        { "auth": 1, "performance": 1,   "testing": 0.5, "database": 2,   "frontend": 1,   "devops": 1   },
-  "performance": { "auth": 1, "performance": 0.5, "testing": 2,   "database": 1,   "frontend": 0.5, "devops": 2   },
-  "testing":     { "auth": 2, "performance": 0.5, "testing": 0.5, "database": 1,   "frontend": 2,   "devops": 1   },
-  "database":    { "auth": 0.5, "performance": 1, "testing": 1,   "database": 0.5, "frontend": 1,   "devops": 2   },
-  "frontend":    { "auth": 1, "performance": 2,   "testing": 0.5, "database": 1,   "frontend": 0.5, "devops": 1   },
-  "devops":      { "auth": 1, "performance": 0.5, "testing": 1,   "database": 0.5, "frontend": 1,   "devops": 0.5 }
+  "auth":        { "auth": 1, "performance": 1,   "testing": 0.5, "database": 2,   "frontend": 1,   "devops": 1,   "runtime": 1   },
+  "performance": { "auth": 1, "performance": 0.5, "testing": 2,   "database": 1,   "frontend": 0.5, "devops": 2,   "runtime": 2   },
+  "testing":     { "auth": 2, "performance": 0.5, "testing": 0.5, "database": 1,   "frontend": 2,   "devops": 1,   "runtime": 0.5 },
+  "database":    { "auth": 0.5, "performance": 1, "testing": 1,   "database": 0.5, "frontend": 1,   "devops": 2,   "runtime": 1   },
+  "frontend":    { "auth": 1, "performance": 2,   "testing": 0.5, "database": 1,   "frontend": 0.5, "devops": 1,   "runtime": 1   },
+  "devops":      { "auth": 1, "performance": 0.5, "testing": 1,   "database": 0.5, "frontend": 1,   "devops": 0.5, "runtime": 2   },
+  "runtime":     { "auth": 1, "performance": 0.5, "testing": 2,   "database": 1,   "frontend": 2,   "devops": 0.5, "runtime": 1   }
 }
