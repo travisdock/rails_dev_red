@@ -141,7 +141,15 @@ class BattleManager {
     const stab = (move.type === attacker.type) ? 1.5 : 1.0;
 
     // Type effectiveness
-    const typeEff = TypeChart.getEffectiveness(move.type, defender.type);
+    let typeEff = TypeChart.getEffectiveness(move.type, defender.type);
+    // Same-type moves are super effective when gems attack bugs, but neutral when bugs attack gems
+    if (move.type === defender.type && move.type === attacker.type) {
+      if (attackerSide === 'player' && defender.isBug) {
+        typeEff = Math.max(typeEff, 2);
+      } else if (attackerSide === 'enemy' && !defender.isBug) {
+        typeEff = 1;
+      }
+    }
     const effText = TypeChart.getEffectivenessText(typeEff);
 
     const damage = GameMath.calculateDamage(attacker.level, move.power, atkStat, defStat, stab, typeEff);

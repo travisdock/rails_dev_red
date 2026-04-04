@@ -20,7 +20,7 @@ class MenuScene extends Phaser.Scene {
     });
 
     // Show player info
-    this.add.text(8, 8, `Badges: ${ProgressManager.badgeCount()}`, {
+    this.add.text(8, 8, `Passes: ${ProgressManager.badgeCount()}`, {
       ...TEXT_STYLE_WHITE
     }).setDepth(1000);
   }
