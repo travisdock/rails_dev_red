@@ -88,7 +88,7 @@
    <property name="targetX" value="1"/>
    <property name="targetY" value="1"/>
   </properties>
-  <object id="1" name="hotel_clerk" type="npc" x="392" y="188">
+  <object id="1" name="Hotel Clerk" type="npc" x="392" y="188">
    <properties>
     <property name="dialog" value="Welcome to Hotel Albuquerque! We hope you enjoy your stay."/>
     <property name="facing" value="down"/>
@@ -99,7 +99,7 @@
   <object id="5" name="heal" type="heal" x="440" y="200">
    <properties>
     <property name="facing" value="down"/>
-    <property name="spriteKey" value="npc06"/>
+    <property name="spriteKey" value="pg15"/>
    </properties>
   </object>
   <object id="7" name="swett_gym" type="gym_entrance" x="415.5" y="81.5" width="17.5" height="14.5">
@@ -126,7 +126,7 @@
   <object id="11" name="minion2" type="trainer" x="184" y="56">
    <properties>
     <property name="facing" value="down"/>
-    <property name="spriteKey" value="npc03"/>
+    <property name="spriteKey" value="pg6"/>
     <property name="trainerId" value="test_minion_02"/>
    </properties>
   </object>
@@ -140,7 +140,7 @@
   <object id="13" name="minion4" type="trainer" x="312" y="55">
    <properties>
     <property name="facing" value="down"/>
-    <property name="spriteKey" value="npc05"/>
+    <property name="spriteKey" value="pg11"/>
     <property name="trainerId" value="test_minion_04"/>
    </properties>
   </object>
@@ -182,7 +182,7 @@
   <object id="19" name="Attendee6" type="npc" x="295" y="280">
    <properties>
     <property name="dialog">You will probably need to fix some bugs in the wild before challenging those testing enthusiasts.
- They are a wild bunch.</property>
+ They are a tough bunch.</property>
     <property name="facing" value="left"/>
     <property name="spriteKey" value="pg6"/>
    </properties>

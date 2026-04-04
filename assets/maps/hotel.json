@@ -147,7 +147,7 @@
                         {
                          "name":"spriteKey",
                          "type":"string",
-                         "value":"npc06"
+                         "value":"pg15"
                         }],
                  "rotation":0,
                  "type":"heal",
@@ -254,7 +254,7 @@
                         {
                          "name":"spriteKey",
                          "type":"string",
-                         "value":"npc03"
+                         "value":"pg6"
                         }, 
                         {
                          "name":"trainerId",
@@ -310,7 +310,7 @@
                         {
                          "name":"spriteKey",
                          "type":"string",
-                         "value":"npc05"
+                         "value":"pg11"
                         }, 
                         {
                          "name":"trainerId",
@@ -473,7 +473,7 @@
                         {
                          "name":"dialog",
                          "type":"string",
-                         "value":"You will probably need to fix some bugs in the wild before challenging those testing enthusiasts.\n They are a wild bunch."
+                         "value":"You will probably need to fix some bugs in the wild before challenging those testing enthusiasts.\n They are a tough bunch."
                         }, 
                         {
                          "name":"facing",

@@ -89,7 +89,7 @@
   "test_minion_02": {
     "id": "test_minion_02", "name": "Attendee Quinn", "class": "Conference Attendee",
     "dialogBefore": "I found some bugs in\nmy code! Let me throw\nthem at you!",
-    "dialogAfter": "I guess I need better\ngems to squash those...",
+    "dialogAfter": "I guess you squashed them...",
     "party": [
       { "bugId": "flaky_test", "level": 5 },
       { "bugId": "no_method_error", "level": 6 }
