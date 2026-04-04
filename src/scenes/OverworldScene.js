@@ -942,12 +942,12 @@ class OverworldScene extends Phaser.Scene {
       "Choose your first gem!",
     ], () => {
       // Show starter menu
-      const menu = new MenuBox(this, GAME_WIDTH / 2 - 60, GAME_HEIGHT / 2 - 30, [
+      const menu = new MenuBox(this, GAME_WIDTH / 2 - 80, GAME_HEIGHT / 2 - 30, [
         { text: `${starters[0].name} (${starters[0].type})`, value: starters[0] },
         { text: `${starters[1].name} (${starters[1].type})`, value: starters[1] },
         { text: `${starters[2].name} (${starters[2].type})`, value: starters[2] }
       ], {
-        itemWidth: 120,
+        itemWidth: 175,
         depth: 1100,
         onSelect: (opt) => {
           menu.destroy();

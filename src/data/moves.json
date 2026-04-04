@@ -275,6 +275,24 @@
     "description": "An endless loading spinner. Lowers enemy Speed.",
     "effect": { "stat": "speed", "stages": -1, "target": "enemy" }
   },
+  "scan": {
+    "id": "scan", "name": "Scan", "type": "auth",
+    "category": "special", "power": 50, "accuracy": 100, "pp": 25,
+    "description": "Scans for vulnerabilities. Reliable.",
+    "effect": null
+  },
+  "warn": {
+    "id": "warn", "name": "Warn", "type": "auth",
+    "category": "special", "power": 70, "accuracy": 95, "pp": 15,
+    "description": "Flags a critical warning. Hits hard.",
+    "effect": null
+  },
+  "ignore": {
+    "id": "ignore", "name": "Ignore", "type": "auth",
+    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "description": "Ignores the warning to move faster. Raises Speed.",
+    "effect": { "stat": "speed", "stages": 1, "target": "self" }
+  },
   "works_on_my_machine": {
     "id": "works_on_my_machine", "name": "Works On My Machine", "type": "testing",
     "category": "special", "power": 70, "accuracy": 95, "pp": 15,

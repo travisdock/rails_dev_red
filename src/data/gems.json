@@ -31,10 +31,9 @@
     "baseStats": { "hp": 55, "attack": 30, "defense": 65, "spAttack": 55, "spDefense": 60, "speed": 40 },
     "baseXP": 64,
     "learnset": [
-      { "level": 1, "move": "authenticate" },
-      { "level": 5, "move": "policy_enforce" },
-      { "level": 10, "move": "token_generate" },
-      { "level": 16, "move": "hash_strength" }
+      { "level": 1, "move": "warn" },
+      { "level": 1, "move": "ignore" },
+      { "level": 12, "move": "scan" }
     ],
     "evolution": null
   },
