@@ -12,6 +12,9 @@ const config = {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
   },
+  audio: {
+    disableWebAudio: true
+  },
   scene: [
     BootScene,
     PreloadScene,
