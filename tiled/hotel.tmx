@@ -105,6 +105,8 @@
   <object id="7" name="swett_gym" type="gym_entrance" x="383.5" y="42.5" width="17.5" height="24">
    <properties>
     <property name="gymId" value="jason_swett"/>
+    <property name="rewardGem" value="capybara"/>
+    <property name="rewardGemLevel" value="15"/>
     <property name="spriteKey" value="npc06"/>
    </properties>
   </object>

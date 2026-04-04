@@ -10,7 +10,7 @@ const moves = window.GAME_DATA.moves;
 const trainers = window.GAME_DATA.trainers;
 const gymLeaders = window.GAME_DATA.gymLeaders;
 const encounters = window.GAME_DATA.encounters;
-const marts = window.GAME_DATA.marts;
+
 
 describe('Data Integrity', () => {
   describe('gem learnsets reference valid moves', () => {
@@ -95,16 +95,6 @@ describe('Data Integrity', () => {
       for (const enc of route.encounters) {
         it(`${routeId} encounter bug "${enc.bugId}" exists`, () => {
           expect(bugs[enc.bugId]).toBeDefined();
-        });
-      }
-    }
-  });
-
-  describe('mart inventories reference valid gems', () => {
-    for (const [martId, mart] of Object.entries(marts)) {
-      for (const item of mart.inventory) {
-        it(`${martId} item gem "${item.gemId}" exists`, () => {
-          expect(gems[item.gemId]).toBeDefined();
         });
       }
     }

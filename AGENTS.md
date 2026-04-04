@@ -43,13 +43,11 @@ npm run test:watch # watch mode
 │   │   ├── BattleScene.js      # Battle rendering, event queue (drainQueue)
 │   │   ├── MenuScene.js        # Pause menu
 │   │   ├── PartyScene.js       # View gem party
-│   │   ├── MartScene.js        # Shop UI
 │   │   └── HealScene.js        # (placeholder)
 │   ├── systems/                # Pure logic, no Phaser dependency (testable)
 │   │   ├── BattleManager.js    # Turn resolution, damage calc, XP
 │   │   ├── EncounterManager.js # Wild encounter checks per zone
 │   │   ├── PartyManager.js     # Party CRUD, healing
-│   │   ├── InventoryManager.js # Money management
 │   │   ├── SaveManager.js      # localStorage save/load
 │   │   ├── DialogManager.js    # Typewriter text, message queue
 │   │   └── ProgressManager.js  # Badges, defeated trainers, flags
@@ -66,7 +64,6 @@ npm run test:watch # watch mode
 │   │   ├── gym-leaders.json    # Boss bug parties and dialogue
 │   │   ├── encounters.json     # Per-zone encounter tables
 │   │   ├── type-chart.json     # 6x6 type effectiveness matrix
-│   │   └── marts.json          # Shop inventories per location
 │   ├── ui/                     # UI components
 │   │   ├── TextBox.js          # Bordered text box
 │   │   ├── MenuBox.js          # Selectable option list
@@ -96,7 +93,7 @@ npm run test:watch # watch mode
 Files are loaded via `<script>` tags in `index.html`. **Order matters** — dependencies must load before dependents. If you add a new file, add the `<script>` tag in the right position.
 
 ### Global Scope
-Everything is global (`class`, `const`, `var` at top level). No modules. `window.GAME_DATA` holds all parsed JSON data. Systems like `PartyManager`, `InventoryManager`, `ProgressManager` are global singletons.
+Everything is global (`class`, `const`, `var` at top level). No modules. `window.GAME_DATA` holds all parsed JSON data. Systems like `PartyManager`, `ProgressManager` are global singletons.
 
 ### Phaser Scene Lifecycle
 - Phaser **reuses scene objects** across `stop()`/`launch()` cycles
@@ -202,10 +199,9 @@ Maps are designed in Tiled and exported as JSON to `assets/maps/`.
 | Type | Key Properties |
 |------|---------------|
 | `npc` | `dialog` (string, `\|` separates pages), `spriteKey`, `facing` |
-| `trainer` | `trainerId`, `spriteKey`, `facing` |
+| `trainer` | `trainerId`, `spriteKey`, `facing`, `rewardGem` (optional gem ID), `rewardGemLevel` (optional int) |
 | `gym_entrance` | `gymId`, `spriteKey`, `requiredBadges` |
 | `heal` | `spriteKey` |
-| `mart` | `martId`, `spriteKey` |
 | `door` | `targetMap`, `targetX` (int), `targetY` (int), `facing` |
 | `sign` | `text` |
 
@@ -236,7 +232,7 @@ The data integrity tests will catch broken references. Always run tests after mo
 ```javascript
 DEBUG.healParty()           // Full heal
 DEBUG.addGem('bullet', 15)  // Add gem at level
-DEBUG.setMoney(9999)        // Set money
+
 DEBUG.addBadge('test_pass') // Add badge
 DEBUG.listGems()            // Show party table
 DEBUG.gameState()           // Dump full state

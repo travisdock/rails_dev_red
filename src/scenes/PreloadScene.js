@@ -25,7 +25,7 @@ class PreloadScene extends Phaser.Scene {
     this.load.json('gym-leaders-data', 'src/data/gym-leaders.json');
     this.load.json('encounters-data', 'src/data/encounters.json');
     this.load.json('type-chart-data', 'src/data/type-chart.json');
-    this.load.json('marts-data', 'src/data/marts.json');
+
 
     // Load sprites
     this.load.spritesheet('player', 'assets/sprites/player.png', {
@@ -144,8 +144,7 @@ class PreloadScene extends Phaser.Scene {
       trainers: this.cache.json.get('trainers-data'),
       gymLeaders: this.cache.json.get('gym-leaders-data'),
       encounters: this.cache.json.get('encounters-data'),
-      typeChart: this.cache.json.get('type-chart-data'),
-      marts: this.cache.json.get('marts-data')
+      typeChart: this.cache.json.get('type-chart-data')
     };
 
     // Initialize type chart

@@ -366,11 +366,6 @@ class BattleScene extends Phaser.Scene {
         next();
         break;
 
-      case 'money':
-        InventoryManager.addMoney(event.amount);
-        next();
-        break;
-
       case 'stat_change':
         next();
         break;

@@ -62,37 +62,6 @@ describe('PartyManager', () => {
   });
 });
 
-describe('InventoryManager', () => {
-  beforeEach(() => {
-    InventoryManager.money = 500;
-  });
-
-  it('starts with initial money', () => {
-    InventoryManager.init(null);
-    expect(InventoryManager.money).toBe(500);
-  });
-
-  it('addMoney increases balance', () => {
-    InventoryManager.addMoney(200);
-    expect(InventoryManager.money).toBe(700);
-  });
-
-  it('spendMoney deducts and returns true', () => {
-    expect(InventoryManager.spendMoney(200)).toBe(true);
-    expect(InventoryManager.money).toBe(300);
-  });
-
-  it('spendMoney fails if insufficient', () => {
-    expect(InventoryManager.spendMoney(9999)).toBe(false);
-    expect(InventoryManager.money).toBe(500);
-  });
-
-  it('canAfford checks correctly', () => {
-    expect(InventoryManager.canAfford(500)).toBe(true);
-    expect(InventoryManager.canAfford(501)).toBe(false);
-  });
-});
-
 describe('ProgressManager', () => {
   beforeEach(() => {
     ProgressManager.init(null);

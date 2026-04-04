@@ -8,7 +8,6 @@ const SaveManager = {
       timestamp: new Date().toISOString(),
       player: {
         name: gameState.playerName || 'Rubyist',
-        money: gameState.money,
         position: { ...gameState.position },
         badges: [...gameState.badges],
         party: gameState.party.map(g => g.serialize()),

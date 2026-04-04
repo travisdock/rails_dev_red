@@ -104,7 +104,6 @@ class TitleScene extends Phaser.Scene {
       if (saveData) {
         ProgressManager.init(saveData);
         PartyManager.init(saveData);
-        InventoryManager.init(saveData);
         this.scene.start('OverworldScene', {
           mapKey: saveData.player.position.map,
           playerX: saveData.player.position.x,
@@ -117,7 +116,6 @@ class TitleScene extends Phaser.Scene {
       // New game
       ProgressManager.init(null);
       PartyManager.init(null);
-      InventoryManager.init(null);
       this.scene.start('OverworldScene', {
         mapKey: 'hotel',
         playerX: 1,

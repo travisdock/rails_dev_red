@@ -18,7 +18,6 @@ const config = {
     DialogScene,
     MenuScene,
     PartyScene,
-    MartScene,
     HealScene
   ]
 };
@@ -39,10 +38,6 @@ window.DEBUG = {
       console.log('Party is full!');
     }
   },
-  setMoney(amount) {
-    InventoryManager.money = amount;
-    console.log(`Money set to $${amount}`);
-  },
   addBadge(badgeId) {
     ProgressManager.addBadge(badgeId);
     console.log(`Badge ${badgeId} added!`);
@@ -54,7 +49,6 @@ window.DEBUG = {
     })));
   },
   gameState() {
-    console.log('Money:', InventoryManager.money);
     console.log('Badges:', ProgressManager.badges);
     console.log('Trainers defeated:', ProgressManager.trainersDefeated);
     console.log('Party:', PartyManager.party.map(g => `${g.name} Lv${g.level}`));
@@ -66,4 +60,4 @@ window.DEBUG = {
 };
 
 console.log('%cBlastoff Rails: The Game v0.2.0', 'color: #ff6633; font-size: 16px; font-weight: bold');
-console.log('Debug tools available: DEBUG.healParty(), DEBUG.addGem(id, level), DEBUG.setMoney(n), DEBUG.listGems(), DEBUG.gameState()');
+console.log('Debug tools available: DEBUG.healParty(), DEBUG.addGem(id, level), DEBUG.listGems(), DEBUG.gameState()');

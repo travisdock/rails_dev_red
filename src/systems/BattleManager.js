@@ -244,12 +244,7 @@ class BattleManager {
       } else {
         // Victory!
         if (this.trainerData) {
-          const prize = this.trainerData.prizeMoney || 0;
           events.push({ type: 'message', text: `You defeated ${this.trainerData.name}!` });
-          if (prize > 0) {
-            events.push({ type: 'money', amount: prize });
-            events.push({ type: 'message', text: `Got $${prize} for winning!` });
-          }
         }
         events.push({ type: 'battle_end', result: 'win' });
       }

@@ -143,7 +143,7 @@ describe('BattleManager', () => {
     it('cannot run from trainer battles', () => {
       const player = makeParty([{ id: 'devise', level: 10 }]);
       const enemy = makeParty([{ id: 'rspec', level: 10 }]);
-      bm.init(player, enemy, false, { name: 'Trainer', prizeMoney: 100 });
+      bm.init(player, enemy, false, { name: 'Trainer' });
 
       const events = bm.executeTurn({ type: 'run' });
       expect(events.some(e => e.text && e.text.includes("Can't run"))).toBe(true);

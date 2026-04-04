@@ -20,11 +20,7 @@ class MenuScene extends Phaser.Scene {
     });
 
     // Show player info
-    this.add.text(8, 8, `$${InventoryManager.money}`, {
-      ...TEXT_STYLE_WHITE
-    }).setDepth(1000);
-
-    this.add.text(8, 18, `Badges: ${ProgressManager.badgeCount()}`, {
+    this.add.text(8, 8, `Badges: ${ProgressManager.badgeCount()}`, {
       ...TEXT_STYLE_WHITE
     }).setDepth(1000);
   }
@@ -49,7 +45,6 @@ class MenuScene extends Phaser.Scene {
     const overworld = this.scene.get('OverworldScene');
     const success = SaveManager.save({
       playerName: 'Rubyist',
-      money: InventoryManager.money,
       position: {
         map: overworld.mapKey,
         x: overworld.player.tileX,

@@ -12,7 +12,8 @@ class Trainer extends NPC {
     this.trainerData = config;
     this.dialogAfter = config.dialogAfter ? config.dialogAfter.split('\n') : ['Good code review!'];
     this.party = (config.party || []).map(p => new BugInstance(p.bugId, p.level));
-    this.prizeMoney = config.prizeMoney || 100;
+    this.rewardGem = config.rewardGem || null;
+    this.rewardGemLevel = config.rewardGemLevel || 10;
     this.lineOfSight = config.lineOfSight || 3;
     this.defeated = ProgressManager.isTrainerDefeated(this.trainerId);
     this.isGymLeader = config.badge !== undefined;

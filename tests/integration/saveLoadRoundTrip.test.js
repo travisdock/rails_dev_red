@@ -15,7 +15,6 @@ describe('Save/Load Round Trip', () => {
 
     const gameState = {
       playerName: 'Tester',
-      money: 2500,
       position: { map: 'staging-springs', x: 10, y: 8, facing: 'up' },
       badges: ['ssl_badge', 'benchmark_badge'],
       party: party,
@@ -31,7 +30,6 @@ describe('Save/Load Round Trip', () => {
     const loaded = SaveManager.load();
     expect(loaded).not.toBeNull();
     expect(loaded.player.name).toBe('Tester');
-    expect(loaded.player.money).toBe(2500);
     expect(loaded.player.position.map).toBe('staging-springs');
     expect(loaded.player.badges).toEqual(['ssl_badge', 'benchmark_badge']);
     expect(loaded.player.starterChosen).toBe(true);
@@ -59,7 +57,7 @@ describe('Save/Load Round Trip', () => {
 
   it('deleteSave removes saved data', () => {
     SaveManager.save({
-      playerName: 'Test', money: 0, position: { map: 'localhost', x: 0, y: 0, facing: 'down' },
+      playerName: 'Test', position: { map: 'localhost', x: 0, y: 0, facing: 'down' },
       badges: [], party: [], trainersDefeated: [], gymsCompleted: [], storySeen: [], starterChosen: false
     });
     expect(SaveManager.hasSave()).toBe(true);

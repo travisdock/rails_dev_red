@@ -26,7 +26,6 @@ const sourceFiles = [
   'src/systems/SaveManager.js',
   'src/systems/ProgressManager.js',
   'src/systems/PartyManager.js',
-  'src/systems/InventoryManager.js',
   'src/systems/EncounterManager.js',
   'src/systems/BattleManager.js',
 ];
@@ -45,7 +44,6 @@ globalThis.window.GAME_DATA = {
   gymLeaders: JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/gym-leaders.json'), 'utf8')),
   encounters: JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/encounters.json'), 'utf8')),
   typeChart: JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/type-chart.json'), 'utf8')),
-  marts: JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/marts.json'), 'utf8')),
 };
 
 TypeChart.init(window.GAME_DATA.typeChart);

@@ -168,6 +168,16 @@
                          "value":"jason_swett"
                         }, 
                         {
+                         "name":"rewardGem",
+                         "type":"string",
+                         "value":"capybara"
+                        }, 
+                        {
+                         "name":"rewardGemLevel",
+                         "type":"string",
+                         "value":"15"
+                        }, 
+                        {
                          "name":"spriteKey",
                          "type":"string",
                          "value":"npc06"

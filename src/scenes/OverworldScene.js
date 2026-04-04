@@ -265,7 +265,8 @@ class OverworldScene extends Phaser.Scene {
             targetX: props.targetX ? parseInt(props.targetX) : undefined,
             targetY: props.targetY ? parseInt(props.targetY) : undefined,
             blockMessage: props.blockMessage,
-            martId: props.martId,
+            rewardGem: props.rewardGem,
+            rewardGemLevel: props.rewardGemLevel ? parseInt(props.rewardGemLevel) : undefined,
             text: props.text
           };
 
@@ -295,7 +296,6 @@ class OverworldScene extends Phaser.Scene {
         { type: 'npc', x: 5, y: 8, name: 'Local Guide', dialog: ["Old Town has been here\nsince 1706. Watch out for\nsecurity bugs in the\nold code!"], spriteKey: 'npc09' },
         { type: 'npc', x: 15, y: 12, name: 'Souvenir Seller', dialog: ["Buy a gem, take on\nthe world!"], spriteKey: 'npc03' },
         { type: 'heal', x: 3, y: 5, name: 'Old Town Clinic', spriteKey: 'npc05' },
-        { type: 'mart', x: 17, y: 5, name: 'Old Town Gem Shop', martId: 'old_town', spriteKey: 'npc04' },
         { type: 'gym_entrance', x: 10, y: 3, gymId: 'greg_molnar', requiredBadges: 1, name: 'Security Audit', spriteKey: 'npc06' },
         { type: 'door', x: 10, y: 19, targetMap: 'hotel', targetX: 10, targetY: 1, facing: 'down' },
         { type: 'door', x: 10, y: 0, targetMap: 'park', targetX: 10, targetY: 18, facing: 'up' },
@@ -306,7 +306,6 @@ class OverworldScene extends Phaser.Scene {
       'park': [
         { type: 'npc', x: 6, y: 10, name: 'Jogger', dialog: ["Running in production\nis like running in the park.\nYou gotta go fast!"], spriteKey: 'npc09' },
         { type: 'heal', x: 3, y: 5, name: 'Park First Aid', spriteKey: 'npc05' },
-        { type: 'mart', x: 17, y: 5, name: 'Park Vendor', martId: 'park', spriteKey: 'npc04' },
         { type: 'gym_entrance', x: 10, y: 3, gymId: 'nate_berkopec', requiredBadges: 2, name: 'Performance Lab', spriteKey: 'npc10' },
         { type: 'door', x: 10, y: 19, targetMap: 'old-town', targetX: 10, targetY: 1, facing: 'down' },
         { type: 'door', x: 10, y: 0, targetMap: 'venue', targetX: 10, targetY: 18, facing: 'up' },
@@ -319,7 +318,6 @@ class OverworldScene extends Phaser.Scene {
         { type: 'npc', x: 6, y: 10, name: 'Volunteer', dialog: ["The rocket is almost ready!\nDefeat DHH to earn your\nCaptain's Pass!"], spriteKey: 'npc03' },
         { type: 'npc', x: 16, y: 8, name: 'Mission Control', dialog: ["All systems nominal.\nAwaiting final passenger\nclearance..."], spriteKey: 'npc09' },
         { type: 'heal', x: 3, y: 5, name: 'Venue Med Bay', spriteKey: 'npc05' },
-        { type: 'mart', x: 17, y: 5, name: 'Conference Merch Booth', martId: 'venue', spriteKey: 'npc04' },
         { type: 'gym_entrance', x: 10, y: 3, gymId: 'dhh', requiredBadges: 3, name: 'The Launch Pad', spriteKey: 'npc06' },
         { type: 'door', x: 10, y: 19, targetMap: 'park', targetX: 10, targetY: 1, facing: 'down' },
         { type: 'sign', x: 10, y: 2, text: 'The Launch Pad\nFinal Challenge: DHH' },
@@ -341,7 +339,6 @@ class OverworldScene extends Phaser.Scene {
         { type: 'sign', x: 10, y: 5, text: 'Prof. Matz\'s Lab\n"Choose your first gem!"' },
         { type: 'sign', x: 10, y: 2, text: 'Route 1 - North\n"Beware of bugs in the grass!"' },
         { type: 'heal', x: 3, y: 5, name: 'CI/CD Center' },
-        { type: 'mart', x: 17, y: 5, name: 'Gem Mart', martId: 'localhost' },
         { type: 'gym_entrance', x: 7, y: 3, gymId: 'sarah_security', badge: 'ssl_badge', name: 'Security Gym' },
         { type: 'door', x: 10, y: 1, targetMap: 'route1', targetX: 5, targetY: 18, facing: 'up' }
       ]),
@@ -718,16 +715,6 @@ class OverworldScene extends Phaser.Scene {
           }));
           break;
 
-        case 'mart':
-          this.npcs.push(new NPC(this, obj.x, obj.y, {
-            name: obj.name || 'Clerk',
-            dialog: ['mart:' + (obj.martId || 'localhost')],
-            color: 0x4488ee,
-            facing: obj.facing || 'down',
-            spriteKey: obj.spriteKey || null
-          }));
-          break;
-
         case 'gym_entrance': {
           const leaderDef = window.GAME_DATA.gymLeaders[obj.gymId];
           if (leaderDef) {
@@ -840,12 +827,6 @@ class OverworldScene extends Phaser.Scene {
           return;
         }
 
-        if (messages[0] && messages[0].startsWith('mart:')) {
-          const martId = messages[0].split(':')[1];
-          this.openMart(martId);
-          return;
-        }
-
         // Trainer battle check
         if (npc instanceof Trainer && !npc.defeated) {
           this.showDialog(messages, () => {
@@ -943,12 +924,6 @@ class OverworldScene extends Phaser.Scene {
     this.scene.launch('MenuScene');
   }
 
-  openMart(martId) {
-    this.player.freeze();
-    this.scene.pause();
-    this.scene.launch('MartScene', { martId });
-  }
-
   showStarterSelection() {
     if (this.starterChosen) return;
     this.player.freeze();
@@ -1024,9 +999,15 @@ class OverworldScene extends Phaser.Scene {
         trainer.onDefeat();
       }
 
-      // Award money
-      if (result.trainerData.prizeMoney) {
-        InventoryManager.addMoney(result.trainerData.prizeMoney);
+      // Build post-battle messages
+      const msgs = [];
+
+      // Gem reward
+      if (trainer && trainer.rewardGem && window.GAME_DATA.gems[trainer.rewardGem]) {
+        const gem = new GemInstance(trainer.rewardGem, trainer.rewardGemLevel);
+        if (PartyManager.addGem(gem)) {
+          msgs.push(`You got ${gem.name} (Lv${gem.level})!`);
+        }
       }
 
       // Gym leader badge
@@ -1034,18 +1015,19 @@ class OverworldScene extends Phaser.Scene {
         ProgressManager.addBadge(result.trainerData.badge);
         ProgressManager.completeGym(result.trainerData.id);
 
+        msgs.push(...(result.trainerData.dialogAfter || ['Great code review!']));
+        msgs.push(`You got the ${result.trainerData.badgeName}!`);
+
+        if (ProgressManager.badgeCount() >= 4) {
+          msgs.push("You have all 4 Boarding Passes!");
+          msgs.push("The rocket is ready.\nWelcome aboard, developer!");
+          msgs.push("3... 2... 1... BLASTOFF!");
+          msgs.push("Congratulations!\nYou've completed\nBlastoff Rails: The Game!");
+        }
+      }
+
+      if (msgs.length > 0) {
         this.time.delayedCall(500, () => {
-          const msgs = [...(result.trainerData.dialogAfter || ['Great code review!'])];
-          msgs.push(`You got the ${result.trainerData.badgeName}!`);
-
-          // Check if all badges collected
-          if (ProgressManager.badgeCount() >= 4) {
-            msgs.push("You have all 4 Boarding Passes!");
-            msgs.push("The rocket is ready.\nWelcome aboard, developer!");
-            msgs.push("3... 2... 1... BLASTOFF!");
-            msgs.push("Congratulations!\nYou've completed\nBlastoff Rails: The Game!");
-          }
-
           this.showDialog(msgs, null, result.trainerData.name);
         });
       } else {
@@ -1056,7 +1038,6 @@ class OverworldScene extends Phaser.Scene {
     } else if (result.result === 'lose') {
       // Blackout - heal and return to last town
       PartyManager.healAll();
-      InventoryManager.money = Math.floor(InventoryManager.money / 2);
       this.time.delayedCall(300, () => {
         this.scene.restart({
           mapKey: 'hotel',
