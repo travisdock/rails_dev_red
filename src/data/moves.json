@@ -250,5 +250,23 @@
     "category": "special", "power": 45, "accuracy": 100, "pp": 30,
     "description": "A painfully slow query. Lowers enemy Speed.",
     "effect": { "stat": "speed", "stages": -1, "target": "enemy" }
+  },
+  "safe_navigate": {
+    "id": "safe_navigate", "name": "Safe Navigate", "type": "testing",
+    "category": "status", "power": 0, "accuracy": 100, "pp": 20,
+    "description": "Uses the &. operator to guard against nil. Raises Defense.",
+    "effect": { "stat": "defense", "stages": 1, "target": "self" }
+  },
+  "lazy_load": {
+    "id": "lazy_load", "name": "Lazy Load", "type": "database",
+    "category": "special", "power": 50, "accuracy": 100, "pp": 25,
+    "description": "Loads records one at a time. Reliable but slows you down.",
+    "effect": { "stat": "speed", "stages": -1, "target": "self" }
+  },
+  "dot_lenght": {
+    "id": "dot_lenght", "name": ".lenght", "type": "testing",
+    "category": "special", "power": 75, "accuracy": 80, "pp": 15,
+    "description": "Calls a misspelled method with confidence. Hits hard but often misses.",
+    "effect": null
   }
 }

@@ -23,7 +23,7 @@ npm run test:watch # watch mode
 - **Phaser.js 3.80+** via CDN (Canvas mode, not WebGL)
 - **Vanilla JavaScript** — no modules, no build step, loaded via `<script>` tags in `index.html`
 - **Tiled Map Editor** — maps designed visually, exported as JSON
-- **16x16 tiles** at 4x zoom, **32x32 character sprites**
+- **16x16 tiles** at 4x zoom, **32x32 character sprites**, **64x64 bug battle sprites**
 - **localStorage** for save data
 - **Vitest** for tests (300+ tests)
 - **Press Start 2P** Google Font for pixel-perfect text
@@ -142,6 +142,9 @@ Process into 4-direction sheets (128x128, 4x4 grid) using Python/PIL:
 - Row 0 = down, Row 1 = left (flip row 1), Row 2 = right, Row 3 = up
 
 Save to `assets/sprites/npcXX.png`, load in PreloadScene, use `spriteKey: 'npcXX'` on objects.
+
+### Adding New Bug Sprites
+Bug battle sprites are 64x64 PNG images stored in `assets/sprites/bugs/`. Name them to match the bug ID (e.g., `n_plus_one.png`). They are loaded by convention in PreloadScene — no code changes needed. Bugs without a sprite fall back to a colored rectangle. The game canvas is 240x160 at 4x zoom (960x640 on screen), so 64 game-pixel sprites appear as 256 screen pixels — this looks correct despite sounding large relative to the canvas.
 
 ### Adding New Music
 1. Drop `.ogg` file in `assets/audio/`

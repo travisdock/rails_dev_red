@@ -4,14 +4,14 @@
     "description": "A sneaky performance killer lurking in your associations.",
     "baseStats": { "hp": 35, "attack": 30, "defense": 25, "spAttack": 50, "spDefense": 30, "speed": 55 },
     "baseXP": 52,
-    "moves": ["slow_query", "migration_run"]
+    "moves": ["slow_query", "lazy_load"]
   },
-  "nil_reference": {
-    "id": "nil_reference", "name": "Nil Reference", "type": "testing",
+  "no_method_error": {
+    "id": "no_method_error", "name": "NoMethodError", "type": "testing",
     "description": "NoMethodError: undefined method for nil:NilClass",
     "baseStats": { "hp": 30, "attack": 40, "defense": 20, "spAttack": 35, "spDefense": 25, "speed": 60 },
     "baseXP": 48,
-    "moves": ["assert_equal", "mock_object"]
+    "moves": ["safe_navigate", "dot_lenght"]
   },
   "missing_template": {
     "id": "missing_template", "name": "Missing Template", "type": "frontend",

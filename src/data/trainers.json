@@ -25,7 +25,7 @@
     "dialogBefore": "My code has 100% coverage\nbut bugs keep slipping through!\nCan your gems squash them?",
     "dialogAfter": "Maybe coverage isn't\neverything...",
     "party": [
-      { "bugId": "nil_reference", "level": 9 },
+      { "bugId": "no_method_error", "level": 9 },
       { "bugId": "flaky_test", "level": 8 }
     ],
     "prizeMoney": 300,
@@ -92,7 +92,7 @@
     "dialogAfter": "I guess I need better\ngems to squash those...",
     "party": [
       { "bugId": "flaky_test", "level": 5 },
-      { "bugId": "nil_reference", "level": 6 }
+      { "bugId": "no_method_error", "level": 6 }
     ],
     "prizeMoney": 180,
     "lineOfSight": 3

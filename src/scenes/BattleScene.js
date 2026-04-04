@@ -50,21 +50,11 @@ class BattleScene extends Phaser.Scene {
 
     // Enemy sprite
     const enemy = this.battleManager.activeEnemyGem;
-    const enemyColor = TYPE_COLORS[enemy.type] || 0xcc4444;
-    this.enemySprite = this.add.rectangle(175, 38, 24, 24, enemyColor)
-      .setStrokeStyle(2, 0x333333);
-    this.add.text(175, 38, enemy.isBug ? 'BUG' : 'GEM', {
-      ...TEXT_STYLE_WHITE, fontSize: '6px'
-    }).setOrigin(0.5).setDepth(1);
+    this.enemySprite = this.createBattleSprite(enemy, 175, 38, 'enemy');
 
-    // Player sprite (back view - slightly larger)
+    // Player sprite
     const player = this.battleManager.activePlayerGem;
-    const playerColor = TYPE_COLORS[player.type] || 0x44cc44;
-    this.playerSprite = this.add.rectangle(60, 88, 28, 28, playerColor)
-      .setStrokeStyle(2, 0x333333);
-    this.add.text(60, 88, player.name.substring(0, 3).toUpperCase(), {
-      ...TEXT_STYLE_WHITE, fontSize: '6px'
-    }).setOrigin(0.5).setDepth(1);
+    this.playerSprite = this.createBattleSprite(player, 60, 88, 'player');
 
     // HUD
     this.hud = new BattleHUD(this);
@@ -98,6 +88,31 @@ class BattleScene extends Phaser.Scene {
     this.keyZ = this.input.keyboard.addKey('Z');
     this.keyX = this.input.keyboard.addKey('X');
     this.keyEnter = this.input.keyboard.addKey('ENTER');
+  }
+
+  createBattleSprite(gem, x, y, side) {
+    const prefix = gem.isBug ? 'bug-' : 'gem-';
+    const id = gem.bugId || gem.gemId || gem.id;
+    const textureKey = prefix + id;
+    if (this.textures.exists(textureKey)) {
+      const tex = this.textures.get(textureKey);
+      if (tex.key === textureKey && tex.source[0] && tex.source[0].width > 0) {
+        const sprite = this.add.image(x, y, textureKey);
+        sprite.setDisplaySize(64, 64);
+        return sprite;
+      }
+    }
+    // Fallback to colored rectangle
+    const defaultColor = side === 'player' ? 0x44cc44 : 0xcc4444;
+    const color = TYPE_COLORS[gem.type] || defaultColor;
+    const size = side === 'player' ? 28 : 24;
+    const rect = this.add.rectangle(x, y, size, size, color)
+      .setStrokeStyle(2, 0x333333);
+    const label = gem.isBug ? 'BUG' : gem.name.substring(0, 3).toUpperCase();
+    this.add.text(x, y, label, {
+      ...TEXT_STYLE_WHITE, fontSize: '6px'
+    }).setOrigin(0.5).setDepth(1);
+    return rect;
   }
 
   showMessage(text, callback) {
@@ -314,11 +329,10 @@ class BattleScene extends Phaser.Scene {
 
       case 'send_out': {
         const gem = event.gem;
-        const color = TYPE_COLORS[gem.type] || 0xcc4444;
         if (event.side === 'enemy') {
           if (this.enemySprite) this.enemySprite.destroy();
-          this.enemySprite = this.add.rectangle(175, 38, 24, 24, color)
-            .setStrokeStyle(2, 0x333333).setAlpha(0);
+          this.enemySprite = this.createBattleSprite(gem, 175, 38, 'enemy');
+          this.enemySprite.setAlpha(0);
           this.tweens.add({
             targets: this.enemySprite, alpha: 1, duration: 300,
             onComplete: () => { this.hud.updateGemInfo('enemy', gem); next(); }
@@ -331,14 +345,9 @@ class BattleScene extends Phaser.Scene {
 
       case 'switch': {
         const gem = event.gem;
-        const color = TYPE_COLORS[gem.type] || 0x44cc44;
         if (event.side === 'player') {
           if (this.playerSprite) this.playerSprite.destroy();
-          this.playerSprite = this.add.rectangle(60, 88, 28, 28, color)
-            .setStrokeStyle(2, 0x333333);
-          this.add.text(60, 88, gem.name.substring(0, 3).toUpperCase(), {
-            ...TEXT_STYLE_WHITE, fontSize: '6px'
-          }).setOrigin(0.5).setDepth(1);
+          this.playerSprite = this.createBattleSprite(gem, 60, 88, 'player');
           // Use snapshotted HP (pre-enemy-attack) if available, otherwise live values
           const hp = event.hp !== undefined ? event.hp : gem.currentHp;
           const maxHp = event.maxHp !== undefined ? event.maxHp : gem.maxHp;
