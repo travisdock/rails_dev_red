@@ -8,6 +8,10 @@ const config = {
   antialias: false,
   parent: document.body,
   backgroundColor: '#111111',
+  scale: {
+    mode: Phaser.Scale.FIT,
+    autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
+  },
   scene: [
     BootScene,
     PreloadScene,

@@ -17,10 +17,80 @@
       min-height: 100vh;
       overflow: hidden;
     }
+    @media (pointer: coarse) {
+      body {
+        align-items: flex-start;
+        padding-top: 60px;
+      }
+    }
     canvas {
       image-rendering: pixelated;
       image-rendering: crisp-edges;
       -ms-interpolation-mode: nearest-neighbor;
+    }
+    /* Mobile controls - only shown on touch devices */
+    #mobile-controls {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 220px;
+      z-index: 1000;
+      pointer-events: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    #mobile-controls .dpad {
+      position: absolute;
+      left: 24px;
+      bottom: 56px;
+      width: 176px;
+      height: 176px;
+    }
+    #mobile-controls .buttons {
+      position: absolute;
+      right: 24px;
+      bottom: 68px;
+    }
+    #mobile-controls button {
+      pointer-events: auto;
+      border: none;
+      border-radius: 50%;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 12px;
+      color: #fff;
+      opacity: 0.55;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+    #mobile-controls button:active, #mobile-controls button.pressed {
+      opacity: 0.85;
+    }
+    .dpad button {
+      position: absolute;
+      width: 58px;
+      height: 58px;
+      background: #444;
+    }
+    .dpad .up    { top: 0; left: 59px; border-radius: 8px 8px 0 0; }
+    .dpad .down  { bottom: 0; left: 59px; border-radius: 0 0 8px 8px; }
+    .dpad .left  { top: 59px; left: 0; border-radius: 8px 0 0 8px; }
+    .dpad .right { top: 59px; right: 0; border-radius: 0 8px 8px 0; }
+    .dpad .center { display: none; }
+    .btn-a {
+      width: 68px;
+      height: 68px;
+      background: #2a7d3f;
+      margin-bottom: 14px;
+    }
+    .btn-b {
+      width: 68px;
+      height: 68px;
+      background: #7d2a2a;
+    }
+    @media (pointer: coarse) {
+      #mobile-controls { display: block; }
     }
   </style>
 </head>
@@ -57,5 +127,62 @@
 
   <script src="src/scenes/HealScene.js"></script>
   <script src="src/main.js"></script>
+
+  <div id="mobile-controls">
+    <div class="dpad">
+      <button class="up" data-key="ArrowUp">&#9650;</button>
+      <button class="down" data-key="ArrowDown">&#9660;</button>
+      <button class="left" data-key="ArrowLeft">&#9664;</button>
+      <button class="right" data-key="ArrowRight">&#9654;</button>
+      <div class="center"></div>
+    </div>
+    <div class="buttons">
+      <button class="btn-a" data-key="z">A</button><br>
+      <button class="btn-b" data-key="x">B</button>
+    </div>
+  </div>
+
+  <script>
+  (function() {
+    const buttons = document.querySelectorAll('#mobile-controls button[data-key]');
+    const canvas = () => document.querySelector('canvas');
+
+    const KEY_CODES = {
+      ArrowUp: 38, ArrowDown: 40, ArrowLeft: 37, ArrowRight: 39,
+      z: 90, x: 88
+    };
+
+    function fireKey(type, key) {
+      window.dispatchEvent(new KeyboardEvent(type, {
+        key: key,
+        code: key.length === 1 ? 'Key' + key.toUpperCase() : key,
+        keyCode: KEY_CODES[key] || 0,
+        which: KEY_CODES[key] || 0,
+        bubbles: true, cancelable: true
+      }));
+    }
+
+    buttons.forEach(btn => {
+      const key = btn.dataset.key;
+
+      btn.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        btn.classList.add('pressed');
+        fireKey('keydown', key);
+      }, { passive: false });
+
+      btn.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        btn.classList.remove('pressed');
+        fireKey('keyup', key);
+      }, { passive: false });
+
+      btn.addEventListener('touchcancel', (e) => {
+        btn.classList.remove('pressed');
+        fireKey('keyup', key);
+      });
+    });
+  })();
+  </script>
 </body>
 </html>
