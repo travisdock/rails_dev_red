@@ -157,37 +157,32 @@
                  "y":200
                 }, 
                 {
-                 "height":24,
+                 "height":14.5,
                  "id":7,
                  "name":"swett_gym",
                  "opacity":1,
                  "properties":[
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"left"
+                        }, 
                         {
                          "name":"gymId",
                          "type":"string",
                          "value":"jason_swett"
                         }, 
                         {
-                         "name":"rewardGem",
-                         "type":"string",
-                         "value":"capybara"
-                        }, 
-                        {
-                         "name":"rewardGemLevel",
-                         "type":"string",
-                         "value":"15"
-                        }, 
-                        {
                          "name":"spriteKey",
                          "type":"string",
-                         "value":"npc06"
+                         "value":"pg7"
                         }],
                  "rotation":0,
                  "type":"gym_entrance",
                  "visible":true,
                  "width":17.5,
                  "x":415.5,
-                 "y":74.5
+                 "y":81.5
                 }, 
                 {
                  "height":0,
@@ -332,7 +327,7 @@
                 {
                  "height":0,
                  "id":14,
-                 "name":"Attendee1",
+                 "name":"Attendee Collin",
                  "opacity":1,
                  "properties":[
                         {

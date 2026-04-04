@@ -111,7 +111,7 @@
   "test_minion_04": {
     "id": "test_minion_04", "name": "Mock Master Drew", "class": "Testing Fanatic",
     "dialogBefore": "I've collected the nastiest\ntesting bugs around.\nLet me unleash them!",
-    "dialogAfter": "You squashed them all...\nMaybe I mocked too much\nand missed real bugs.",
+    "dialogAfter": "Maybe you are ready for\nJason's review. As long as\nhe is feeling up to it.",
     "party": [
       { "bugId": "flaky_test", "level": 9 },
       { "bugId": "external_dependency", "level": 8 },

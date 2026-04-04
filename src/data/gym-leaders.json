@@ -2,8 +2,8 @@
   "jason_swett": {
     "id": "jason_swett", "name": "Jason Swett", "title": "Testing Expert",
     "gymType": "testing", "badge": "test_pass", "badgeName": "Test Pass",
-    "dialogBefore": "Testing isn't optional.\nIt's the foundation of\neverything we build.\nLet's see if your gems can\nsquash these testing bugs!",
-    "dialogAfter": "Your tests are green across\nthe board. Take the Test Pass.\nYou've earned it!",
+    "dialogBefore": "I am feeling a little\nblocked. Maybe a code review\nwill loosen things up\na bit.",
+    "dialogAfter": "Your tests are green across\nthe board. Excuse me I need\nto make a run for\nthe bathroom.",
     "party": [
       { "bugId": "external_dependency", "level": 12 },
       { "bugId": "phantom_failure", "level": 12 },

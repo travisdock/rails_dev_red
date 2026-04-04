@@ -89,10 +89,32 @@
       addCard('pg-grid', `assets/sprites/pg${i}.png`, `PG ${i}`, `pg${i}`, '36x48 frames');
     }
 
-    // Original NPC sprites
+    // Original NPC sprites — crop to first 2 frames and zoom in
     const npcIds = ['01','02','03','04','05','06','07','09','10'];
     for (const id of npcIds) {
-      addCard('npc-grid', `assets/sprites/npc${id}.png`, `NPC ${id}`, `npc${id}`, '32x32 frames');
+      const grid = document.getElementById('npc-grid');
+      const card = document.createElement('div');
+      card.className = 'card';
+      const canvas = document.createElement('canvas');
+      canvas.width = 64;
+      canvas.height = 32;
+      canvas.style.imageRendering = 'pixelated';
+      canvas.style.width = '128px';
+      canvas.style.height = '64px';
+      canvas.style.marginBottom = '8px';
+      const ctx = canvas.getContext('2d');
+      ctx.imageSmoothingEnabled = false;
+      const img = new Image();
+      img.src = `assets/sprites/npc${id}.png`;
+      img.onload = () => {
+        ctx.drawImage(img, 0, 0, 64, 32, 0, 0, 64, 32);
+      };
+      img.onerror = () => card.remove();
+      card.appendChild(canvas);
+      const info = document.createElement('div');
+      info.innerHTML = `<div class="name">NPC ${id}</div><div class="key">spriteKey: <code>npc${id}</code></div><div class="size">32x32 frames</div>`;
+      card.appendChild(info);
+      grid.appendChild(card);
     }
 
     // Bug sprites

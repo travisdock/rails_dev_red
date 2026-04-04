@@ -102,12 +102,11 @@
     <property name="spriteKey" value="npc06"/>
    </properties>
   </object>
-  <object id="7" name="swett_gym" type="gym_entrance" x="415.5" y="74.5" width="17.5" height="24">
+  <object id="7" name="swett_gym" type="gym_entrance" x="415.5" y="81.5" width="17.5" height="14.5">
    <properties>
+    <property name="facing" value="left"/>
     <property name="gymId" value="jason_swett"/>
-    <property name="rewardGem" value="capybara"/>
-    <property name="rewardGemLevel" value="15"/>
-    <property name="spriteKey" value="pg2"/>
+    <property name="spriteKey" value="pg7"/>
    </properties>
   </object>
   <object id="9" name="minion5" type="trainer" x="56.5" y="54.5">
@@ -145,7 +144,7 @@
     <property name="trainerId" value="test_minion_04"/>
    </properties>
   </object>
-  <object id="14" name="Attendee1" type="npc" x="55.5" y="184.5">
+  <object id="14" name="Attendee Collin" type="npc" x="55.5" y="184.5">
    <properties>
     <property name="dialog" value="Be careful in there, I heard some of them talking about TDD..."/>
     <property name="facing" value="down"/>

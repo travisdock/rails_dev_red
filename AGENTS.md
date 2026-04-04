@@ -200,7 +200,7 @@ Maps are designed in Tiled and exported as JSON to `assets/maps/`.
 |------|---------------|
 | `npc` | `dialog` (string, `\|` separates pages), `spriteKey`, `facing` |
 | `trainer` | `trainerId`, `spriteKey`, `facing`, `rewardGem` (optional gem ID), `rewardGemLevel` (optional int) |
-| `gym_entrance` | `gymId`, `spriteKey`, `requiredBadges` |
+| `gym_leader` | `gymId`, `spriteKey`, `facing`, `rewardGem` (optional), `rewardGemLevel` (optional), `requiredBadges` |
 | `heal` | `spriteKey` |
 | `door` | `targetMap`, `targetX` (int), `targetY` (int), `facing` |
 | `sign` | `text` |

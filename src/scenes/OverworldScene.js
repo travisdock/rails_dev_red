@@ -715,14 +715,17 @@ class OverworldScene extends Phaser.Scene {
           }));
           break;
 
-        case 'gym_entrance': {
+        case 'gym_entrance':
+        case 'gym_leader': {
           const leaderDef = window.GAME_DATA.gymLeaders[obj.gymId];
           if (leaderDef) {
             const t = new Trainer(this, obj.x, obj.y, {
               ...leaderDef,
               facing: obj.facing || 'down',
               color: 0xffcc00,
-              spriteKey: obj.spriteKey || null
+              spriteKey: obj.spriteKey || null,
+              rewardGem: obj.rewardGem || null,
+              rewardGemLevel: obj.rewardGemLevel || 10
             });
             this.trainers.push(t);
             this.npcs.push(t);
