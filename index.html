@@ -89,6 +89,27 @@
       height: 68px;
       background: #7d2a2a;
     }
+    #mute-btn {
+      position: fixed;
+      top: 8px;
+      right: 8px;
+      z-index: 10000;
+      background: #333;
+      border: 1px solid #555;
+      border-radius: 6px;
+      color: #fff;
+      font-size: 20px;
+      width: 36px;
+      height: 36px;
+      line-height: 36px;
+      padding: 0;
+      text-align: center;
+      cursor: pointer;
+      opacity: 0.6;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+    #mute-btn:hover, #mute-btn:active { opacity: 0.9; }
     @media (pointer: coarse) {
       #mobile-controls { display: block; }
     }
@@ -127,6 +148,19 @@
 
   <script src="src/scenes/HealScene.js"></script>
   <script src="src/main.js"></script>
+  <script>
+  let isMuted = true;
+
+  function toggleMute() {
+    if (!window.game) return;
+    isMuted = !isMuted;
+    window.game.sound.mute = isMuted;
+    if (!isMuted && window.game.sound.context && window.game.sound.context.state === 'suspended') {
+      window.game.sound.context.resume();
+    }
+    document.getElementById('mute-btn').textContent = isMuted ? '\u{1F507}' : '\u{1F50A}';
+  }
+  </script>
 
   <div id="mobile-controls">
     <div class="dpad">
@@ -141,6 +175,7 @@
       <button class="btn-b" data-key="x">B</button>
     </div>
   </div>
+  <button id="mute-btn" onclick="toggleMute()">&#x1F507;</button>
 
   <script>
   (function() {

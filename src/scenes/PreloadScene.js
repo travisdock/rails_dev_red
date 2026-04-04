@@ -89,12 +89,8 @@ class PreloadScene extends Phaser.Scene {
     // Load bug sprites (loaded by convention — missing files fall back to colored rectangles)
     const bugIds = [
       'n_plus_one', 'no_method_error', 'request_timeout', 'sql_injection',
-      'memory_leak', 'race_condition', 'xss_attack', 'csrf_vuln',
-      'circular_dependency', 'unhandled_promise', 'flaky_test', 'brittle_spec',
-      'slow_test_suite', 'external_dependency', 'test_pollution', 'phantom_failure',
-      'auth_bypass', 'exposed_secret', 'insecure_redirect', 'infinite_loop',
-      'cache_stampede', 'schema_mismatch', 'deadlock', 'ci_failure',
-      'z_index_hell', 'docker_drift'
+      'memory_leak', 'race_condition', 'xss_attack', 'flaky_test', 'brittle_spec',
+      'slow_test_suite', 'external_dependency', 'test_pollution', 'phantom_failure'
     ];
     for (const id of bugIds) {
       this.load.image('bug-' + id, 'assets/sprites/bugs/' + id + '.png');
@@ -102,9 +98,7 @@ class PreloadScene extends Phaser.Scene {
 
     // Load gem sprites (loaded by convention — missing files fall back to colored rectangles)
     const gemIds = [
-      'rspec', 'bullet', 'brakeman', 'devise', 'pundit', 'bcrypt',
-      'rack_mini_profiler', 'capybara', 'factory_bot', 'active_record',
-      'sidekiq', 'puma', 'turbo', 'pry'
+      'rspec', 'bullet', 'brakeman'
     ];
     for (const id of gemIds) {
       this.load.image('gem-' + id, 'assets/sprites/gems/' + id + '.png');
