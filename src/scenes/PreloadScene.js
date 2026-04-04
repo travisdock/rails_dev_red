@@ -40,6 +40,14 @@ class PreloadScene extends Phaser.Scene {
       });
     }
 
+    // Load portrait-style NPC sprites (single row, 4 directions: down, left, right, up)
+    const pgIds = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'];
+    for (const id of pgIds) {
+      this.load.spritesheet('pg' + id, 'assets/sprites/pg' + id + '.png', {
+        frameWidth: 36, frameHeight: 48
+      });
+    }
+
     // Load tilesets
     this.load.spritesheet('tiles-path', 'assets/tilesets/path.png', {
       frameWidth: 16, frameHeight: 16
@@ -89,7 +97,7 @@ class PreloadScene extends Phaser.Scene {
 
     // Load bug sprites (loaded by convention — missing files fall back to colored rectangles)
     const bugIds = [
-      'n_plus_one', 'no_method_error', 'missing_template', 'sql_injection',
+      'n_plus_one', 'no_method_error', 'request_timeout', 'sql_injection',
       'memory_leak', 'race_condition', 'xss_attack', 'csrf_vuln',
       'circular_dependency', 'unhandled_promise', 'flaky_test', 'brittle_spec',
       'slow_test_suite', 'external_dependency', 'test_pollution', 'phantom_failure',

@@ -147,7 +147,7 @@
    <properties>
     <property name="dialog" value="Be careful in there, I heard some of them talking about TDD..."/>
     <property name="facing" value="down"/>
-    <property name="spriteKey" value="npc09"/>
+    <property name="spriteKey" value="pg3"/>
    </properties>
   </object>
   <object id="15" name="Attendee2" type="npc" x="229.5" y="199.5">
@@ -161,7 +161,7 @@
    <properties>
     <property name="dialog" value="Pair programming is the only way to go!"/>
     <property name="facing" value="left"/>
-    <property name="spriteKey" value="npc06"/>
+    <property name="spriteKey" value="pg13"/>
    </properties>
   </object>
   <object id="17" name="Attendee3" type="npc" x="148" y="264.5">
@@ -183,7 +183,7 @@
     <property name="dialog">You will probably need to fix some bugs in the wild before challenging those testing enthusiasts.
  They are a wild bunch.</property>
     <property name="facing" value="left"/>
-    <property name="spriteKey" value="npc03"/>
+    <property name="spriteKey" value="pg6"/>
    </properties>
   </object>
   <object id="20" name="Door" type="door" x="3.17606" y="279.357">

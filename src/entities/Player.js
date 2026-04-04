@@ -15,7 +15,7 @@ class Player {
         pos.x + TILE_SIZE / 2,
         pos.y + TILE_SIZE / 2,
         'player', 0
-      ).setDepth(5);
+      ).setDepth(10 + tileY);
 
       // Create walk animations
       // Spritesheet layout: 4 rows x 4 cols
@@ -51,7 +51,7 @@ class Player {
         pos.y + TILE_SIZE / 2,
         TILE_SIZE - 2, TILE_SIZE - 2,
         0x22aa44
-      ).setDepth(5);
+      ).setDepth(10 + tileY);
       this.hasSprite = false;
     }
 
@@ -112,6 +112,7 @@ class Player {
       onComplete: () => {
         this.tileX = newTileX;
         this.tileY = newTileY;
+        this.sprite.setDepth(10 + newTileY);
         this.isMoving = false;
         // Return to idle
         if (this.hasSprite) {
@@ -127,6 +128,7 @@ class Player {
     this.tileY = tileY;
     const pos = Grid.tileToPixel(tileX, tileY);
     this.sprite.setPosition(pos.x + TILE_SIZE / 2, pos.y + TILE_SIZE / 2);
+    this.sprite.setDepth(10 + tileY);
   }
 
   freeze() { this.frozen = true; }

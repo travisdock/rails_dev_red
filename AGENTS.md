@@ -254,7 +254,7 @@ copy(JSON.stringify(BATTLE_LOG, null, 2))  // Copy log to clipboard
 `rspec`, `bullet`, `brakeman`, `devise`, `pundit`, `bcrypt`, `rack_mini_profiler`, `capybara`, `factory_bot`, `active_record`, `sidekiq`, `puma`, `turbo`, `pry`
 
 ### Bug IDs
-`n_plus_one`, `nil_reference`, `missing_template`, `sql_injection`, `memory_leak`, `race_condition`, `xss_attack`, `csrf_vuln`, `circular_dependency`, `unhandled_promise`, `flaky_test`, `brittle_spec`, `slow_test_suite`, `external_dependency`, `test_pollution`, `phantom_failure`, `auth_bypass`, `exposed_secret`, `insecure_redirect`, `infinite_loop`, `cache_stampede`, `schema_mismatch`, `deadlock`, `ci_failure`, `z_index_hell`, `docker_drift`
+`n_plus_one`, `nil_reference`, `request_timeout`, `sql_injection`, `memory_leak`, `race_condition`, `xss_attack`, `csrf_vuln`, `circular_dependency`, `unhandled_promise`, `flaky_test`, `brittle_spec`, `slow_test_suite`, `external_dependency`, `test_pollution`, `phantom_failure`, `auth_bypass`, `exposed_secret`, `insecure_redirect`, `infinite_loop`, `cache_stampede`, `schema_mismatch`, `deadlock`, `ci_failure`, `z_index_hell`, `docker_drift`
 
 ### Trainer IDs
 `test_minion_01`-`05`, `attendee_01`-`03`, `speaker_01`-`03`, `organizer_01`

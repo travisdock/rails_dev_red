@@ -338,7 +338,7 @@
                         {
                          "name":"spriteKey",
                          "type":"string",
-                         "value":"npc09"
+                         "value":"pg3"
                         }],
                  "rotation":0,
                  "type":"npc",
@@ -394,7 +394,7 @@
                         {
                          "name":"spriteKey",
                          "type":"string",
-                         "value":"npc06"
+                         "value":"pg13"
                         }],
                  "rotation":0,
                  "type":"npc",
@@ -478,7 +478,7 @@
                         {
                          "name":"spriteKey",
                          "type":"string",
-                         "value":"npc03"
+                         "value":"pg6"
                         }],
                  "rotation":0,
                  "type":"npc",

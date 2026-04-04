@@ -3,7 +3,7 @@
     "encounterRate": 0.12,
     "encounters": [
       { "bugId": "no_method_error", "levelRange": [3, 6], "weight": 40 },
-      { "bugId": "missing_template", "levelRange": [3, 5], "weight": 35 },
+      { "bugId": "request_timeout", "levelRange": [3, 5], "weight": 35 },
       { "bugId": "n_plus_one", "levelRange": [3, 6], "weight": 25 }
     ]
   },
@@ -30,7 +30,7 @@
     "encounterRate": 0.14,
     "encounters": [
       { "bugId": "no_method_error", "levelRange": [2, 5], "weight": 35 },
-      { "bugId": "missing_template", "levelRange": [2, 5], "weight": 30 },
+      { "bugId": "request_timeout", "levelRange": [2, 5], "weight": 30 },
       { "bugId": "n_plus_one", "levelRange": [3, 6], "weight": 35 }
     ]
   },

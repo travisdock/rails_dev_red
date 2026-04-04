@@ -66,13 +66,13 @@
     "effect": null
   },
   "expect_matcher": {
-    "id": "expect_matcher", "name": "Expect Matcher", "type": "testing",
+    "id": "expect_matcher", "name": "Expect", "type": "testing",
     "category": "special", "power": 50, "accuracy": 100, "pp": 25,
     "description": "Sets an expectation and matches it precisely.",
     "effect": null
   },
   "assert_equal": {
-    "id": "assert_equal", "name": "Assert Equal", "type": "testing",
+    "id": "assert_equal", "name": "Assert", "type": "testing",
     "category": "physical", "power": 60, "accuracy": 100, "pp": 20,
     "description": "Asserts equality with force.",
     "effect": null
@@ -90,7 +90,7 @@
     "effect": { "stat": "attack", "stages": 1, "target": "self" }
   },
   "mock_object": {
-    "id": "mock_object", "name": "Mock Object", "type": "testing",
+    "id": "mock_object", "name": "Mock", "type": "testing",
     "category": "status", "power": 0, "accuracy": 100, "pp": 20,
     "description": "Creates a mock to confuse the enemy. Lowers Attack.",
     "effect": { "stat": "attack", "stages": -1, "target": "enemy" }
@@ -262,6 +262,84 @@
     "category": "special", "power": 50, "accuracy": 100, "pp": 25,
     "description": "Loads records one at a time. Reliable but slows you down.",
     "effect": { "stat": "speed", "stages": -1, "target": "self" }
+  },
+  "external_dep": {
+    "id": "external_dep", "name": "External Dep", "type": "performance",
+    "category": "special", "power": 65, "accuracy": 85, "pp": 15,
+    "description": "Calls a third-party API. Powerful but unreliable.",
+    "effect": null
+  },
+  "spinner": {
+    "id": "spinner", "name": "Spinner", "type": "performance",
+    "category": "status", "power": 0, "accuracy": 100, "pp": 20,
+    "description": "An endless loading spinner. Lowers enemy Speed.",
+    "effect": { "stat": "speed", "stages": -1, "target": "enemy" }
+  },
+  "bobby_tables": {
+    "id": "bobby_tables", "name": "Bobby Tables", "type": "database",
+    "category": "special", "power": 70, "accuracy": 95, "pp": 15,
+    "description": "Little Bobby Tables strikes again. Solid hit.",
+    "effect": null
+  },
+  "tautology": {
+    "id": "tautology", "name": "Tautology", "type": "database",
+    "category": "status", "power": 0, "accuracy": 100, "pp": 20,
+    "description": "OR 1=1. Always true. Lowers enemy Defense.",
+    "effect": { "stat": "defense", "stages": -1, "target": "enemy" }
+  },
+  "script_inject": {
+    "id": "script_inject", "name": "Script Inject", "type": "auth",
+    "category": "special", "power": 70, "accuracy": 95, "pp": 15,
+    "description": "Injects a malicious <script> tag. Hits hard.",
+    "effect": null
+  },
+  "cookie_steal": {
+    "id": "cookie_steal", "name": "Cookie Steal", "type": "auth",
+    "category": "special", "power": 55, "accuracy": 100, "pp": 20,
+    "description": "Steals session cookies. Weakens enemy defenses.",
+    "effect": { "stat": "spDefense", "stages": -1, "target": "enemy" }
+  },
+  "heap_growth": {
+    "id": "heap_growth", "name": "Heap Growth", "type": "performance",
+    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "description": "Memory usage keeps climbing. Raises Sp. Attack.",
+    "effect": { "stat": "spAttack", "stages": 1, "target": "self" }
+  },
+  "out_of_memory": {
+    "id": "out_of_memory", "name": "Out of Memory", "type": "performance",
+    "category": "special", "power": 90, "accuracy": 85, "pp": 5,
+    "description": "OOM killer terminates the process. Devastating.",
+    "effect": null
+  },
+  "deadlock": {
+    "id": "deadlock", "name": "Deadlock", "type": "devops",
+    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "description": "Two threads waiting on each other. Forever. Lowers enemy Speed.",
+    "effect": { "stat": "speed", "stages": -1, "target": "enemy" }
+  },
+  "double_write": {
+    "id": "double_write", "name": "Double Write", "type": "devops",
+    "category": "special", "power": 85, "accuracy": 75, "pp": 10,
+    "description": "Two threads write at once. Devastating but unpredictable.",
+    "effect": null
+  },
+  "stale_read": {
+    "id": "stale_read", "name": "Stale Read", "type": "devops",
+    "category": "special", "power": 50, "accuracy": 100, "pp": 20,
+    "description": "Reads outdated data. Weakens the enemy's defenses.",
+    "effect": { "stat": "spDefense", "stages": -1, "target": "enemy" }
+  },
+  "tdd": {
+    "id": "tdd", "name": "TDD", "type": "testing",
+    "category": "physical", "power": 60, "accuracy": 100, "pp": 20,
+    "description": "Red, green, refactor. Hits with disciplined force.",
+    "effect": null
+  },
+  "describe": {
+    "id": "describe", "name": "Describe", "type": "testing",
+    "category": "special", "power": 80, "accuracy": 90, "pp": 10,
+    "description": "Wraps the enemy in a describe block. Thorough and powerful.",
+    "effect": null
   },
   "dot_lenght": {
     "id": "dot_lenght", "name": ".lenght", "type": "testing",

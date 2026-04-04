@@ -7,8 +7,8 @@
     "learnset": [
       { "level": 1, "move": "expect_matcher" },
       { "level": 5, "move": "mock_object" },
-      { "level": 10, "move": "assert_equal" },
-      { "level": 16, "move": "integration_test" }
+      { "level": 10, "move": "tdd" },
+      { "level": 16, "move": "describe" }
     ],
     "evolution": null
   },

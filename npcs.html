@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NPC Sprite Reference</title>
+  <style>
+    body {
+      background: #1a1a2e;
+      color: #eee;
+      font-family: monospace;
+      padding: 20px;
+    }
+    h1 { color: #e94560; }
+    h2 { color: #e94560; margin-top: 40px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .card {
+      background: #16213e;
+      border: 2px solid #0f3460;
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+    }
+    .card img {
+      image-rendering: pixelated;
+      height: 96px;
+      margin-bottom: 8px;
+      object-fit: cover;
+      object-position: center;
+      width: 96px;
+    }
+    .card .name {
+      font-size: 16px;
+      font-weight: bold;
+      color: #e94560;
+    }
+    .card .key {
+      font-size: 13px;
+      color: #aaa;
+      margin-top: 4px;
+    }
+    .card .key code {
+      background: #0f3460;
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #53d8fb;
+    }
+    .card .size {
+      font-size: 11px;
+      color: #666;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>NPC Sprite Reference</h1>
+  <p>Use the <code>spriteKey</code> value in Tiled or code to assign a sprite to an NPC or trainer.</p>
+
+  <h2>New Sprites (pg1-pg15)</h2>
+  <div class="grid" id="pg-grid"></div>
+
+  <h2>Original Sprites (npc01-npc10)</h2>
+  <div class="grid" id="npc-grid"></div>
+
+  <h2>Bug Sprites</h2>
+  <div class="grid" id="bug-grid"></div>
+
+  <h2>Gem Sprites</h2>
+  <div class="grid" id="gem-grid"></div>
+
+  <script>
+    function addCard(gridId, src, name, key, size) {
+      const grid = document.getElementById(gridId);
+      const card = document.createElement('div');
+      card.className = 'card';
+      const img = document.createElement('img');
+      img.src = src;
+      img.onerror = () => card.remove();
+      card.appendChild(img);
+      card.innerHTML += `<div class="name">${name}</div><div class="key">spriteKey: <code>${key}</code></div><div class="size">${size}</div>`;
+      grid.appendChild(card);
+    }
+
+    // PG sprites
+    for (let i = 1; i <= 15; i++) {
+      addCard('pg-grid', `assets/sprites/pg${i}.png`, `PG ${i}`, `pg${i}`, '36x48 frames');
+    }
+
+    // Original NPC sprites
+    const npcIds = ['01','02','03','04','05','06','07','09','10'];
+    for (const id of npcIds) {
+      addCard('npc-grid', `assets/sprites/npc${id}.png`, `NPC ${id}`, `npc${id}`, '32x32 frames');
+    }
+
+    // Bug sprites
+    const bugIds = [
+      'n_plus_one', 'no_method_error', 'request_timeout', 'sql_injection',
+      'memory_leak', 'race_condition', 'xss_attack', 'csrf_vuln',
+      'circular_dependency', 'unhandled_promise', 'flaky_test', 'brittle_spec',
+      'slow_test_suite', 'external_dependency', 'test_pollution', 'phantom_failure',
+      'auth_bypass', 'exposed_secret', 'insecure_redirect', 'infinite_loop',
+      'cache_stampede', 'schema_mismatch', 'deadlock', 'ci_failure',
+      'z_index_hell', 'docker_drift'
+    ];
+    for (const id of bugIds) {
+      addCard('bug-grid', `assets/sprites/bugs/${id}.png`, id.replace(/_/g, ' '), `bug-${id}`, '64x64');
+    }
+
+    // Gem sprites
+    const gemIds = [
+      'rspec', 'bullet', 'brakeman', 'devise', 'pundit', 'bcrypt',
+      'rack_mini_profiler', 'capybara', 'factory_bot', 'active_record',
+      'sidekiq', 'puma', 'turbo', 'pry'
+    ];
+    for (const id of gemIds) {
+      addCard('gem-grid', `assets/sprites/gems/${id}.png`, id.replace(/_/g, ' '), `gem-${id}`, '64x64');
+    }
+  </script>
+</body>
+</html>

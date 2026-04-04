@@ -15,7 +15,7 @@
     "dialogAfter": "Back to the tutorials\nfor me...",
     "party": [
       { "bugId": "brittle_spec", "level": 7 },
-      { "bugId": "missing_template", "level": 8 }
+      { "bugId": "request_timeout", "level": 8 }
     ],
     "prizeMoney": 240,
     "lineOfSight": 3

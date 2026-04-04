@@ -40,11 +40,11 @@
             "expandedObjectLayers": [
                 4
             ],
-            "scale": 1.1595,
+            "scale": 2,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 357.91289348857265,
-                "y": 268.2190599396291
+                "x": 589.5,
+                "y": 55.75
             }
         },
         "park.tmx": {
@@ -104,15 +104,15 @@
             "expandedObjectLayers": [
                 4
             ],
-            "scale": 1,
+            "scale": 1.5,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 218,
-                "y": 175.5
+                "x": 241.3333333333333,
+                "y": 234.33333333333337
             }
         }
     },
-    "last.exportedFilePath": "/Users/travisdockter/development/rails_dev_red/assets/maps",
+    "last.exportedFilePath": "/home/travis/development/bor_the_game/rails-quest/assets/maps",
     "last.externalTilesetPath": "/home/travis/development/bor_the_game/rails-quest/tiled",
     "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
     "map.lastUsedFormat": "tmx",
@@ -120,11 +120,11 @@
     ],
     "project": "blastoff_rails_the_game.tiled-project",
     "recentFiles": [
+        "venue.tmx",
         "parking_lot.tmx",
         "old_town.tmx",
         "hotel.tmx",
         "park.tmx",
-        "venue.tmx",
         "rocket.tsx"
     ],
     "tileset.lastUsedFilter": "Tiled tileset files (*.tsx *.xml)"

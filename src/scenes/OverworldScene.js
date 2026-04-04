@@ -284,17 +284,6 @@ class OverworldScene extends Phaser.Scene {
       this.loadProceduralObjects(mapKey);
     }
 
-    // Town name label
-    const names = {
-      'hotel': 'The Hotel', 'old-town': 'Old Town',
-      'park': 'The Park', 'venue': 'The Venue',
-      'parking-lot': 'Parking Lot'
-    };
-    const displayName = names[mapKey] || mapKey;
-    this.add.text(this.mapWidth / 2, 12, displayName, {
-      ...TEXT_STYLE_WHITE, fontSize: '6px',
-      backgroundColor: '#33333388', padding: { x: 4, y: 2 }
-    }).setOrigin(0.5).setDepth(100).setScrollFactor(0);
   }
 
   // Load NPC/door/trainer objects from the procedural definitions
