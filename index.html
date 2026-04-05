@@ -12,6 +12,7 @@
     body {
       background: #111;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
@@ -19,8 +20,8 @@
     }
     @media (pointer: coarse) {
       body {
-        align-items: flex-start;
-        padding-top: 60px;
+        justify-content: flex-start;
+        padding-top: 50px;
       }
     }
     canvas {
@@ -31,6 +32,19 @@
       max-height: 480px;
       display: block;
       margin: 0 auto;
+    }
+    .mobile-hint { display: none; }
+    @media (pointer: coarse) {
+      .desktop-hint { display: none; }
+      .mobile-hint { display: inline; }
+    }
+    #controls-hint {
+      color: #555;
+      font-family: monospace;
+      font-size: 12px;
+      text-align: center;
+      padding: 8px;
+      white-space: nowrap;
     }
     /* Mobile controls - only shown on touch devices */
     #mobile-controls {
@@ -181,6 +195,7 @@
   }
   </script>
 
+  <div id="controls-hint"><span class="desktop-hint">Arrows: Move &nbsp; Z: Confirm &nbsp; X: Menu/Cancel</span><span class="mobile-hint">A: Confirm &nbsp; B: Menu/Cancel</span></div>
   <div id="mobile-controls">
     <div class="dpad">
       <button class="up" data-key="ArrowUp">&#9650;&#xFE0E;</button>
