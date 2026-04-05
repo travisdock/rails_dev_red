@@ -69,6 +69,13 @@ const SaveManager = {
       gemName = gemDef ? gemDef.name : (firstGem.gemId || '???');
     }
     const badges = (data.player.badges || []).length;
-    return { gemName, badges };
+    let savedDate = '';
+    if (data.timestamp) {
+      const d = new Date(data.timestamp);
+      const mm = String(d.getMonth() + 1).padStart(2, '0');
+      const dd = String(d.getDate()).padStart(2, '0');
+      savedDate = `${d.getFullYear()}/${mm}/${dd}`;
+    }
+    return { gemName, badges, savedDate };
   }
 };

@@ -21,23 +21,30 @@ class TitleScene extends Phaser.Scene {
     this.add.image(GAME_WIDTH / 2, GAME_HEIGHT / 2, 'logo').setDisplaySize(176, 176).setAlpha(0.4).setDepth(-1);
 
     // Save slots
-    const menuY = 105;
+    const menuY = 85;
     this.menuItems = [];
     this.selectedIndex = 0;
 
     for (let slot = 1; slot <= 3; slot++) {
       const info = SaveManager.slotInfo(slot);
       if (info) {
-        this.menuItems.push({ text: `${info.gemName}`, action: 'continue', slot });
+        this.menuItems.push({ text: info.gemName, date: info.savedDate, action: 'continue', slot });
       } else {
-        this.menuItems.push({ text: 'New Game Here', action: 'new', slot });
+        this.menuItems.push({ text: 'New Game Here', date: null, action: 'new', slot });
       }
     }
 
     this.menuTexts = this.menuItems.map((item, i) => {
-      return this.add.text(GAME_WIDTH / 2, menuY + i * 14, item.text, {
+      const y = menuY + i * 20;
+      const nameText = this.add.text(GAME_WIDTH / 2, y, item.text, {
         ...TEXT_STYLE_WHITE
-      }).setOrigin(0.5);
+      }).setOrigin(0.5).setDepth(1);
+      if (item.date) {
+        this.add.text(GAME_WIDTH / 2, y + 8, item.date, {
+          fontFamily: '"Tiny5", cursive', fontSize: '8px', color: '#bbbbbb'
+        }).setOrigin(0.5).setDepth(1);
+      }
+      return nameText;
     });
 
     // Cursor
@@ -55,7 +62,7 @@ class TitleScene extends Phaser.Scene {
     });
 
     // Version text
-    this.add.text(GAME_WIDTH / 2, GAME_HEIGHT - 5, 'v0.1.0', {
+    this.add.text(GAME_WIDTH / 2, GAME_HEIGHT - 5, 'v0.9.0', {
       fontFamily: '"Tiny5", cursive', fontSize: '8px', color: '#555555'
     }).setOrigin(0.5).setDepth(1);
 
@@ -90,8 +97,8 @@ class TitleScene extends Phaser.Scene {
   }
 
   updateCursor() {
-    const menuY = 105;
-    this.cursor.setY(menuY + this.selectedIndex * 14);
+    const menuY = 85;
+    this.cursor.setY(menuY + this.selectedIndex * 20);
   }
 
   selectOption() {
