@@ -19,7 +19,7 @@ class PartyScene extends Phaser.Scene {
       this.add.rectangle(8, y + 8, 6, 16, typeColor);
 
       // Name and level
-      this.add.text(16, y, `${gem.name} Lv${gem.level}`, {
+      this.add.text(16, y, `${gem.name} v${gem.level}`, {
         ...TEXT_STYLE_WHITE
       });
 

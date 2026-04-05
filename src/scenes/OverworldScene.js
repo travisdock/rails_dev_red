@@ -667,7 +667,7 @@ class OverworldScene extends Phaser.Scene {
 
       const showReward = () => {
         if (rewardGem) {
-          this.showDialog([`You got ${rewardGem.name} (Lv${rewardGem.level})!`], () => {
+          this.showDialog([`You got ${rewardGem.name} (v${rewardGem.level})!`], () => {
             this.player.unfreeze();
           });
         } else {

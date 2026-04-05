@@ -39,7 +39,7 @@ window.DEBUG = {
   addGem(gemId, level) {
     const gem = new GemInstance(gemId, level || 10);
     if (PartyManager.addGem(gem)) {
-      console.log(`Added ${gem.name} Lv${gem.level}`);
+      console.log(`Added ${gem.name} v${gem.level}`);
     } else {
       console.log('Party is full!');
     }
@@ -59,7 +59,7 @@ window.DEBUG = {
       spDefense: GameMath.calcStat(def.baseStats.spDefense, level, false),
       speed: GameMath.calcStat(def.baseStats.speed, level, false)
     };
-    console.log(`${gem.name} set to Lv${level}`);
+    console.log(`${gem.name} set to v${level}`);
   },
   addBadge(badgeId) {
     ProgressManager.addBadge(badgeId);
@@ -74,7 +74,7 @@ window.DEBUG = {
   gameState() {
     console.log('Badges:', ProgressManager.badges);
     console.log('Trainers defeated:', ProgressManager.trainersDefeated);
-    console.log('Party:', PartyManager.party.map(g => `${g.name} Lv${g.level}`));
+    console.log('Party:', PartyManager.party.map(g => `${g.name} v${g.level}`));
   },
   deleteSave() {
     SaveManager.deleteSave();

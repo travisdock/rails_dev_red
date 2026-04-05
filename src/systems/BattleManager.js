@@ -235,7 +235,7 @@ class BattleManager {
       const levelUps = this.activePlayerGem.addXP(xpGain);
       for (const lu of levelUps) {
         events.push({ type: 'level_up', gem: this.activePlayerGem, level: lu.level });
-        events.push({ type: 'message', text: `${this.activePlayerGem.name} grew to level ${lu.level}!` });
+        events.push({ type: 'message', text: `Bundle update was run and ${this.activePlayerGem.name}'s version was updated to v${lu.level}!` });
         if (lu.newMove) {
           // Auto-learn if space, otherwise skip for MVP
           if (this.activePlayerGem.moves.length < MAX_MOVES) {

@@ -35,7 +35,7 @@ class BattleHUD {
     this.elements.push(hud.bg);
 
     // Level (second line, compact font)
-    hud.levelText = this.scene.add.text(x + 4, y + 12, `Lv${gem.level}`, {
+    hud.levelText = this.scene.add.text(x + 4, y + 12, `v${gem.level}`, {
       fontFamily: '"Tiny5", cursive',
       fontSize: '8px',
       color: '#111111'
@@ -106,7 +106,7 @@ class BattleHUD {
     if (!hud) return;
 
     hud.nameText.setText(gem.name);
-    hud.levelText.setText(`Lv${gem.level}`);
+    hud.levelText.setText(`v${gem.level}`);
 
     // Resize box to fit new name
     const newWidth = Math.max(hud.minWidth, hud.nameText.width + 16);
