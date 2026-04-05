@@ -23,7 +23,7 @@
       { "bugId": "circular_dependency", "levelRange": [13, 17], "weight": 20 },
       { "bugId": "race_condition", "levelRange": [15, 19], "weight": 20 },
       { "bugId": "n_plus_one", "levelRange": [13, 16], "weight": 20 },
-      { "bugId": "unhandled_promise", "levelRange": [14, 17], "weight": 15 }
+      { "bugId": "cors_error", "levelRange": [14, 17], "weight": 15 }
     ]
   },
   "parking_lot_easy": {

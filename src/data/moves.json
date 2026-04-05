@@ -216,31 +216,31 @@
     "effect": { "stat": "speed", "stages": 1, "target": "self" }
   },
   "background_job": {
-    "id": "background_job", "name": "Background Job", "type": "devops",
+    "id": "background_job", "name": "Background Job", "type": "performance",
     "category": "special", "power": 65, "accuracy": 100, "pp": 20,
     "description": "Queues a background job to deal damage.",
     "effect": null
   },
   "docker_build": {
-    "id": "docker_build", "name": "Docker Build", "type": "devops",
+    "id": "docker_build", "name": "Docker Build", "type": "performance",
     "category": "special", "power": 80, "accuracy": 90, "pp": 10,
     "description": "Builds a Docker container. Heavy hit.",
     "effect": null
   },
   "ci_pipeline": {
-    "id": "ci_pipeline", "name": "CI Pipeline", "type": "devops",
+    "id": "ci_pipeline", "name": "CI Pipeline", "type": "performance",
     "category": "special", "power": 55, "accuracy": 100, "pp": 25,
     "description": "Runs the CI pipeline. Consistent damage.",
     "effect": null
   },
   "thread_pool": {
-    "id": "thread_pool", "name": "Thread Pool", "type": "devops",
+    "id": "thread_pool", "name": "Thread Pool", "type": "performance",
     "category": "status", "power": 0, "accuracy": 100, "pp": 15,
     "description": "Initializes a thread pool. Raises Defense.",
     "effect": { "stat": "defense", "stages": 1, "target": "self" }
   },
   "deploy_push": {
-    "id": "deploy_push", "name": "Deploy Push", "type": "devops",
+    "id": "deploy_push", "name": "Deploy Push", "type": "performance",
     "category": "special", "power": 90, "accuracy": 85, "pp": 5,
     "description": "Pushes to production. Massive damage, risky.",
     "effect": null
@@ -274,6 +274,54 @@
     "category": "status", "power": 0, "accuracy": 100, "pp": 20,
     "description": "An endless loading spinner. Lowers enemy Speed.",
     "effect": { "stat": "speed", "stages": -1, "target": "enemy" }
+  },
+  "important": {
+    "id": "important", "name": "!important", "type": "frontend",
+    "category": "special", "power": 85, "accuracy": 85, "pp": 10,
+    "description": "Overrides everything. Powerful but reckless.",
+    "effect": null
+  },
+  "margin_auto": {
+    "id": "margin_auto", "name": "Margin Auto", "type": "frontend",
+    "category": "special", "power": 55, "accuracy": 100, "pp": 25,
+    "description": "margin: 0 auto. Centers with elegance.",
+    "effect": null
+  },
+  "z_index_9999": {
+    "id": "z_index_9999", "name": "z-index: 9999", "type": "frontend",
+    "category": "special", "power": 75, "accuracy": 90, "pp": 15,
+    "description": "Just keep adding nines. Brute force stacking.",
+    "effect": null
+  },
+  "request_blocked": {
+    "id": "request_blocked", "name": "Request Blocked", "type": "frontend",
+    "category": "special", "power": 65, "accuracy": 100, "pp": 20,
+    "description": "The request is denied. Access-Control says no.",
+    "effect": null
+  },
+  "external_redirect": {
+    "id": "external_redirect", "name": "External Redirect", "type": "frontend",
+    "category": "status", "power": 0, "accuracy": 100, "pp": 20,
+    "description": "Redirects to an external origin. Lowers enemy Speed.",
+    "effect": { "stat": "speed", "stages": -1, "target": "enemy" }
+  },
+  "parse": {
+    "id": "parse", "name": "Parse", "type": "frontend",
+    "category": "special", "power": 60, "accuracy": 100, "pp": 20,
+    "description": "Parses the template with precision. Reliable damage.",
+    "effect": null
+  },
+  "lint": {
+    "id": "lint", "name": "Lint", "type": "frontend",
+    "category": "special", "power": 50, "accuracy": 100, "pp": 25,
+    "description": "Catches problems before they ship. Lowers enemy Defense.",
+    "effect": { "stat": "defense", "stages": -1, "target": "enemy" }
+  },
+  "format": {
+    "id": "format", "name": "Format", "type": "frontend",
+    "category": "special", "power": 85, "accuracy": 90, "pp": 10,
+    "description": "Formats everything perfectly. Devastating.",
+    "effect": null
   },
   "scan": {
     "id": "scan", "name": "Scan", "type": "security",
@@ -402,19 +450,19 @@
     "effect": null
   },
   "deadlock": {
-    "id": "deadlock", "name": "Deadlock", "type": "devops",
+    "id": "deadlock", "name": "Deadlock", "type": "runtime",
     "category": "status", "power": 0, "accuracy": 100, "pp": 15,
     "description": "Two threads waiting on each other. Forever. Lowers enemy Speed.",
     "effect": { "stat": "speed", "stages": -1, "target": "enemy" }
   },
   "double_write": {
-    "id": "double_write", "name": "Double Write", "type": "devops",
+    "id": "double_write", "name": "Double Write", "type": "runtime",
     "category": "special", "power": 85, "accuracy": 75, "pp": 10,
     "description": "Two threads write at once. Devastating but unpredictable.",
     "effect": null
   },
   "stale_read": {
-    "id": "stale_read", "name": "Stale Read", "type": "devops",
+    "id": "stale_read", "name": "Stale Read", "type": "runtime",
     "category": "special", "power": 50, "accuracy": 100, "pp": 20,
     "description": "Reads outdated data. Weakens the enemy's defenses.",
     "effect": { "stat": "spDefense", "stages": -1, "target": "enemy" }

@@ -44,6 +44,23 @@ window.DEBUG = {
       console.log('Party is full!');
     }
   },
+  setLevel(index, level) {
+    const gem = PartyManager.party[index];
+    if (!gem) { console.log('No gem at index ' + index); return; }
+    const def = window.GAME_DATA.gems[gem.gemId];
+    gem.level = level;
+    gem.xp = GameMath.xpForLevel(level);
+    gem.maxHp = GameMath.calcStat(def.baseStats.hp, level, true);
+    gem.currentHp = gem.maxHp;
+    gem.stats = {
+      attack: GameMath.calcStat(def.baseStats.attack, level, false),
+      defense: GameMath.calcStat(def.baseStats.defense, level, false),
+      spAttack: GameMath.calcStat(def.baseStats.spAttack, level, false),
+      spDefense: GameMath.calcStat(def.baseStats.spDefense, level, false),
+      speed: GameMath.calcStat(def.baseStats.speed, level, false)
+    };
+    console.log(`${gem.name} set to Lv${level}`);
+  },
   addBadge(badgeId) {
     ProgressManager.addBadge(badgeId);
     console.log(`Badge ${badgeId} added!`);

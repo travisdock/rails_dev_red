@@ -14,7 +14,7 @@ class Trainer extends NPC {
     this.party = (config.party || []).map(p => new BugInstance(p.bugId, p.level));
     this.rewardGem = config.rewardGem || null;
     this.rewardGemLevel = config.rewardGemLevel || 10;
-    this.lineOfSight = config.lineOfSight || 3;
+    this.lineOfSight = config.lineOfSight !== undefined ? config.lineOfSight : 3;
     this.defeated = ProgressManager.isTrainerDefeated(this.trainerId);
     this.isGymLeader = config.badge !== undefined;
     this.badge = config.badge;

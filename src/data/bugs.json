@@ -35,7 +35,7 @@
     "moves": ["heap_growth", "out_of_memory"]
   },
   "race_condition": {
-    "id": "race_condition", "name": "Race Condition", "type": "devops",
+    "id": "race_condition", "name": "Race Condition", "type": "runtime",
     "description": "Two threads walk into a bar. The order is unpredictable.",
     "baseStats": { "hp": 40, "attack": 50, "defense": 30, "spAttack": 50, "spDefense": 30, "speed": 65 },
     "baseXP": 64,
@@ -62,12 +62,12 @@
     "baseXP": 56,
     "moves": ["benchmark", "slow_query"]
   },
-  "unhandled_promise": {
-    "id": "unhandled_promise", "name": "Unhandled Promise", "type": "frontend",
-    "description": "A promise rejected with no handler. Chaos ensues.",
+  "cors_error": {
+    "id": "cors_error", "name": "CORS Error", "type": "frontend",
+    "description": "Cross-Origin Request Blocked. Access denied.",
     "baseStats": { "hp": 30, "attack": 45, "defense": 25, "spAttack": 50, "spDefense": 30, "speed": 55 },
     "baseXP": 54,
-    "moves": ["dom_manipulate", "hotwire_stream", "stimulus_connect"]
+    "moves": ["request_blocked", "external_redirect"]
   },
   "flaky_test": {
     "id": "flaky_test", "name": "Flaky Test", "type": "testing",
@@ -160,25 +160,18 @@
     "baseXP": 64,
     "moves": ["raw_sql", "slow_query", "index_optimize"]
   },
-  "ci_failure": {
-    "id": "ci_failure", "name": "CI Failure", "type": "devops",
-    "description": "The build is red. Again. Nobody knows what changed.",
-    "baseStats": { "hp": 40, "attack": 40, "defense": 35, "spAttack": 45, "spDefense": 35, "speed": 45 },
-    "baseXP": 56,
-    "moves": ["ci_pipeline", "background_job", "thread_pool"]
+  "centered_div": {
+    "id": "centered_div", "name": "Centered Div", "type": "frontend",
+    "description": "How hard can it be to center a div? Very.",
+    "baseStats": { "hp": 40, "attack": 35, "defense": 35, "spAttack": 45, "spDefense": 35, "speed": 40 },
+    "baseXP": 50,
+    "moves": ["important", "margin_auto"]
   },
   "z_index_hell": {
     "id": "z_index_hell", "name": "Z-Index Hell", "type": "frontend",
     "description": "z-index: 99999. Still behind the modal.",
     "baseStats": { "hp": 35, "attack": 35, "defense": 30, "spAttack": 45, "spDefense": 35, "speed": 40 },
     "baseXP": 50,
-    "moves": ["dom_manipulate", "hotwire_stream", "stimulus_connect"]
-  },
-  "docker_drift": {
-    "id": "docker_drift", "name": "Docker Drift", "type": "devops",
-    "description": "Works in Docker. Doesn't work in Docker anymore.",
-    "baseStats": { "hp": 40, "attack": 35, "defense": 35, "spAttack": 40, "spDefense": 40, "speed": 40 },
-    "baseXP": 52,
-    "moves": ["docker_build", "background_job"]
+    "moves": ["z_index_9999"]
   }
 }

@@ -128,7 +128,7 @@
     "evolution": null
   },
   "sidekiq": {
-    "id": "sidekiq", "name": "Sidekiq", "type": "devops",
+    "id": "sidekiq", "name": "Sidekiq", "type": "performance",
     "description": "Simple, efficient background processing. Works hard so you don't have to.",
     "baseStats": { "hp": 55, "attack": 60, "defense": 45, "spAttack": 50, "spDefense": 40, "speed": 55 },
     "baseXP": 64,
@@ -141,7 +141,7 @@
     "evolution": null
   },
   "puma": {
-    "id": "puma", "name": "Puma", "type": "devops",
+    "id": "puma", "name": "Puma", "type": "performance",
     "description": "A fast, concurrent web server for Ruby.",
     "baseStats": { "hp": 60, "attack": 45, "defense": 50, "spAttack": 40, "spDefense": 50, "speed": 60 },
     "baseXP": 62,
@@ -176,6 +176,18 @@
       { "level": 4, "move": "whereami" },
       { "level": 8, "move": "show_source" },
       { "level": 12, "move": "jump_to" }
+    ],
+    "evolution": null
+  },
+  "herb": {
+    "id": "herb", "name": "Herb", "type": "frontend",
+    "description": "A powerful view layer component engine. Beautiful and fast.",
+    "baseStats": { "hp": 55, "attack": 40, "defense": 50, "spAttack": 75, "spDefense": 60, "speed": 65 },
+    "baseXP": 72,
+    "learnset": [
+      { "level": 1, "move": "parse" },
+      { "level": 1, "move": "lint" },
+      { "level": 14, "move": "format" }
     ],
     "evolution": null
   }

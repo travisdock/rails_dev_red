@@ -47,9 +47,9 @@
     "dialogBefore": "Full-stack means I've got\nbugs for every layer!",
     "dialogAfter": "Well-rounded team\nyou've got there.",
     "party": [
-      { "bugId": "unhandled_promise", "level": 14 },
+      { "bugId": "cors_error", "level": 14 },
       { "bugId": "exposed_secret", "level": 13 },
-      { "bugId": "ci_failure", "level": 14 }
+      { "bugId": "race_condition", "level": 14 }
     ],
     "prizeMoney": 560,
     "lineOfSight": 4
@@ -131,5 +131,46 @@
     ],
     "prizeMoney": 800,
     "lineOfSight": 5
+  },
+  "parking_01": {
+    "id": "parking_01", "name": "Junior Dev Casey", "class": "Junior Developer",
+    "dialogBefore": "I just deployed my first app and everything is breaking!",
+    "dialogAfter": "Maybe I should have written tests first...",
+    "party": [
+      { "bugId": "no_method_error", "level": 9 },
+      { "bugId": "centered_div", "level": 10 }
+    ],
+    "lineOfSight": 3
+  },
+  "parking_02": {
+    "id": "parking_02", "name": "Frontend Dev Skyler", "class": "Frontend Developer",
+    "dialogBefore": "My CSS is pixel perfect but my JavaScript is full of bugs!",
+    "dialogAfter": "I should have checked the console...",
+    "party": [
+      { "bugId": "cors_error", "level": 10 },
+      { "bugId": "z_index_hell", "level": 11 }
+    ],
+    "lineOfSight": 3
+  },
+  "parking_03": {
+    "id": "parking_03", "name": "Senior Dev Dana", "class": "Senior Developer",
+    "dialogBefore": "I've been debugging production issues all day. Want to see what I found?",
+    "dialogAfter": "You handled those like a pro...",
+    "party": [
+      { "bugId": "race_condition", "level": 15 },
+      { "bugId": "cors_error", "level": 16 }
+    ],
+    "lineOfSight": 4
+  },
+  "parking_04": {
+    "id": "parking_04", "name": "Open Source Marco", "class": "Full Stack Developer",
+    "dialogBefore": "Do you know what's possible in the Rails view layer?",
+    "dialogAfter": "You will need Herb where you are going. Use it well.",
+    "party": [
+      { "bugId": "memory_leak", "level": 16 },
+      { "bugId": "cors_error", "level": 16 },
+      { "bugId": "z_index_hell", "level": 17 }
+    ],
+    "lineOfSight": 0
   }
 }

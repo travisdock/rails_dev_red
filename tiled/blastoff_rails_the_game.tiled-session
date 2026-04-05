@@ -23,15 +23,16 @@
             "expandedObjectLayers": [
                 4
             ],
-            "scale": 8,
+            "scale": 2,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 49,
-                "y": 236.1875
+                "x": 232.5,
+                "y": 139.75
             }
         },
         "house.tsx": {
-            "scaleInDock": 1
+            "scaleInDock": 1,
+            "scaleInEditor": 1
         },
         "interior.tsx": {
             "scaleInDock": 1
@@ -120,10 +121,11 @@
     ],
     "project": "blastoff_rails_the_game.tiled-project",
     "recentFiles": [
+        "house.tsx",
+        "hotel.tmx",
         "venue.tmx",
         "parking_lot.tmx",
         "old_town.tmx",
-        "hotel.tmx",
         "park.tmx",
         "rocket.tsx"
     ],

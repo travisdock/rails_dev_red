@@ -13,23 +13,26 @@ class BattleHUD {
   createEnemyHUD(gem) {
     const x = 8;
     const y = 16;
-    this.enemyHUD = this.createGemHUD(x, y, gem, false, 135, 73);
+    this.enemyHUD = this.createGemHUD(x, y, gem, false, 105, 73);
   }
 
-  createGemHUD(x, y, gem, showHP, width, barWidth) {
+  createGemHUD(x, y, gem, showHP, minWidth, barWidth) {
     const hud = {};
+
+    // Name (create first to measure width)
+    hud.nameText = this.scene.add.text(x + 4, y + 2, `${gem.name}`, {
+      ...TEXT_STYLE
+    }).setScrollFactor(0).setDepth(901);
+    this.elements.push(hud.nameText);
+
+    // Size box to fit name text, with minimum width
+    const width = Math.max(minWidth, hud.nameText.width + 16);
 
     // Background box
     hud.bg = this.scene.add.rectangle(x + width / 2, y + 16, width, 32, 0xf8f8f8)
       .setStrokeStyle(1, 0x888888)
       .setScrollFactor(0).setDepth(900);
     this.elements.push(hud.bg);
-
-    // Name
-    hud.nameText = this.scene.add.text(x + 4, y + 2, `${gem.name}`, {
-      ...TEXT_STYLE
-    }).setScrollFactor(0).setDepth(901);
-    this.elements.push(hud.nameText);
 
     // Level (second line, compact font)
     hud.levelText = this.scene.add.text(x + 4, y + 12, `Lv${gem.level}`, {
@@ -80,6 +83,7 @@ class BattleHUD {
     hud.showHP = showHP;
     hud.hudX = x;
     hud.hudWidth = width;
+    hud.minWidth = minWidth;
 
     return hud;
   }
@@ -103,6 +107,13 @@ class BattleHUD {
 
     hud.nameText.setText(gem.name);
     hud.levelText.setText(`Lv${gem.level}`);
+
+    // Resize box to fit new name
+    const newWidth = Math.max(hud.minWidth, hud.nameText.width + 16);
+    hud.bg.setDisplaySize(newWidth, 32);
+    hud.bg.setX(hud.hudX + newWidth / 2);
+    hud.hudWidth = newWidth;
+
     this.updateHP(side, gem.currentHp, gem.maxHp);
   }
 

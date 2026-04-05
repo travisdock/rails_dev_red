@@ -90,7 +90,8 @@ class PreloadScene extends Phaser.Scene {
     const bugIds = [
       'n_plus_one', 'no_method_error', 'request_timeout', 'sql_injection',
       'memory_leak', 'race_condition', 'xss_attack', 'flaky_test', 'brittle_spec',
-      'slow_test_suite', 'external_dependency', 'test_pollution', 'phantom_failure'
+      'slow_test_suite', 'external_dependency', 'test_pollution', 'phantom_failure',
+      'cors_error', 'centered_div', 'z_index_hell'
     ];
     for (const id of bugIds) {
       this.load.image('bug-' + id, 'assets/sprites/bugs/' + id + '.png');
@@ -98,7 +99,7 @@ class PreloadScene extends Phaser.Scene {
 
     // Load gem sprites (loaded by convention — missing files fall back to colored rectangles)
     const gemIds = [
-      'rspec', 'bullet', 'brakeman'
+      'rspec', 'bullet', 'brakeman', 'herb'
     ];
     for (const id of gemIds) {
       this.load.image('gem-' + id, 'assets/sprites/gems/' + id + '.png');

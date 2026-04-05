@@ -11,7 +11,7 @@ describe('TypeChart', () => {
   it('returns not very effective for known pairs', () => {
     expect(TypeChart.getEffectiveness('security', 'performance')).toBe(1);
     expect(TypeChart.getEffectiveness('database', 'security')).toBe(0.5);
-    expect(TypeChart.getEffectiveness('performance', 'devops')).toBe(1);
+    expect(TypeChart.getEffectiveness('runtime', 'performance')).toBe(0.5);
   });
 
   it('returns neutral for neutral pairs', () => {
