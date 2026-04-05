@@ -1,18 +1,20 @@
 class TransitionFX {
   static battleTransition(scene, callback) {
+    // Black overlay for flashing
     const overlay = scene.add.rectangle(
       GAME_WIDTH / 2, GAME_HEIGHT / 2,
       GAME_WIDTH, GAME_HEIGHT,
-      0x000000, 0
+      0x000000, 1
     ).setScrollFactor(0).setDepth(2000);
 
-    // Flash white then fade to black
+    // Flash: black -> transparent -> black, 3 times
     scene.tweens.add({
       targets: overlay,
-      alpha: { from: 0, to: 1 },
-      duration: 300,
+      alpha: 0,
+      duration: 120,
       yoyo: true,
       repeat: 2,
+      hold: 80,
       onComplete: () => {
         overlay.setAlpha(1);
         scene.time.delayedCall(200, () => {

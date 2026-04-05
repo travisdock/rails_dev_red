@@ -59,6 +59,27 @@ class OverworldScene extends Phaser.Scene {
       });
     } else if (!this.starterChosen && this.mapKey === 'hotel') {
       this.time.delayedCall(500, () => this.showStarterSelection());
+    } else {
+      // First visit message for each map
+      const mapStoryKey = 'visited_' + this.mapKey;
+      if (!ProgressManager.hasSeenStory(mapStoryKey)) {
+        const mapMessages = {
+          'parking-lot': ["You step into the Parking Lot.", "Stray from the pathways and you might encounter wild bugs."],
+          'old-town': ["Welcome to Old Town. The oldest code in Albuquerque lives here."],
+          'park': ["You enter the Park. Watch out for performance bugs in the tall grass."],
+          'venue': ["The Venue. The rocket awaits those with all four Boarding Passes."]
+        };
+        const msgs = mapMessages[this.mapKey];
+        if (msgs) {
+          ProgressManager.seeStory(mapStoryKey);
+          this.player.freeze();
+          this.time.delayedCall(400, () => {
+            this.showDialog(msgs, () => {
+              this.player.unfreeze();
+            });
+          });
+        }
+      }
     }
   }
 
@@ -456,7 +477,7 @@ class OverworldScene extends Phaser.Scene {
 
         // Special NPC actions
         if (messages[0] === 'heal') {
-          this.showDialog(['Welcome to the CI/CD Center!', 'Let me heal your gems...', 'Your gems are fully restored!'], () => {
+          this.showDialog(['Welcome to the CI/CD Center!', 'Let me run bundle pristine...', 'Your gems are fully restored!'], () => {
             PartyManager.healAll();
           }, npc.name);
           return;
@@ -567,7 +588,7 @@ class OverworldScene extends Phaser.Scene {
     const starters = [
       { gemId: 'rspec', name: 'RSpec', type: 'Testing', desc: 'All-around solid' },
       { gemId: 'bullet', name: 'Bullet', type: 'Performance', desc: 'Fast special attacker' },
-      { gemId: 'brakeman', name: 'Brakeman', type: 'security', desc: 'Tough and defensive' }
+      { gemId: 'brakeman', name: 'Brakeman', type: 'Security', desc: 'Tough and defensive' }
     ];
 
     this.dialogManager.show([
@@ -648,26 +669,34 @@ class OverworldScene extends Phaser.Scene {
         ProgressManager.completeGym(result.trainerData.id);
 
         trainerMsgs.push(...(result.trainerData.dialogAfter || ['Great code review!']));
-        trainerMsgs.push(`You got the ${result.trainerData.badgeName}!`);
+      }
+
+      // Build system messages (no trainer name)
+      const systemMsgs = [];
+
+      // Badge/pass reward
+      if (result.trainerData.isGymLeader && result.trainerData.badge) {
+        systemMsgs.push(`You got the ${result.trainerData.badgeName}!`);
 
         if (ProgressManager.badgeCount() >= 4) {
-          trainerMsgs.push("You have all 4 Boarding Passes!");
-          trainerMsgs.push("The rocket is ready.\nWelcome aboard, developer!");
-          trainerMsgs.push("3... 2... 1... BLASTOFF!");
-          trainerMsgs.push("Congratulations!\nYou've completed\nBlastoff Rails: The Game!");
+          systemMsgs.push("You have all 4 Boarding Passes!");
+          systemMsgs.push("The rocket is ready.\nWelcome aboard, developer!");
+          systemMsgs.push("3... 2... 1... BLASTOFF!");
+          systemMsgs.push("Congratulations!\nYou've completed\nBlastoff Rails: The Game!");
         }
       }
 
-      // Gem reward (shown after trainer dialog, no trainer name)
+      // Gem reward
       let rewardGem = null;
       if (trainer && trainer.rewardGem && window.GAME_DATA.gems[trainer.rewardGem]) {
         rewardGem = new GemInstance(trainer.rewardGem, trainer.rewardGemLevel);
         PartyManager.addGem(rewardGem);
+        systemMsgs.push(`You got ${rewardGem.name} (v${rewardGem.level})!`);
       }
 
-      const showReward = () => {
-        if (rewardGem) {
-          this.showDialog([`You got ${rewardGem.name} (v${rewardGem.level})!`], () => {
+      const showSystemMsgs = () => {
+        if (systemMsgs.length > 0) {
+          this.showDialog(systemMsgs, () => {
             this.player.unfreeze();
           });
         } else {
@@ -677,10 +706,10 @@ class OverworldScene extends Phaser.Scene {
 
       if (trainerMsgs.length > 0) {
         this.time.delayedCall(500, () => {
-          this.showDialog(trainerMsgs, showReward, result.trainerData.name);
+          this.showDialog(trainerMsgs, showSystemMsgs, result.trainerData.name);
         });
       } else {
-        this.time.delayedCall(300, showReward);
+        this.time.delayedCall(300, showSystemMsgs);
       }
     } else if (result.result === 'lose') {
       // Blackout - heal and return to last town

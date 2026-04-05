@@ -64,11 +64,11 @@
                 4,
                 5
             ],
-            "scale": 1,
-            "selectedLayer": 1,
+            "scale": 2,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 308,
-                "y": 300.5
+                "x": 328,
+                "y": 242.75
             }
         },
         "path.tsx": {
@@ -121,10 +121,10 @@
     ],
     "project": "blastoff_rails_the_game.tiled-project",
     "recentFiles": [
+        "parking_lot.tmx",
         "house.tsx",
         "hotel.tmx",
         "venue.tmx",
-        "parking_lot.tmx",
         "old_town.tmx",
         "park.tmx",
         "rocket.tsx"

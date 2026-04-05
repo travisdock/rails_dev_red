@@ -76,6 +76,7 @@ class TitleScene extends Phaser.Scene {
     this.cursors = this.input.keyboard.createCursorKeys();
     this.keyZ = this.input.keyboard.addKey('Z');
     this.keyEnter = this.input.keyboard.addKey('ENTER');
+    this.keyC = this.input.keyboard.addKey('C');
   }
 
   update() {
@@ -90,6 +91,14 @@ class TitleScene extends Phaser.Scene {
 
     if (Phaser.Input.Keyboard.JustDown(this.keyZ) || Phaser.Input.Keyboard.JustDown(this.keyEnter)) {
       this.selectOption();
+    }
+
+    if (this.keyC.isDown && this.input.keyboard.checkDown(this.keyC)) {
+      const item = this.menuItems[this.selectedIndex];
+      if (item.action === 'continue') {
+        SaveManager.deleteSave(item.slot);
+        this.scene.restart();
+      }
     }
   }
 
@@ -121,9 +130,9 @@ class TitleScene extends Phaser.Scene {
       PartyManager.init(null);
       this.scene.start('OverworldScene', {
         mapKey: 'hotel',
-        playerX: 1,
-        playerY: 17,
-        facing: 'up',
+        playerX: 5,
+        playerY: 14,
+        facing: 'down',
         starterChosen: false
       });
     }

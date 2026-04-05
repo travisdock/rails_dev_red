@@ -213,7 +213,7 @@ class BattleScene extends Phaser.Scene {
       onCancel: () => this.showActionMenu()
     });
 
-    this.messageBox.setText('Choose a gem: (X to cancel)').setVisible(true);
+    this.messageBox.setText('Choose a gem:').setVisible(true);
   }
 
   handleAction(action) {
@@ -274,7 +274,7 @@ class BattleScene extends Phaser.Scene {
           this.currentMenu = null;
         }
         // If more events follow, auto-advance; otherwise wait for input
-        if (this.eventQueue.length > 0) {
+        if (this.eventQueue.length > 0 && !event.waitForInput) {
           this.log('message_auto', { text: event.text, remaining: this.eventQueue.length });
           nextAfter(800);
         } else {
