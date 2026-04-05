@@ -60,7 +60,7 @@
     "description": "A requires B requires A. Stack overflow imminent.",
     "baseStats": { "hp": 50, "attack": 30, "defense": 45, "spAttack": 40, "spDefense": 45, "speed": 20 },
     "baseXP": 56,
-    "moves": ["benchmark", "slow_query"]
+    "moves": ["require_self", "stack_overflow"]
   },
   "cors_error": {
     "id": "cors_error", "name": "CORS Error", "type": "frontend",
@@ -137,14 +137,14 @@
     "description": "while(true) { /* help */ }",
     "baseStats": { "hp": 50, "attack": 40, "defense": 35, "spAttack": 50, "spDefense": 40, "speed": 45 },
     "baseXP": 62,
-    "moves": ["profile_analyze", "cache_warm", "eager_load"]
+    "moves": ["while_true"]
   },
   "cache_stampede": {
     "id": "cache_stampede", "name": "Cache Stampede", "type": "performance",
     "description": "Cache expires. A thousand requests hit the DB at once.",
     "baseStats": { "hp": 45, "attack": 40, "defense": 35, "spAttack": 50, "spDefense": 40, "speed": 45 },
     "baseXP": 60,
-    "moves": ["benchmark", "eager_load", "profile_analyze"]
+    "moves": ["cache_miss", "cold_start", "thundering_herd"]
   },
   "schema_mismatch": {
     "id": "schema_mismatch", "name": "Schema Mismatch", "type": "database",

@@ -437,6 +437,42 @@
     "description": "Steals session cookies. Weakens enemy defenses.",
     "effect": { "stat": "spDefense", "stages": -1, "target": "enemy" }
   },
+  "cache_miss": {
+    "id": "cache_miss", "name": "Cache Miss", "type": "performance",
+    "category": "special", "power": 55, "accuracy": 100, "pp": 25,
+    "description": "Cache is empty. Everyone hits the DB.",
+    "effect": null
+  },
+  "cold_start": {
+    "id": "cold_start", "name": "Cold Start", "type": "performance",
+    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "description": "Cache is completely cold. Raises Sp. Attack.",
+    "effect": { "stat": "spAttack", "stages": 1, "target": "self" }
+  },
+  "thundering_herd": {
+    "id": "thundering_herd", "name": "Thundering Herd", "type": "performance",
+    "category": "special", "power": 85, "accuracy": 85, "pp": 10,
+    "description": "All the requests arrive at once. Devastating.",
+    "effect": null
+  },
+  "require_self": {
+    "id": "require_self", "name": "require_self", "type": "performance",
+    "category": "status", "power": 0, "accuracy": 100, "pp": 20,
+    "description": "Requires itself. Gets stronger in a loop. Raises Sp. Attack.",
+    "effect": { "stat": "spAttack", "stages": 1, "target": "self" }
+  },
+  "stack_overflow": {
+    "id": "stack_overflow", "name": "Stack Overflow", "type": "performance",
+    "category": "special", "power": 80, "accuracy": 90, "pp": 10,
+    "description": "The call stack blows up. Devastating.",
+    "effect": null
+  },
+  "while_true": {
+    "id": "while_true", "name": "while(true)", "type": "performance",
+    "category": "special", "power": 60, "accuracy": 100, "pp": 99,
+    "description": "while(true) { /* help */ }. It never stops.",
+    "effect": null
+  },
   "heap_growth": {
     "id": "heap_growth", "name": "Heap Growth", "type": "performance",
     "category": "status", "power": 0, "accuracy": 100, "pp": 15,
