@@ -5,33 +5,20 @@ class TitleScene extends Phaser.Scene {
 
   create() {
     // Background
-    this.add.rectangle(GAME_WIDTH / 2, GAME_HEIGHT / 2, GAME_WIDTH, GAME_HEIGHT, 0x111122);
+    this.add.rectangle(GAME_WIDTH / 2, GAME_HEIGHT / 2, GAME_WIDTH, GAME_HEIGHT, 0x111122).setDepth(-2);
 
     // Title
     this.add.text(GAME_WIDTH / 2, 30, 'BLASTOFF RAILS', {
       ...TEXT_STYLE, fontSize: '10px', color: '#ff6633'
-    }).setOrigin(0.5);
+    }).setOrigin(0.5).setDepth(1);
 
     // Subtitle
     this.add.text(GAME_WIDTH / 2, 48, 'The Game', {
       ...TEXT_STYLE, color: '#ff9966'
-    }).setOrigin(0.5);
+    }).setOrigin(0.5).setDepth(1);
 
-    // Decorative gem icon (diamond shape)
-    const gfx = this.add.graphics();
-    gfx.fillStyle(0xe74c3c, 1);
-    gfx.fillPoints([
-      { x: GAME_WIDTH / 2, y: 65 },
-      { x: GAME_WIDTH / 2 + 15, y: 80 },
-      { x: GAME_WIDTH / 2, y: 95 },
-      { x: GAME_WIDTH / 2 - 15, y: 80 }
-    ], true);
-    gfx.fillStyle(0xff6666, 0.5);
-    gfx.fillPoints([
-      { x: GAME_WIDTH / 2, y: 65 },
-      { x: GAME_WIDTH / 2 + 15, y: 80 },
-      { x: GAME_WIDTH / 2, y: 80 }
-    ], true);
+    // Logo (background, centered)
+    this.add.image(GAME_WIDTH / 2, GAME_HEIGHT / 2, 'logo').setDisplaySize(176, 176).setAlpha(0.4).setDepth(-1);
 
     // Save slots
     const menuY = 105;
@@ -68,9 +55,9 @@ class TitleScene extends Phaser.Scene {
     });
 
     // Version text
-    this.add.text(GAME_WIDTH / 2, GAME_HEIGHT - 8, 'v0.1.0', {
-      ...TEXT_STYLE, fontSize: '6px', color: '#555555'
-    }).setOrigin(0.5);
+    this.add.text(GAME_WIDTH / 2, GAME_HEIGHT - 5, 'v0.1.0', {
+      fontFamily: '"Tiny5", cursive', fontSize: '8px', color: '#555555'
+    }).setOrigin(0.5).setDepth(1);
 
     // Input
     this.cursors = this.input.keyboard.createCursorKeys();

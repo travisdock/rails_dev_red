@@ -27,6 +27,9 @@ class PreloadScene extends Phaser.Scene {
     this.load.json('type-chart-data', 'src/data/type-chart.json');
 
 
+    // Load logo
+    this.load.image('logo', 'assets/logo.png');
+
     // Load sprites
     this.load.spritesheet('player', 'assets/sprites/player.png', {
       frameWidth: 32, frameHeight: 32
