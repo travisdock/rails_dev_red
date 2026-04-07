@@ -59,7 +59,7 @@
     "dialogBefore": "I've been in the Rails\ncommunity for 15 years.\nThese bugs will crush you!",
     "dialogAfter": "Clean code. I'd approve\nthat PR.",
     "party": [
-      { "bugId": "deadlock", "level": 16 },
+      { "bugId": "pending_migration", "level": 16 },
       { "bugId": "xss_attack", "level": 15 },
       { "bugId": "circular_dependency", "level": 16 }
     ],

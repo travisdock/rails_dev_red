@@ -115,7 +115,7 @@
     "evolution": null
   },
   "active_record": {
-    "id": "active_record", "name": "ActiveRecord", "type": "database",
+    "id": "active_record", "name": "ActiveRecord", "type": "rails",
     "description": "The ORM at the heart of Rails. Powerful and versatile.",
     "baseStats": { "hp": 70, "attack": 50, "defense": 50, "spAttack": 55, "spDefense": 50, "speed": 30 },
     "baseXP": 72,

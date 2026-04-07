@@ -36,11 +36,11 @@
   },
   "dhh": {
     "id": "dhh", "name": "DHH", "title": "Rails Creator",
-    "gymType": "database", "badge": "captains_pass", "badgeName": "Captain's Pass",
+    "gymType": "rails", "badge": "captains_pass", "badgeName": "Captain's Pass",
     "dialogBefore": "You've made it to the launch pad.\nBut the rocket only has room\nfor real Rails developers.\nLet's see if your gems can\nhandle the nastiest bugs.",
     "dialogAfter": "Welcome aboard.\nTake the Captain's Pass.\nThe rocket is waiting.\nSee you in space!",
     "party": [
-      { "bugId": "deadlock", "level": 26 },
+      { "bugId": "pending_migration", "level": 26 },
       { "bugId": "z_index_hell", "level": 25 },
       { "bugId": "race_condition", "level": 25 },
       { "bugId": "sql_injection", "level": 28 }

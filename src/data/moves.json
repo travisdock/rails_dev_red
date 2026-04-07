@@ -168,25 +168,25 @@
     "effect": null
   },
   "migration_run": {
-    "id": "migration_run", "name": "Migration Run", "type": "database",
+    "id": "migration_run", "name": "Migration Run", "type": "rails",
     "category": "special", "power": 55, "accuracy": 100, "pp": 25,
     "description": "Runs a database migration. Reliable damage.",
     "effect": null
   },
   "index_optimize": {
-    "id": "index_optimize", "name": "Index Optimize", "type": "database",
+    "id": "index_optimize", "name": "Index Optimize", "type": "rails",
     "category": "status", "power": 0, "accuracy": 100, "pp": 15,
     "description": "Optimizes database indexes. Raises Speed.",
     "effect": { "stat": "speed", "stages": 1, "target": "self" }
   },
   "schema_dump": {
-    "id": "schema_dump", "name": "Schema Dump", "type": "database",
+    "id": "schema_dump", "name": "Schema Dump", "type": "rails",
     "category": "special", "power": 70, "accuracy": 95, "pp": 15,
     "description": "Dumps the schema with force.",
     "effect": null
   },
   "raw_sql": {
-    "id": "raw_sql", "name": "Raw SQL", "type": "database",
+    "id": "raw_sql", "name": "Raw SQL", "type": "rails",
     "category": "special", "power": 90, "accuracy": 80, "pp": 5,
     "description": "Executes raw SQL. High risk, high reward.",
     "effect": null
@@ -246,7 +246,7 @@
     "effect": null
   },
   "slow_query": {
-    "id": "slow_query", "name": "Slow Query", "type": "database",
+    "id": "slow_query", "name": "Slow Query", "type": "rails",
     "category": "special", "power": 45, "accuracy": 100, "pp": 30,
     "description": "A painfully slow query. Lowers enemy Speed.",
     "effect": { "stat": "speed", "stages": -1, "target": "enemy" }
@@ -258,7 +258,7 @@
     "effect": { "stat": "defense", "stages": 1, "target": "self" }
   },
   "lazy_load": {
-    "id": "lazy_load", "name": "Lazy Load", "type": "database",
+    "id": "lazy_load", "name": "Lazy Load", "type": "rails",
     "category": "special", "power": 50, "accuracy": 100, "pp": 25,
     "description": "Loads records one at a time. Reliable but slows you down.",
     "effect": { "stat": "speed", "stages": -1, "target": "self" }
@@ -286,6 +286,18 @@
     "category": "special", "power": 55, "accuracy": 100, "pp": 25,
     "description": "margin: 0 auto. Centers with elegance.",
     "effect": null
+  },
+  "webpack": {
+    "id": "webpack", "name": "Webpack", "type": "frontend",
+    "category": "special", "power": 70, "accuracy": 85, "pp": 15,
+    "description": "Compiles everything. Powerful but unreliable.",
+    "effect": null
+  },
+  "asset_pipeline_confusion": {
+    "id": "asset_pipeline_confusion", "name": "Asset Confusion", "type": "frontend",
+    "category": "status", "power": 0, "accuracy": 100, "pp": 20,
+    "description": "Sprockets? Webpacker? Propshaft? Lowers enemy Defense.",
+    "effect": { "stat": "defense", "stages": -1, "target": "enemy" }
   },
   "z_index_9999": {
     "id": "z_index_9999", "name": "z-index: 9999", "type": "frontend",
@@ -414,13 +426,13 @@
     "effect": null
   },
   "bobby_tables": {
-    "id": "bobby_tables", "name": "Bobby Tables", "type": "database",
+    "id": "bobby_tables", "name": "Bobby Tables", "type": "rails",
     "category": "special", "power": 70, "accuracy": 95, "pp": 15,
     "description": "Little Bobby Tables strikes again. Solid hit.",
     "effect": null
   },
   "tautology": {
-    "id": "tautology", "name": "Tautology", "type": "database",
+    "id": "tautology", "name": "Tautology", "type": "rails",
     "category": "status", "power": 0, "accuracy": 100, "pp": 20,
     "description": "OR 1=1. Always true. Lowers enemy Defense.",
     "effect": { "stat": "defense", "stages": -1, "target": "enemy" }
@@ -436,6 +448,30 @@
     "category": "special", "power": 55, "accuracy": 100, "pp": 20,
     "description": "Steals session cookies. Weakens enemy defenses.",
     "effect": { "stat": "spDefense", "stages": -1, "target": "enemy" }
+  },
+  "permit_all": {
+    "id": "permit_all", "name": "permit!", "type": "rails",
+    "category": "special", "power": 70, "accuracy": 95, "pp": 15,
+    "description": "Permits all parameters. Dangerous and powerful.",
+    "effect": null
+  },
+  "admin_true": {
+    "id": "admin_true", "name": "admin=true", "type": "rails",
+    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "description": "Sets admin to true. Raises Sp. Attack.",
+    "effect": { "stat": "spAttack", "stages": 1, "target": "self" }
+  },
+  "rails_db_migrate": {
+    "id": "rails_db_migrate", "name": "db:migrate", "type": "rails",
+    "category": "special", "power": 60, "accuracy": 100, "pp": 20,
+    "description": "Runs pending migrations. Steady damage.",
+    "effect": null
+  },
+  "schema_conflict": {
+    "id": "schema_conflict", "name": "Schema Conflict", "type": "rails",
+    "category": "status", "power": 0, "accuracy": 100, "pp": 20,
+    "description": "The schema file has merge conflicts. Lowers enemy Defense.",
+    "effect": { "stat": "defense", "stages": -1, "target": "enemy" }
   },
   "cache_miss": {
     "id": "cache_miss", "name": "Cache Miss", "type": "performance",

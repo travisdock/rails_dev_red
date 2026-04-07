@@ -125,19 +125,26 @@
     "baseXP": 60,
     "moves": ["cache_miss", "cold_start", "thundering_herd"]
   },
-  "schema_mismatch": {
-    "id": "schema_mismatch", "name": "Schema Mismatch", "type": "database",
-    "description": "The migration ran in staging but not production.",
+  "mass_assignment": {
+    "id": "mass_assignment", "name": "Mass Assignment", "type": "rails",
+    "description": "Forgot strong_params. Anyone can set admin=true.",
     "baseStats": { "hp": 40, "attack": 35, "defense": 30, "spAttack": 40, "spDefense": 35, "speed": 40 },
     "baseXP": 50,
-    "moves": ["migration_run", "schema_dump"]
+    "moves": ["permit_all", "admin_true"]
   },
-  "deadlock": {
-    "id": "deadlock", "name": "Deadlock", "type": "database",
-    "description": "Two transactions waiting on each other. Forever.",
+  "pending_migration": {
+    "id": "pending_migration", "name": "Pending Migration", "type": "rails",
+    "description": "ActiveRecord::PendingMigrationError. The app won't boot.",
     "baseStats": { "hp": 50, "attack": 45, "defense": 40, "spAttack": 45, "spDefense": 40, "speed": 40 },
     "baseXP": 64,
-    "moves": ["raw_sql", "slow_query", "index_optimize"]
+    "moves": ["rails_db_migrate", "schema_conflict"]
+  },
+  "missing_assets": {
+    "id": "missing_assets", "name": "Missing Assets", "type": "frontend",
+    "description": "The assets compiled in dev but not production.",
+    "baseStats": { "hp": 35, "attack": 40, "defense": 30, "spAttack": 50, "spDefense": 30, "speed": 45 },
+    "baseXP": 52,
+    "moves": ["webpack", "asset_pipeline_confusion"]
   },
   "centered_div": {
     "id": "centered_div", "name": "Centered Div", "type": "frontend",

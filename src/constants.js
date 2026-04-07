@@ -7,7 +7,7 @@ const ENCOUNTER_RATE = 0.15;
 const MAX_PARTY_SIZE = 6;
 const MAX_MOVES = 4;
 
-const TYPES = ['security', 'performance', 'testing', 'database', 'frontend', 'runtime'];
+const TYPES = ['security', 'performance', 'testing', 'rails', 'frontend', 'runtime'];
 
 // Text style defaults for crisp pixel text
 const TEXT_STYLE = {
@@ -25,7 +25,7 @@ const TYPE_COLORS = {
   security: 0xe74c3c,
   performance: 0xf39c12,
   testing: 0x2ecc71,
-  database: 0x3498db,
+  rails: 0x3498db,
   frontend: 0x9b59b6,
   runtime: 0xe67e22
 };
