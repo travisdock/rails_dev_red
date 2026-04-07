@@ -173,7 +173,7 @@ class OverworldScene extends Phaser.Scene {
     // Render tile layers
     for (const layer of mapData.layers) {
       if (layer.type === 'tilelayer' && layer.data) {
-        const depth = layer.name === 'world' ? 2 : (layer.name === 'above' ? 10 : 0);
+        const depth = layer.name === 'world' ? 2 : (layer.name === 'above' ? 500 : 0);
         const isCollision = layer.name === 'collisions';
 
         for (let i = 0; i < layer.data.length; i++) {

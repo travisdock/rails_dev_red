@@ -65,10 +65,10 @@
                 5
             ],
             "scale": 2,
-            "selectedLayer": 3,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 328,
-                "y": 242.75
+                "x": 431,
+                "y": 182.75
             }
         },
         "path.tsx": {
