@@ -55,7 +55,7 @@
             "scale": 4,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 602.25,
+                "x": 584.25,
                 "y": 339.125
             }
         },
@@ -65,9 +65,9 @@
                 5
             ],
             "scale": 2,
-            "selectedLayer": 1,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 431,
+                "x": 280,
                 "y": 182.75
             }
         },

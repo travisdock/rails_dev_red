@@ -28,10 +28,10 @@
     "dialogBefore": "Measure, don't guess. That's the Speedshop way. Let's see if your gems can handle real performance bugs.",
     "dialogAfter": "Fast and efficient. You've earned the Performance Pass. I prefer to take Proposite with me when tackling particularly nasty N+1s.",
     "party": [
-      { "bugId": "n_plus_one", "level": 30 },
-      { "bugId": "cache_stampede", "level": 31 },
-      { "bugId": "infinite_loop", "level": 33 },
-      { "bugId": "memory_leak", "level": 35 }
+      { "bugId": "n_plus_one", "level": 22 },
+      { "bugId": "cache_stampede", "level": 24 },
+      { "bugId": "infinite_loop", "level": 25 },
+      { "bugId": "memory_leak", "level": 27 }
     ]
   },
   "dhh": {

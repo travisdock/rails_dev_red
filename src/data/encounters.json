@@ -19,11 +19,11 @@
   "park": {
     "encounterRate": 0.18,
     "encounters": [
-      { "bugId": "memory_leak", "levelRange": [14, 18], "weight": 25 },
-      { "bugId": "circular_dependency", "levelRange": [13, 17], "weight": 20 },
-      { "bugId": "race_condition", "levelRange": [15, 19], "weight": 20 },
-      { "bugId": "n_plus_one", "levelRange": [13, 16], "weight": 20 },
-      { "bugId": "cors_error", "levelRange": [14, 17], "weight": 15 }
+      { "bugId": "memory_leak", "levelRange": [15, 22], "weight": 25 },
+      { "bugId": "circular_dependency", "levelRange": [15, 22], "weight": 20 },
+      { "bugId": "race_condition", "levelRange": [15, 22], "weight": 20 },
+      { "bugId": "n_plus_one", "levelRange": [15, 22], "weight": 20 },
+      { "bugId": "cors_error", "levelRange": [15, 22], "weight": 15 }
     ]
   },
   "parking_lot_easy": {

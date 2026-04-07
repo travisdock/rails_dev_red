@@ -161,6 +161,8 @@
    <properties>
     <property name="facing" value="left"/>
     <property name="gymId" value="nate_berkopec"/>
+    <property name="rewardGem" value="proposite"/>
+    <property name="rewardGemLevel" value="30"/>
     <property name="spriteKey" value="pg2"/>
    </properties>
   </object>

@@ -243,6 +243,16 @@
                          "value":"nate_berkopec"
                         }, 
                         {
+                         "name":"rewardGem",
+                         "type":"string",
+                         "value":"proposite"
+                        }, 
+                        {
+                         "name":"rewardGemLevel",
+                         "type":"string",
+                         "value":"30"
+                        }, 
+                        {
                          "name":"spriteKey",
                          "type":"string",
                          "value":"pg2"
@@ -251,7 +261,7 @@
                  "type":"gym_entrance",
                  "visible":true,
                  "width":0,
-                 "x":616.333333333333,
+                 "x":616.333,
                  "y":375.5
                 }],
          "opacity":1,
