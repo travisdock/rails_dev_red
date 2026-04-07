@@ -48,7 +48,7 @@
     "dialogAfter": "Well-rounded team\nyou've got there.",
     "party": [
       { "bugId": "cors_error", "level": 14 },
-      { "bugId": "exposed_secret", "level": 13 },
+      { "bugId": "sql_injection", "level": 13 },
       { "bugId": "race_condition", "level": 14 }
     ],
     "prizeMoney": 560,
@@ -161,16 +161,5 @@
       { "bugId": "cors_error", "level": 16 }
     ],
     "lineOfSight": 4
-  },
-  "parking_04": {
-    "id": "parking_04", "name": "Open Source Marco", "class": "Full Stack Developer",
-    "dialogBefore": "Do you know what's possible in the Rails view layer?",
-    "dialogAfter": "You will need Herb where you are going. Use it well.",
-    "party": [
-      { "bugId": "memory_leak", "level": 16 },
-      { "bugId": "cors_error", "level": 16 },
-      { "bugId": "z_index_hell", "level": 17 }
-    ],
-    "lineOfSight": 0
   }
 }

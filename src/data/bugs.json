@@ -111,27 +111,6 @@
     "baseXP": 58,
     "moves": ["works_on_my_machine", "heisenbug"]
   },
-  "auth_bypass": {
-    "id": "auth_bypass", "name": "Auth Bypass", "type": "security",
-    "description": "Skips authentication entirely. Admin access for everyone!",
-    "baseStats": { "hp": 40, "attack": 50, "defense": 35, "spAttack": 45, "spDefense": 35, "speed": 50 },
-    "baseXP": 62,
-    "moves": ["authenticate", "token_generate", "policy_enforce"]
-  },
-  "exposed_secret": {
-    "id": "exposed_secret", "name": "Exposed Secret", "type": "security",
-    "description": "API keys committed to the repo. Oops.",
-    "baseStats": { "hp": 40, "attack": 40, "defense": 30, "spAttack": 40, "spDefense": 35, "speed": 45 },
-    "baseXP": 54,
-    "moves": ["authenticate", "session_store"]
-  },
-  "insecure_redirect": {
-    "id": "insecure_redirect", "name": "Insecure Redirect", "type": "security",
-    "description": "Open redirect lets attackers phish your users.",
-    "baseStats": { "hp": 35, "attack": 40, "defense": 30, "spAttack": 45, "spDefense": 40, "speed": 45 },
-    "baseXP": 54,
-    "moves": ["authenticate", "hash_strength"]
-  },
   "infinite_loop": {
     "id": "infinite_loop", "name": "Infinite Loop", "type": "performance",
     "description": "while(true) { /* help */ }",

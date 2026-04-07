@@ -52,11 +52,11 @@
             "expandedObjectLayers": [
                 4
             ],
-            "scale": 1.5,
-            "selectedLayer": 1,
+            "scale": 4,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 70.66666666666669,
-                "y": 260
+                "x": 602.25,
+                "y": 339.125
             }
         },
         "parking_lot.tmx": {

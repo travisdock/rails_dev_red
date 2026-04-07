@@ -11,29 +11,28 @@
     ],
     "prizeMoney": 1400
   },
-  "greg_molnar": {
-    "id": "greg_molnar", "name": "Greg Molnar", "title": "Security Specialist",
-    "gymType": "security", "badge": "security_pass", "badgeName": "Security Pass",
-    "dialogBefore": "Security isn't a feature.\nIt's a responsibility.\nLet's see if your gems can\nsurvive these security bugs.",
-    "dialogAfter": "Your defenses are solid.\nTake the Security Pass.\nKeep your apps safe out there.",
+  "open_source_marco": {
+    "id": "open_source_marco", "name": "Open Source Marco", "title": "Open Source Maintainer",
+    "gymType": "frontend", "badge": "open_source_pass", "badgeName": "Open Source Pass",
+    "dialogBefore": "Do you know what's possible in the Rails view layer?",
+    "dialogAfter": "You will need Herb where you are going. Use it well.",
     "party": [
-      { "bugId": "exposed_secret", "level": 18 },
-      { "bugId": "xss_attack", "level": 18 },
-      { "bugId": "auth_bypass", "level": 20 }
-    ],
-    "prizeMoney": 2000
+      { "bugId": "memory_leak", "level": 16 },
+      { "bugId": "cors_error", "level": 16 },
+      { "bugId": "z_index_hell", "level": 17 }
+    ]
   },
   "nate_berkopec": {
     "id": "nate_berkopec", "name": "Nate Berkopec", "title": "Performance Engineer",
     "gymType": "performance", "badge": "speed_pass", "badgeName": "Speed Pass",
-    "dialogBefore": "Every millisecond matters.\nIf your app isn't fast,\nyour users are gone.\nCan your gems squash\nthese performance bugs?",
-    "dialogAfter": "Fast and efficient.\nYou've earned the Speed Pass.\nNow make it even faster.",
+    "dialogBefore": "Measure, don't guess. That's the Speedshop way. Let's see if your gems can handle real performance bugs.",
+    "dialogAfter": "Fast and efficient. You've earned the Speed Pass. Now go make your app even faster.",
     "party": [
-      { "bugId": "cache_stampede", "level": 22 },
-      { "bugId": "infinite_loop", "level": 22 },
-      { "bugId": "memory_leak", "level": 24 }
-    ],
-    "prizeMoney": 2400
+      { "bugId": "n_plus_one", "level": 30 },
+      { "bugId": "cache_stampede", "level": 31 },
+      { "bugId": "infinite_loop", "level": 33 },
+      { "bugId": "memory_leak", "level": 35 }
+    ]
   },
   "dhh": {
     "id": "dhh", "name": "DHH", "title": "Rails Creator",

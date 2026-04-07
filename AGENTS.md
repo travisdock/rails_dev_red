@@ -244,7 +244,7 @@ copy(JSON.stringify(BATTLE_LOG, null, 2))  // Copy log to clipboard
 ```
 
 ### Badge IDs
-`test_pass`, `security_pass`, `speed_pass`, `captains_pass`
+`test_pass`, `open_source_pass`, `speed_pass`, `captains_pass`
 
 ### Gem IDs
 `rspec`, `bullet`, `brakeman`, `devise`, `pundit`, `bcrypt`, `rack_mini_profiler`, `capybara`, `factory_bot`, `active_record`, `sidekiq`, `puma`, `turbo`, `pry`

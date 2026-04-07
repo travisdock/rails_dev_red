@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="19">
+<map version="1.10" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="20">
  <editorsettings>
   <export target="../assets/maps/park.json" format="json"/>
  </editorsettings>
@@ -155,6 +155,13 @@
     <property name="targetMap" value="venue"/>
     <property name="targetX" value="28"/>
     <property name="targetY" value="16"/>
+   </properties>
+  </object>
+  <object id="19" name="Nate Berkopec" type="gym_entrance" x="616.333" y="375.5">
+   <properties>
+    <property name="facing" value="left"/>
+    <property name="gymId" value="nate_berkopec"/>
+    <property name="spriteKey" value="pg2"/>
    </properties>
   </object>
  </objectgroup>
