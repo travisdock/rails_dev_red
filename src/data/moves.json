@@ -473,6 +473,18 @@
     "description": "The schema file has merge conflicts. Lowers enemy Defense.",
     "effect": { "stat": "defense", "stages": -1, "target": "enemy" }
   },
+  "detect": {
+    "id": "detect", "name": "Detect", "type": "performance",
+    "category": "special", "power": 60, "accuracy": 100, "pp": 20,
+    "description": "Detects performance issues. Reliable damage.",
+    "effect": null
+  },
+  "raise": {
+    "id": "raise", "name": "Raise", "type": "performance",
+    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "description": "Raises an alert. Raises Speed.",
+    "effect": { "stat": "speed", "stages": 1, "target": "self" }
+  },
   "cache_miss": {
     "id": "cache_miss", "name": "Cache Miss", "type": "performance",
     "category": "special", "power": 55, "accuracy": 100, "pp": 25,

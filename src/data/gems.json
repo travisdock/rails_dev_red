@@ -179,6 +179,17 @@
     ],
     "evolution": null
   },
+  "proposite": {
+    "id": "proposite", "name": "Proposite", "type": "performance",
+    "description": "A dark crystal of pure performance insight. Detects what others miss.",
+    "baseStats": { "hp": 50, "attack": 40, "defense": 45, "spAttack": 70, "spDefense": 55, "speed": 70 },
+    "baseXP": 72,
+    "learnset": [
+      { "level": 1, "move": "detect" },
+      { "level": 1, "move": "raise" }
+    ],
+    "evolution": null
+  },
   "herb": {
     "id": "herb", "name": "Herb", "type": "frontend",
     "description": "A powerful view layer component engine. Beautiful and fast.",

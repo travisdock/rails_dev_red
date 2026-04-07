@@ -26,7 +26,7 @@
     "id": "nate_berkopec", "name": "Nate Berkopec", "title": "Performance Engineer",
     "gymType": "performance", "badge": "speed_pass", "badgeName": "Performance Pass",
     "dialogBefore": "Measure, don't guess. That's the Speedshop way. Let's see if your gems can handle real performance bugs.",
-    "dialogAfter": "Fast and efficient. You've earned the Performance Pass. Now go make your app even faster.",
+    "dialogAfter": "Fast and efficient. You've earned the Performance Pass. I prefer to take Proposite with me when tackling particularly nasty N+1s.",
     "party": [
       { "bugId": "n_plus_one", "level": 30 },
       { "bugId": "cache_stampede", "level": 31 },
