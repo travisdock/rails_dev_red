@@ -66,6 +66,10 @@ class TitleScene extends Phaser.Scene {
       fontFamily: '"Tiny5", cursive', fontSize: '8px', color: '#555555'
     }).setOrigin(0.5).setDepth(1);
 
+    // Menu music
+    this.menuMusic = this.sound.add('music-menu', { loop: true, volume: 0.3 });
+    this.menuMusic.play();
+
     // Input
     this.cursors = this.input.keyboard.createCursorKeys();
     this.keyZ = this.input.keyboard.addKey('Z');
@@ -102,6 +106,10 @@ class TitleScene extends Phaser.Scene {
   }
 
   selectOption() {
+    if (this.menuMusic) {
+      this.menuMusic.stop();
+      this.menuMusic = null;
+    }
     const item = this.menuItems[this.selectedIndex];
     SaveManager.activeSlot = item.slot;
 

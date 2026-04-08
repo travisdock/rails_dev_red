@@ -1,8 +1,8 @@
 {
   "attendee_01": {
     "id": "attendee_01", "name": "Attendee Jamie", "class": "Conference Attendee",
-    "dialogBefore": "This is my first Rails conf!\nI keep running into bugs!",
-    "dialogAfter": "Wow, you really squashed\nthat bug...",
+    "dialogBefore": "This is my first conference! I keep running into bugs!",
+    "dialogAfter": "Wow, you really squashed that bug...",
     "party": [
       { "bugId": "brittle_spec", "level": 5 }
     ],
@@ -11,8 +11,8 @@
   },
   "attendee_02": {
     "id": "attendee_02", "name": "Attendee Morgan", "class": "Conference Attendee",
-    "dialogBefore": "I've been writing Rails\nfor six months now.\nCan you handle my bugs?",
-    "dialogAfter": "Back to the tutorials\nfor me...",
+    "dialogBefore": "I've been writing Rails for six months now. Can you handle my bugs?",
+    "dialogAfter": "Back to the tutorials for me...",
     "party": [
       { "bugId": "brittle_spec", "level": 7 },
       { "bugId": "request_timeout", "level": 8 }
@@ -22,8 +22,8 @@
   },
   "attendee_03": {
     "id": "attendee_03", "name": "Attendee Riley", "class": "Conference Attendee",
-    "dialogBefore": "My code has 100% coverage\nbut bugs keep slipping through!\nCan your gems squash them?",
-    "dialogAfter": "Maybe coverage isn't\neverything...",
+    "dialogBefore": "My code has 100% coverage but bugs keep slipping through! Can your gems squash them?",
+    "dialogAfter": "Maybe coverage isn't everything...",
     "party": [
       { "bugId": "no_method_error", "level": 9 },
       { "bugId": "flaky_test", "level": 8 }
@@ -33,8 +33,8 @@
   },
   "speaker_01": {
     "id": "speaker_01", "name": "Speaker Taylor", "class": "Conference Speaker",
-    "dialogBefore": "I'm giving a talk on\nperformance optimization.\nCheck out these nasty bugs!",
-    "dialogAfter": "You optimized your way\nright through those...",
+    "dialogBefore": "I'm giving a talk on performance optimization. Check out these nasty bugs!",
+    "dialogAfter": "You optimized your way right through those...",
     "party": [
       { "bugId": "n_plus_one", "level": 12 },
       { "bugId": "memory_leak", "level": 11 }
@@ -44,8 +44,8 @@
   },
   "speaker_02": {
     "id": "speaker_02", "name": "Speaker Alex", "class": "Conference Speaker",
-    "dialogBefore": "Full-stack means I've got\nbugs for every layer!",
-    "dialogAfter": "Well-rounded team\nyou've got there.",
+    "dialogBefore": "Full-stack means I've got bugs for every layer!",
+    "dialogAfter": "Well-rounded team you've got there.",
     "party": [
       { "bugId": "cors_error", "level": 14 },
       { "bugId": "sql_injection", "level": 13 },
@@ -56,8 +56,8 @@
   },
   "speaker_03": {
     "id": "speaker_03", "name": "Speaker Sam", "class": "Conference Speaker",
-    "dialogBefore": "I've been in the Rails\ncommunity for 15 years.\nThese bugs will crush you!",
-    "dialogAfter": "Clean code. I'd approve\nthat PR.",
+    "dialogBefore": "I've been in the Rails community for 15 years. These bugs will crush you!",
+    "dialogAfter": "Clean code. I'd approve that PR.",
     "party": [
       { "bugId": "pending_migration", "level": 16 },
       { "bugId": "xss_attack", "level": 15 },
@@ -68,8 +68,8 @@
   },
   "test_minion_01": {
     "id": "test_minion_01", "name": "TDD Enthusiast Pat", "class": "Testing Fanatic",
-    "dialogBefore": "Red, green, refactor!\nBut first, squash this bug!",
-    "dialogAfter": "My bug got squashed...\nTime to refactor.",
+    "dialogBefore": "Red, green, refactor! But first, squash this bug!",
+    "dialogAfter": "My bug got squashed... Time to refactor.",
     "party": [
       { "bugId": "flaky_test", "level": 6 }
     ],
@@ -78,8 +78,8 @@
   },
   "test_minion_05": {
     "id": "test_minion_05", "name": "Attendee Avery", "class": "Conference Attendee",
-    "dialogBefore": "I just found my first bug!\nWant to see it?",
-    "dialogAfter": "Ok that bug didn't\nstand a chance...",
+    "dialogBefore": "I just found my first bug! Want to see it?",
+    "dialogAfter": "Ok that bug didn't stand a chance...",
     "party": [
       { "bugId": "flaky_test", "level": 4 }
     ],
@@ -88,7 +88,7 @@
   },
   "test_minion_02": {
     "id": "test_minion_02", "name": "Attendee Quinn", "class": "Conference Attendee",
-    "dialogBefore": "I found some bugs in\nmy code! Let me throw\nthem at you!",
+    "dialogBefore": "I found some bugs in my code! Let me throw them at you!",
     "dialogAfter": "I guess you squashed them...",
     "party": [
       { "bugId": "flaky_test", "level": 5 },
@@ -99,8 +99,8 @@
   },
   "test_minion_03": {
     "id": "test_minion_03", "name": "QA Advocate Lee", "class": "Testing Fanatic",
-    "dialogBefore": "No code ships without\nfixing these bugs first.\nNot on my watch!",
-    "dialogAfter": "Your gems handled those\nbugs impressively...",
+    "dialogBefore": "No code ships without fixing these bugs first. Not on my watch!",
+    "dialogAfter": "Your gems handled those bugs impressively...",
     "party": [
       { "bugId": "external_dependency", "level": 8 },
       { "bugId": "brittle_spec", "level": 7 }
@@ -109,9 +109,9 @@
     "lineOfSight": 4
   },
   "test_minion_04": {
-    "id": "test_minion_04", "name": "Mock Master Drew", "class": "Testing Fanatic",
-    "dialogBefore": "I've collected the nastiest\ntesting bugs around.\nLet me unleash them!",
-    "dialogAfter": "Maybe you are ready for\nJason's review. As long as\nhe is feeling up to it.",
+    "id": "test_minion_04", "name": "Mock Master Michael", "class": "Testing Fanatic",
+    "dialogBefore": "I've collected the nastiest testing bugs around. Let me unleash them!",
+    "dialogAfter": "Maybe you are ready for Jason's review. As long as he is feeling up to it.",
     "party": [
       { "bugId": "flaky_test", "level": 9 },
       { "bugId": "external_dependency", "level": 8 },
@@ -122,8 +122,8 @@
   },
   "organizer_01": {
     "id": "organizer_01", "name": "Organizer Jordan", "class": "Conference Organizer",
-    "dialogBefore": "I organized this whole\nconference. Think your gems\ncan handle the worst bugs?",
-    "dialogAfter": "You're ready for\nthe rocket.",
+    "dialogBefore": "I organized this whole conference. Think your gems can handle the worst bugs?",
+    "dialogAfter": "You're ready for the rocket.",
     "party": [
       { "bugId": "race_condition", "level": 20 },
       { "bugId": "csrf_vuln", "level": 20 },

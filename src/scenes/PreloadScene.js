@@ -110,6 +110,7 @@ class PreloadScene extends Phaser.Scene {
     }
 
     // Load audio
+    this.load.audio('music-menu', 'assets/audio/menu.ogg');
     this.load.audio('music-hotel', 'assets/audio/hotel.ogg');
     this.load.audio('music-battle', 'assets/audio/battle.ogg');
     this.load.audio('music-old-town', 'assets/audio/old_town.ogg');

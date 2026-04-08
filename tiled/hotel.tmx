@@ -96,10 +96,10 @@
     <property name="spriteKey" value="npc06"/>
    </properties>
   </object>
-  <object id="5" name="heal" type="heal" x="440" y="200">
+  <object id="5" name="Heal" type="heal" x="440" y="200">
    <properties>
     <property name="facing" value="down"/>
-    <property name="spriteKey" value="pg15"/>
+    <property name="spriteKey" value="npc04"/>
    </properties>
   </object>
   <object id="7" name="swett_gym" type="gym_entrance" x="415.5" y="81.5" width="17.5" height="14.5">
@@ -151,35 +151,35 @@
     <property name="spriteKey" value="pg3"/>
    </properties>
   </object>
-  <object id="15" name="Attendee2" type="npc" x="229.5" y="199.5">
+  <object id="15" name="Attendee John" type="npc" x="229.5" y="199.5">
    <properties>
     <property name="dialog" value="Are you excited for the conference?! I can hardly wait to lift off."/>
     <property name="facing" value="up"/>
-    <property name="spriteKey" value="npc04"/>
+    <property name="spriteKey" value="pg14"/>
    </properties>
   </object>
-  <object id="16" name="Attendee4" type="npc" x="168.5" y="264">
+  <object id="16" name="Attendee Jimothy" type="npc" x="168.5" y="264">
    <properties>
     <property name="dialog" value="Pair programming is the only way to go!"/>
     <property name="facing" value="left"/>
     <property name="spriteKey" value="pg13"/>
    </properties>
   </object>
-  <object id="17" name="Attendee3" type="npc" x="148" y="264.5">
+  <object id="17" name="Attendee Erik" type="npc" x="148" y="264.5">
    <properties>
     <property name="dialog" value="I am going to take notes in all the talks and review them when I get home!"/>
     <property name="facing" value="right"/>
     <property name="spriteKey" value="npc07"/>
    </properties>
   </object>
-  <object id="18" name="Attendee5" type="npc" x="344.5" y="249">
+  <object id="18" name="Attendee Ann" type="npc" x="344.5" y="249">
    <properties>
     <property name="dialog" value="Which talk are you most excited for?"/>
     <property name="facing" value="down"/>
     <property name="spriteKey" value="npc05"/>
    </properties>
   </object>
-  <object id="19" name="Attendee6" type="npc" x="295" y="280">
+  <object id="19" name="Attendee Jessica" type="npc" x="295" y="280">
    <properties>
     <property name="dialog">You will probably need to fix some bugs in the wild before challenging those testing enthusiasts.
  They are a tough bunch.</property>

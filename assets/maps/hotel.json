@@ -103,7 +103,7 @@
                 {
                  "height":0,
                  "id":1,
-                 "name":"hotel_clerk",
+                 "name":"Hotel Clerk",
                  "opacity":1,
                  "properties":[
                         {
@@ -136,7 +136,7 @@
                 {
                  "height":0,
                  "id":5,
-                 "name":"heal",
+                 "name":"Heal",
                  "opacity":1,
                  "properties":[
                         {
@@ -147,7 +147,7 @@
                         {
                          "name":"spriteKey",
                          "type":"string",
-                         "value":"pg15"
+                         "value":"npc04"
                         }],
                  "rotation":0,
                  "type":"heal",
@@ -355,7 +355,7 @@
                 {
                  "height":0,
                  "id":15,
-                 "name":"Attendee2",
+                 "name":"Attendee John",
                  "opacity":1,
                  "properties":[
                         {
@@ -371,7 +371,7 @@
                         {
                          "name":"spriteKey",
                          "type":"string",
-                         "value":"npc04"
+                         "value":"pg14"
                         }],
                  "rotation":0,
                  "type":"npc",
@@ -383,7 +383,7 @@
                 {
                  "height":0,
                  "id":16,
-                 "name":"Attendee4",
+                 "name":"Attendee Jimothy",
                  "opacity":1,
                  "properties":[
                         {
@@ -411,7 +411,7 @@
                 {
                  "height":0,
                  "id":17,
-                 "name":"Attendee3",
+                 "name":"Attendee Erik",
                  "opacity":1,
                  "properties":[
                         {
@@ -439,7 +439,7 @@
                 {
                  "height":0,
                  "id":18,
-                 "name":"Attendee5",
+                 "name":"Attendee Ann",
                  "opacity":1,
                  "properties":[
                         {
@@ -467,7 +467,7 @@
                 {
                  "height":0,
                  "id":19,
-                 "name":"Attendee6",
+                 "name":"Attendee Jessica",
                  "opacity":1,
                  "properties":[
                         {
