@@ -161,5 +161,15 @@
       { "bugId": "cors_error", "level": 16 }
     ],
     "lineOfSight": 4
+  },
+  "avo_adrian": {
+    "id": "avo_adrian", "name": "Friendly Dev Adrian", "class": "Indie Dev",
+    "dialogBefore": "Don't worry, I'll be friendly.",
+    "dialogAfter": "That was a rush, thanks.",
+    "party": [
+      { "bugId": "memory_leak", "level": 15 },
+      { "bugId": "missing_assets", "level": 16 }
+    ],
+    "lineOfSight": 3
   }
 }

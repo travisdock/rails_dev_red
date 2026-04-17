@@ -2,6 +2,25 @@ const SaveManager = {
   SAVE_KEY_PREFIX: 'rails_quest_save_',
   SAVE_VERSION: 1,
   activeSlot: 1,
+  sessionStart: 0,
+  playtime: 0,
+
+  startSession(previousPlaytime) {
+    this.playtime = previousPlaytime || 0;
+    this.sessionStart = Date.now();
+  },
+
+  getPlaytime() {
+    return this.playtime + (Date.now() - this.sessionStart);
+  },
+
+  formatPlaytime(ms) {
+    const totalSeconds = Math.floor(ms / 1000);
+    const h = Math.floor(totalSeconds / 3600);
+    const m = Math.floor((totalSeconds % 3600) / 60);
+    const s = totalSeconds % 60;
+    return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+  },
 
   _key(slot) {
     return this.SAVE_KEY_PREFIX + (slot || this.activeSlot);
@@ -18,6 +37,7 @@ const SaveManager = {
         party: gameState.party.map(g => g.serialize()),
         starterChosen: gameState.starterChosen
       },
+      playtime: this.getPlaytime(),
       flags: {
         trainersDefeated: [...gameState.trainersDefeated],
         gymsCompleted: [...gameState.gymsCompleted],
@@ -76,6 +96,7 @@ const SaveManager = {
       const dd = String(d.getDate()).padStart(2, '0');
       savedDate = `${d.getFullYear()}/${mm}/${dd}`;
     }
-    return { gemName, badges, savedDate };
+    const playtime = this.formatPlaytime(data.playtime || 0);
+    return { gemName, badges, savedDate, playtime };
   }
 };

@@ -28,7 +28,7 @@ class TitleScene extends Phaser.Scene {
     for (let slot = 1; slot <= 3; slot++) {
       const info = SaveManager.slotInfo(slot);
       if (info) {
-        this.menuItems.push({ text: info.gemName, date: info.savedDate, action: 'continue', slot });
+        this.menuItems.push({ text: info.gemName, date: info.savedDate, playtime: info.playtime, action: 'continue', slot });
       } else {
         this.menuItems.push({ text: 'New Game Here', date: null, action: 'new', slot });
       }
@@ -40,7 +40,7 @@ class TitleScene extends Phaser.Scene {
         ...TEXT_STYLE_WHITE
       }).setOrigin(0.5).setDepth(1);
       if (item.date) {
-        this.add.text(GAME_WIDTH / 2, y + 8, item.date, {
+        this.add.text(GAME_WIDTH / 2, y + 8, `${item.date}  ${item.playtime}`, {
           fontFamily: '"Tiny5", cursive', fontSize: '8px', color: '#bbbbbb'
         }).setOrigin(0.5).setDepth(1);
       }
@@ -116,6 +116,7 @@ class TitleScene extends Phaser.Scene {
     if (item.action === 'continue') {
       const saveData = SaveManager.load();
       if (saveData) {
+        SaveManager.startSession(saveData.playtime || 0);
         ProgressManager.init(saveData);
         PartyManager.init(saveData);
         this.scene.start('OverworldScene', {
@@ -128,6 +129,7 @@ class TitleScene extends Phaser.Scene {
       }
     } else {
       // New game
+      SaveManager.startSession(0);
       ProgressManager.init(null);
       PartyManager.init(null);
       this.scene.start('OverworldScene', {
