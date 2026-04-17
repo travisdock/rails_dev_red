@@ -371,7 +371,7 @@
                         {
                          "name":"spriteKey",
                          "type":"string",
-                         "value":"pg14"
+                         "value":"npc24"
                         }],
                  "rotation":0,
                  "type":"npc",
