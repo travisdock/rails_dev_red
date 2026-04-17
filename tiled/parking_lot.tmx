@@ -146,15 +146,6 @@
     <property name="targetY" value="1"/>
    </properties>
   </object>
-  <object id="14" name="Open Source Marco" type="gym_leader" x="87.3333" y="8.66667">
-   <properties>
-    <property name="facing" value="down"/>
-    <property name="gymId" value="open_source_marco"/>
-    <property name="rewardGem" value="herb"/>
-    <property name="rewardGemLevel" value="20"/>
-    <property name="spriteKey" value="pg10"/>
-   </properties>
-  </object>
   <object id="15" name="Devops Dana" type="trainer" x="72" y="327.333">
    <properties>
     <property name="facing" value="right"/>
@@ -162,11 +153,11 @@
     <property name="trainerId" value="parking_03"/>
    </properties>
   </object>
-  <object id="16" name="Frontend Dev Skyler" type="trainer" x="280" y="309.333">
+  <object id="16" name="Indie Dev Jeremy" type="trainer" x="280" y="309.333">
    <properties>
     <property name="facing" value="down"/>
-    <property name="spriteKey" value="npc02"/>
-    <property name="trainerId" value="parking_02"/>
+    <property name="spriteKey" value="npc12"/>
+    <property name="trainerId" value="indie_jeremy"/>
    </properties>
   </object>
   <object id="17" name="Junior Dev Casey" type="trainer" x="279.833" y="40">

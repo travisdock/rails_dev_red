@@ -265,44 +265,6 @@
                 }, 
                 {
                  "height":0,
-                 "id":14,
-                 "name":"Open Source Marco",
-                 "opacity":1,
-                 "properties":[
-                        {
-                         "name":"facing",
-                         "type":"string",
-                         "value":"down"
-                        }, 
-                        {
-                         "name":"rewardGem",
-                         "type":"string",
-                         "value":"herb"
-                        }, 
-                        {
-                         "name":"rewardGemLevel",
-                         "type":"string",
-                         "value":"20"
-                        }, 
-                        {
-                         "name":"spriteKey",
-                         "type":"string",
-                         "value":"pg10"
-                        }, 
-                        {
-                         "name":"trainerId",
-                         "type":"string",
-                         "value":"parking_04"
-                        }],
-                 "rotation":0,
-                 "type":"trainer",
-                 "visible":true,
-                 "width":0,
-                 "x":87.3333333333333,
-                 "y":8.66666666666667
-                }, 
-                {
-                 "height":0,
                  "id":15,
                  "name":"Devops Dana",
                  "opacity":1,
@@ -327,12 +289,12 @@
                  "visible":true,
                  "width":0,
                  "x":72,
-                 "y":327.333333333333
+                 "y":327.333
                 }, 
                 {
                  "height":0,
                  "id":16,
-                 "name":"Frontend Dev Skyler",
+                 "name":"Indie Dev Jeremy",
                  "opacity":1,
                  "properties":[
                         {
@@ -343,19 +305,19 @@
                         {
                          "name":"spriteKey",
                          "type":"string",
-                         "value":"npc02"
+                         "value":"npc12"
                         }, 
                         {
                          "name":"trainerId",
                          "type":"string",
-                         "value":"parking_02"
+                         "value":"indie_jeremy"
                         }],
                  "rotation":0,
                  "type":"trainer",
                  "visible":true,
                  "width":0,
                  "x":280,
-                 "y":309.333333333333
+                 "y":309.333
                 }, 
                 {
                  "height":0,
@@ -382,7 +344,7 @@
                  "type":"trainer",
                  "visible":true,
                  "width":0,
-                 "x":279.833333333333,
+                 "x":279.833,
                  "y":40
                 }],
          "opacity":1,
@@ -446,7 +408,7 @@
                  "rotation":0,
                  "type":"encounter",
                  "visible":true,
-                 "width":166.833333333333,
+                 "width":166.833,
                  "x":116.5,
                  "y":69.5
                 }, 
@@ -465,7 +427,7 @@
                  "type":"encounter",
                  "visible":true,
                  "width":291.333,
-                 "x":292.3333,
+                 "x":292.333,
                  "y":357.167
                 }, 
                 {
@@ -518,9 +480,9 @@
                  "rotation":0,
                  "type":"encounter",
                  "visible":true,
-                 "width":217.499666666667,
-                 "x":69.9168333333333,
-                 "y":358.083333333333
+                 "width":217.5,
+                 "x":69.9168,
+                 "y":358.083
                 }],
          "opacity":1,
          "type":"objectgroup",
