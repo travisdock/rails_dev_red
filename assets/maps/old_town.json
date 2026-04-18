@@ -307,8 +307,8 @@
                  "type":"door",
                  "visible":true,
                  "width":0,
-                 "x":636.252490142214,
-                 "y":148.798181682271
+                 "x":636.252,
+                 "y":148.798
                 }, 
                 {
                  "height":0,
@@ -340,8 +340,8 @@
                  "type":"door",
                  "visible":true,
                  "width":0,
-                 "x":636.317766440545,
-                 "y":140.905608192708
+                 "x":636.318,
+                 "y":140.906
                 }, 
                 {
                  "height":0,
@@ -378,8 +378,8 @@
                  "type":"gym_leader",
                  "visible":true,
                  "width":0,
-                 "x":327.677822317517,
-                 "y":327.211708772257
+                 "x":327.678,
+                 "y":327.212
                 }, 
                 {
                  "height":0,
@@ -406,8 +406,31 @@
                  "type":"trainer",
                  "visible":true,
                  "width":0,
-                 "x":247.972406078121,
-                 "y":262.421925981169
+                 "x":247.972,
+                 "y":262.422
+                }, 
+                {
+                 "height":0,
+                 "id":7,
+                 "name":"Heal",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"left"
+                        }, 
+                        {
+                         "name":"spriteKey",
+                         "type":"string",
+                         "value":"npc04"
+                        }],
+                 "rotation":0,
+                 "type":"heal",
+                 "visible":true,
+                 "width":0,
+                 "x":616.548682011957,
+                 "y":391.793886873487
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -427,7 +450,7 @@
          "y":0
         }],
  "nextlayerid":9,
- "nextobjectid":7,
+ "nextobjectid":8,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.12.0",

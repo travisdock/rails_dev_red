@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="20">
+<map version="1.10" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="21">
  <editorsettings>
   <export target="../assets/maps/park.json" format="json"/>
  </editorsettings>
@@ -164,6 +164,12 @@
     <property name="rewardGem" value="proposite"/>
     <property name="rewardGemLevel" value="30"/>
     <property name="spriteKey" value="pg2"/>
+   </properties>
+  </object>
+  <object id="20" name="Heal" type="heal" x="23.8333" y="40">
+   <properties>
+    <property name="facing" value="down"/>
+    <property name="spriteKey" value="npc04"/>
    </properties>
   </object>
  </objectgroup>

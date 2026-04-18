@@ -544,7 +544,7 @@ class OverworldScene extends Phaser.Scene {
 
         // Special NPC actions
         if (messages[0] === 'heal') {
-          this.showDialog(['Welcome to the CI/CD Center!', 'Let me run bundle pristine...', 'Your gems are fully restored!'], () => {
+          this.showDialog(['You look a little tired.', 'Let me run bundle pristine...', 'Your gems are fully restored!'], () => {
             PartyManager.healAll();
           }, npc.name);
           return;

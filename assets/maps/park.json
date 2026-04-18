@@ -263,6 +263,29 @@
                  "width":0,
                  "x":616.333,
                  "y":375.5
+                }, 
+                {
+                 "height":0,
+                 "id":20,
+                 "name":"Heal",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"down"
+                        }, 
+                        {
+                         "name":"spriteKey",
+                         "type":"string",
+                         "value":"npc04"
+                        }],
+                 "rotation":0,
+                 "type":"heal",
+                 "visible":true,
+                 "width":0,
+                 "x":23.8333333333333,
+                 "y":40
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -534,7 +557,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":20,
+ "nextobjectid":21,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.12.0",
