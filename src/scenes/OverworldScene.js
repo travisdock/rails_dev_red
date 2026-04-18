@@ -103,6 +103,68 @@ class OverworldScene extends Phaser.Scene {
     }
   }
 
+  playFinalCutscene() {
+    SaveManager.save({
+      playerName: 'Rubyist',
+      position: {
+        map: this.mapKey,
+        x: this.player.tileX,
+        y: this.player.tileY,
+        facing: this.player.facing
+      },
+      badges: ProgressManager.badges,
+      party: PartyManager.party,
+      trainersDefeated: ProgressManager.trainersDefeated,
+      gymsCompleted: ProgressManager.gymsCompleted,
+      storySeen: ProgressManager.storySeen,
+      starterChosen: this.starterChosen,
+      spriteKey: this.playerSpriteKey
+    });
+
+    this.stopMusic();
+
+    // Fade to black and hold for a beat before the video starts
+    const blackout = this.add.rectangle(
+      GAME_WIDTH / 2, GAME_HEIGHT / 2,
+      GAME_WIDTH, GAME_HEIGHT,
+      0x000000, 1
+    ).setScrollFactor(0).setDepth(2000).setAlpha(0);
+
+    this.tweens.add({
+      targets: blackout,
+      alpha: 1,
+      duration: 1200,
+      onComplete: () => {
+        this.time.delayedCall(700, () => this.startFinalVideo());
+      }
+    });
+  }
+
+  startFinalVideo() {
+    const creditsMusic = this.sound.add('music-credits', { loop: false, volume: 0.5 });
+    creditsMusic.play();
+
+    const overlay = document.createElement('div');
+    overlay.style.cssText = 'position:fixed;inset:0;background:#000;z-index:99999;display:flex;align-items:center;justify-content:center;';
+
+    const video = document.createElement('video');
+    video.src = 'assets/final_cutscene.mp4';
+    video.autoplay = true;
+    video.playsInline = true;
+    video.muted = true;
+    video.style.cssText = 'max-width:100%;max-height:100%;';
+
+    const finish = () => {
+      overlay.remove();
+      this.scene.start('CreditsScene');
+    };
+    video.addEventListener('ended', finish);
+    video.addEventListener('error', finish);
+
+    overlay.appendChild(video);
+    document.body.appendChild(overlay);
+  }
+
   stopMusic() {
     if (this.currentMusic) {
       const music = this.currentMusic;
@@ -749,13 +811,19 @@ class OverworldScene extends Phaser.Scene {
         systemMsgs.push(`You got ${rewardGem.name} (v${rewardGem.level})!`);
       }
 
-      const showSystemMsgs = () => {
-        if (systemMsgs.length > 0) {
-          this.showDialog(systemMsgs, () => {
-            this.player.unfreeze();
-          });
+      const isFinale = result.trainerData.id === 'dhh';
+      const onEnd = () => {
+        if (isFinale) {
+          this.playFinalCutscene();
         } else {
           this.player.unfreeze();
+        }
+      };
+      const showSystemMsgs = () => {
+        if (systemMsgs.length > 0) {
+          this.showDialog(systemMsgs, onEnd);
+        } else {
+          onEnd();
         }
       };
 

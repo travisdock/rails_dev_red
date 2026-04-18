@@ -17,6 +17,7 @@ const config = {
     PreloadScene,
     TitleScene,
     OverworldScene,
+    CreditsScene,
     BattleScene,
     BattleUIScene,
     DialogScene,
