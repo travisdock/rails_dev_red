@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Debug Console Reference</title>
+  <style>
+    body {
+      background: #1a1a2e;
+      color: #eee;
+      font-family: monospace;
+      padding: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    h1 { color: #e94560; }
+    h2 { color: #e94560; margin-top: 40px; border-bottom: 1px solid #0f3460; padding-bottom: 8px; }
+    .nav { margin-bottom: 20px; }
+    .nav a { color: #53d8fb; margin-right: 16px; }
+    .intro { color: #aaa; font-size: 13px; line-height: 1.6; }
+    .intro code { background: #0f3460; padding: 2px 6px; border-radius: 3px; color: #53d8fb; }
+    .cmd {
+      background: #16213e;
+      border: 2px solid #0f3460;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+    .cmd-name {
+      font-size: 15px;
+      font-weight: bold;
+      color: #53d8fb;
+      margin-bottom: 6px;
+    }
+    .cmd-desc { font-size: 13px; color: #ccc; margin-bottom: 10px; line-height: 1.5; }
+    .cmd-args {
+      font-size: 12px;
+      color: #aaa;
+      margin-bottom: 8px;
+    }
+    .cmd-args strong { color: #eee; }
+    .cmd pre {
+      background: #0a0f1f;
+      padding: 10px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      color: #cfe;
+      overflow-x: auto;
+      margin: 4px 0;
+    }
+    .ids-block {
+      background: #0f3460;
+      padding: 10px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      color: #cfe;
+      margin: 6px 0;
+      line-height: 1.8;
+    }
+    .ids-block code {
+      background: #1a1a2e;
+      padding: 1px 6px;
+      border-radius: 3px;
+      color: #53d8fb;
+    }
+  </style>
+</head>
+<body>
+  <h1>Debug Console Reference</h1>
+  <p class="intro">
+    Open your browser devtools and call these on the <code>window.DEBUG</code> object while the game is running.
+    Useful for skipping grinds, testing battles, or inspecting state. Not available in production builds if stripped.
+  </p>
+
+  <h2>Party &amp; Gems</h2>
+
+  <div class="cmd">
+    <div class="cmd-name">DEBUG.healParty()</div>
+    <div class="cmd-desc">Fully heals all gems in your party (HP restored to max).</div>
+    <pre>DEBUG.healParty()</pre>
+  </div>
+
+  <div class="cmd">
+    <div class="cmd-name">DEBUG.addGem(gemId, level?)</div>
+    <div class="cmd-desc">Adds a new gem instance to your party. Fails silently if party is full (max 6).</div>
+    <div class="cmd-args"><strong>gemId</strong> — id of the gem (see list below). <strong>level</strong> — optional, defaults to 10.</div>
+    <pre>DEBUG.addGem('rspec')
+DEBUG.addGem('herb', 25)</pre>
+  </div>
+
+  <div class="cmd">
+    <div class="cmd-name">DEBUG.setLevel(index, level)</div>
+    <div class="cmd-desc">Sets the level of a gem in your party by its slot index. Recalculates max HP and stats, and refills HP.</div>
+    <div class="cmd-args"><strong>index</strong> — party slot (0-5). <strong>level</strong> — new level.</div>
+    <pre>DEBUG.setLevel(0, 30)</pre>
+  </div>
+
+  <div class="cmd">
+    <div class="cmd-name">DEBUG.listGems()</div>
+    <div class="cmd-desc">Logs a table of all party gems: name, level, HP, type, and moves.</div>
+    <pre>DEBUG.listGems()</pre>
+  </div>
+
+  <h2>Progress</h2>
+
+  <div class="cmd">
+    <div class="cmd-name">DEBUG.addBadge(badgeId)</div>
+    <div class="cmd-desc">Grants a gym badge. Useful for testing post-gym progression.</div>
+    <div class="cmd-args"><strong>badgeId</strong> — one of the badge ids below.</div>
+    <pre>DEBUG.addBadge('test_pass')</pre>
+  </div>
+
+  <div class="cmd">
+    <div class="cmd-name">DEBUG.gameState()</div>
+    <div class="cmd-desc">Logs current badges, trainers defeated, and party summary.</div>
+    <pre>DEBUG.gameState()</pre>
+  </div>
+
+  <h2>Save</h2>
+
+  <div class="cmd">
+    <div class="cmd-name">DEBUG.deleteSave()</div>
+    <div class="cmd-desc">Deletes the active save slot. Reload the page to start fresh from the title screen.</div>
+    <pre>DEBUG.deleteSave()</pre>
+  </div>
+
+  <h2>Reference IDs</h2>
+
+  <div class="cmd">
+    <div class="cmd-name">Gem IDs</div>
+    <div class="ids-block">
+      <code>rspec</code> <code>bullet</code> <code>brakeman</code> <code>devise</code> <code>pundit</code> <code>bcrypt</code>
+      <code>rack_mini_profiler</code> <code>capybara</code> <code>factory_bot</code> <code>active_record</code>
+      <code>sidekiq</code> <code>puma</code> <code>turbo</code> <code>pry</code> <code>proposite</code> <code>herb</code>
+    </div>
+  </div>
+
+  <div class="cmd">
+    <div class="cmd-name">Badge IDs</div>
+    <div class="ids-block">
+      <code>test_pass</code> <code>open_source_pass</code> <code>speed_pass</code> <code>captains_pass</code>
+    </div>
+  </div>
+</body>
+</html>
