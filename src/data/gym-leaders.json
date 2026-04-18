@@ -2,8 +2,8 @@
   "jason_swett": {
     "id": "jason_swett", "name": "Jason Swett", "title": "Testing Expert",
     "gymType": "testing", "badge": "test_pass", "badgeName": "Test Pass",
-    "dialogBefore": "I am feeling a little\nblocked. Maybe a code review\nwill loosen things up.",
-    "dialogAfter": "Your tests are green across\nthe board. Excuse me I need\nto make a run for\nthe bathroom.",
+    "dialogBefore": "I am feeling a little blocked. Maybe a code review will loosen things up.",
+    "dialogAfter": "Your tests are green across the board. Excuse me I need to make a run for the bathroom.",
     "party": [
       { "bugId": "external_dependency", "level": 12 },
       { "bugId": "phantom_failure", "level": 12 },
@@ -37,8 +37,8 @@
   "dhh": {
     "id": "dhh", "name": "DHH", "title": "Rails Creator",
     "gymType": "rails", "badge": "captains_pass", "badgeName": "Captain's Pass",
-    "dialogBefore": "You've made it to the launch pad.\nBut the rocket only has room\nfor real Rails developers.\nLet's see if your gems can\nhandle the nastiest bugs.",
-    "dialogAfter": "Welcome aboard.\nTake the Captain's Pass.\nThe rocket is waiting.\nSee you in space!",
+    "dialogBefore": "You've made it to the launch pad. But the rocket only has room for real Rails developers. Let's see if your gems can handle the nastiest bugs.",
+    "dialogAfter": "Welcome aboard. Take the Captain's Pass. The rocket is waiting. See you in space!",
     "party": [
       { "bugId": "pending_migration", "level": 26 },
       { "bugId": "z_index_hell", "level": 25 },

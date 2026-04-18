@@ -175,7 +175,7 @@
   "indie_jeremy": {
     "id": "indie_jeremy", "name": "Indie Dev Jeremy", "class": "Indie Dev",
     "dialogBefore": "I have my own conference you know, Blue Ridge Ruby.",
-    "dialogAfter": "You squashed those bugs like a real pro!",
+    "dialogAfter": "You handled those bugs well. Maybe you should be a speaker!",
     "party": [
       { "bugId": "race_condition", "level": 12 },
       { "bugId": "csrf_vuln", "level": 13 }

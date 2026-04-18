@@ -4,7 +4,7 @@ class IntroScene extends Phaser.Scene {
   }
 
   create() {
-    this.add.image(GAME_WIDTH / 2, GAME_HEIGHT / 2, 'matz').setDepth(-1);
+    this.add.image(GAME_WIDTH / 2, GAME_HEIGHT / 2, 'prof_ruby').setDepth(-1);
 
     this.dialogManager = new DialogManager(this);
     this.keyZ = this.input.keyboard.addKey('Z');
@@ -19,12 +19,12 @@ class IntroScene extends Phaser.Scene {
   runIntro() {
     this.dialogManager.show([
       "Hello there!",
-      "My name is Matz. I created the Ruby programming language.",
+      "My name is Prof. Ruby. I teach the Ruby programming language.",
       "Welcome to Albuquerque!",
       "You're here for Blastoff Rails, the conference that's literally out of this world!",
       "To board the rocket, you'll need to earn Boarding Passes from four elite devs.",
       "But first, let's pick an avatar for you."
-    ], () => this.runSpriteSelection(), 'Prof. Matz');
+    ], () => this.runSpriteSelection(), 'Prof. Ruby');
   }
 
   runSpriteSelection() {
@@ -47,14 +47,14 @@ class IntroScene extends Phaser.Scene {
       "A fine choice!",
       "Every Rails dev needs a trusty gem.",
       "Choose your first gem!"
-    ], () => this.runStarterMenu(), 'Prof. Matz');
+    ], () => this.runStarterMenu(), 'Prof. Ruby');
   }
 
   runStarterMenu() {
     const starters = [
-      { gemId: 'rspec', name: 'RSpec', type: 'Testing', desc: 'All-around solid' },
-      { gemId: 'bullet', name: 'Bullet', type: 'Performance', desc: 'Fast special attacker' },
-      { gemId: 'brakeman', name: 'Brakeman', type: 'Security', desc: 'Tough and defensive' }
+      { gemId: 'rspec', name: 'RSpec', type: 'Testing' },
+      { gemId: 'bullet', name: 'Bullet', type: 'Performance' },
+      { gemId: 'brakeman', name: 'Brakeman', type: 'Security' }
     ];
 
     this._starterMenu = new MenuBox(this, GAME_WIDTH / 2 - 92, GAME_HEIGHT / 2 - 30, [
@@ -72,9 +72,8 @@ class IntroScene extends Phaser.Scene {
 
         this.dialogManager.show([
           `You chose ${opt.value.name}!`,
-          `${opt.value.name} - ${opt.value.desc}.`,
-          "Now go explore Albuquerque\nand earn those Boarding Passes!"
-        ], () => this.finish(), 'Prof. Matz');
+          "Now go explore Albuquerque and earn those Boarding Passes!"
+        ], () => this.finish(), 'Prof. Ruby');
       },
       onCancel: () => {}
     });

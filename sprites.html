@@ -216,7 +216,7 @@
       'slow_test_suite', 'external_dependency', 'test_pollution', 'phantom_failure',
       'auth_bypass', 'exposed_secret', 'insecure_redirect', 'infinite_loop',
       'cache_stampede', 'schema_mismatch', 'deadlock', 'ci_failure',
-      'z_index_hell', 'docker_drift'
+      'z_index_hell', 'docker_drift', 'mass_assignment', 'pending_migration'
     ];
     for (const id of bugIds) {
       addCard('bug-grid', `assets/sprites/bugs/${id}.png`, id.replace(/_/g, ' '), `bug-${id}`, '64x64');

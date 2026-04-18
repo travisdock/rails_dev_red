@@ -133,7 +133,7 @@
     "moves": ["permit_all", "admin_true"]
   },
   "pending_migration": {
-    "id": "pending_migration", "name": "Pending Migration", "type": "rails",
+    "id": "pending_migration", "name": "Pend. Migration", "type": "rails",
     "description": "ActiveRecord::PendingMigrationError. The app won't boot.",
     "baseStats": { "hp": 50, "attack": 45, "defense": 40, "spAttack": 45, "spDefense": 40, "speed": 40 },
     "baseXP": 64,

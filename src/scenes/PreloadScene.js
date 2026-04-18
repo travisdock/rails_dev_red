@@ -29,7 +29,7 @@ class PreloadScene extends Phaser.Scene {
 
     // Load logo
     this.load.image('logo', 'assets/logo.png');
-    this.load.image('matz', 'assets/matz.png');
+    this.load.image('prof_ruby', 'assets/prof_ruby.png');
 
     // Load sprites
     this.load.spritesheet('player', 'assets/sprites/player.png', {
@@ -101,7 +101,8 @@ class PreloadScene extends Phaser.Scene {
       'memory_leak', 'race_condition', 'xss_attack', 'flaky_test', 'brittle_spec',
       'slow_test_suite', 'external_dependency', 'test_pollution', 'phantom_failure',
       'cors_error', 'centered_div', 'z_index_hell',
-      'circular_dependency', 'infinite_loop', 'cache_stampede'
+      'circular_dependency', 'infinite_loop', 'cache_stampede',
+      'mass_assignment', 'pending_migration', 'missing_assets', 'csrf_vuln'
     ];
     for (const id of bugIds) {
       this.load.image('bug-' + id, 'assets/sprites/bugs/' + id + '.png');

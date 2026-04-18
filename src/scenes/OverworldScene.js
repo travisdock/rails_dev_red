@@ -479,7 +479,7 @@ class OverworldScene extends Phaser.Scene {
         // Check badge requirement
         if (door.requiredBadges && ProgressManager.badgeCount() < door.requiredBadges) {
           this.player.freeze();
-          const msg = door.blockMessage || `You need ${door.requiredBadges} badges\nto pass!`;
+          const msg = door.blockMessage || `You need ${door.requiredBadges} badges to pass!`;
           this.dialogManager.show([msg], () => {
             this.player.unfreeze();
             // Push player back
@@ -721,7 +721,7 @@ class OverworldScene extends Phaser.Scene {
           this.dialogManager.show([
             `You chose ${opt.value.name}!`,
             `${opt.value.name} - ${opt.value.desc}.`,
-            "Now explore Albuquerque and\nearn your Boarding Passes!"
+            "Now explore Albuquerque and earn your Boarding Passes!"
           ], () => {
             this.inDialog = false;
             this.player.unfreeze();
@@ -795,9 +795,9 @@ class OverworldScene extends Phaser.Scene {
 
         if (ProgressManager.badgeCount() >= 4) {
           systemMsgs.push("You have all 4 Boarding Passes!");
-          systemMsgs.push("The rocket is ready.\nWelcome aboard, developer!");
+          systemMsgs.push("The rocket is ready. Welcome aboard, developer!");
           systemMsgs.push("3... 2... 1... BLASTOFF!");
-          systemMsgs.push("Congratulations!\nYou've completed\nBlastoff Rails: The Game!");
+          systemMsgs.push("Congratulations! You've completed Blastoff Rails: The Game!");
         }
       }
 
