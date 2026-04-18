@@ -8,7 +8,7 @@ class SpritePicker {
     this.active = true;
 
     const boxW = 120;
-    const boxH = 96;
+    const boxH = 72;
     const cx = GAME_WIDTH / 2;
     const cy = GAME_HEIGHT / 2;
 
@@ -19,11 +19,6 @@ class SpritePicker {
       .setScrollFactor(0)
       .setDepth(this.depth);
     this.elements.push(bg);
-
-    this.title = scene.add.text(cx, cy - 38, 'Choose your look', {
-      ...TEXT_STYLE
-    }).setOrigin(0.5).setScrollFactor(0).setDepth(this.depth + 1);
-    this.elements.push(this.title);
 
     this.preview = scene.add.sprite(cx, cy, options[0].key, 0)
       .setScale(2)
@@ -39,16 +34,6 @@ class SpritePicker {
     }).setOrigin(0.5).setScrollFactor(0).setDepth(this.depth + 1);
     this.elements.push(this.leftArrow, this.rightArrow);
 
-    this.label = scene.add.text(cx, cy + 30, options[0].label, {
-      ...TEXT_STYLE
-    }).setOrigin(0.5).setScrollFactor(0).setDepth(this.depth + 1);
-    this.elements.push(this.label);
-
-    this.hint = scene.add.text(cx, cy + 42, 'Z to confirm', {
-      ...TEXT_STYLE, fontSize: '6px', color: '#666666'
-    }).setOrigin(0.5).setScrollFactor(0).setDepth(this.depth + 1);
-    this.elements.push(this.hint);
-
     this.keys = {
       left: scene.input.keyboard.addKey('LEFT'),
       right: scene.input.keyboard.addKey('RIGHT'),
@@ -60,7 +45,6 @@ class SpritePicker {
   updatePreview() {
     const opt = this.options[this.selectedIndex];
     this.preview.setTexture(opt.key, 0);
-    this.label.setText(opt.label);
   }
 
   update() {

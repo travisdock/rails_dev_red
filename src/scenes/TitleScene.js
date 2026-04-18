@@ -134,15 +134,7 @@ class TitleScene extends Phaser.Scene {
       SaveManager.startSession(0);
       ProgressManager.init(null);
       PartyManager.init(null);
-      this.scene.start('OverworldScene', {
-        mapKey: 'hotel',
-        playerX: 5,
-        playerY: 14,
-        facing: 'down',
-        starterChosen: false,
-        playerSpriteKey: 'player',
-        spriteChosen: false
-      });
+      this.scene.start('IntroScene');
     }
   }
 }
