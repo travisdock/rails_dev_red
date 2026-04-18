@@ -26,8 +26,8 @@
             "scale": 2,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 232.5,
-                "y": 139.5
+                "x": 228,
+                "y": 139.75
             }
         },
         "house.tsx": {
@@ -44,8 +44,8 @@
             "scale": 1.4309,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 275.35117758054366,
-                "y": 273.2545950101334
+                "x": 163.53344049199802,
+                "y": 19.5681039904955
             }
         },
         "park.tmx": {
@@ -67,8 +67,8 @@
             "scale": 2,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 471.5,
-                "y": 298
+                "x": 160,
+                "y": 292
             }
         },
         "path.tsx": {
@@ -105,15 +105,15 @@
             "expandedObjectLayers": [
                 4
             ],
-            "scale": 2.5979,
-            "selectedLayer": 4,
+            "scale": 1.5,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 223.64217252396165,
-                "y": 291.3891989683975
+                "x": 241.3333333333333,
+                "y": 234.33333333333337
             }
         }
     },
-    "last.exportedFilePath": "/Users/travisdockter/development/rails_dev_red/assets/maps",
+    "last.exportedFilePath": "/home/travis/development/bor_the_game/rails-quest/assets/maps",
     "last.externalTilesetPath": "/home/travis/development/bor_the_game/rails-quest/tiled",
     "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
     "map.lastUsedFormat": "tmx",
@@ -121,9 +121,9 @@
     ],
     "project": "blastoff_rails_the_game.tiled-project",
     "recentFiles": [
+        "hotel.tmx",
         "parking_lot.tmx",
         "house.tsx",
-        "hotel.tmx",
         "venue.tmx",
         "old_town.tmx",
         "park.tmx",

@@ -158,18 +158,18 @@
     <property name="spriteKey" value="pg14"/>
    </properties>
   </object>
-  <object id="16" name="Attendee Jimothy" type="npc" x="168.5" y="264">
+  <object id="16" name="Speaker Andrew" type="npc" x="168.5" y="264">
    <properties>
-    <property name="dialog" value="Pair programming is the only way to go!"/>
+    <property name="dialog" value="The Ruby community isn't something you join, it's something you help create!"/>
     <property name="facing" value="left"/>
-    <property name="spriteKey" value="pg13"/>
+    <property name="spriteKey" value="pg10"/>
    </properties>
   </object>
-  <object id="17" name="Attendee Erik" type="npc" x="148" y="264.5">
+  <object id="17" name="Remote Ruby Chris" type="npc" x="148" y="264.5">
    <properties>
-    <property name="dialog" value="I am going to take notes in all the talks and review them when I get home!"/>
+    <property name="dialog" value="If you are looking to move off Heroku, Hatchbox is definitely the way to go."/>
     <property name="facing" value="right"/>
-    <property name="spriteKey" value="npc07"/>
+    <property name="spriteKey" value="npc11"/>
    </properties>
   </object>
   <object id="18" name="Attendee Ann" type="npc" x="344.5" y="249">

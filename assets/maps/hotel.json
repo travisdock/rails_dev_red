@@ -371,7 +371,7 @@
                         {
                          "name":"spriteKey",
                          "type":"string",
-                         "value":"npc24"
+                         "value":"pg14"
                         }],
                  "rotation":0,
                  "type":"npc",
@@ -383,13 +383,13 @@
                 {
                  "height":0,
                  "id":16,
-                 "name":"Attendee Jimothy",
+                 "name":"Speaker Andrew",
                  "opacity":1,
                  "properties":[
                         {
                          "name":"dialog",
                          "type":"string",
-                         "value":"Pair programming is the only way to go!"
+                         "value":"The Ruby community isn't something you join, it's something you help create!"
                         }, 
                         {
                          "name":"facing",
@@ -399,7 +399,7 @@
                         {
                          "name":"spriteKey",
                          "type":"string",
-                         "value":"pg13"
+                         "value":"pg10"
                         }],
                  "rotation":0,
                  "type":"npc",
@@ -411,13 +411,13 @@
                 {
                  "height":0,
                  "id":17,
-                 "name":"Attendee Erik",
+                 "name":"Remote Ruby Chris",
                  "opacity":1,
                  "properties":[
                         {
                          "name":"dialog",
                          "type":"string",
-                         "value":"I am going to take notes in all the talks and review them when I get home!"
+                         "value":"If you are looking to move off Heroku, Hatchbox is definitely the way to go."
                         }, 
                         {
                          "name":"facing",
@@ -427,7 +427,7 @@
                         {
                          "name":"spriteKey",
                          "type":"string",
-                         "value":"npc07"
+                         "value":"npc11"
                         }],
                  "rotation":0,
                  "type":"npc",
