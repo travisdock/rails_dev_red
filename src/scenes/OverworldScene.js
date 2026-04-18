@@ -552,6 +552,14 @@ class OverworldScene extends Phaser.Scene {
 
         // Trainer battle check
         if (npc instanceof Trainer && !npc.defeated) {
+          // DHH only battles players who've earned the other three Boarding Passes
+          if (npc.trainerId === 'dhh' && ProgressManager.badgeCount() < 3) {
+            this.showDialog([
+              "I don't think you are ready yet.",
+              "Come back when you've earned the other three Boarding Passes."
+            ], null, npc.name);
+            return;
+          }
           this.showDialog(messages, () => {
             this.startTrainerBattle(npc, true);
           }, npc.name);
@@ -833,7 +841,7 @@ class OverworldScene extends Phaser.Scene {
         this.time.delayedCall(300, showSystemMsgs);
       }
     } else if (result.result === 'lose') {
-      // Blackout - heal and return to last town
+      // Blackout - heal and return to hotel
       PartyManager.healAll();
       this.time.delayedCall(300, () => {
         this.scene.restart({
