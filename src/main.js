@@ -16,6 +16,7 @@ const config = {
     BootScene,
     PreloadScene,
     TitleScene,
+    IntroScene,
     OverworldScene,
     CreditsScene,
     BattleScene,

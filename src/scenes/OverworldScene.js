@@ -656,11 +656,9 @@ class OverworldScene extends Phaser.Scene {
 
     // Only sprites with real 4-frame walk cycles per direction.
     // npc11-26 (16x16 Character Sprites Human Pack 1) repeat one idle frame per row, so no walk animation.
-    const npcIds = ['01','02','03','04','05','06','07','09','10'];
-    const options = [
-      { key: 'player', label: 'Default' },
-      ...npcIds.map(id => ({ key: 'npc' + id, label: 'NPC ' + id }))
-    ].filter(o => this.textures.exists(o.key));
+    const npcIds = ['01','02','03','05','06','07','09','10'];
+    const options = npcIds.map(id => ({ key: 'npc' + id, label: 'NPC ' + id }))
+      .filter(o => this.textures.exists(o.key));
 
     const picker = new SpritePicker(this, options, {
       onSelect: (opt) => {
