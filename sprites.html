@@ -127,18 +127,18 @@
     ];
 
     const renderers = {
-      // Show first two frames of 32x32 sheet side-by-side
+      // Show first forward-facing frame of 32x32 sheet
       npc(card, src) {
         const canvas = document.createElement('canvas');
-        canvas.width = 64;
+        canvas.width = 32;
         canvas.height = 32;
-        canvas.style.width = '128px';
+        canvas.style.width = '64px';
         canvas.style.height = '64px';
         const ctx = canvas.getContext('2d');
         ctx.imageSmoothingEnabled = false;
         const img = new Image();
         img.src = src;
-        img.onload = () => ctx.drawImage(img, 0, 0, 64, 32, 0, 0, 64, 32);
+        img.onload = () => ctx.drawImage(img, 0, 0, 32, 32, 0, 0, 32, 32);
         img.onerror = () => card.remove();
         card.appendChild(canvas);
       },
@@ -153,7 +153,7 @@
         ctx.imageSmoothingEnabled = false;
         const img = new Image();
         img.src = src;
-        img.onload = () => ctx.drawImage(img, 0, 0, 36, 48, 0, 0, 36, 48);
+        img.onload = () => ctx.drawImage(img, 36, 0, 36, 48, 0, 0, 36, 48);
         img.onerror = () => card.remove();
         card.appendChild(canvas);
       }
