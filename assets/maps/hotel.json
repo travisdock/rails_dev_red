@@ -299,7 +299,7 @@
                 {
                  "height":0,
                  "id":13,
-                 "name":"minion4",
+                 "name":"Speaker Ifat",
                  "opacity":1,
                  "properties":[
                         {
@@ -310,12 +310,12 @@
                         {
                          "name":"spriteKey",
                          "type":"string",
-                         "value":"pg11"
+                         "value":"pg12"
                         }, 
                         {
                          "name":"trainerId",
                          "type":"string",
-                         "value":"test_minion_04"
+                         "value":"ifat_ribon"
                         }],
                  "rotation":0,
                  "type":"trainer",

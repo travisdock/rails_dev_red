@@ -121,10 +121,10 @@
     ],
     "project": "blastoff_rails_the_game.tiled-project",
     "recentFiles": [
+        "venue.tmx",
         "hotel.tmx",
         "parking_lot.tmx",
         "house.tsx",
-        "venue.tmx",
         "old_town.tmx",
         "park.tmx",
         "rocket.tsx"

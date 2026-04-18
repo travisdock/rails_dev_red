@@ -108,10 +108,10 @@
     "prizeMoney": 250,
     "lineOfSight": 4
   },
-  "test_minion_04": {
-    "id": "test_minion_04", "name": "Mock Master Michael", "class": "Testing Fanatic",
-    "dialogBefore": "I've collected the nastiest testing bugs around. Let me unleash them!",
-    "dialogAfter": "Maybe you are ready for Jason's review. As long as he is feeling up to it.",
+  "ifat_ribon": {
+    "id": "ifat_ribon", "name": "Speaker Ifat", "class": "Conference Speaker",
+    "dialogBefore": "AI can write tests in seconds, but it can't tell you which ones matter (yet).",
+    "dialogAfter": "I think you have a good understanding of clear, maintainable tests.",
     "party": [
       { "bugId": "flaky_test", "level": 9 },
       { "bugId": "external_dependency", "level": 8 },

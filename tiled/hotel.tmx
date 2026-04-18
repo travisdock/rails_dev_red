@@ -137,11 +137,11 @@
     <property name="trainerId" value="test_minion_03"/>
    </properties>
   </object>
-  <object id="13" name="minion4" type="trainer" x="312" y="55">
+  <object id="13" name="Speaker Ifat" type="trainer" x="312" y="55">
    <properties>
     <property name="facing" value="down"/>
-    <property name="spriteKey" value="pg11"/>
-    <property name="trainerId" value="test_minion_04"/>
+    <property name="spriteKey" value="pg12"/>
+    <property name="trainerId" value="ifat_ribon"/>
    </properties>
   </object>
   <object id="14" name="Attendee Collin" type="npc" x="55.5" y="184.5">
