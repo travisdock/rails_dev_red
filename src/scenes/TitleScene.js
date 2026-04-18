@@ -124,7 +124,9 @@ class TitleScene extends Phaser.Scene {
           playerX: saveData.player.position.x,
           playerY: saveData.player.position.y,
           facing: saveData.player.position.facing,
-          starterChosen: saveData.player.starterChosen
+          starterChosen: saveData.player.starterChosen,
+          playerSpriteKey: saveData.player.spriteKey || 'player',
+          spriteChosen: !!saveData.player.spriteKey
         });
       }
     } else {
@@ -137,7 +139,9 @@ class TitleScene extends Phaser.Scene {
         playerX: 5,
         playerY: 14,
         facing: 'down',
-        starterChosen: false
+        starterChosen: false,
+        playerSpriteKey: 'player',
+        spriteChosen: false
       });
     }
   }

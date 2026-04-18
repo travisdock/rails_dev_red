@@ -35,7 +35,8 @@ const SaveManager = {
         position: { ...gameState.position },
         badges: [...gameState.badges],
         party: gameState.party.map(g => g.serialize()),
-        starterChosen: gameState.starterChosen
+        starterChosen: gameState.starterChosen,
+        spriteKey: gameState.spriteKey || null
       },
       playtime: this.getPlaytime(),
       flags: {

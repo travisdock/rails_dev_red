@@ -9,6 +9,8 @@ class OverworldScene extends Phaser.Scene {
     this.startY = data.playerY || 12;
     this.startFacing = data.facing || 'down';
     this.starterChosen = data.starterChosen || false;
+    this.playerSpriteKey = data.playerSpriteKey || 'player';
+    this.spriteChosen = data.spriteChosen || false;
   }
 
   create() {
@@ -21,10 +23,10 @@ class OverworldScene extends Phaser.Scene {
     this.inMenu = false;
 
     this.loadMap(this.mapKey);
-    this.player = new Player(this, this.startX, this.startY);
+    this.player = new Player(this, this.startX, this.startY, this.playerSpriteKey);
     this.player.facing = this.startFacing;
     if (this.player.hasSprite) {
-      this.player.sprite.play(`player-idle-${this.startFacing}`, true);
+      this.player.sprite.play(`${this.player.spriteKey}-idle-${this.startFacing}`, true);
     }
 
     // Camera
@@ -49,12 +51,15 @@ class OverworldScene extends Phaser.Scene {
           "Welcome to Albuquerque!",
           "You're here for Blastoff Rails, the conference that's literally out of this world!",
           "To board the rocket, you'll need to earn Boarding Passes from four elite devs.",
-          "But first, you'll need a gem to get started!"
+          "But first, who are you?"
         ], () => {
-          this.player.unfreeze();
-          if (!this.starterChosen) {
-            this.showStarterSelection();
-          }
+          this.showSpriteSelection(() => {
+            if (!this.starterChosen) {
+              this.showStarterSelection();
+            } else {
+              this.player.unfreeze();
+            }
+          });
         });
       });
     } else if (!this.starterChosen && this.mapKey === 'hotel') {
@@ -515,7 +520,9 @@ class OverworldScene extends Phaser.Scene {
         playerX: targetX,
         playerY: targetY,
         facing: facing || 'down',
-        starterChosen: this.starterChosen
+        starterChosen: this.starterChosen,
+        playerSpriteKey: this.playerSpriteKey,
+        spriteChosen: this.spriteChosen
       });
     });
   }
@@ -580,6 +587,49 @@ class OverworldScene extends Phaser.Scene {
     this.scene.launch('MenuScene');
   }
 
+  showSpriteSelection(onDone) {
+    if (this.spriteChosen) { if (onDone) onDone(); return; }
+    this.player.freeze();
+    this.inDialog = true;
+
+    // Only sprites with real 4-frame walk cycles per direction.
+    // npc11-26 (16x16 Character Sprites Human Pack 1) repeat one idle frame per row, so no walk animation.
+    const npcIds = ['01','02','03','04','05','06','07','09','10'];
+    const options = [
+      { key: 'player', label: 'Default' },
+      ...npcIds.map(id => ({ key: 'npc' + id, label: 'NPC ' + id }))
+    ].filter(o => this.textures.exists(o.key));
+
+    const picker = new SpritePicker(this, options, {
+      onSelect: (opt) => {
+        picker.destroy();
+        this._spritePicker = null;
+        this.applyPlayerSprite(opt.key);
+        this.spriteChosen = true;
+        this.inDialog = false;
+        if (onDone) onDone();
+      }
+    });
+    this._spritePicker = picker;
+  }
+
+  applyPlayerSprite(spriteKey) {
+    if (!this.textures.exists(spriteKey)) return;
+    const facing = this.player.facing;
+    const tileX = this.player.tileX;
+    const tileY = this.player.tileY;
+    const frozen = this.player.frozen;
+    this.player.destroy();
+    this.player = new Player(this, tileX, tileY, spriteKey);
+    this.player.facing = facing;
+    if (this.player.hasSprite) {
+      this.player.sprite.play(`${spriteKey}-idle-${facing}`, true);
+    }
+    if (frozen) this.player.freeze();
+    this.playerSpriteKey = spriteKey;
+    this.cameras.main.startFollow(this.player.sprite, true);
+  }
+
   showStarterSelection() {
     if (this.starterChosen) return;
     this.player.freeze();
@@ -626,6 +676,11 @@ class OverworldScene extends Phaser.Scene {
   }
 
   update() {
+    if (this._spritePicker && this._spritePicker.active) {
+      this._spritePicker.update();
+      return;
+    }
+
     if (this._starterMenu && this._starterMenu.active) {
       this._starterMenu.update();
       return;
@@ -720,7 +775,9 @@ class OverworldScene extends Phaser.Scene {
           playerX: 27,
           playerY: 13,
           facing: 'down',
-          starterChosen: this.starterChosen
+          starterChosen: this.starterChosen,
+          playerSpriteKey: this.playerSpriteKey,
+          spriteChosen: this.spriteChosen
         });
       });
     } else {

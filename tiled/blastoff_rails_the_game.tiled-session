@@ -27,7 +27,7 @@
             "selectedLayer": 3,
             "viewCenter": {
                 "x": 232.5,
-                "y": 139.75
+                "y": 139.5
             }
         },
         "house.tsx": {
@@ -44,8 +44,8 @@
             "scale": 1.4309,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 163.53344049199802,
-                "y": 19.5681039904955
+                "x": 275.35117758054366,
+                "y": 273.2545950101334
             }
         },
         "park.tmx": {
@@ -67,8 +67,8 @@
             "scale": 2,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 160,
-                "y": 292
+                "x": 471.5,
+                "y": 298
             }
         },
         "path.tsx": {
@@ -105,11 +105,11 @@
             "expandedObjectLayers": [
                 4
             ],
-            "scale": 1.5,
-            "selectedLayer": 2,
+            "scale": 2.5979,
+            "selectedLayer": 4,
             "viewCenter": {
-                "x": 241.3333333333333,
-                "y": 234.33333333333337
+                "x": 223.64217252396165,
+                "y": 291.3891989683975
             }
         }
     },

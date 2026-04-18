@@ -56,7 +56,8 @@ class MenuScene extends Phaser.Scene {
       trainersDefeated: ProgressManager.trainersDefeated,
       gymsCompleted: ProgressManager.gymsCompleted,
       storySeen: ProgressManager.storySeen,
-      starterChosen: overworld.starterChosen
+      starterChosen: overworld.starterChosen,
+      spriteKey: overworld.playerSpriteKey
     });
 
     this.menu.destroy();

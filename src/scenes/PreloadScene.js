@@ -51,6 +51,11 @@ class PreloadScene extends Phaser.Scene {
       });
     }
 
+    // DHH (portrait-style, down-facing only)
+    this.load.spritesheet('dhh', 'assets/sprites/dhh.png', {
+      frameWidth: 36, frameHeight: 48
+    });
+
     // Load tilesets
     this.load.spritesheet('tiles-path', 'assets/tilesets/path.png', {
       frameWidth: 16, frameHeight: 16
