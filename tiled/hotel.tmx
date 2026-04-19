@@ -158,14 +158,14 @@
     <property name="spriteKey" value="pg14"/>
    </properties>
   </object>
-  <object id="16" name="Speaker Andrew" type="npc" x="168.5" y="264">
+  <object id="16" name="Speaker Andrew" type="npc" x="168.136" y="248.182">
    <properties>
     <property name="dialog" value="The Ruby community isn't something you join, it's something you help create!"/>
     <property name="facing" value="left"/>
     <property name="spriteKey" value="pg10"/>
    </properties>
   </object>
-  <object id="17" name="Remote Ruby Chris" type="npc" x="148" y="264.5">
+  <object id="17" name="Remote Ruby Chris" type="npc" x="150" y="247.875">
    <properties>
     <property name="dialog" value="If you are looking to move off Heroku, Hatchbox is definitely the way to go."/>
     <property name="facing" value="right"/>

@@ -429,8 +429,36 @@
                  "type":"heal",
                  "visible":true,
                  "width":0,
-                 "x":616.548682011957,
-                 "y":391.793886873487
+                 "x":616.549,
+                 "y":391.794
+                }, 
+                {
+                 "height":0,
+                 "id":8,
+                 "name":"Martian Irina",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"dialog",
+                         "type":"string",
+                         "value":"The probability of meeting a cat on a tree in San Francisco is small but never zero"
+                        }, 
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"down"
+                        }, 
+                        {
+                         "name":"spriteKey",
+                         "type":"string",
+                         "value":"npc19"
+                        }],
+                 "rotation":0,
+                 "type":"npc",
+                 "visible":true,
+                 "width":0,
+                 "x":40.1666666666667,
+                 "y":328.833333333333
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -450,7 +478,7 @@
          "y":0
         }],
  "nextlayerid":9,
- "nextobjectid":8,
+ "nextobjectid":9,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.12.0",

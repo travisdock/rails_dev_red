@@ -23,11 +23,11 @@
             "expandedObjectLayers": [
                 4
             ],
-            "scale": 2,
+            "scale": 1.5,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 228,
-                "y": 139.75
+                "x": 277.33333333333326,
+                "y": 126.33333333333331
             }
         },
         "house.tsx": {
@@ -41,11 +41,11 @@
             "expandedObjectLayers": [
                 4
             ],
-            "scale": 5.5,
+            "scale": 1.5,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 539.2727272727273,
-                "y": 416.4545454545455
+                "x": 264,
+                "y": 284.99999999999994
             }
         },
         "park.tmx": {
@@ -55,8 +55,8 @@
             "scale": 4,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 584.25,
-                "y": 339.125
+                "x": 114.75,
+                "y": 82.375
             }
         },
         "parking_lot.tmx": {
@@ -121,12 +121,12 @@
     ],
     "project": "blastoff_rails_the_game.tiled-project",
     "recentFiles": [
+        "park.tmx",
         "hotel.tmx",
         "old_town.tmx",
         "venue.tmx",
         "parking_lot.tmx",
         "house.tsx",
-        "park.tmx",
         "rocket.tsx"
     ],
     "tileset.lastUsedFilter": "Tiled tileset files (*.tsx *.xml)"
