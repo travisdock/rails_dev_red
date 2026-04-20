@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="21">
+<map version="1.10" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="23">
  <editorsettings>
   <export target="../assets/maps/park.json" format="json"/>
  </editorsettings>
@@ -214,6 +214,22 @@
    <properties>
     <property name="facing" value="down"/>
     <property name="spriteKey" value="npc04"/>
+   </properties>
+  </object>
+  <object id="21" name="Futurist Scott" type="npc" x="247.682" y="360.455">
+   <properties>
+    <property name="dialog" value="Code doesn't grow anymore. It accumulates. At superhuman speed."/>
+    <property name="facing" value="left"/>
+    <property name="spriteKey" value="npc18"/>
+   </properties>
+  </object>
+  <object id="22" name="Active Agent Justin" type="trainer" x="72.3333" y="472">
+   <properties>
+    <property name="facing" value="right"/>
+    <property name="rewardGem" value="active_agent"/>
+    <property name="rewardGemLevel" value="18"/>
+    <property name="spriteKey" value="pg7"/>
+    <property name="trainerId" value="justin_bowen"/>
    </properties>
   </object>
  </objectgroup>

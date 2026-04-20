@@ -181,5 +181,16 @@
       { "bugId": "csrf_vuln", "level": 13 }
     ],
     "lineOfSight": 3
+  },
+  "justin_bowen": {
+    "id": "justin_bowen", "name": "Active Agent Justin", "class": "Active Agent",
+    "dialogBefore": "An agent is just a controller with a persona. Nothing mystical.",
+    "dialogAfter": "Retry logic keeps hallucinations out of production.",
+    "party": [
+      { "bugId": "hallucination", "level": 18 },
+      { "bugId": "context_overflow", "level": 20 }
+    ],
+    "prizeMoney": 500,
+    "lineOfSight": 3
   }
 }

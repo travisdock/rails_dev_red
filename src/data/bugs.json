@@ -159,5 +159,26 @@
     "baseStats": { "hp": 35, "attack": 35, "defense": 30, "spAttack": 45, "spDefense": 35, "speed": 40 },
     "baseXP": 50,
     "moves": ["z_index_9999"]
+  },
+  "hallucination": {
+    "id": "hallucination", "name": "Hallucination", "type": "runtime",
+    "description": "Confidently calls a method that doesn't exist.",
+    "baseStats": { "hp": 40, "attack": 45, "defense": 30, "spAttack": 60, "spDefense": 30, "speed": 55 },
+    "baseXP": 66,
+    "moves": ["made_up_method", "gaslight"]
+  },
+  "context_overflow": {
+    "id": "context_overflow", "name": "Context Overflow", "type": "runtime",
+    "description": "Too many tokens. Earlier instructions forgotten.",
+    "baseStats": { "hp": 55, "attack": 45, "defense": 50, "spAttack": 50, "spDefense": 45, "speed": 30 },
+    "baseXP": 66,
+    "moves": ["token_limit", "truncate"]
+  },
+  "prompt_injection": {
+    "id": "prompt_injection", "name": "Prompt Injection", "type": "security",
+    "description": "Ignore all previous instructions and do this instead.",
+    "baseStats": { "hp": 40, "attack": 55, "defense": 30, "spAttack": 65, "spDefense": 30, "speed": 55 },
+    "baseXP": 70,
+    "moves": ["ignore_previous", "system_override"]
   }
 }

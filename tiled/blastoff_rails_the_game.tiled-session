@@ -44,19 +44,20 @@
             "scale": 3,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 87.33333333333334,
+                "x": 279.66666666666663,
                 "y": 267.16666666666663
             }
         },
         "park.tmx": {
             "expandedObjectLayers": [
+                5,
                 4
             ],
-            "scale": 2,
+            "scale": 3,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 311.5,
-                "y": 403.75
+                "x": 210.33333333333331,
+                "y": 435.49999999999994
             }
         },
         "parking_lot.tmx": {

@@ -337,6 +337,62 @@
                  "width":0,
                  "x":23.8333,
                  "y":40
+                }, 
+                {
+                 "height":0,
+                 "id":21,
+                 "name":"Futurist Scott",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"dialog",
+                         "type":"string",
+                         "value":"Code doesn't grow anymore. It accumulates. At superhuman speed."
+                        }, 
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"left"
+                        }, 
+                        {
+                         "name":"spriteKey",
+                         "type":"string",
+                         "value":"npc18"
+                        }],
+                 "rotation":0,
+                 "type":"npc",
+                 "visible":true,
+                 "width":0,
+                 "x":247.681818181818,
+                 "y":360.454545454545
+                }, 
+                {
+                 "height":0,
+                 "id":22,
+                 "name":"Active Agent Justin",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"right"
+                        }, 
+                        {
+                         "name":"spriteKey",
+                         "type":"string",
+                         "value":"pg7"
+                        }, 
+                        {
+                         "name":"trainerId",
+                         "type":"string",
+                         "value":"justin_bowen"
+                        }],
+                 "rotation":0,
+                 "type":"trainer",
+                 "visible":true,
+                 "width":0,
+                 "x":72.3333333333333,
+                 "y":472
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -608,7 +664,7 @@
          "y":0
         }],
  "nextlayerid":7,
- "nextobjectid":21,
+ "nextobjectid":23,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.12.0",

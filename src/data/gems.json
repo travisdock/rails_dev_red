@@ -201,5 +201,16 @@
       { "level": 14, "move": "format" }
     ],
     "evolution": null
+  },
+  "active_agent": {
+    "id": "active_agent", "name": "ActiveAgent", "type": "rails",
+    "description": "Agents as controllers, prompts as views. Rails-native AI.",
+    "baseStats": { "hp": 50, "attack": 45, "defense": 45, "spAttack": 60, "spDefense": 45, "speed": 55 },
+    "baseXP": 68,
+    "learnset": [
+      { "level": 1, "move": "prompt" },
+      { "level": 20, "move": "tool_call" }
+    ],
+    "evolution": null
   }
 }
