@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Save Data Stats</title>
+  <style>
+    body {
+      background: #1a1a2e;
+      color: #eee;
+      font-family: monospace;
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    h1 { color: #e94560; }
+    h2 { color: #e94560; margin-top: 32px; border-bottom: 1px solid #0f3460; padding-bottom: 8px; }
+    .nav { margin-bottom: 20px; }
+    .nav a { color: #53d8fb; margin-right: 16px; }
+    .slot {
+      background: #16213e;
+      border: 2px solid #0f3460;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+    .slot-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+    .slot-title { font-size: 18px; font-weight: bold; color: #53d8fb; }
+    .slot-meta { font-size: 12px; color: #888; }
+    .bar-row {
+      margin: 10px 0;
+    }
+    .bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: #ccc;
+      margin-bottom: 4px;
+    }
+    .bar-label strong { color: #fff; }
+    .bar-track {
+      height: 14px;
+      background: #0f3460;
+      border-radius: 7px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #22cc44, #53d8fb);
+      transition: width 0.4s ease;
+    }
+    .bar-fill.complete {
+      background: linear-gradient(90deg, #ff6633, #e94560);
+    }
+    details {
+      margin-top: 12px;
+      font-size: 12px;
+    }
+    summary {
+      cursor: pointer;
+      color: #53d8fb;
+      padding: 4px 0;
+    }
+    details ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 8px;
+    }
+    details li {
+      padding: 2px 0;
+      color: #aaa;
+    }
+    details li.defeated { color: #22cc44; }
+    details li.defeated::before { content: '✓ '; }
+    details li.remaining::before { content: '○ '; color: #666; }
+    .empty {
+      color: #666;
+      font-style: italic;
+      padding: 16px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <a href="index.html">Game</a>
+    <a href="sprites.html">Sprites</a>
+    <a href="bugs.html">Bugs</a>
+    <a href="people.html">People</a>
+  </div>
+  <h1>Save Data Stats</h1>
+  <p style="color:#aaa; font-size:13px;">Analyzes your browser's saved games for battle completion progress.</p>
+
+  <div id="slots"></div>
+
+  <script>
+    const SAVE_KEY_PREFIX = 'rails_quest_save_';
+    const TOTAL_BADGES = 4;
+
+    async function loadGameData() {
+      const [trainers, gymLeaders] = await Promise.all([
+        fetch('src/data/trainers.json').then(r => r.json()),
+        fetch('src/data/gym-leaders.json').then(r => r.json())
+      ]);
+      return { trainers, gymLeaders };
+    }
+
+    function readSave(slot) {
+      const raw = localStorage.getItem(SAVE_KEY_PREFIX + slot);
+      if (!raw) return null;
+      try { return JSON.parse(raw); } catch { return null; }
+    }
+
+    function formatPlaytime(ms) {
+      const s = Math.floor(ms / 1000);
+      const h = Math.floor(s / 3600);
+      const m = Math.floor((s % 3600) / 60);
+      const sec = s % 60;
+      return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(sec).padStart(2, '0')}`;
+    }
+
+    function renderBar(label, done, total) {
+      const pct = total === 0 ? 0 : Math.round((done / total) * 100);
+      const complete = done === total && total > 0;
+      return `
+        <div class="bar-row">
+          <div class="bar-label">
+            <span>${label}</span>
+            <span><strong>${done}/${total}</strong> &middot; ${pct}%</span>
+          </div>
+          <div class="bar-track">
+            <div class="bar-fill ${complete ? 'complete' : ''}" style="width:${pct}%"></div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderSlot(slot, data, gameData) {
+      const container = document.createElement('div');
+      container.className = 'slot';
+
+      if (!data) {
+        container.innerHTML = `
+          <div class="slot-header"><span class="slot-title">Slot ${slot}</span></div>
+          <div class="empty">No save in this slot.</div>
+        `;
+        return container;
+      }
+
+      const player = data.player || {};
+      const flags = data.flags || {};
+      const defeatedTrainers = new Set(flags.trainersDefeated || []);
+      const gymsCompleted = new Set(flags.gymsCompleted || []);
+      const badges = (player.badges || []).length;
+      const playtime = formatPlaytime(data.playtime || 0);
+      const savedAt = data.timestamp ? new Date(data.timestamp).toLocaleString() : '';
+
+      const trainerIds = Object.keys(gameData.trainers);
+      const gymIds = Object.keys(gameData.gymLeaders);
+      const allBattleIds = [...trainerIds, ...gymIds];
+      const allDefeated = new Set([...defeatedTrainers, ...gymsCompleted]);
+      const battlesDone = allBattleIds.filter(id => allDefeated.has(id)).length;
+      const battlesTotal = allBattleIds.length;
+
+      // First gem display
+      const firstGem = (player.party && player.party[0]) || null;
+      const starter = firstGem ? firstGem.gemId : '—';
+
+      container.innerHTML = `
+        <div class="slot-header">
+          <span class="slot-title">Slot ${slot}: ${starter}</span>
+          <span class="slot-meta">${savedAt}</span>
+          <span class="slot-meta">playtime ${playtime}</span>
+        </div>
+        ${renderBar('Battles won', battlesDone, battlesTotal)}
+        ${renderBar('Boarding Passes', badges, TOTAL_BADGES)}
+        ${renderBar('Trainers defeated', trainerIds.filter(id => defeatedTrainers.has(id)).length, trainerIds.length)}
+        <details>
+          <summary>Battle breakdown</summary>
+          <ul>
+            ${gymIds.map(id => {
+              const def = gameData.gymLeaders[id];
+              const done = gymsCompleted.has(id);
+              return `<li class="${done ? 'defeated' : 'remaining'}">[Gym] ${def.name}</li>`;
+            }).join('')}
+            ${trainerIds.map(id => {
+              const def = gameData.trainers[id];
+              const done = defeatedTrainers.has(id);
+              return `<li class="${done ? 'defeated' : 'remaining'}">${def.name}</li>`;
+            }).join('')}
+          </ul>
+        </details>
+      `;
+      return container;
+    }
+
+    async function init() {
+      const gameData = await loadGameData();
+      const root = document.getElementById('slots');
+      let any = false;
+      for (let slot = 1; slot <= 3; slot++) {
+        const data = readSave(slot);
+        if (data) any = true;
+        root.appendChild(renderSlot(slot, data, gameData));
+      }
+      if (!any) {
+        const note = document.createElement('p');
+        note.style.cssText = 'color:#888; text-align:center; margin-top:20px;';
+        note.textContent = 'No save data found in this browser. Start a game first and save, then reload this page.';
+        root.appendChild(note);
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>
