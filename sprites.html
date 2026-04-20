@@ -210,23 +210,18 @@
     }
 
     const bugIds = [
-      'n_plus_one', 'no_method_error', 'request_timeout', 'sql_injection',
-      'memory_leak', 'race_condition', 'xss_attack', 'csrf_vuln',
-      'circular_dependency', 'unhandled_promise', 'flaky_test', 'brittle_spec',
-      'slow_test_suite', 'external_dependency', 'test_pollution', 'phantom_failure',
-      'auth_bypass', 'exposed_secret', 'insecure_redirect', 'infinite_loop',
-      'cache_stampede', 'schema_mismatch', 'deadlock', 'ci_failure',
-      'z_index_hell', 'docker_drift', 'mass_assignment', 'pending_migration'
+      'brittle_spec', 'cache_stampede', 'centered_div', 'circular_dependency',
+      'cors_error', 'csrf_vuln', 'external_dependency', 'flaky_test',
+      'infinite_loop', 'mass_assignment', 'memory_leak', 'missing_assets',
+      'n_plus_one', 'no_method_error', 'pending_migration', 'phantom_failure',
+      'race_condition', 'request_timeout', 'slow_test_suite', 'sql_injection',
+      'test_pollution', 'xss_attack', 'z_index_hell'
     ];
     for (const id of bugIds) {
       addCard('bug-grid', `assets/sprites/bugs/${id}.png`, id.replace(/_/g, ' '), `bug-${id}`, '64x64');
     }
 
-    const gemIds = [
-      'rspec', 'bullet', 'brakeman', 'devise', 'pundit', 'bcrypt',
-      'rack_mini_profiler', 'capybara', 'factory_bot', 'active_record',
-      'sidekiq', 'puma', 'turbo', 'pry', 'herb', 'proposite'
-    ];
+    const gemIds = ['brakeman', 'bullet', 'herb', 'proposite', 'rspec'];
     for (const id of gemIds) {
       addCard('gem-grid', `assets/sprites/gems/${id}.png`, id.replace(/_/g, ' '), `gem-${id}`, '64x64');
     }
