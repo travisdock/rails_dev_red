@@ -111,7 +111,7 @@ class PreloadScene extends Phaser.Scene {
 
     // Load gem sprites (loaded by convention — missing files fall back to colored rectangles)
     const gemIds = [
-      'rspec', 'bullet', 'brakeman', 'herb', 'proposite'
+      'rspec', 'bullet', 'brakeman', 'herb', 'proposite', 'active_agent'
     ];
     for (const id of gemIds) {
       this.load.image('gem-' + id, 'assets/sprites/gems/' + id + '.png');

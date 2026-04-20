@@ -391,7 +391,7 @@ class OverworldScene extends Phaser.Scene {
               facing: obj.facing || 'down',
               spriteKey: obj.spriteKey || null,
               rewardGem: obj.rewardGem || null,
-              rewardGemLevel: obj.rewardGemLevel || 10
+              rewardGemLevel: Number(obj.rewardGemLevel) || 10
             });
             this.trainers.push(t);
             this.npcs.push(t);
