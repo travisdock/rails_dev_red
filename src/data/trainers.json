@@ -137,8 +137,8 @@
     "dialogBefore": "I just deployed my first app and everything is breaking!",
     "dialogAfter": "Maybe I should have written tests first...",
     "party": [
-      { "bugId": "no_method_error", "level": 9 },
-      { "bugId": "centered_div", "level": 10 }
+      { "bugId": "no_method_error", "level": 11 },
+      { "bugId": "centered_div", "level": 12 }
     ],
     "lineOfSight": 3
   },
@@ -157,8 +157,8 @@
     "dialogBefore": "I've been debugging production issues all day. Want to see what I found?",
     "dialogAfter": "You handled those like a pro...",
     "party": [
-      { "bugId": "race_condition", "level": 15 },
-      { "bugId": "cors_error", "level": 16 }
+      { "bugId": "race_condition", "level": 17 },
+      { "bugId": "cors_error", "level": 18 }
     ],
     "lineOfSight": 4
   },
@@ -167,8 +167,8 @@
     "dialogBefore": "Don't worry, I'll be friendly.",
     "dialogAfter": "That was a rush, thanks.",
     "party": [
-      { "bugId": "memory_leak", "level": 15 },
-      { "bugId": "missing_assets", "level": 16 }
+      { "bugId": "memory_leak", "level": 17 },
+      { "bugId": "missing_assets", "level": 19 }
     ],
     "lineOfSight": 3
   },
@@ -177,8 +177,8 @@
     "dialogBefore": "I have my own conference you know, Blue Ridge Ruby.",
     "dialogAfter": "You handled those bugs well. Maybe you should be a speaker!",
     "party": [
-      { "bugId": "race_condition", "level": 12 },
-      { "bugId": "csrf_vuln", "level": 13 }
+      { "bugId": "race_condition", "level": 14 },
+      { "bugId": "csrf_vuln", "level": 15 }
     ],
     "lineOfSight": 3
   },
@@ -187,8 +187,8 @@
     "dialogBefore": "An agent is just a controller with a persona. Nothing mystical.",
     "dialogAfter": "Retry logic keeps hallucinations out of production.",
     "party": [
-      { "bugId": "hallucination", "level": 18 },
-      { "bugId": "context_overflow", "level": 20 }
+      { "bugId": "hallucination", "level": 23 },
+      { "bugId": "context_overflow", "level": 25 }
     ],
     "prizeMoney": 500,
     "lineOfSight": 3

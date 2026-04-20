@@ -363,8 +363,8 @@
                  "type":"npc",
                  "visible":true,
                  "width":0,
-                 "x":247.681818181818,
-                 "y":360.454545454545
+                 "x":247.682,
+                 "y":360.455
                 }, 
                 {
                  "height":0,
@@ -376,6 +376,16 @@
                          "name":"facing",
                          "type":"string",
                          "value":"right"
+                        }, 
+                        {
+                         "name":"rewardGem",
+                         "type":"string",
+                         "value":"active_agent"
+                        }, 
+                        {
+                         "name":"rewardGemLevel",
+                         "type":"string",
+                         "value":"18"
                         }, 
                         {
                          "name":"spriteKey",
@@ -391,7 +401,7 @@
                  "type":"trainer",
                  "visible":true,
                  "width":0,
-                 "x":72.3333333333333,
+                 "x":72.3333,
                  "y":472
                 }],
          "opacity":1,
@@ -406,7 +416,7 @@
          "name":"encounters",
          "objects":[
                 {
-                 "height":41.0306260543843,
+                 "height":41.0306,
                  "id":3,
                  "name":"Zone",
                  "opacity":1,
@@ -414,14 +424,14 @@
                         {
                          "name":"encounterZone",
                          "type":"string",
-                         "value":"park"
+                         "value":"park_easy"
                         }],
                  "rotation":0.376173,
                  "type":"encounter",
                  "visible":true,
-                 "width":154.550118538959,
-                 "x":146.725565275848,
-                 "y":243.08117487284
+                 "width":154.55,
+                 "x":146.726,
+                 "y":243.081
                 }, 
                 {
                  "height":60.9746,
@@ -432,7 +442,7 @@
                         {
                          "name":"encounterZone",
                          "type":"string",
-                         "value":"park"
+                         "value":"park_easy"
                         }],
                  "rotation":0,
                  "type":"encounter",
@@ -450,7 +460,7 @@
                         {
                          "name":"encounterZone",
                          "type":"string",
-                         "value":"park"
+                         "value":"park_easy"
                         }],
                  "rotation":0,
                  "type":"encounter",
@@ -468,7 +478,7 @@
                         {
                          "name":"encounterZone",
                          "type":"string",
-                         "value":"park"
+                         "value":"park_easy"
                         }],
                  "rotation":0,
                  "type":"encounter",
@@ -486,7 +496,7 @@
                         {
                          "name":"encounterZone",
                          "type":"string",
-                         "value":"park"
+                         "value":"park_easy"
                         }],
                  "rotation":0,
                  "type":"encounter",
@@ -504,7 +514,7 @@
                         {
                          "name":"encounterZone",
                          "type":"string",
-                         "value":"park"
+                         "value":"park_easy"
                         }],
                  "rotation":0,
                  "type":"encounter",
@@ -522,7 +532,7 @@
                         {
                          "name":"encounterZone",
                          "type":"string",
-                         "value":"park"
+                         "value":"park_easy"
                         }],
                  "rotation":0,
                  "type":"encounter",
@@ -540,7 +550,7 @@
                         {
                          "name":"encounterZone",
                          "type":"string",
-                         "value":"park"
+                         "value":"park_easy"
                         }],
                  "rotation":0,
                  "type":"encounter",
@@ -558,7 +568,7 @@
                         {
                          "name":"encounterZone",
                          "type":"string",
-                         "value":"park"
+                         "value":"park_hard"
                         }],
                  "rotation":0,
                  "type":"encounter",
@@ -576,7 +586,7 @@
                         {
                          "name":"encounterZone",
                          "type":"string",
-                         "value":"park"
+                         "value":"park_hard"
                         }],
                  "rotation":0,
                  "type":"encounter",
@@ -594,7 +604,7 @@
                         {
                          "name":"encounterZone",
                          "type":"string",
-                         "value":"park"
+                         "value":"park_hard"
                         }],
                  "rotation":0,
                  "type":"encounter",
@@ -612,7 +622,7 @@
                         {
                          "name":"encounterZone",
                          "type":"string",
-                         "value":"park"
+                         "value":"park_hard"
                         }],
                  "rotation":0,
                  "type":"encounter",
@@ -630,7 +640,7 @@
                         {
                          "name":"encounterZone",
                          "type":"string",
-                         "value":"park"
+                         "value":"park_hard"
                         }],
                  "rotation":0,
                  "type":"encounter",
@@ -648,7 +658,7 @@
                         {
                          "name":"encounterZone",
                          "type":"string",
-                         "value":"park"
+                         "value":"park_hard"
                         }],
                  "rotation":0,
                  "type":"encounter",

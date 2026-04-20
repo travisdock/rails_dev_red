@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="9">
+<map version="1.10" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="17">
  <editorsettings>
   <export target="../assets/maps/old_town.json" format="json"/>
  </editorsettings>
@@ -250,5 +250,46 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup id="5" name="encounters"/>
+ <objectgroup id="5" name="encounters">
+  <object id="9" name="Zone" type="encounter" x="82" y="84" width="505" height="71">
+   <properties>
+    <property name="encounterZone" value="old_town_easy"/>
+   </properties>
+  </object>
+  <object id="10" name="Zone" type="encounter" x="-1.5" y="487.833" width="556" height="65">
+   <properties>
+    <property name="encounterZone" value="old_town_easy"/>
+   </properties>
+  </object>
+  <object id="11" name="Zone" type="encounter" x="483.333" y="196" width="74.6667" height="136">
+   <properties>
+    <property name="encounterZone" value="old_town_easy"/>
+   </properties>
+  </object>
+  <object id="12" name="Zone" type="encounter" x="82.6666" y="196" width="74.6667" height="136">
+   <properties>
+    <property name="encounterZone" value="old_town_easy"/>
+   </properties>
+  </object>
+  <object id="13" name="Zone" type="encounter" x="83.3333" y="339.333" width="74.6667" height="102.667">
+   <properties>
+    <property name="encounterZone" value="old_town_hard"/>
+   </properties>
+  </object>
+  <object id="14" name="Zone" type="encounter" x="482" y="340" width="74.6667" height="102.667">
+   <properties>
+    <property name="encounterZone" value="old_town_hard"/>
+   </properties>
+  </object>
+  <object id="15" name="Zone" type="encounter" x="500.667" y="557.333" width="56" height="79.3337">
+   <properties>
+    <property name="encounterZone" value="old_town_hard"/>
+   </properties>
+  </object>
+  <object id="16" name="Zone" type="encounter" x="20.6667" y="556.333" width="56" height="79.3337">
+   <properties>
+    <property name="encounterZone" value="old_town_hard"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>

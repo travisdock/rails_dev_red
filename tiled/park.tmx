@@ -236,72 +236,72 @@
  <objectgroup id="5" name="encounters">
   <object id="3" name="Zone" type="encounter" x="146.726" y="243.081" width="154.55" height="41.0306" rotation="0.376173">
    <properties>
-    <property name="encounterZone" value="park"/>
+    <property name="encounterZone" value="park_easy"/>
    </properties>
   </object>
   <object id="4" name="Zone2" type="encounter" x="179.582" y="178.981" width="89.7946" height="60.9746">
    <properties>
-    <property name="encounterZone" value="park"/>
+    <property name="encounterZone" value="park_easy"/>
    </properties>
   </object>
   <object id="7" name="Zone3" type="encounter" x="68.6634" y="338.928" width="88.1078" height="41.7781">
    <properties>
-    <property name="encounterZone" value="park"/>
+    <property name="encounterZone" value="park_easy"/>
    </properties>
   </object>
   <object id="8" name="Zone" type="encounter" x="50.864" y="383.223" width="42.5796" height="13.8166">
    <properties>
-    <property name="encounterZone" value="park"/>
+    <property name="encounterZone" value="park_easy"/>
    </properties>
   </object>
   <object id="9" name="Zone" type="encounter" x="49.1312" y="369.259" width="14.9979" height="11.8949">
    <properties>
-    <property name="encounterZone" value="park"/>
+    <property name="encounterZone" value="park_easy"/>
    </properties>
   </object>
   <object id="10" name="Zone" type="encounter" x="289.615" y="369.777" width="43.9595" height="59.2589">
    <properties>
-    <property name="encounterZone" value="park"/>
+    <property name="encounterZone" value="park_easy"/>
    </properties>
   </object>
   <object id="11" name="Zone" type="encounter" x="274.307" y="370.552" width="14.0151" height="42.4595">
    <properties>
-    <property name="encounterZone" value="park"/>
+    <property name="encounterZone" value="park_easy"/>
    </properties>
   </object>
   <object id="12" name="Zone" type="encounter" x="275.134" y="354.219" width="26.8928" height="12.7136">
    <properties>
-    <property name="encounterZone" value="park"/>
+    <property name="encounterZone" value="park_easy"/>
    </properties>
   </object>
   <object id="13" name="Zone" type="encounter" x="354.779" y="225.745" width="26.8928" height="61.0261">
    <properties>
-    <property name="encounterZone" value="park"/>
+    <property name="encounterZone" value="park_hard"/>
    </properties>
   </object>
   <object id="14" name="Zone" type="encounter" x="387.36" y="241.001" width="41.3736" height="44.4767">
    <properties>
-    <property name="encounterZone" value="park"/>
+    <property name="encounterZone" value="park_hard"/>
    </properties>
   </object>
   <object id="15" name="Zone" type="encounter" x="430.285" y="257.551" width="31.5474" height="27.9273">
    <properties>
-    <property name="encounterZone" value="park"/>
+    <property name="encounterZone" value="park_hard"/>
    </properties>
   </object>
   <object id="16" name="Zone" type="encounter" x="370.552" y="289.098" width="73.9553" height="12.9294">
    <properties>
-    <property name="encounterZone" value="park"/>
+    <property name="encounterZone" value="park_hard"/>
    </properties>
   </object>
   <object id="17" name="Zone" type="encounter" x="402.617" y="401.582" width="91.0219" height="12.9294">
    <properties>
-    <property name="encounterZone" value="park"/>
+    <property name="encounterZone" value="park_hard"/>
    </properties>
   </object>
   <object id="18" name="Zone" type="encounter" x="401.324" y="417.098" width="76.5411" height="43.9596">
    <properties>
-    <property name="encounterZone" value="park"/>
+    <property name="encounterZone" value="park_hard"/>
    </properties>
   </object>
  </objectgroup>
