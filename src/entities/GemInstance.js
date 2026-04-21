@@ -137,7 +137,7 @@ class GemInstance {
     const gem = new GemInstance(data.gemId, data.level);
     gem.nickname = data.nickname;
     gem.xp = data.xp;
-    gem.currentHp = data.currentHp;
+    gem.currentHp = Math.min(data.currentHp, gem.maxHp);
     gem.moves = [...data.moves];
     gem.pp = [...data.pp];
     return gem;
