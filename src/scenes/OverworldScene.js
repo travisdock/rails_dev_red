@@ -89,14 +89,24 @@ class OverworldScene extends Phaser.Scene {
   }
 
   playMapMusic(mapKey) {
-    if (this.currentMusic) {
-      this.currentMusic.stop();
-      this.currentMusic = null;
+    // Cancel any pending music-start scheduled by a previous transition
+    if (this._musicTimer) {
+      this._musicTimer.remove();
+      this._musicTimer = null;
     }
+
+    // Belt-and-suspenders: stop every music-tagged sound in the global
+    // SoundManager. Phaser's this.sound.add() doesn't auto-clean on scene
+    // restart, so leaks from prior scenes can still be audible here.
+    this.sound.sounds.slice().forEach(s => {
+      if (s.key && s.key.startsWith('music-')) s.stop();
+    });
+    this.currentMusic = null;
 
     const musicKey = 'music-' + mapKey;
     if (this.cache.audio.exists(musicKey)) {
-      this.time.delayedCall(500, () => {
+      this._musicTimer = this.time.delayedCall(500, () => {
+        this._musicTimer = null;
         this.currentMusic = this.sound.add(musicKey, { loop: true, volume: 0.3 });
         this.currentMusic.play();
       });
@@ -166,6 +176,10 @@ class OverworldScene extends Phaser.Scene {
   }
 
   stopMusic() {
+    if (this._musicTimer) {
+      this._musicTimer.remove();
+      this._musicTimer = null;
+    }
     if (this.currentMusic) {
       const music = this.currentMusic;
       this.currentMusic = null;
