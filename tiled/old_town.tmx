@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="17">
+<map version="1.10" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="20">
  <editorsettings>
   <export target="../assets/maps/old_town.json" format="json"/>
  </editorsettings>
@@ -208,15 +208,15 @@
    <properties>
     <property name="facing" value="right"/>
     <property name="targetMap" value="venue"/>
-    <property name="targetX" value="2"/>
-    <property name="targetY" value="18"/>
+    <property name="targetX" value="1"/>
+    <property name="targetY" value="17"/>
    </properties>
   </object>
   <object id="4" name="VenueDoor" type="door" x="636.318" y="140.906">
    <properties>
     <property name="facing" value="right"/>
     <property name="targetMap" value="venue"/>
-    <property name="targetX" value="2"/>
+    <property name="targetX" value="1"/>
     <property name="targetY" value="16"/>
    </properties>
   </object>
@@ -247,6 +247,27 @@
     <property name="dialog" value="The probability of meeting a cat on a tree in San Francisco is small but never zero"/>
     <property name="facing" value="down"/>
     <property name="spriteKey" value="npc19"/>
+   </properties>
+  </object>
+  <object id="17" name="Rails Enthusiast Amanda" type="npc" x="616.182" y="280.182">
+   <properties>
+    <property name="dialog" value="Have you heard of the Rails Foundation?"/>
+    <property name="facing" value="down"/>
+    <property name="spriteKey" value="pg12"/>
+   </properties>
+  </object>
+  <object id="18" name="Sneaky Dev David" type="npc" x="327.864" y="297.136">
+   <properties>
+    <property name="dialog" value="Oh hey there, did you know if you type DEBUG in the console you can do all sorts of tricksie things."/>
+    <property name="facing" value="down"/>
+    <property name="spriteKey" value="npc05"/>
+   </properties>
+  </object>
+  <object id="19" name="Speaker Andrew" type="npc" x="376" y="392.333">
+   <properties>
+    <property name="dialog" value="The Ruby community isn't something you join, it's something you help create!"/>
+    <property name="facing" value="left"/>
+    <property name="spriteKey" value="pg10"/>
    </properties>
   </object>
  </objectgroup>

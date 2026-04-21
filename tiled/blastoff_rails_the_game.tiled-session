@@ -23,11 +23,11 @@
             "expandedObjectLayers": [
                 4
             ],
-            "scale": 0.33,
+            "scale": 4,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 39.39393939393949,
-                "y": 462.1212121212121
+                "x": 216.5,
+                "y": 212.625
             }
         },
         "house.tsx": {
@@ -42,11 +42,11 @@
                 5,
                 4
             ],
-            "scale": 1.5,
-            "selectedLayer": 5,
+            "scale": 3,
+            "selectedLayer": 4,
             "viewCenter": {
-                "x": 334.6666666666667,
-                "y": 234.99999999999997
+                "x": 375.66666666666663,
+                "y": 369.8333333333333
             }
         },
         "park.tmx": {
@@ -55,10 +55,10 @@
                 4
             ],
             "scale": 2,
-            "selectedLayer": 5,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 193.5,
-                "y": 166.25
+                "x": 179,
+                "y": 346.25
             }
         },
         "parking_lot.tmx": {
@@ -66,11 +66,11 @@
                 5,
                 4
             ],
-            "scale": 0.75,
-            "selectedLayer": 4,
+            "scale": 8,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 542.6666666666665,
-                "y": 91.33333333333326
+                "x": 630.5,
+                "y": 206.5625
             }
         },
         "path.tsx": {
@@ -107,11 +107,11 @@
             "expandedObjectLayers": [
                 4
             ],
-            "scale": 0.75,
-            "selectedLayer": 2,
+            "scale": 2,
+            "selectedLayer": 4,
             "viewCenter": {
-                "x": 345.33333333333337,
-                "y": 380.66666666666674
+                "x": 285.5,
+                "y": 185.25
             }
         }
     },
@@ -126,10 +126,10 @@
     ],
     "project": "blastoff_rails_the_game.tiled-project",
     "recentFiles": [
-        "old_town.tmx",
         "park.tmx",
-        "parking_lot.tmx",
+        "old_town.tmx",
         "venue.tmx",
+        "parking_lot.tmx",
         "hotel.tmx",
         "house.tsx",
         "rocket.tsx"

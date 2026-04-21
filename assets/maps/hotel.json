@@ -215,7 +215,7 @@
                 {
                  "height":0,
                  "id":10,
-                 "name":"minion1",
+                 "name":"Speaker Matheus",
                  "opacity":1,
                  "properties":[
                         {
@@ -226,12 +226,12 @@
                         {
                          "name":"spriteKey",
                          "type":"string",
-                         "value":"npc02"
+                         "value":"pg2"
                         }, 
                         {
                          "name":"trainerId",
                          "type":"string",
-                         "value":"test_minion_01"
+                         "value":"speaker_matheus"
                         }],
                  "rotation":0,
                  "type":"trainer",
@@ -383,13 +383,13 @@
                 {
                  "height":0,
                  "id":16,
-                 "name":"Speaker Andrew",
+                 "name":"Senior Dev Jason",
                  "opacity":1,
                  "properties":[
                         {
                          "name":"dialog",
                          "type":"string",
-                         "value":"The Ruby community isn't something you join, it's something you help create!"
+                         "value":"I discovered a new nightmare today when I broke off the airplane\u2019s bathroom lock while inside."
                         }, 
                         {
                          "name":"facing",
@@ -399,14 +399,14 @@
                         {
                          "name":"spriteKey",
                          "type":"string",
-                         "value":"pg10"
+                         "value":"pg14"
                         }],
                  "rotation":0,
                  "type":"npc",
                  "visible":true,
                  "width":0,
-                 "x":168.136363636364,
-                 "y":248.181818181818
+                 "x":168.136,
+                 "y":248.182
                 }, 
                 {
                  "height":0,
@@ -466,34 +466,6 @@
                 }, 
                 {
                  "height":0,
-                 "id":19,
-                 "name":"Attendee Jessica",
-                 "opacity":1,
-                 "properties":[
-                        {
-                         "name":"dialog",
-                         "type":"string",
-                         "value":"You will probably need to fix some bugs in the wild before challenging those testing enthusiasts.\n They are a tough bunch."
-                        }, 
-                        {
-                         "name":"facing",
-                         "type":"string",
-                         "value":"left"
-                        }, 
-                        {
-                         "name":"spriteKey",
-                         "type":"string",
-                         "value":"pg6"
-                        }],
-                 "rotation":0,
-                 "type":"npc",
-                 "visible":true,
-                 "width":0,
-                 "x":295,
-                 "y":280
-                }, 
-                {
-                 "height":0,
                  "id":20,
                  "name":"Door",
                  "opacity":1,
@@ -511,7 +483,7 @@
                         {
                          "name":"targetX",
                          "type":"string",
-                         "value":"39"
+                         "value":"38"
                         }, 
                         {
                          "name":"targetY",
@@ -522,8 +494,8 @@
                  "type":"door",
                  "visible":true,
                  "width":0,
-                 "x":3.17606,
-                 "y":279.357
+                 "x":3.90333,
+                 "y":283.175
                 }, 
                 {
                  "height":0,
@@ -544,7 +516,7 @@
                         {
                          "name":"targetX",
                          "type":"string",
-                         "value":"39"
+                         "value":"38"
                         }, 
                         {
                          "name":"targetY",
@@ -555,8 +527,8 @@
                  "type":"door",
                  "visible":true,
                  "width":0,
-                 "x":3.375,
-                 "y":259.125
+                 "x":3.73864,
+                 "y":260.034
                 }],
          "opacity":1,
          "properties":[

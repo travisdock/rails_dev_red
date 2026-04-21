@@ -296,12 +296,12 @@
                         {
                          "name":"targetX",
                          "type":"string",
-                         "value":"2"
+                         "value":"1"
                         }, 
                         {
                          "name":"targetY",
                          "type":"string",
-                         "value":"18"
+                         "value":"17"
                         }],
                  "rotation":0,
                  "type":"door",
@@ -329,7 +329,7 @@
                         {
                          "name":"targetX",
                          "type":"string",
-                         "value":"2"
+                         "value":"1"
                         }, 
                         {
                          "name":"targetY",
@@ -459,6 +459,90 @@
                  "width":0,
                  "x":40.1667,
                  "y":328.833
+                }, 
+                {
+                 "height":0,
+                 "id":17,
+                 "name":"Rails Enthusiast Amanda",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"dialog",
+                         "type":"string",
+                         "value":"Have you heard of the Rails Foundation?"
+                        }, 
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"down"
+                        }, 
+                        {
+                         "name":"spriteKey",
+                         "type":"string",
+                         "value":"pg12"
+                        }],
+                 "rotation":0,
+                 "type":"npc",
+                 "visible":true,
+                 "width":0,
+                 "x":616.181818181818,
+                 "y":280.181818181818
+                }, 
+                {
+                 "height":0,
+                 "id":18,
+                 "name":"Sneaky Dev David",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"dialog",
+                         "type":"string",
+                         "value":"Oh hey there, did you know if you type DEBUG in the console you can do all sorts of tricksie things."
+                        }, 
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"down"
+                        }, 
+                        {
+                         "name":"spriteKey",
+                         "type":"string",
+                         "value":"npc05"
+                        }],
+                 "rotation":0,
+                 "type":"npc",
+                 "visible":true,
+                 "width":0,
+                 "x":327.863636363636,
+                 "y":297.136363636364
+                }, 
+                {
+                 "height":0,
+                 "id":19,
+                 "name":"Speaker Andrew",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"dialog",
+                         "type":"string",
+                         "value":"The Ruby community isn't something you join, it's something you help create!"
+                        }, 
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"left"
+                        }, 
+                        {
+                         "name":"spriteKey",
+                         "type":"string",
+                         "value":"pg10"
+                        }],
+                 "rotation":0,
+                 "type":"npc",
+                 "visible":true,
+                 "width":0,
+                 "x":376,
+                 "y":392.333333333333
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -490,7 +574,7 @@
                  "y":84
                 }, 
                 {
-                 "height":64.9999999999999,
+                 "height":65,
                  "id":10,
                  "name":"Zone",
                  "opacity":1,
@@ -505,7 +589,7 @@
                  "visible":true,
                  "width":556,
                  "x":-1.5,
-                 "y":487.833333333333
+                 "y":487.833
                 }, 
                 {
                  "height":136,
@@ -521,8 +605,8 @@
                  "rotation":0,
                  "type":"encounter",
                  "visible":true,
-                 "width":74.6666666666667,
-                 "x":483.333333333333,
+                 "width":74.6667,
+                 "x":483.333,
                  "y":196
                 }, 
                 {
@@ -540,11 +624,11 @@
                  "type":"encounter",
                  "visible":true,
                  "width":74.6667,
-                 "x":82.66665,
+                 "x":82.6666,
                  "y":196
                 }, 
                 {
-                 "height":102.666666666667,
+                 "height":102.667,
                  "id":13,
                  "name":"Zone",
                  "opacity":1,
@@ -558,8 +642,8 @@
                  "type":"encounter",
                  "visible":true,
                  "width":74.6667,
-                 "x":83.3333166666666,
-                 "y":339.333333333333
+                 "x":83.3333,
+                 "y":339.333
                 }, 
                 {
                  "height":102.667,
@@ -576,11 +660,11 @@
                  "type":"encounter",
                  "visible":true,
                  "width":74.6667,
-                 "x":481.999983333333,
-                 "y":339.999833333333
+                 "x":482,
+                 "y":340
                 }, 
                 {
-                 "height":79.3336666666666,
+                 "height":79.3337,
                  "id":15,
                  "name":"Zone",
                  "opacity":1,
@@ -593,9 +677,9 @@
                  "rotation":0,
                  "type":"encounter",
                  "visible":true,
-                 "width":56.0000333333333,
-                 "x":500.66665,
-                 "y":557.333166666667
+                 "width":56,
+                 "x":500.667,
+                 "y":557.333
                 }, 
                 {
                  "height":79.3337,
@@ -612,8 +696,8 @@
                  "type":"encounter",
                  "visible":true,
                  "width":56,
-                 "x":20.6666666666667,
-                 "y":556.33315
+                 "x":20.6667,
+                 "y":556.333
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -622,7 +706,7 @@
          "y":0
         }],
  "nextlayerid":9,
- "nextobjectid":17,
+ "nextobjectid":20,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.12.0",

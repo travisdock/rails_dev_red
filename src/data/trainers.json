@@ -54,26 +54,27 @@
     "prizeMoney": 560,
     "lineOfSight": 4
   },
-  "speaker_03": {
-    "id": "speaker_03", "name": "Speaker Sam", "class": "Conference Speaker",
-    "dialogBefore": "I've been in the Rails community for 15 years. These bugs will crush you!",
-    "dialogAfter": "Clean code. I'd approve that PR.",
+  "speaker_kieran": {
+    "id": "speaker_kieran", "name": "Speaker Kieran", "class": "Conference Speaker",
+    "dialogBefore": "Every bug is data. Fix it once, prevent it forever.",
+    "dialogAfter": "Lesson logged. Your system just got smarter.",
     "party": [
-      { "bugId": "pending_migration", "level": 16 },
-      { "bugId": "xss_attack", "level": 15 },
-      { "bugId": "circular_dependency", "level": 16 }
+      { "bugId": "pending_migration", "level": 24 },
+      { "bugId": "xss_attack", "level": 23 },
+      { "bugId": "circular_dependency", "level": 25 }
     ],
     "prizeMoney": 600,
     "lineOfSight": 5
   },
-  "test_minion_01": {
-    "id": "test_minion_01", "name": "TDD Enthusiast Pat", "class": "Testing Fanatic",
-    "dialogBefore": "Red, green, refactor! But first, squash this bug!",
-    "dialogAfter": "My bug got squashed... Time to refactor.",
+  "speaker_matheus": {
+    "id": "speaker_matheus", "name": "Speaker Matheus", "class": "Conference Speaker",
+    "dialogBefore": "You don't need engines or new languages. Ruby is all you need.",
+    "dialogAfter": "Ten years in and Ruby still brings me joy.",
     "party": [
+      { "bugId": "no_method_error", "level": 6 },
       { "bugId": "flaky_test", "level": 6 }
     ],
-    "prizeMoney": 150,
+    "prizeMoney": 300,
     "lineOfSight": 3
   },
   "test_minion_05": {

@@ -119,7 +119,7 @@
     <property name="facing" value="right"/>
     <property name="targetMap" value="hotel"/>
     <property name="targetX" value="1"/>
-    <property name="targetY" value="17"/>
+    <property name="targetY" value="16"/>
    </properties>
   </object>
   <object id="3" name="hotelDoor" type="door" x="626.5" y="209" width="13.5" height="13.25">

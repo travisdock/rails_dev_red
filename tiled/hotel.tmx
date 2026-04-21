@@ -116,11 +116,11 @@
     <property name="trainerId" value="test_minion_05"/>
    </properties>
   </object>
-  <object id="10" name="minion1" type="trainer" x="119.5" y="120.5">
+  <object id="10" name="Speaker Matheus" type="trainer" x="119.5" y="120.5">
    <properties>
     <property name="facing" value="up"/>
-    <property name="spriteKey" value="npc02"/>
-    <property name="trainerId" value="test_minion_01"/>
+    <property name="spriteKey" value="pg2"/>
+    <property name="trainerId" value="speaker_matheus"/>
    </properties>
   </object>
   <object id="11" name="minion2" type="trainer" x="184" y="56">
@@ -158,11 +158,11 @@
     <property name="spriteKey" value="pg14"/>
    </properties>
   </object>
-  <object id="16" name="Speaker Andrew" type="npc" x="168.136" y="248.182">
+  <object id="16" name="Senior Dev Jason" type="npc" x="168.136" y="248.182">
    <properties>
-    <property name="dialog" value="The Ruby community isn't something you join, it's something you help create!"/>
+    <property name="dialog" value="I discovered a new nightmare today when I broke off the airplane’s bathroom lock while inside."/>
     <property name="facing" value="left"/>
-    <property name="spriteKey" value="pg10"/>
+    <property name="spriteKey" value="pg14"/>
    </properties>
   </object>
   <object id="17" name="Remote Ruby Chris" type="npc" x="150" y="247.875">
@@ -179,27 +179,19 @@
     <property name="spriteKey" value="npc05"/>
    </properties>
   </object>
-  <object id="19" name="Attendee Jessica" type="npc" x="295" y="280">
-   <properties>
-    <property name="dialog">You will probably need to fix some bugs in the wild before challenging those testing enthusiasts.
- They are a tough bunch.</property>
-    <property name="facing" value="left"/>
-    <property name="spriteKey" value="pg6"/>
-   </properties>
-  </object>
-  <object id="20" name="Door" type="door" x="3.17606" y="279.357">
+  <object id="20" name="Door" type="door" x="3.90333" y="283.175">
    <properties>
     <property name="facing" value="left"/>
     <property name="targetMap" value="parking-lot"/>
-    <property name="targetX" value="39"/>
+    <property name="targetX" value="38"/>
     <property name="targetY" value="13"/>
    </properties>
   </object>
-  <object id="21" name="Door" type="door" x="3.375" y="259.125">
+  <object id="21" name="Door" type="door" x="3.73864" y="260.034">
    <properties>
     <property name="facing" value="left"/>
     <property name="targetMap" value="parking-lot"/>
-    <property name="targetX" value="39"/>
+    <property name="targetX" value="38"/>
     <property name="targetY" value="12"/>
    </properties>
   </object>
