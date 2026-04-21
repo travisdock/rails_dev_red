@@ -1,215 +1,551 @@
 {
   "rspec": {
-    "id": "rspec", "name": "RSpec", "type": "testing",
+    "id": "rspec",
+    "name": "RSpec",
+    "type": "testing",
     "description": "Behavior-driven development for Ruby. The gold standard.",
-    "baseStats": { "hp": 50, "attack": 45, "defense": 50, "spAttack": 55, "spDefense": 55, "speed": 50 },
+    "baseStats": {
+      "hp": 42,
+      "attack": 38,
+      "defense": 42,
+      "spAttack": 47,
+      "spDefense": 47,
+      "speed": 42
+    },
     "baseXP": 64,
     "learnset": [
-      { "level": 1, "move": "expect_matcher" },
-      { "level": 5, "move": "mock_object" },
-      { "level": 10, "move": "tdd" },
-      { "level": 16, "move": "describe" }
+      {
+        "level": 1,
+        "move": "expect_matcher"
+      },
+      {
+        "level": 5,
+        "move": "mock_object"
+      },
+      {
+        "level": 10,
+        "move": "tdd"
+      },
+      {
+        "level": 16,
+        "move": "describe"
+      }
     ],
     "evolution": null
   },
   "bullet": {
-    "id": "bullet", "name": "Bullet", "type": "performance",
+    "id": "bullet",
+    "name": "Bullet",
+    "type": "performance",
     "description": "Hunts down N+1 queries with precision.",
-    "baseStats": { "hp": 40, "attack": 55, "defense": 30, "spAttack": 65, "spDefense": 35, "speed": 70 },
+    "baseStats": {
+      "hp": 34,
+      "attack": 47,
+      "defense": 26,
+      "spAttack": 55,
+      "spDefense": 30,
+      "speed": 60
+    },
     "baseXP": 62,
     "learnset": [
-      { "level": 1, "move": "eager_load" },
-      { "level": 11, "move": "benchmark" },
-      { "level": 17, "move": "profile_analyze" }
+      {
+        "level": 1,
+        "move": "eager_load"
+      },
+      {
+        "level": 11,
+        "move": "benchmark"
+      },
+      {
+        "level": 17,
+        "move": "profile_analyze"
+      }
     ],
     "evolution": null
   },
   "brakeman": {
-    "id": "brakeman", "name": "Brakeman", "type": "security",
+    "id": "brakeman",
+    "name": "Brakeman",
+    "type": "security",
     "description": "A static analysis security scanner for Rails. Finds vulnerabilities before they find you.",
-    "baseStats": { "hp": 55, "attack": 30, "defense": 65, "spAttack": 55, "spDefense": 60, "speed": 40 },
+    "baseStats": {
+      "hp": 47,
+      "attack": 26,
+      "defense": 55,
+      "spAttack": 47,
+      "spDefense": 51,
+      "speed": 34
+    },
     "baseXP": 64,
     "learnset": [
-      { "level": 1, "move": "warn" },
-      { "level": 1, "move": "ignore" },
-      { "level": 12, "move": "scan" }
+      {
+        "level": 1,
+        "move": "warn"
+      },
+      {
+        "level": 1,
+        "move": "ignore"
+      },
+      {
+        "level": 12,
+        "move": "scan"
+      }
     ],
     "evolution": null
   },
   "devise": {
-    "id": "devise", "name": "Devise", "type": "security",
+    "id": "devise",
+    "name": "Devise",
+    "type": "security",
     "description": "A flexible authentication solution for Rails.",
-    "baseStats": { "hp": 50, "attack": 35, "defense": 55, "spAttack": 60, "spDefense": 65, "speed": 40 },
+    "baseStats": {
+      "hp": 42,
+      "attack": 30,
+      "defense": 47,
+      "spAttack": 51,
+      "spDefense": 55,
+      "speed": 34
+    },
     "baseXP": 64,
     "learnset": [
-      { "level": 1, "move": "authenticate" },
-      { "level": 5, "move": "session_store" },
-      { "level": 10, "move": "token_generate" },
-      { "level": 16, "move": "omniauth_integrate" }
+      {
+        "level": 1,
+        "move": "authenticate"
+      },
+      {
+        "level": 5,
+        "move": "session_store"
+      },
+      {
+        "level": 10,
+        "move": "token_generate"
+      },
+      {
+        "level": 16,
+        "move": "omniauth_integrate"
+      }
     ],
     "evolution": null
   },
   "pundit": {
-    "id": "pundit", "name": "Pundit", "type": "security",
+    "id": "pundit",
+    "name": "Pundit",
+    "type": "security",
     "description": "Minimal authorization through OO design.",
-    "baseStats": { "hp": 45, "attack": 30, "defense": 60, "spAttack": 55, "spDefense": 70, "speed": 35 },
+    "baseStats": {
+      "hp": 38,
+      "attack": 26,
+      "defense": 51,
+      "spAttack": 47,
+      "spDefense": 60,
+      "speed": 30
+    },
     "baseXP": 60,
     "learnset": [
-      { "level": 1, "move": "policy_enforce" },
-      { "level": 6, "move": "session_store" },
-      { "level": 12, "move": "authenticate" },
-      { "level": 18, "move": "hash_strength" }
+      {
+        "level": 1,
+        "move": "policy_enforce"
+      },
+      {
+        "level": 6,
+        "move": "session_store"
+      },
+      {
+        "level": 12,
+        "move": "authenticate"
+      },
+      {
+        "level": 18,
+        "move": "hash_strength"
+      }
     ],
     "evolution": null
   },
   "bcrypt": {
-    "id": "bcrypt", "name": "Bcrypt", "type": "security",
+    "id": "bcrypt",
+    "name": "Bcrypt",
+    "type": "security",
     "description": "Rock-solid password hashing. Slow but unbreakable.",
-    "baseStats": { "hp": 65, "attack": 25, "defense": 80, "spAttack": 40, "spDefense": 75, "speed": 20 },
+    "baseStats": {
+      "hp": 55,
+      "attack": 21,
+      "defense": 68,
+      "spAttack": 34,
+      "spDefense": 64,
+      "speed": 17
+    },
     "baseXP": 70,
     "learnset": [
-      { "level": 1, "move": "hash_strength" },
-      { "level": 4, "move": "authenticate" },
-      { "level": 9, "move": "session_store" },
-      { "level": 15, "move": "token_generate" }
+      {
+        "level": 1,
+        "move": "hash_strength"
+      },
+      {
+        "level": 4,
+        "move": "authenticate"
+      },
+      {
+        "level": 9,
+        "move": "session_store"
+      },
+      {
+        "level": 15,
+        "move": "token_generate"
+      }
     ],
     "evolution": null
   },
   "rack_mini_profiler": {
-    "id": "rack_mini_profiler", "name": "Rack-Mini-Profiler", "type": "performance",
+    "id": "rack_mini_profiler",
+    "name": "Rack-Mini-Profiler",
+    "type": "performance",
     "description": "Profiles every request. Sees all.",
-    "baseStats": { "hp": 55, "attack": 40, "defense": 45, "spAttack": 60, "spDefense": 50, "speed": 55 },
+    "baseStats": {
+      "hp": 47,
+      "attack": 34,
+      "defense": 38,
+      "spAttack": 51,
+      "spDefense": 42,
+      "speed": 47
+    },
     "baseXP": 65,
     "learnset": [
-      { "level": 1, "move": "profile_analyze" },
-      { "level": 6, "move": "cache_warm" },
-      { "level": 12, "move": "benchmark" },
-      { "level": 18, "move": "eager_load" }
+      {
+        "level": 1,
+        "move": "profile_analyze"
+      },
+      {
+        "level": 6,
+        "move": "cache_warm"
+      },
+      {
+        "level": 12,
+        "move": "benchmark"
+      },
+      {
+        "level": 18,
+        "move": "eager_load"
+      }
     ],
     "evolution": null
   },
   "capybara": {
-    "id": "capybara", "name": "Capybara", "type": "testing",
+    "id": "capybara",
+    "name": "Capybara",
+    "type": "testing",
     "description": "Simulates user interaction. Thorough and patient.",
-    "baseStats": { "hp": 60, "attack": 35, "defense": 55, "spAttack": 50, "spDefense": 60, "speed": 35 },
+    "baseStats": {
+      "hp": 51,
+      "attack": 30,
+      "defense": 47,
+      "spAttack": 42,
+      "spDefense": 51,
+      "speed": 30
+    },
     "baseXP": 63,
     "learnset": [
-      { "level": 1, "move": "visit_page" },
-      { "level": 5, "move": "fill_in" },
-      { "level": 11, "move": "click_button" },
-      { "level": 17, "move": "selenium_driver" }
+      {
+        "level": 1,
+        "move": "visit_page"
+      },
+      {
+        "level": 5,
+        "move": "fill_in"
+      },
+      {
+        "level": 11,
+        "move": "click_button"
+      },
+      {
+        "level": 17,
+        "move": "selenium_driver"
+      }
     ],
     "evolution": null
   },
   "factory_bot": {
-    "id": "factory_bot", "name": "FactoryBot", "type": "testing",
+    "id": "factory_bot",
+    "name": "FactoryBot",
+    "type": "testing",
     "description": "Builds test data with precision strategies.",
-    "baseStats": { "hp": 45, "attack": 50, "defense": 40, "spAttack": 60, "spDefense": 45, "speed": 55 },
+    "baseStats": {
+      "hp": 38,
+      "attack": 42,
+      "defense": 34,
+      "spAttack": 51,
+      "spDefense": 38,
+      "speed": 47
+    },
     "baseXP": 58,
     "learnset": [
-      { "level": 1, "move": "build_stubbed" },
-      { "level": 4, "move": "override_attributes" },
-      { "level": 9, "move": "nested_factory" },
-      { "level": 15, "move": "transient_blast" }
+      {
+        "level": 1,
+        "move": "build_stubbed"
+      },
+      {
+        "level": 4,
+        "move": "override_attributes"
+      },
+      {
+        "level": 9,
+        "move": "nested_factory"
+      },
+      {
+        "level": 15,
+        "move": "transient_blast"
+      }
     ],
     "evolution": null
   },
   "active_record": {
-    "id": "active_record", "name": "ActiveRecord", "type": "rails",
+    "id": "active_record",
+    "name": "ActiveRecord",
+    "type": "rails",
     "description": "The ORM at the heart of Rails. Powerful and versatile.",
-    "baseStats": { "hp": 70, "attack": 50, "defense": 50, "spAttack": 55, "spDefense": 50, "speed": 30 },
+    "baseStats": {
+      "hp": 60,
+      "attack": 42,
+      "defense": 42,
+      "spAttack": 47,
+      "spDefense": 42,
+      "speed": 26
+    },
     "baseXP": 72,
     "learnset": [
-      { "level": 1, "move": "migration_run" },
-      { "level": 6, "move": "index_optimize" },
-      { "level": 12, "move": "schema_dump" },
-      { "level": 18, "move": "raw_sql" }
+      {
+        "level": 1,
+        "move": "migration_run"
+      },
+      {
+        "level": 6,
+        "move": "index_optimize"
+      },
+      {
+        "level": 12,
+        "move": "schema_dump"
+      },
+      {
+        "level": 18,
+        "move": "raw_sql"
+      }
     ],
     "evolution": null
   },
   "sidekiq": {
-    "id": "sidekiq", "name": "Sidekiq", "type": "performance",
+    "id": "sidekiq",
+    "name": "Sidekiq",
+    "type": "performance",
     "description": "Simple, efficient background processing. Works hard so you don't have to.",
-    "baseStats": { "hp": 55, "attack": 60, "defense": 45, "spAttack": 50, "spDefense": 40, "speed": 55 },
+    "baseStats": {
+      "hp": 47,
+      "attack": 51,
+      "defense": 38,
+      "spAttack": 42,
+      "spDefense": 34,
+      "speed": 47
+    },
     "baseXP": 64,
     "learnset": [
-      { "level": 1, "move": "background_job" },
-      { "level": 5, "move": "thread_pool" },
-      { "level": 10, "move": "ci_pipeline" },
-      { "level": 16, "move": "deploy_push" }
+      {
+        "level": 1,
+        "move": "background_job"
+      },
+      {
+        "level": 5,
+        "move": "thread_pool"
+      },
+      {
+        "level": 10,
+        "move": "ci_pipeline"
+      },
+      {
+        "level": 16,
+        "move": "deploy_push"
+      }
     ],
     "evolution": null
   },
   "puma": {
-    "id": "puma", "name": "Puma", "type": "performance",
+    "id": "puma",
+    "name": "Puma",
+    "type": "performance",
     "description": "A fast, concurrent web server for Ruby.",
-    "baseStats": { "hp": 60, "attack": 45, "defense": 50, "spAttack": 40, "spDefense": 50, "speed": 60 },
+    "baseStats": {
+      "hp": 51,
+      "attack": 38,
+      "defense": 42,
+      "spAttack": 34,
+      "spDefense": 42,
+      "speed": 51
+    },
     "baseXP": 62,
     "learnset": [
-      { "level": 1, "move": "thread_pool" },
-      { "level": 5, "move": "background_job" },
-      { "level": 11, "move": "docker_build" },
-      { "level": 17, "move": "deploy_push" }
+      {
+        "level": 1,
+        "move": "thread_pool"
+      },
+      {
+        "level": 5,
+        "move": "background_job"
+      },
+      {
+        "level": 11,
+        "move": "docker_build"
+      },
+      {
+        "level": 17,
+        "move": "deploy_push"
+      }
     ],
     "evolution": null
   },
   "turbo": {
-    "id": "turbo", "name": "Turbo", "type": "frontend",
+    "id": "turbo",
+    "name": "Turbo",
+    "type": "frontend",
     "description": "The speed of a single-page app without the JavaScript.",
-    "baseStats": { "hp": 50, "attack": 55, "defense": 40, "spAttack": 55, "spDefense": 45, "speed": 65 },
+    "baseStats": {
+      "hp": 42,
+      "attack": 47,
+      "defense": 34,
+      "spAttack": 47,
+      "spDefense": 38,
+      "speed": 55
+    },
     "baseXP": 66,
     "learnset": [
-      { "level": 1, "move": "hotwire_stream" },
-      { "level": 5, "move": "stimulus_connect" },
-      { "level": 11, "move": "dom_manipulate" },
-      { "level": 17, "move": "bundle_compile" }
+      {
+        "level": 1,
+        "move": "hotwire_stream"
+      },
+      {
+        "level": 5,
+        "move": "stimulus_connect"
+      },
+      {
+        "level": 11,
+        "move": "dom_manipulate"
+      },
+      {
+        "level": 17,
+        "move": "bundle_compile"
+      }
     ],
     "evolution": null
   },
   "pry": {
-    "id": "pry", "name": "Pry", "type": "testing",
+    "id": "pry",
+    "name": "Pry",
+    "type": "testing",
     "description": "A runtime developer console. Peers into the unknown.",
-    "baseStats": { "hp": 35, "attack": 40, "defense": 30, "spAttack": 45, "spDefense": 35, "speed": 50 },
+    "baseStats": {
+      "hp": 30,
+      "attack": 34,
+      "defense": 26,
+      "spAttack": 38,
+      "spDefense": 30,
+      "speed": 42
+    },
     "baseXP": 45,
     "learnset": [
-      { "level": 1, "move": "binding_pry" },
-      { "level": 4, "move": "whereami" },
-      { "level": 8, "move": "show_source" },
-      { "level": 12, "move": "jump_to" }
+      {
+        "level": 1,
+        "move": "binding_pry"
+      },
+      {
+        "level": 4,
+        "move": "whereami"
+      },
+      {
+        "level": 8,
+        "move": "show_source"
+      },
+      {
+        "level": 12,
+        "move": "jump_to"
+      }
     ],
     "evolution": null
   },
   "proposite": {
-    "id": "proposite", "name": "Proposite", "type": "performance",
+    "id": "proposite",
+    "name": "Proposite",
+    "type": "performance",
     "description": "A dark crystal of pure performance insight. Detects what others miss.",
-    "baseStats": { "hp": 50, "attack": 40, "defense": 45, "spAttack": 70, "spDefense": 55, "speed": 70 },
+    "baseStats": {
+      "hp": 42,
+      "attack": 34,
+      "defense": 38,
+      "spAttack": 60,
+      "spDefense": 47,
+      "speed": 60
+    },
     "baseXP": 72,
     "learnset": [
-      { "level": 1, "move": "detect" },
-      { "level": 1, "move": "raise" }
+      {
+        "level": 1,
+        "move": "detect"
+      },
+      {
+        "level": 1,
+        "move": "raise"
+      }
     ],
     "evolution": null
   },
   "herb": {
-    "id": "herb", "name": "Herb", "type": "frontend",
+    "id": "herb",
+    "name": "Herb",
+    "type": "frontend",
     "description": "A powerful view layer component engine. Beautiful and fast.",
-    "baseStats": { "hp": 55, "attack": 40, "defense": 50, "spAttack": 75, "spDefense": 60, "speed": 65 },
+    "baseStats": {
+      "hp": 47,
+      "attack": 34,
+      "defense": 42,
+      "spAttack": 64,
+      "spDefense": 51,
+      "speed": 55
+    },
     "baseXP": 72,
     "learnset": [
-      { "level": 1, "move": "parse" },
-      { "level": 1, "move": "lint" },
-      { "level": 14, "move": "format" }
+      {
+        "level": 1,
+        "move": "parse"
+      },
+      {
+        "level": 1,
+        "move": "lint"
+      },
+      {
+        "level": 14,
+        "move": "format"
+      }
     ],
     "evolution": null
   },
   "active_agent": {
-    "id": "active_agent", "name": "ActiveAgent", "type": "rails",
+    "id": "active_agent",
+    "name": "ActiveAgent",
+    "type": "rails",
     "description": "Agents as controllers, prompts as views. Rails-native AI.",
-    "baseStats": { "hp": 50, "attack": 45, "defense": 45, "spAttack": 60, "spDefense": 45, "speed": 55 },
+    "baseStats": {
+      "hp": 42,
+      "attack": 38,
+      "defense": 38,
+      "spAttack": 51,
+      "spDefense": 38,
+      "speed": 47
+    },
     "baseXP": 68,
     "learnset": [
-      { "level": 1, "move": "prompt" },
-      { "level": 20, "move": "tool_call" }
+      {
+        "level": 1,
+        "move": "prompt"
+      },
+      {
+        "level": 20,
+        "move": "tool_call"
+      }
     ],
     "evolution": null
   }

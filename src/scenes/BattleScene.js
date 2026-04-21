@@ -197,7 +197,7 @@ class BattleScene extends Phaser.Scene {
 
     this.currentMenu = new MenuBox(this, 4, 52, gems, {
       itemWidth: 180,
-      depth: 900,
+      depth: 1000,
       onSelect: (opt) => {
         const gem = this.playerParty[opt.value];
         if (gem.isFainted) {
