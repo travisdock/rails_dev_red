@@ -263,11 +263,11 @@
     <property name="spriteKey" value="npc05"/>
    </properties>
   </object>
-  <object id="19" name="Speaker Andrew" type="npc" x="376" y="392.333">
+  <object id="19" name="Speaker Andrew" type="trainer" x="376" y="392.333">
    <properties>
-    <property name="dialog" value="The Ruby community isn't something you join, it's something you help create!"/>
     <property name="facing" value="left"/>
-    <property name="spriteKey" value="pg10"/>
+    <property name="spriteKey" value="npc11"/>
+    <property name="trainerId" value="speaker_andrew"/>
    </properties>
   </object>
  </objectgroup>

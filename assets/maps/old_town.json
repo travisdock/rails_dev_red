@@ -485,8 +485,8 @@
                  "type":"npc",
                  "visible":true,
                  "width":0,
-                 "x":616.181818181818,
-                 "y":280.181818181818
+                 "x":616.182,
+                 "y":280.182
                 }, 
                 {
                  "height":0,
@@ -513,8 +513,8 @@
                  "type":"npc",
                  "visible":true,
                  "width":0,
-                 "x":327.863636363636,
-                 "y":297.136363636364
+                 "x":327.864,
+                 "y":297.136
                 }, 
                 {
                  "height":0,
@@ -523,11 +523,6 @@
                  "opacity":1,
                  "properties":[
                         {
-                         "name":"dialog",
-                         "type":"string",
-                         "value":"The Ruby community isn't something you join, it's something you help create!"
-                        }, 
-                        {
                          "name":"facing",
                          "type":"string",
                          "value":"left"
@@ -535,14 +530,19 @@
                         {
                          "name":"spriteKey",
                          "type":"string",
-                         "value":"pg10"
+                         "value":"npc11"
+                        }, 
+                        {
+                         "name":"trainerId",
+                         "type":"string",
+                         "value":"speaker_andrew"
                         }],
                  "rotation":0,
-                 "type":"npc",
+                 "type":"trainer",
                  "visible":true,
                  "width":0,
                  "x":376,
-                 "y":392.333333333333
+                 "y":392.333
                 }],
          "opacity":1,
          "type":"objectgroup",

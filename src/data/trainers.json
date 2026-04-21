@@ -31,13 +31,13 @@
     "prizeMoney": 300,
     "lineOfSight": 3
   },
-  "speaker_01": {
-    "id": "speaker_01", "name": "Speaker Taylor", "class": "Conference Speaker",
-    "dialogBefore": "I'm giving a talk on performance optimization. Check out these nasty bugs!",
-    "dialogAfter": "You optimized your way right through those...",
+  "speaker_andrew": {
+    "id": "speaker_andrew", "name": "Speaker Andrew", "class": "Conference Speaker",
+    "dialogBefore": "The Ruby community isn't something you join, it's something you help create!",
+    "dialogAfter": "That's what the community is about. Keep contributing!",
     "party": [
-      { "bugId": "n_plus_one", "level": 12 },
-      { "bugId": "memory_leak", "level": 11 }
+      { "bugId": "external_dependency", "level": 16 },
+      { "bugId": "test_pollution", "level": 17 }
     ],
     "prizeMoney": 400,
     "lineOfSight": 4
