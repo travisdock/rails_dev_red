@@ -57,6 +57,10 @@ class PreloadScene extends Phaser.Scene {
       frameWidth: 36, frameHeight: 48
     });
 
+    this.load.spritesheet('cirdes', 'assets/sprites/cirdes.png', {
+      frameWidth: 36, frameHeight: 48
+    });
+
     // Load tilesets
     this.load.spritesheet('tiles-path', 'assets/tilesets/path.png', {
       frameWidth: 16, frameHeight: 16

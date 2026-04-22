@@ -146,13 +146,6 @@
     <property name="targetY" value="1"/>
    </properties>
   </object>
-  <object id="15" name="Devops Dana" type="trainer" x="72" y="327.333">
-   <properties>
-    <property name="facing" value="right"/>
-    <property name="spriteKey" value="pg12"/>
-    <property name="trainerId" value="parking_03"/>
-   </properties>
-  </object>
   <object id="16" name="Indie Dev Jeremy" type="trainer" x="280" y="309.333">
    <properties>
     <property name="facing" value="down"/>
@@ -164,7 +157,7 @@
    <properties>
     <property name="facing" value="down"/>
     <property name="spriteKey" value="npc09"/>
-    <property name="trainerId" value="parking_01"/>
+    <property name="trainerId" value="aaron_wallentine"/>
    </properties>
   </object>
  </objectgroup>

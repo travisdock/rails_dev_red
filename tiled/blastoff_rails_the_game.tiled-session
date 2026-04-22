@@ -23,11 +23,11 @@
             "expandedObjectLayers": [
                 4
             ],
-            "scale": 4,
+            "scale": 5.5,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 216.5,
-                "y": 212.625
+                "x": 106.9090909090909,
+                "y": 182.45454545454544
             }
         },
         "house.tsx": {
@@ -54,11 +54,11 @@
                 5,
                 4
             ],
-            "scale": 4,
+            "scale": 1.5,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 439,
-                "y": 331.375
+                "x": 299.33333333333326,
+                "y": 304.99999999999994
             }
         },
         "parking_lot.tmx": {
@@ -66,11 +66,11 @@
                 5,
                 4
             ],
-            "scale": 8,
+            "scale": 1.5,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 630.5,
-                "y": 206.5625
+                "x": 322,
+                "y": 240.99999999999997
             }
         },
         "path.tsx": {
@@ -126,10 +126,10 @@
     ],
     "project": "blastoff_rails_the_game.tiled-project",
     "recentFiles": [
-        "park.tmx",
-        "hotel.tmx",
-        "venue.tmx",
         "old_town.tmx",
+        "hotel.tmx",
+        "park.tmx",
+        "venue.tmx",
         "parking_lot.tmx",
         "house.tsx",
         "rocket.tsx"

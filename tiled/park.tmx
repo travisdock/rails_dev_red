@@ -239,7 +239,7 @@
     <property name="trainerId" value="speaker_kieran"/>
    </properties>
   </object>
-  <object id="24" name="Speaker Avi" type="npc" x="520.333" y="312.833">
+  <object id="24" name="Speaker Avi" type="npc" x="311.083" y="487.416">
    <properties>
     <property name="dialog" value="Let go with AI. You won't even need to read the code."/>
     <property name="facing" value="left"/>
@@ -250,12 +250,12 @@
    <properties>
     <property name="dialog" value="What do you know about Apollo's guidance computer and the Therac-25 radiation therapy machine?"/>
     <property name="facing" value="down"/>
-    <property name="spriteKey" value="pg1"/>
+    <property name="spriteKey" value="npc18"/>
    </properties>
   </object>
-  <object id="26" name="Speaker Neha" type="trainer" x="503.667" y="407.833" rotation="359.66">
+  <object id="26" name="Speaker Neha" type="trainer" x="503.417" y="343.833" rotation="359.66">
    <properties>
-    <property name="facing" value="up"/>
+    <property name="facing" value="down"/>
     <property name="spriteKey" value="npc21"/>
     <property name="trainerId" value="speaker_neha"/>
    </properties>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="22">
+<map version="1.10" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="23">
  <editorsettings>
   <export target="../assets/maps/hotel.json" format="json"/>
  </editorsettings>
@@ -109,13 +109,6 @@
     <property name="spriteKey" value="pg7"/>
    </properties>
   </object>
-  <object id="9" name="minion5" type="trainer" x="56.5" y="54.5">
-   <properties>
-    <property name="facing" value="down"/>
-    <property name="spriteKey" value="npc01"/>
-    <property name="trainerId" value="test_minion_05"/>
-   </properties>
-  </object>
   <object id="10" name="Speaker Matheus" type="trainer" x="119.5" y="120.5">
    <properties>
     <property name="facing" value="up"/>
@@ -123,18 +116,11 @@
     <property name="trainerId" value="speaker_matheus"/>
    </properties>
   </object>
-  <object id="11" name="minion2" type="trainer" x="184" y="56">
-   <properties>
-    <property name="facing" value="down"/>
-    <property name="spriteKey" value="pg6"/>
-    <property name="trainerId" value="test_minion_02"/>
-   </properties>
-  </object>
-  <object id="12" name="minion3" type="trainer" x="248" y="118.5">
+  <object id="12" name="First Friend Andy" type="trainer" x="248" y="118.5">
    <properties>
     <property name="facing" value="up"/>
-    <property name="spriteKey" value="npc04"/>
-    <property name="trainerId" value="test_minion_03"/>
+    <property name="spriteKey" value="pg14"/>
+    <property name="trainerId" value="andy_croll"/>
    </properties>
   </object>
   <object id="13" name="Speaker Ifat" type="trainer" x="312" y="55">
@@ -144,18 +130,11 @@
     <property name="trainerId" value="ifat_ribon"/>
    </properties>
   </object>
-  <object id="14" name="Attendee Collin" type="npc" x="55.5" y="184.5">
+  <object id="14" name="Attendee Chadwick" type="npc" x="55.5" y="184.5">
    <properties>
     <property name="dialog" value="Be careful in there, I heard some of them talking about TDD..."/>
     <property name="facing" value="down"/>
-    <property name="spriteKey" value="pg3"/>
-   </properties>
-  </object>
-  <object id="15" name="Attendee John" type="npc" x="229.5" y="199.5">
-   <properties>
-    <property name="dialog" value="Are you excited for the conference?! I can hardly wait to lift off."/>
-    <property name="facing" value="up"/>
-    <property name="spriteKey" value="pg14"/>
+    <property name="spriteKey" value="pg9"/>
    </properties>
   </object>
   <object id="16" name="Senior Dev Jason" type="npc" x="168.136" y="248.182">
@@ -172,13 +151,6 @@
     <property name="spriteKey" value="npc11"/>
    </properties>
   </object>
-  <object id="18" name="Attendee Ann" type="npc" x="344.5" y="249">
-   <properties>
-    <property name="dialog" value="Which talk are you most excited for?"/>
-    <property name="facing" value="down"/>
-    <property name="spriteKey" value="npc05"/>
-   </properties>
-  </object>
   <object id="20" name="Door" type="door" x="3.90333" y="283.175">
    <properties>
     <property name="facing" value="left"/>
@@ -193,6 +165,13 @@
     <property name="targetMap" value="parking-lot"/>
     <property name="targetX" value="38"/>
     <property name="targetY" value="12"/>
+   </properties>
+  </object>
+  <object id="22" name="Tropical Cirdes" type="npc" x="311.318" y="216.864">
+   <properties>
+    <property name="dialog" value="If you've never debugged with a caipirinha in hand, you haven't seen Rails under the sun. Come to Tropical on Rails if you get the chance."/>
+    <property name="facing" value="down"/>
+    <property name="spriteKey" value="cirdes"/>
    </properties>
   </object>
  </objectgroup>

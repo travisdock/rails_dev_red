@@ -83,46 +83,12 @@
     "prizeMoney": 300,
     "lineOfSight": 3
   },
-  "test_minion_05": {
-    "id": "test_minion_05",
-    "name": "Attendee Avery",
-    "class": "Conference Attendee",
-    "dialogBefore": "I just found my first bug! Want to see it?",
-    "dialogAfter": "Ok that bug didn't stand a chance...",
-    "party": [
-      {
-        "bugId": "flaky_test",
-        "level": 4
-      }
-    ],
-    "prizeMoney": 100,
-    "lineOfSight": 3
-  },
-  "test_minion_02": {
-    "id": "test_minion_02",
-    "name": "Attendee Quinn",
-    "class": "Conference Attendee",
-    "dialogBefore": "I found some bugs in my code! Let me throw them at you!",
-    "dialogAfter": "I guess you squashed them...",
-    "party": [
-      {
-        "bugId": "flaky_test",
-        "level": 5
-      },
-      {
-        "bugId": "no_method_error",
-        "level": 6
-      }
-    ],
-    "prizeMoney": 180,
-    "lineOfSight": 3
-  },
-  "test_minion_03": {
-    "id": "test_minion_03",
-    "name": "QA Advocate Lee",
-    "class": "Testing Fanatic",
-    "dialogBefore": "No code ships without fixing these bugs first. Not on my watch!",
-    "dialogAfter": "Your gems handled those bugs impressively...",
+  "andy_croll": {
+    "id": "andy_croll",
+    "name": "First Friend Andy",
+    "class": "Ruby Mentor",
+    "dialogBefore": "Everyone was new once. Let's see what you've learned.",
+    "dialogAfter": "Nicely done. The community's better with you in it.",
     "party": [
       {
         "bugId": "external_dependency",
@@ -159,12 +125,12 @@
     "prizeMoney": 350,
     "lineOfSight": 4
   },
-  "parking_01": {
-    "id": "parking_01",
-    "name": "Junior Dev Casey",
-    "class": "Junior Developer",
-    "dialogBefore": "I just deployed my first app and everything is breaking!",
-    "dialogAfter": "Maybe I should have written tests first...",
+  "aaron_wallentine": {
+    "id": "aaron_wallentine",
+    "name": "Musical Dev Walle",
+    "class": "Ruby Dev",
+    "dialogBefore": "Haribol! (Chant the Names of God) ... In between coding sessions I like to play and sing kirtan to clear and refresh my mind.",
+    "dialogAfter": "Shall we play a song?",
     "party": [
       {
         "bugId": "no_method_error",
