@@ -439,6 +439,11 @@
                  "opacity":1,
                  "properties":[
                         {
+                         "name":"dialog",
+                         "type":"string",
+                         "value":"Let go with AI. You won't even need to read the code."
+                        }, 
+                        {
                          "name":"facing",
                          "type":"string",
                          "value":"left"
@@ -447,18 +452,69 @@
                          "name":"spriteKey",
                          "type":"string",
                          "value":"npc18"
+                        }],
+                 "rotation":0,
+                 "type":"npc",
+                 "visible":true,
+                 "width":0,
+                 "x":520.333,
+                 "y":312.833
+                }, 
+                {
+                 "height":0,
+                 "id":25,
+                 "name":"Speaker Nikky",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"dialog",
+                         "type":"string",
+                         "value":"What do you know about Apollo's guidance computer and the Therac-25 radiation therapy machine?"
+                        }, 
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"down"
+                        }, 
+                        {
+                         "name":"spriteKey",
+                         "type":"string",
+                         "value":"pg1"
+                        }],
+                 "rotation":0,
+                 "type":"npc",
+                 "visible":true,
+                 "width":0,
+                 "x":312,
+                 "y":231.333
+                }, 
+                {
+                 "height":0,
+                 "id":26,
+                 "name":"Speaker Neha",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"up"
+                        }, 
+                        {
+                         "name":"spriteKey",
+                         "type":"string",
+                         "value":"npc21"
                         }, 
                         {
                          "name":"trainerId",
                          "type":"string",
-                         "value":"speaker_avi"
+                         "value":"speaker_neha"
                         }],
-                 "rotation":0,
+                 "rotation":359.66,
                  "type":"trainer",
                  "visible":true,
                  "width":0,
-                 "x":520.333333333333,
-                 "y":312.833333333333
+                 "x":503.667,
+                 "y":407.833
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -730,7 +786,7 @@
          "y":0
         }],
  "nextlayerid":7,
- "nextobjectid":25,
+ "nextobjectid":27,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.12.0",

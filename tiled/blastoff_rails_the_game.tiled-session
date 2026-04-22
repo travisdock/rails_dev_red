@@ -45,8 +45,8 @@
             "scale": 1.5,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 370,
-                "y": 331.66666666666663
+                "x": 298,
+                "y": 239.66666666666663
             }
         },
         "park.tmx": {
@@ -54,11 +54,11 @@
                 5,
                 4
             ],
-            "scale": 1,
-            "selectedLayer": 0,
+            "scale": 4,
+            "selectedLayer": 4,
             "viewCenter": {
-                "x": 94,
-                "y": 247.5
+                "x": 439,
+                "y": 331.375
             }
         },
         "parking_lot.tmx": {
@@ -108,10 +108,10 @@
                 4
             ],
             "scale": 2,
-            "selectedLayer": 4,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 285.5,
-                "y": 185.25
+                "x": 285,
+                "y": 245.25
             }
         }
     },

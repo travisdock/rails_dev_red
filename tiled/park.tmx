@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="25">
+<map version="1.10" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="27">
  <editorsettings>
   <export target="../assets/maps/park.json" format="json"/>
  </editorsettings>
@@ -239,11 +239,25 @@
     <property name="trainerId" value="speaker_kieran"/>
    </properties>
   </object>
-  <object id="24" name="Speaker Avi" type="trainer" x="520.333" y="312.833">
+  <object id="24" name="Speaker Avi" type="npc" x="520.333" y="312.833">
    <properties>
+    <property name="dialog" value="Let go with AI. You won't even need to read the code."/>
     <property name="facing" value="left"/>
     <property name="spriteKey" value="npc18"/>
-    <property name="trainerId" value="speaker_avi"/>
+   </properties>
+  </object>
+  <object id="25" name="Speaker Nikky" type="npc" x="312" y="231.333">
+   <properties>
+    <property name="dialog" value="What do you know about Apollo's guidance computer and the Therac-25 radiation therapy machine?"/>
+    <property name="facing" value="down"/>
+    <property name="spriteKey" value="pg1"/>
+   </properties>
+  </object>
+  <object id="26" name="Speaker Neha" type="trainer" x="503.667" y="407.833" rotation="359.66">
+   <properties>
+    <property name="facing" value="up"/>
+    <property name="spriteKey" value="npc21"/>
+    <property name="trainerId" value="speaker_neha"/>
    </properties>
   </object>
  </objectgroup>

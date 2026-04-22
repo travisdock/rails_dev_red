@@ -497,7 +497,7 @@
                         {
                          "name":"dialog",
                          "type":"string",
-                         "value":"Oh hey there, did you know if you type DEBUG in the console you can do all sorts of tricksie things."
+                         "value":"Oh hey there, did you know if you type DEBUG in the devtools console you can do all sorts of tricksie things."
                         }, 
                         {
                          "name":"facing",
@@ -706,7 +706,7 @@
          "y":0
         }],
  "nextlayerid":9,
- "nextobjectid":20,
+ "nextobjectid":21,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.12.0",

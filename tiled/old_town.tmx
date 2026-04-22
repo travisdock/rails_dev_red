@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="20">
+<map version="1.10" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="21">
  <editorsettings>
   <export target="../assets/maps/old_town.json" format="json"/>
  </editorsettings>
@@ -258,7 +258,7 @@
   </object>
   <object id="18" name="Sneaky Dev David" type="npc" x="327.864" y="297.136">
    <properties>
-    <property name="dialog" value="Oh hey there, did you know if you type DEBUG in the console you can do all sorts of tricksie things."/>
+    <property name="dialog" value="Oh hey there, did you know if you type DEBUG in the devtools console you can do all sorts of tricksie things."/>
     <property name="facing" value="down"/>
     <property name="spriteKey" value="npc05"/>
    </properties>

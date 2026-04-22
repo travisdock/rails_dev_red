@@ -18,23 +18,23 @@
     "prizeMoney": 400,
     "lineOfSight": 4
   },
-  "speaker_avi": {
-    "id": "speaker_avi",
-    "name": "Speaker Avi",
+  "speaker_neha": {
+    "id": "speaker_neha",
+    "name": "Speaker Neha",
     "class": "Conference Speaker",
-    "dialogBefore": "Let go with AI. You won't even need to read the code.",
-    "dialogAfter": "When it doesn't work, compound the lesson back in.",
+    "dialogBefore": "How fast are your dashboards?",
+    "dialogAfter": "Good throughput. Your gems are fast.",
     "party": [
       {
-        "bugId": "context_overflow",
+        "bugId": "memory_leak",
         "level": 22
       },
       {
-        "bugId": "sql_injection",
+        "bugId": "n_plus_one",
         "level": 23
       },
       {
-        "bugId": "race_condition",
+        "bugId": "cache_stampede",
         "level": 24
       }
     ],
