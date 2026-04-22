@@ -71,8 +71,8 @@ class OverworldScene extends Phaser.Scene {
         const mapMessages = {
           'parking-lot': ["You step into the Parking Lot.", "Stray from the pathways and you might encounter wild bugs."],
           'old-town': ["Welcome to Old Town. The oldest code in Albuquerque lives here."],
-          'park': ["You enter the Park. Watch out for performance bugs in the tall grass."],
-          'venue': ["The Venue. The rocket awaits those with all four Boarding Passes."]
+          'park': ["You enter Tiguex Park. Watch out for performance bugs in the tall grass."],
+          'venue': ["The Rocket. It awaits those with all four Boarding Passes."]
         };
         const msgs = mapMessages[this.mapKey];
         if (msgs) {

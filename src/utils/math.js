@@ -13,7 +13,7 @@ const GameMath = {
 
   // XP gained from defeating an enemy
   xpGain(baseXP, enemyLevel) {
-    return Math.floor((baseXP * enemyLevel) / 7);
+    return Math.floor((baseXP * enemyLevel) / 6);
   },
 
   // Calculate stat at a given level from base stat

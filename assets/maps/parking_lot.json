@@ -265,34 +265,6 @@
                 }, 
                 {
                  "height":0,
-                 "id":15,
-                 "name":"Devops Dana",
-                 "opacity":1,
-                 "properties":[
-                        {
-                         "name":"facing",
-                         "type":"string",
-                         "value":"right"
-                        }, 
-                        {
-                         "name":"spriteKey",
-                         "type":"string",
-                         "value":"pg12"
-                        }, 
-                        {
-                         "name":"trainerId",
-                         "type":"string",
-                         "value":"parking_03"
-                        }],
-                 "rotation":0,
-                 "type":"trainer",
-                 "visible":true,
-                 "width":0,
-                 "x":72,
-                 "y":327.333
-                }, 
-                {
-                 "height":0,
                  "id":16,
                  "name":"Indie Dev Jeremy",
                  "opacity":1,
@@ -322,7 +294,7 @@
                 {
                  "height":0,
                  "id":17,
-                 "name":"Junior Dev Casey",
+                 "name":"Musical Dev Walle",
                  "opacity":1,
                  "properties":[
                         {
@@ -333,7 +305,7 @@
                         {
                          "name":"spriteKey",
                          "type":"string",
-                         "value":"npc09"
+                         "value":"npc18"
                         }, 
                         {
                          "name":"trainerId",
@@ -346,6 +318,34 @@
                  "width":0,
                  "x":279.833,
                  "y":40
+                }, 
+                {
+                 "height":0,
+                 "id":18,
+                 "name":"Senior Dev David",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"right"
+                        }, 
+                        {
+                         "name":"spriteKey",
+                         "type":"string",
+                         "value":"npc11"
+                        }, 
+                        {
+                         "name":"trainerId",
+                         "type":"string",
+                         "value":"david_hill"
+                        }],
+                 "rotation":0,
+                 "type":"trainer",
+                 "visible":true,
+                 "width":0,
+                 "x":71.9166666666667,
+                 "y":343.916666666667
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -491,7 +491,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":18,
+ "nextobjectid":19,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.12.0",

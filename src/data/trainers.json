@@ -143,9 +143,9 @@
     ],
     "lineOfSight": 3
   },
-  "parking_03": {
-    "id": "parking_03",
-    "name": "Senior Dev Dana",
+  "david_hill": {
+    "id": "david_hill",
+    "name": "Senior Dev David",
     "class": "Senior Developer",
     "dialogBefore": "I've been debugging production issues all day. Want to see what I found?",
     "dialogAfter": "You handled those like a pro...",

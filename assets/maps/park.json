@@ -416,6 +416,11 @@
                          "value":"down"
                         }, 
                         {
+                         "name":"lineOfSight",
+                         "type":"string",
+                         "value":"3"
+                        }, 
+                        {
                          "name":"spriteKey",
                          "type":"string",
                          "value":"npc18"
@@ -457,8 +462,8 @@
                  "type":"npc",
                  "visible":true,
                  "width":0,
-                 "x":520.333,
-                 "y":312.833
+                 "x":311.083,
+                 "y":487.416
                 }, 
                 {
                  "height":0,
@@ -479,7 +484,7 @@
                         {
                          "name":"spriteKey",
                          "type":"string",
-                         "value":"pg1"
+                         "value":"npc18"
                         }],
                  "rotation":0,
                  "type":"npc",
@@ -497,7 +502,7 @@
                         {
                          "name":"facing",
                          "type":"string",
-                         "value":"up"
+                         "value":"down"
                         }, 
                         {
                          "name":"spriteKey",
@@ -513,8 +518,8 @@
                  "type":"trainer",
                  "visible":true,
                  "width":0,
-                 "x":503.667,
-                 "y":407.833
+                 "x":503.417,
+                 "y":343.833
                 }],
          "opacity":1,
          "type":"objectgroup",

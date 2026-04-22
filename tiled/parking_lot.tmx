@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="40" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="18">
+<map version="1.10" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="40" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="19">
  <editorsettings>
   <export target="../assets/maps/parking_lot.json" format="json"/>
  </editorsettings>
@@ -153,11 +153,18 @@
     <property name="trainerId" value="indie_jeremy"/>
    </properties>
   </object>
-  <object id="17" name="Junior Dev Casey" type="trainer" x="279.833" y="40">
+  <object id="17" name="Musical Dev Walle" type="trainer" x="279.833" y="40">
    <properties>
     <property name="facing" value="down"/>
-    <property name="spriteKey" value="npc09"/>
+    <property name="spriteKey" value="npc18"/>
     <property name="trainerId" value="aaron_wallentine"/>
+   </properties>
+  </object>
+  <object id="18" name="Senior Dev David" type="trainer" x="71.9167" y="343.917">
+   <properties>
+    <property name="facing" value="right"/>
+    <property name="spriteKey" value="npc11"/>
+    <property name="trainerId" value="david_hill"/>
    </properties>
   </object>
  </objectgroup>

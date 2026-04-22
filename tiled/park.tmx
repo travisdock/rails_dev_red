@@ -235,6 +235,7 @@
   <object id="23" name="Compounding Engineer Kieran" type="trainer" x="80" y="120.5">
    <properties>
     <property name="facing" value="down"/>
+    <property name="lineOfSight" value="3"/>
     <property name="spriteKey" value="npc18"/>
     <property name="trainerId" value="speaker_kieran"/>
    </properties>

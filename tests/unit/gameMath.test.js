@@ -54,7 +54,7 @@ describe('GameMath', () => {
 
   describe('xpGain', () => {
     it('calculates correctly', () => {
-      expect(GameMath.xpGain(64, 10)).toBe(Math.floor((64 * 10) / 7));
+      expect(GameMath.xpGain(64, 10)).toBe(Math.floor((64 * 10) / 6));
     });
   });
 
