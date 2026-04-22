@@ -431,6 +431,34 @@
                  "width":0,
                  "x":80,
                  "y":120.5
+                }, 
+                {
+                 "height":0,
+                 "id":24,
+                 "name":"Speaker Avi",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"left"
+                        }, 
+                        {
+                         "name":"spriteKey",
+                         "type":"string",
+                         "value":"npc18"
+                        }, 
+                        {
+                         "name":"trainerId",
+                         "type":"string",
+                         "value":"speaker_avi"
+                        }],
+                 "rotation":0,
+                 "type":"trainer",
+                 "visible":true,
+                 "width":0,
+                 "x":520.333333333333,
+                 "y":312.833333333333
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -702,7 +730,7 @@
          "y":0
         }],
  "nextlayerid":7,
- "nextobjectid":24,
+ "nextobjectid":25,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.12.0",

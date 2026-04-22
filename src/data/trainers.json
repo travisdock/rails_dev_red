@@ -1,195 +1,251 @@
 {
-  "attendee_01": {
-    "id": "attendee_01", "name": "Attendee Jamie", "class": "Conference Attendee",
-    "dialogBefore": "This is my first conference! I keep running into bugs!",
-    "dialogAfter": "Wow, you really squashed that bug...",
-    "party": [
-      { "bugId": "brittle_spec", "level": 5 }
-    ],
-    "prizeMoney": 120,
-    "lineOfSight": 3
-  },
-  "attendee_02": {
-    "id": "attendee_02", "name": "Attendee Morgan", "class": "Conference Attendee",
-    "dialogBefore": "I've been writing Rails for six months now. Can you handle my bugs?",
-    "dialogAfter": "Back to the tutorials for me...",
-    "party": [
-      { "bugId": "brittle_spec", "level": 7 },
-      { "bugId": "request_timeout", "level": 8 }
-    ],
-    "prizeMoney": 240,
-    "lineOfSight": 3
-  },
-  "attendee_03": {
-    "id": "attendee_03", "name": "Attendee Riley", "class": "Conference Attendee",
-    "dialogBefore": "My code has 100% coverage but bugs keep slipping through! Can your gems squash them?",
-    "dialogAfter": "Maybe coverage isn't everything...",
-    "party": [
-      { "bugId": "no_method_error", "level": 9 },
-      { "bugId": "flaky_test", "level": 8 }
-    ],
-    "prizeMoney": 300,
-    "lineOfSight": 3
-  },
   "speaker_andrew": {
-    "id": "speaker_andrew", "name": "Speaker Andrew", "class": "Conference Speaker",
+    "id": "speaker_andrew",
+    "name": "Speaker Andrew",
+    "class": "Conference Speaker",
     "dialogBefore": "The Ruby community isn't something you join, it's something you help create!",
     "dialogAfter": "That's what the community is about. Keep contributing!",
     "party": [
-      { "bugId": "external_dependency", "level": 16 },
-      { "bugId": "test_pollution", "level": 17 }
+      {
+        "bugId": "external_dependency",
+        "level": 16
+      },
+      {
+        "bugId": "test_pollution",
+        "level": 17
+      }
     ],
     "prizeMoney": 400,
     "lineOfSight": 4
   },
-  "speaker_02": {
-    "id": "speaker_02", "name": "Speaker Alex", "class": "Conference Speaker",
-    "dialogBefore": "Full-stack means I've got bugs for every layer!",
-    "dialogAfter": "Well-rounded team you've got there.",
+  "speaker_avi": {
+    "id": "speaker_avi",
+    "name": "Speaker Avi",
+    "class": "Conference Speaker",
+    "dialogBefore": "Let go with AI. You won't even need to read the code.",
+    "dialogAfter": "When it doesn't work, compound the lesson back in.",
     "party": [
-      { "bugId": "cors_error", "level": 14 },
-      { "bugId": "sql_injection", "level": 13 },
-      { "bugId": "race_condition", "level": 14 }
+      {
+        "bugId": "context_overflow",
+        "level": 22
+      },
+      {
+        "bugId": "sql_injection",
+        "level": 23
+      },
+      {
+        "bugId": "race_condition",
+        "level": 24
+      }
     ],
     "prizeMoney": 560,
     "lineOfSight": 4
   },
   "speaker_kieran": {
-    "id": "speaker_kieran", "name": "Speaker Kieran", "class": "Conference Speaker",
+    "id": "speaker_kieran",
+    "name": "Speaker Kieran",
+    "class": "Conference Speaker",
     "dialogBefore": "Every bug is data. Fix it once, prevent it forever.",
     "dialogAfter": "Lesson logged. Your system just got smarter.",
     "party": [
-      { "bugId": "pending_migration", "level": 24 },
-      { "bugId": "xss_attack", "level": 23 },
-      { "bugId": "circular_dependency", "level": 25 }
+      {
+        "bugId": "pending_migration",
+        "level": 24
+      },
+      {
+        "bugId": "xss_attack",
+        "level": 23
+      },
+      {
+        "bugId": "circular_dependency",
+        "level": 25
+      }
     ],
     "prizeMoney": 600,
     "lineOfSight": 5
   },
   "speaker_matheus": {
-    "id": "speaker_matheus", "name": "Speaker Matheus", "class": "Conference Speaker",
+    "id": "speaker_matheus",
+    "name": "Speaker Matheus",
+    "class": "Conference Speaker",
     "dialogBefore": "You don't need engines or new languages. Ruby is all you need.",
     "dialogAfter": "Ten years in and Ruby still brings me joy.",
     "party": [
-      { "bugId": "no_method_error", "level": 6 },
-      { "bugId": "flaky_test", "level": 6 }
+      {
+        "bugId": "no_method_error",
+        "level": 6
+      },
+      {
+        "bugId": "flaky_test",
+        "level": 6
+      }
     ],
     "prizeMoney": 300,
     "lineOfSight": 3
   },
   "test_minion_05": {
-    "id": "test_minion_05", "name": "Attendee Avery", "class": "Conference Attendee",
+    "id": "test_minion_05",
+    "name": "Attendee Avery",
+    "class": "Conference Attendee",
     "dialogBefore": "I just found my first bug! Want to see it?",
     "dialogAfter": "Ok that bug didn't stand a chance...",
     "party": [
-      { "bugId": "flaky_test", "level": 4 }
+      {
+        "bugId": "flaky_test",
+        "level": 4
+      }
     ],
     "prizeMoney": 100,
     "lineOfSight": 3
   },
   "test_minion_02": {
-    "id": "test_minion_02", "name": "Attendee Quinn", "class": "Conference Attendee",
+    "id": "test_minion_02",
+    "name": "Attendee Quinn",
+    "class": "Conference Attendee",
     "dialogBefore": "I found some bugs in my code! Let me throw them at you!",
     "dialogAfter": "I guess you squashed them...",
     "party": [
-      { "bugId": "flaky_test", "level": 5 },
-      { "bugId": "no_method_error", "level": 6 }
+      {
+        "bugId": "flaky_test",
+        "level": 5
+      },
+      {
+        "bugId": "no_method_error",
+        "level": 6
+      }
     ],
     "prizeMoney": 180,
     "lineOfSight": 3
   },
   "test_minion_03": {
-    "id": "test_minion_03", "name": "QA Advocate Lee", "class": "Testing Fanatic",
+    "id": "test_minion_03",
+    "name": "QA Advocate Lee",
+    "class": "Testing Fanatic",
     "dialogBefore": "No code ships without fixing these bugs first. Not on my watch!",
     "dialogAfter": "Your gems handled those bugs impressively...",
     "party": [
-      { "bugId": "external_dependency", "level": 8 },
-      { "bugId": "brittle_spec", "level": 7 }
+      {
+        "bugId": "external_dependency",
+        "level": 8
+      },
+      {
+        "bugId": "brittle_spec",
+        "level": 7
+      }
     ],
     "prizeMoney": 250,
     "lineOfSight": 4
   },
   "ifat_ribon": {
-    "id": "ifat_ribon", "name": "Speaker Ifat", "class": "Conference Speaker",
+    "id": "ifat_ribon",
+    "name": "Speaker Ifat",
+    "class": "Conference Speaker",
     "dialogBefore": "AI can write tests in seconds, but it can't tell you which ones matter (yet).",
     "dialogAfter": "I think you have a good understanding of clear, maintainable tests.",
     "party": [
-      { "bugId": "flaky_test", "level": 9 },
-      { "bugId": "external_dependency", "level": 8 },
-      { "bugId": "slow_test_suite", "level": 10 }
+      {
+        "bugId": "flaky_test",
+        "level": 9
+      },
+      {
+        "bugId": "external_dependency",
+        "level": 8
+      },
+      {
+        "bugId": "slow_test_suite",
+        "level": 10
+      }
     ],
     "prizeMoney": 350,
     "lineOfSight": 4
   },
-  "organizer_01": {
-    "id": "organizer_01", "name": "Organizer Jordan", "class": "Conference Organizer",
-    "dialogBefore": "I organized this whole conference. Think your gems can handle the worst bugs?",
-    "dialogAfter": "You're ready for the rocket.",
-    "party": [
-      { "bugId": "race_condition", "level": 20 },
-      { "bugId": "csrf_vuln", "level": 20 },
-      { "bugId": "sql_injection", "level": 22 }
-    ],
-    "prizeMoney": 800,
-    "lineOfSight": 5
-  },
   "parking_01": {
-    "id": "parking_01", "name": "Junior Dev Casey", "class": "Junior Developer",
+    "id": "parking_01",
+    "name": "Junior Dev Casey",
+    "class": "Junior Developer",
     "dialogBefore": "I just deployed my first app and everything is breaking!",
     "dialogAfter": "Maybe I should have written tests first...",
     "party": [
-      { "bugId": "no_method_error", "level": 11 },
-      { "bugId": "centered_div", "level": 12 }
-    ],
-    "lineOfSight": 3
-  },
-  "parking_02": {
-    "id": "parking_02", "name": "Frontend Dev Skyler", "class": "Frontend Developer",
-    "dialogBefore": "My CSS is pixel perfect but my JavaScript is full of bugs!",
-    "dialogAfter": "I should have checked the console...",
-    "party": [
-      { "bugId": "cors_error", "level": 10 },
-      { "bugId": "z_index_hell", "level": 11 }
+      {
+        "bugId": "no_method_error",
+        "level": 11
+      },
+      {
+        "bugId": "centered_div",
+        "level": 12
+      }
     ],
     "lineOfSight": 3
   },
   "parking_03": {
-    "id": "parking_03", "name": "Senior Dev Dana", "class": "Senior Developer",
+    "id": "parking_03",
+    "name": "Senior Dev Dana",
+    "class": "Senior Developer",
     "dialogBefore": "I've been debugging production issues all day. Want to see what I found?",
     "dialogAfter": "You handled those like a pro...",
     "party": [
-      { "bugId": "race_condition", "level": 17 },
-      { "bugId": "cors_error", "level": 18 }
+      {
+        "bugId": "race_condition",
+        "level": 17
+      },
+      {
+        "bugId": "cors_error",
+        "level": 18
+      }
     ],
     "lineOfSight": 4
   },
   "avo_adrian": {
-    "id": "avo_adrian", "name": "Friendly Dev Adrian", "class": "Indie Dev",
+    "id": "avo_adrian",
+    "name": "Friendly Dev Adrian",
+    "class": "Indie Dev",
     "dialogBefore": "Don't worry, I'll be friendly.",
     "dialogAfter": "That was a rush, thanks.",
     "party": [
-      { "bugId": "memory_leak", "level": 17 },
-      { "bugId": "missing_assets", "level": 19 }
+      {
+        "bugId": "memory_leak",
+        "level": 17
+      },
+      {
+        "bugId": "missing_assets",
+        "level": 19
+      }
     ],
     "lineOfSight": 3
   },
   "indie_jeremy": {
-    "id": "indie_jeremy", "name": "Indie Dev Jeremy", "class": "Indie Dev",
+    "id": "indie_jeremy",
+    "name": "Indie Dev Jeremy",
+    "class": "Indie Dev",
     "dialogBefore": "I have my own conference you know, Blue Ridge Ruby.",
     "dialogAfter": "You handled those bugs well. Maybe you should be a speaker!",
     "party": [
-      { "bugId": "race_condition", "level": 14 },
-      { "bugId": "csrf_vuln", "level": 15 }
+      {
+        "bugId": "race_condition",
+        "level": 14
+      },
+      {
+        "bugId": "csrf_vuln",
+        "level": 15
+      }
     ],
     "lineOfSight": 3
   },
   "justin_bowen": {
-    "id": "justin_bowen", "name": "Active Agent Justin", "class": "Active Agent",
+    "id": "justin_bowen",
+    "name": "Active Agent Justin",
+    "class": "Active Agent",
     "dialogBefore": "An agent is just a controller with a persona. Nothing mystical.",
     "dialogAfter": "Retry logic keeps hallucinations out of production.",
     "party": [
-      { "bugId": "hallucination", "level": 23 },
-      { "bugId": "context_overflow", "level": 25 }
+      {
+        "bugId": "hallucination",
+        "level": 23
+      },
+      {
+        "bugId": "context_overflow",
+        "level": 25
+      }
     ],
     "prizeMoney": 500,
     "lineOfSight": 3
