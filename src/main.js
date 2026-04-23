@@ -84,5 +84,5 @@ window.DEBUG = {
   }
 };
 
-console.log('%cBlastoff Rails: The Game v0.2.0', 'color: #ff6633; font-size: 16px; font-weight: bold');
+console.log('%cBlastoff Rails: The Game v1.0.0', 'color: #ff6633; font-size: 16px; font-weight: bold');
 console.log('Debug tools available: DEBUG.healParty(), DEBUG.addGem(id, level), DEBUG.listGems(), DEBUG.gameState()');
