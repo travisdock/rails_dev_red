@@ -183,8 +183,8 @@
     "id": "indie_jeremy",
     "name": "Indie Dev Jeremy",
     "class": "Indie Dev",
-    "dialogBefore": "I have my own conference you know, Blue Ridge Ruby.",
-    "dialogAfter": "You handled those bugs well. Maybe you should be a speaker!",
+    "dialogBefore": "Take a break from the gem mine, and get up to the ridge line.",
+    "dialogAfter": "You handled those bugs well. It would be an honor to have you at Blue Ridge Ruby someday.",
     "party": [
       {
         "bugId": "race_condition",
