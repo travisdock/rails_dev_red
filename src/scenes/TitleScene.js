@@ -62,7 +62,7 @@ class TitleScene extends Phaser.Scene {
     });
 
     // Version text
-    this.add.text(GAME_WIDTH / 2, GAME_HEIGHT - 5, 'v1.0.0', {
+    this.add.text(GAME_WIDTH / 2, GAME_HEIGHT - 5, 'v1.0.1', {
       fontFamily: '"Tiny5", cursive', fontSize: '8px', color: '#555555'
     }).setOrigin(0.5).setDepth(1);
 

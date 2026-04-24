@@ -130,7 +130,7 @@ class BattleScene extends Phaser.Scene {
 
   showActionMenu() {
     this.battleState = 'action_select';
-    this.messageBox.setText(`What will ${this.battleManager.activePlayerGem.name} do?`);
+    this.messageBox.setText(`What will ${this.battleManager.activePlayerGem.name} do?`).setVisible(true);
 
     if (this.currentMenu) this.currentMenu.destroy();
 
@@ -205,7 +205,8 @@ class BattleScene extends Phaser.Scene {
           return;
         }
         if (opt.value === this.battleManager.playerGemIndex) {
-          // Already active
+          // Selecting the active gem exits the menu
+          this.showActionMenu();
           return;
         }
         this.handleSwitch(opt.value);
