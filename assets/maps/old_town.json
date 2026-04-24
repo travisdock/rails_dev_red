@@ -543,6 +543,34 @@
                  "width":0,
                  "x":376,
                  "y":392.333
+                }, 
+                {
+                 "height":0,
+                 "id":21,
+                 "name":"Coding Coder Drew",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"down"
+                        }, 
+                        {
+                         "name":"spriteKey",
+                         "type":"string",
+                         "value":"pg2"
+                        }, 
+                        {
+                         "name":"trainerId",
+                         "type":"string",
+                         "value":"drew_bragg"
+                        }],
+                 "rotation":0,
+                 "type":"trainer",
+                 "visible":true,
+                 "width":0,
+                 "x":407.681818181818,
+                 "y":264.871212121212
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -706,7 +734,7 @@
          "y":0
         }],
  "nextlayerid":9,
- "nextobjectid":21,
+ "nextobjectid":22,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.12.0",

@@ -215,5 +215,24 @@
     ],
     "prizeMoney": 500,
     "lineOfSight": 3
+  },
+  "drew_bragg": {
+    "id": "drew_bragg",
+    "name": "Coding Coder Drew",
+    "class": "Podcaster",
+    "dialogBefore": "So you think you know enough to be a ruby engineer?",
+    "dialogAfter": "Now THAT'S code worth coding.",
+    "party": [
+      {
+        "bugId": "xss_attack",
+        "level": 17
+      },
+      {
+        "bugId": "circular_dependency",
+        "level": 18
+      }
+    ],
+    "prizeMoney": 400,
+    "lineOfSight": 4
   }
 }
