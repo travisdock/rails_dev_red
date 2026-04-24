@@ -47,6 +47,7 @@ class CreditsScene extends Phaser.Scene {
       { text: 'Aaron Wallentine', size: 8 },
       { text: 'David Hill', size: 8 },
       { text: 'Drew Bragg', size: 8 },
+      { text: 'Stephen McKeon', size: 8 },
       { text: '', size: 8 },
       { text: 'Made for', size: 8, color: '#888888' },
       { text: 'Blastoff Rails 2026', size: 10, color: '#ff6633' },

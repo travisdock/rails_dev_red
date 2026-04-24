@@ -13,6 +13,10 @@
       {
         "bugId": "test_pollution",
         "level": 17
+      },
+      {
+        "bugId": "centered_div",
+        "level": 17
       }
     ],
     "prizeMoney": 400,
@@ -216,6 +220,29 @@
     "prizeMoney": 500,
     "lineOfSight": 3
   },
+  "stephen_mckeon": {
+    "id": "stephen_mckeon",
+    "name": "Speaker Stove",
+    "class": "Conference Speaker",
+    "dialogBefore": "AI is fast, but sustained investment in human growth still matters.",
+    "dialogAfter": "Incredible debugging skills. You should be a mentor!",
+    "party": [
+      {
+        "bugId": "pending_migration",
+        "level": 18
+      },
+      {
+        "bugId": "circular_dependency",
+        "level": 20
+      },
+      {
+        "bugId": "z_index_hell",
+        "level": 19
+      }
+    ],
+    "prizeMoney": 400,
+    "lineOfSight": 4
+  },
   "drew_bragg": {
     "id": "drew_bragg",
     "name": "Coding Coder Drew",
@@ -229,6 +256,10 @@
       },
       {
         "bugId": "circular_dependency",
+        "level": 18
+      },
+      {
+        "bugId": "cors_error",
         "level": 18
       }
     ],

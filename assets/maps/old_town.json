@@ -571,6 +571,34 @@
                  "width":0,
                  "x":407.681818181818,
                  "y":264.871212121212
+                }, 
+                {
+                 "height":0,
+                 "id":22,
+                 "name":"Speaker Stove",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"right"
+                        }, 
+                        {
+                         "name":"spriteKey",
+                         "type":"string",
+                         "value":"npc18"
+                        }, 
+                        {
+                         "name":"trainerId",
+                         "type":"string",
+                         "value":"stephen_mckeon"
+                        }],
+                 "rotation":0,
+                 "type":"trainer",
+                 "visible":true,
+                 "width":0,
+                 "x":232,
+                 "y":424
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -734,7 +762,7 @@
          "y":0
         }],
  "nextlayerid":9,
- "nextobjectid":22,
+ "nextobjectid":23,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.12.0",
