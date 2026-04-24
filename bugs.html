@@ -76,6 +76,25 @@
     .nav { margin-bottom: 20px; }
     .nav a { color: #53d8fb; margin-right: 16px; }
   </style>
+  <!-- Travalytics Analytics -->
+  <script>
+  (function() {
+    if (window.location.hostname === 'localhost' ||
+        window.location.hostname === '127.0.0.1' ||
+        window.location.hostname.startsWith('192.168.') ||
+        window.location.hostname.startsWith('10.') ||
+        window.location.hostname === '::1') {
+      console.log('Travalytics: Skipping tracking on localhost');
+      return;
+    }
+    const script = document.createElement('script');
+    script.src = 'https://travserve.net/analytics.js';
+    script.setAttribute('data-tracking-id', '3e679486-b9d2-4bf5-9b4a-97e7a4e2ec5c');
+    script.setAttribute('data-endpoint', 'https://travserve.net');
+    script.async = true;
+    document.head.appendChild(script);
+  })();
+  </script>
 </head>
 <body>
   <div class="nav">
