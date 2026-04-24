@@ -35,6 +35,7 @@ class CreditsScene extends Phaser.Scene {
       { text: 'Avi Flombaum', size: 8 },
       { text: 'Cirdes Henrique', size: 8 },
       { text: 'David Hill', size: 8 },
+      { text: 'Chadwick Johnson', size: 8 },
       { text: 'Kieran Klaassen', size: 8 },
       { text: 'Adrian Marin', size: 8 },
       { text: 'Andrew Mason', size: 8 },
