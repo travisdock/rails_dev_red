@@ -14,7 +14,7 @@ class CreditsScene extends Phaser.Scene {
       { text: '- Game Design -', size: 8, color: '#888888' },
       { text: 'Travis Dockter', size: 8 },
       { text: '', size: 8 },
-      { text: '- Custom Artwork -', size: 8, color: '#888888' },
+      { text: '- Custom Character Art -', size: 8, color: '#888888' },
       { text: 'Jannell Hadnot', size: 8 },
       { text: '', size: 8 },
       { text: '- Game Assets & Music -', size: 8, color: '#888888' },
