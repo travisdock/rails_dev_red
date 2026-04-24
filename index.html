@@ -214,7 +214,7 @@
       }
       // Play silent <audio> element to force iOS media channel (bypasses silent switch)
       if (!silentAudio) {
-        silentAudio = new Audio('assets/audio/silence.wav');
+        silentAudio = new Audio('assets/audio/silence.ogg');
         silentAudio.loop = true;
       }
       silentAudio.play().catch(() => {});
