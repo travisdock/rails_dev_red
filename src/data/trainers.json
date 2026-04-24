@@ -152,7 +152,7 @@
     "name": "Senior Dev David",
     "class": "Senior Developer",
     "dialogBefore": "I've been debugging production issues all day. Want to see what I found?",
-    "dialogAfter": "You handled those like a pro...",
+    "dialogAfter": "I'd like to make an ode to your debugging skills",
     "party": [
       {
         "bugId": "race_condition",
