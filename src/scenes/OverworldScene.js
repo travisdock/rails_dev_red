@@ -784,6 +784,7 @@ class OverworldScene extends Phaser.Scene {
     this.scene.resume();
     TransitionFX.fadeIn(this, 300);
     this.playMapMusic(this.mapKey);
+    SaveManager.markDirty();
 
     if (result.result === 'win' && result.trainerData) {
       // Mark trainer defeated

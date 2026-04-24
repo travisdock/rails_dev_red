@@ -25,6 +25,7 @@ const ProgressManager = {
   addBadge(badgeId) {
     if (!this.badges.includes(badgeId)) {
       this.badges.push(badgeId);
+      SaveManager.markDirty();
     }
   },
 
@@ -35,6 +36,7 @@ const ProgressManager = {
   defeatTrainer(trainerId) {
     if (!this.trainersDefeated.includes(trainerId)) {
       this.trainersDefeated.push(trainerId);
+      SaveManager.markDirty();
     }
   },
 
@@ -45,6 +47,7 @@ const ProgressManager = {
   completeGym(gymId) {
     if (!this.gymsCompleted.includes(gymId)) {
       this.gymsCompleted.push(gymId);
+      SaveManager.markDirty();
     }
   },
 
@@ -55,6 +58,7 @@ const ProgressManager = {
   seeStory(storyId) {
     if (!this.storySeen.includes(storyId)) {
       this.storySeen.push(storyId);
+      SaveManager.markDirty();
     }
   },
 

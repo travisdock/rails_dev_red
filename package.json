@@ -1,6 +1,6 @@
 {
   "name": "blastoff-rails",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Blastoff Rails: The Game - A Pokemon-style RPG for the Blastoff Rails conference",
   "scripts": {
     "dev": "npx serve . -p 8080 --no-clipboard",

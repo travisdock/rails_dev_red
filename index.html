@@ -239,6 +239,27 @@
   <script src="src/scenes/HealScene.js"></script>
   <script src="src/main.js"></script>
   <script>
+  // Warn before navigating away with unsaved progress
+  window.addEventListener('beforeunload', (e) => {
+    if (typeof SaveManager !== 'undefined' && SaveManager.dirty) {
+      e.preventDefault();
+      e.returnValue = '';
+    }
+  });
+
+  // Warn when clicking same-origin nav links (e.g. Sprites/Bugs/People/Stats)
+  // since beforeunload alone won't always show a useful message in modern browsers
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href]');
+    if (!link) return;
+    const href = link.getAttribute('href');
+    if (!href || href.startsWith('#') || link.target === '_blank') return;
+    if (typeof SaveManager !== 'undefined' && SaveManager.dirty) {
+      const ok = confirm('You have unsaved progress. Leaving this page will lose it.\n\nLeave anyway?');
+      if (!ok) e.preventDefault();
+    }
+  });
+
   let isMuted = true;
   let silentAudio = null;
 

@@ -12,6 +12,7 @@ const PartyManager = {
   addGem(gem) {
     if (this.party.length >= MAX_PARTY_SIZE) return false;
     this.party.push(gem);
+    SaveManager.markDirty();
     return true;
   },
 

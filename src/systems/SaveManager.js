@@ -8,6 +8,11 @@ const SaveManager = {
   startSession(previousPlaytime) {
     this.playtime = previousPlaytime || 0;
     this.sessionStart = Date.now();
+    this.dirty = false;
+  },
+
+  markDirty() {
+    this.dirty = true;
   },
 
   getPlaytime() {
@@ -47,6 +52,7 @@ const SaveManager = {
     };
     try {
       localStorage.setItem(this._key(), JSON.stringify(data));
+      this.dirty = false;
       return true;
     } catch (e) {
       console.error('Save failed:', e);
