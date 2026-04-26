@@ -265,5 +265,43 @@
     ],
     "prizeMoney": 400,
     "lineOfSight": 4
+  },
+  "nadia_odunayo": {
+    "id": "nadia_odunayo",
+    "name": "Solo Dev Nadia",
+    "class": "Founder",
+    "dialogBefore": "How many women does it take to make a dev team? The answer is one.",
+    "dialogAfter": "You seem well-read. I think you might like StoryGraph.",
+    "party": [
+      { "bugId": "pending_migration", "level": 15 },
+      { "bugId": "circular_dependency", "level": 16 }
+    ],
+    "prizeMoney": 350,
+    "lineOfSight": 4
+  },
+  "rachael_wrightmunn": {
+    "id": "rachael_wrightmunn",
+    "name": "Streamer Rachael",
+    "class": "Streamer",
+    "dialogBefore": "I love contributing to open-source live on Twitch!",
+    "dialogAfter": "Wow, your debugging skills are great! Have you tried contributing to open-source?",
+    "party": [
+      { "bugId": "request_timeout", "level": 7 },
+      { "bugId": "flaky_test", "level": 8 }
+    ],
+    "prizeMoney": 250,
+    "lineOfSight": 4
+  },
+  "walter_white": {
+    "id": "walter_white",
+    "name": "Angry Walt",
+    "class": "Chemistry Teacher",
+    "dialogBefore": "I am the one who knocks.",
+    "dialogAfter": "Say my name.",
+    "party": [
+      { "bugId": "heisenbug", "level": 50 }
+    ],
+    "prizeMoney": 5000,
+    "lineOfSight": 5
   }
 }

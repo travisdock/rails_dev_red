@@ -109,7 +109,7 @@
     "description": "The test fails in CI but passes locally. Every. Single. Time.",
     "baseStats": { "hp": 40, "attack": 40, "defense": 35, "spAttack": 45, "spDefense": 40, "speed": 55 },
     "baseXP": 58,
-    "moves": ["works_on_my_machine", "heisenbug"]
+    "moves": ["works_on_my_machine", "observer_effect"]
   },
   "infinite_loop": {
     "id": "infinite_loop", "name": "Infinite Loop", "type": "performance",
@@ -180,5 +180,12 @@
     "baseStats": { "hp": 40, "attack": 55, "defense": 30, "spAttack": 65, "spDefense": 30, "speed": 55 },
     "baseXP": 70,
     "moves": ["ignore_previous", "system_override"]
+  },
+  "heisenbug": {
+    "id": "heisenbug", "name": "Heisenbug", "type": "runtime",
+    "description": "Disappears when you observe it. Pure 99.1% trouble.",
+    "baseStats": { "hp": 60, "attack": 45, "defense": 40, "spAttack": 65, "spDefense": 45, "speed": 55 },
+    "baseXP": 100,
+    "moves": ["observer_effect", "phase_shift"]
   }
 }

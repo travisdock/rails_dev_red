@@ -344,8 +344,36 @@
                  "type":"trainer",
                  "visible":true,
                  "width":0,
-                 "x":71.9166666666667,
-                 "y":343.916666666667
+                 "x":71.9167,
+                 "y":343.917
+                }, 
+                {
+                 "height":0,
+                 "id":19,
+                 "name":"Solo Dev Nadia",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"right"
+                        }, 
+                        {
+                         "name":"spriteKey",
+                         "type":"string",
+                         "value":"npc17"
+                        }, 
+                        {
+                         "name":"trainerId",
+                         "type":"string",
+                         "value":"nadia_odunayo"
+                        }],
+                 "rotation":0,
+                 "type":"trainer",
+                 "visible":true,
+                 "width":0,
+                 "x":72.5833333333333,
+                 "y":168.416666666667
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -491,7 +519,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":19,
+ "nextobjectid":20,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.12.0",

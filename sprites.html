@@ -142,17 +142,6 @@
           key: `npc${id}`,
           label: `NPC ${id}`
         }))
-      },
-      {
-        title: 'Custom Sprites',
-        author: null,
-        url: null,
-        frameSize: '36x48 frames',
-        renderer: 'pg',
-        sprites: [
-          { key: 'dhh', label: 'DHH' },
-          { key: 'cirdes', label: 'Cirdes' }
-        ]
       }
     ];
 
@@ -242,7 +231,7 @@
     const bugIds = [
       'brittle_spec', 'cache_stampede', 'centered_div', 'circular_dependency',
       'context_overflow', 'cors_error', 'csrf_vuln', 'external_dependency',
-      'flaky_test', 'hallucination', 'infinite_loop', 'mass_assignment',
+      'flaky_test', 'hallucination', 'heisenbug', 'infinite_loop', 'mass_assignment',
       'memory_leak', 'missing_assets', 'n_plus_one', 'no_method_error',
       'pending_migration', 'phantom_failure', 'prompt_injection', 'race_condition',
       'request_timeout', 'slow_test_suite', 'sql_injection', 'test_pollution',

@@ -359,8 +359,8 @@
     "description": "It passes locally. Not my problem. Solid hit.",
     "effect": null
   },
-  "heisenbug": {
-    "id": "heisenbug", "name": "Heisenbug", "type": "testing",
+  "observer_effect": {
+    "id": "observer_effect", "name": "Observer Effect", "type": "testing",
     "category": "status", "power": 0, "accuracy": 100, "pp": 15,
     "description": "Disappears when you try to observe it. Raises Sp. Defense.",
     "effect": { "stat": "spDefense", "stages": 1, "target": "self" }
@@ -615,6 +615,12 @@
     "id": "tool_call", "name": "Tool Call", "type": "rails",
     "category": "special", "power": 60, "accuracy": 95, "pp": 20,
     "description": "Invokes a registered tool. Solid hit.",
+    "effect": null
+  },
+  "phase_shift": {
+    "id": "phase_shift", "name": "Phase Shift", "type": "runtime",
+    "category": "special", "power": 80, "accuracy": 90, "pp": 10,
+    "description": "Slips between observed states. Hits hard from nowhere.",
     "effect": null
   }
 }

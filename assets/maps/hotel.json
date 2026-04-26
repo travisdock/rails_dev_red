@@ -445,6 +445,34 @@
                  "width":0,
                  "x":311.318,
                  "y":216.864
+                }, 
+                {
+                 "height":0,
+                 "id":23,
+                 "name":"Streamer Rachael",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"down"
+                        }, 
+                        {
+                         "name":"spriteKey",
+                         "type":"string",
+                         "value":"npc15"
+                        }, 
+                        {
+                         "name":"trainerId",
+                         "type":"string",
+                         "value":"rachael_wrightmunn"
+                        }],
+                 "rotation":0,
+                 "type":"trainer",
+                 "visible":true,
+                 "width":0,
+                 "x":167.5,
+                 "y":55.5
                 }],
          "opacity":1,
          "properties":[
@@ -480,7 +508,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":23,
+ "nextobjectid":24,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.12.0",

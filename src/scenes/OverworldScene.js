@@ -368,6 +368,7 @@ class OverworldScene extends Phaser.Scene {
             blockMessage: props.blockMessage,
             rewardGem: props.rewardGem,
             rewardGemLevel: props.rewardGemLevel ? parseInt(props.rewardGemLevel) : undefined,
+            requiresGym: props.requiresGym,
             text: props.text
           };
 
@@ -398,6 +399,10 @@ class OverworldScene extends Phaser.Scene {
           break;
 
         case 'trainer': {
+          // Optional: only spawn if a specific gym has been completed (post-game easter eggs)
+          if (obj.requiresGym && !ProgressManager.gymsCompleted.includes(obj.requiresGym)) {
+            break;
+          }
           const trainerDef = window.GAME_DATA.trainers[obj.trainerId];
           if (trainerDef) {
             const t = new Trainer(this, obj.x, obj.y, {

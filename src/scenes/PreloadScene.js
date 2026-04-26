@@ -107,7 +107,7 @@ class PreloadScene extends Phaser.Scene {
       'cors_error', 'centered_div', 'z_index_hell',
       'circular_dependency', 'infinite_loop', 'cache_stampede',
       'mass_assignment', 'pending_migration', 'missing_assets', 'csrf_vuln',
-      'hallucination', 'context_overflow', 'prompt_injection'
+      'hallucination', 'context_overflow', 'prompt_injection', 'heisenbug'
     ];
     for (const id of bugIds) {
       this.load.image('bug-' + id, 'assets/sprites/bugs/' + id + '.png');

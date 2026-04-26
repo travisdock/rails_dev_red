@@ -358,6 +358,39 @@
                  "width":13.5,
                  "x":272.792,
                  "y":211
+                }, 
+                {
+                 "height":0,
+                 "id":10,
+                 "name":"Angry Walter",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"down"
+                        }, 
+                        {
+                         "name":"requiresGym",
+                         "type":"string",
+                         "value":"dhh"
+                        }, 
+                        {
+                         "name":"spriteKey",
+                         "type":"string",
+                         "value":"pg14"
+                        }, 
+                        {
+                         "name":"trainerId",
+                         "type":"string",
+                         "value":"walter_white"
+                        }],
+                 "rotation":0,
+                 "type":"trainer",
+                 "visible":true,
+                 "width":0,
+                 "x":231.667,
+                 "y":7.83333
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -377,7 +410,7 @@
          "y":0
         }],
  "nextlayerid":7,
- "nextobjectid":10,
+ "nextobjectid":11,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.12.0",

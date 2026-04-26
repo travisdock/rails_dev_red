@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="10">
+<map version="1.10" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="11">
  <editorsettings>
   <export target="../assets/maps/venue.json" format="json"/>
  </editorsettings>
@@ -190,6 +190,14 @@
     <property name="dialog" value="Oh hey, sorry, didn't see you there. Hope you are enjoying the game!"/>
     <property name="facing" value="down"/>
     <property name="spriteKey" value="pg3"/>
+   </properties>
+  </object>
+  <object id="10" name="Angry Walter" type="trainer" x="231.667" y="7.83333">
+   <properties>
+    <property name="facing" value="down"/>
+    <property name="requiresGym" value="dhh"/>
+    <property name="spriteKey" value="pg14"/>
+    <property name="trainerId" value="walter_white"/>
    </properties>
   </object>
  </objectgroup>
