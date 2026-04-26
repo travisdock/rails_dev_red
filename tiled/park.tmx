@@ -244,7 +244,7 @@
    <properties>
     <property name="dialog" value="Let go with AI. You won't even need to read the code."/>
     <property name="facing" value="left"/>
-    <property name="spriteKey" value="npc18"/>
+    <property name="spriteKey" value="pg2"/>
    </properties>
   </object>
   <object id="25" name="Speaker Nikky" type="npc" x="312" y="231.333">

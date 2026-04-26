@@ -456,7 +456,7 @@
                         {
                          "name":"spriteKey",
                          "type":"string",
-                         "value":"npc18"
+                         "value":"pg2"
                         }],
                  "rotation":0,
                  "type":"npc",

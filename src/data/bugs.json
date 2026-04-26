@@ -161,14 +161,14 @@
     "moves": ["z_index_9999"]
   },
   "hallucination": {
-    "id": "hallucination", "name": "Hallucination", "type": "runtime",
+    "id": "hallucination", "name": "Hallucination", "type": "ai",
     "description": "Confidently calls a method that doesn't exist.",
     "baseStats": { "hp": 40, "attack": 45, "defense": 30, "spAttack": 60, "spDefense": 30, "speed": 55 },
     "baseXP": 66,
     "moves": ["made_up_method", "gaslight"]
   },
   "context_overflow": {
-    "id": "context_overflow", "name": "Context Overflow", "type": "runtime",
+    "id": "context_overflow", "name": "Context Overflow", "type": "ai",
     "description": "Too many tokens. Earlier instructions forgotten.",
     "baseStats": { "hp": 55, "attack": 45, "defense": 50, "spAttack": 50, "spDefense": 45, "speed": 30 },
     "baseXP": 66,

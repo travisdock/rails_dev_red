@@ -7,7 +7,7 @@ const ENCOUNTER_RATE = 0.15;
 const MAX_PARTY_SIZE = 6;
 const MAX_MOVES = 4;
 
-const TYPES = ['security', 'performance', 'testing', 'rails', 'frontend', 'runtime'];
+const TYPES = ['security', 'performance', 'testing', 'rails', 'frontend', 'runtime', 'ai'];
 
 // Text style defaults for crisp pixel text
 const TEXT_STYLE = {
@@ -27,7 +27,8 @@ const TYPE_COLORS = {
   testing: 0x2ecc71,
   rails: 0x3498db,
   frontend: 0x9b59b6,
-  runtime: 0xe67e22
+  runtime: 0xe67e22,
+  ai: 0x1abc9c
 };
 
 const DIRECTIONS = {

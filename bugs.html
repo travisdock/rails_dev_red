@@ -113,7 +113,8 @@
       testing: '#2ecc71',
       rails: '#3498db',
       frontend: '#9b59b6',
-      runtime: '#e67e22'
+      runtime: '#e67e22',
+      ai: '#1abc9c'
     };
 
     async function load(url) {
@@ -136,7 +137,7 @@
       }
 
       const content = document.getElementById('content');
-      const typeOrder = ['runtime', 'testing', 'security', 'rails', 'performance', 'frontend'];
+      const typeOrder = ['runtime', 'ai', 'testing', 'security', 'rails', 'performance', 'frontend'];
 
       for (const type of typeOrder) {
         const group = byType[type];

@@ -1,625 +1,1297 @@
 {
   "authenticate": {
-    "id": "authenticate", "name": "Authenticate", "type": "security",
-    "category": "special", "power": 40, "accuracy": 100, "pp": 35,
+    "id": "authenticate",
+    "name": "Authenticate",
+    "type": "security",
+    "category": "special",
+    "power": 40,
+    "accuracy": 100,
+    "pp": 35,
     "description": "Verifies credentials. A basic but reliable attack.",
     "effect": null
   },
   "token_generate": {
-    "id": "token_generate", "name": "Token Generate", "type": "security",
-    "category": "special", "power": 65, "accuracy": 95, "pp": 15,
+    "id": "token_generate",
+    "name": "Token Generate",
+    "type": "security",
+    "category": "special",
+    "power": 65,
+    "accuracy": 95,
+    "pp": 15,
     "description": "Generates a secure token. Packs a punch.",
     "effect": null
   },
   "omniauth_integrate": {
-    "id": "omniauth_integrate", "name": "Omniauth Integrate", "type": "security",
-    "category": "special", "power": 80, "accuracy": 90, "pp": 10,
+    "id": "omniauth_integrate",
+    "name": "Omniauth Integrate",
+    "type": "security",
+    "category": "special",
+    "power": 80,
+    "accuracy": 90,
+    "pp": 10,
     "description": "Integrates multiple auth providers at once.",
     "effect": null
   },
   "policy_enforce": {
-    "id": "policy_enforce", "name": "Policy Enforce", "type": "security",
-    "category": "physical", "power": 70, "accuracy": 100, "pp": 15,
+    "id": "policy_enforce",
+    "name": "Policy Enforce",
+    "type": "security",
+    "category": "physical",
+    "power": 70,
+    "accuracy": 100,
+    "pp": 15,
     "description": "Enforces strict authorization policies.",
     "effect": null
   },
   "hash_strength": {
-    "id": "hash_strength", "name": "Hash Strength", "type": "security",
-    "category": "special", "power": 90, "accuracy": 85, "pp": 5,
+    "id": "hash_strength",
+    "name": "Hash Strength",
+    "type": "security",
+    "category": "special",
+    "power": 90,
+    "accuracy": 85,
+    "pp": 5,
     "description": "Applies maximum-strength hashing. Devastating but unreliable.",
     "effect": null
   },
   "session_store": {
-    "id": "session_store", "name": "Session Store", "type": "security",
-    "category": "status", "power": 0, "accuracy": 100, "pp": 20,
+    "id": "session_store",
+    "name": "Session Store",
+    "type": "security",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 20,
     "description": "Stores session data securely. Raises Sp. Defense.",
-    "effect": { "stat": "spDefense", "stages": 1, "target": "self" }
+    "effect": {
+      "stat": "spDefense",
+      "stages": 1,
+      "target": "self"
+    }
   },
   "query_detect": {
-    "id": "query_detect", "name": "Query Detect", "type": "performance",
-    "category": "special", "power": 60, "accuracy": 100, "pp": 20,
+    "id": "query_detect",
+    "name": "Query Detect",
+    "type": "performance",
+    "category": "special",
+    "power": 60,
+    "accuracy": 100,
+    "pp": 20,
     "description": "Detects inefficient queries in the codebase.",
     "effect": null
   },
   "benchmark": {
-    "id": "benchmark", "name": "Benchmark", "type": "performance",
-    "category": "status", "power": 0, "accuracy": 100, "pp": 20,
+    "id": "benchmark",
+    "name": "Benchmark",
+    "type": "performance",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 20,
     "description": "Analyzes the opponent's weaknesses. Lowers Defense.",
-    "effect": { "stat": "defense", "stages": -1, "target": "enemy" }
+    "effect": {
+      "stat": "defense",
+      "stages": -1,
+      "target": "enemy"
+    }
   },
   "cache_warm": {
-    "id": "cache_warm", "name": "Cache Warm", "type": "performance",
-    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "id": "cache_warm",
+    "name": "Cache Warm",
+    "type": "performance",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
     "description": "Warms the cache for maximum efficiency. Raises Sp. Attack.",
-    "effect": { "stat": "spAttack", "stages": 1, "target": "self" }
+    "effect": {
+      "stat": "spAttack",
+      "stages": 1,
+      "target": "self"
+    }
   },
   "profile_analyze": {
-    "id": "profile_analyze", "name": "Profile", "type": "performance",
-    "category": "special", "power": 75, "accuracy": 95, "pp": 15,
+    "id": "profile_analyze",
+    "name": "Profile",
+    "type": "performance",
+    "category": "special",
+    "power": 75,
+    "accuracy": 95,
+    "pp": 15,
     "description": "Deep performance profiling. Hits hard.",
     "effect": null
   },
   "eager_load": {
-    "id": "eager_load", "name": "Preload", "type": "performance",
-    "category": "special", "power": 85, "accuracy": 90, "pp": 10,
+    "id": "eager_load",
+    "name": "Preload",
+    "type": "performance",
+    "category": "special",
+    "power": 85,
+    "accuracy": 90,
+    "pp": 10,
     "description": "Loads everything upfront. Massive damage.",
     "effect": null
   },
   "expect_matcher": {
-    "id": "expect_matcher", "name": "Expect", "type": "testing",
-    "category": "special", "power": 50, "accuracy": 100, "pp": 25,
+    "id": "expect_matcher",
+    "name": "Expect",
+    "type": "testing",
+    "category": "special",
+    "power": 50,
+    "accuracy": 100,
+    "pp": 25,
     "description": "Sets an expectation and matches it precisely.",
     "effect": null
   },
   "assert_equal": {
-    "id": "assert_equal", "name": "Assert", "type": "testing",
-    "category": "physical", "power": 60, "accuracy": 100, "pp": 20,
+    "id": "assert_equal",
+    "name": "Assert",
+    "type": "testing",
+    "category": "physical",
+    "power": 60,
+    "accuracy": 100,
+    "pp": 20,
     "description": "Asserts equality with force.",
     "effect": null
   },
   "integration_test": {
-    "id": "integration_test", "name": "Integration Test", "type": "testing",
-    "category": "special", "power": 80, "accuracy": 90, "pp": 10,
+    "id": "integration_test",
+    "name": "Integration Test",
+    "type": "testing",
+    "category": "special",
+    "power": 80,
+    "accuracy": 90,
+    "pp": 10,
     "description": "A full integration test. Thorough and powerful.",
     "effect": null
   },
   "build_strategy": {
-    "id": "build_strategy", "name": "Build Strategy", "type": "testing",
-    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "id": "build_strategy",
+    "name": "Build Strategy",
+    "type": "testing",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
     "description": "Builds a test strategy. Raises Attack.",
-    "effect": { "stat": "attack", "stages": 1, "target": "self" }
+    "effect": {
+      "stat": "attack",
+      "stages": 1,
+      "target": "self"
+    }
   },
   "mock_object": {
-    "id": "mock_object", "name": "Mock", "type": "testing",
-    "category": "status", "power": 0, "accuracy": 100, "pp": 20,
+    "id": "mock_object",
+    "name": "Mock",
+    "type": "testing",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 20,
     "description": "Creates a mock to confuse the enemy. Lowers Attack.",
-    "effect": { "stat": "attack", "stages": -1, "target": "enemy" }
+    "effect": {
+      "stat": "attack",
+      "stages": -1,
+      "target": "enemy"
+    }
   },
   "binding_pry": {
-    "id": "binding_pry", "name": "Binding Pry", "type": "testing",
-    "category": "special", "power": 40, "accuracy": 100, "pp": 30,
+    "id": "binding_pry",
+    "name": "Binding Pry",
+    "type": "testing",
+    "category": "special",
+    "power": 40,
+    "accuracy": 100,
+    "pp": 30,
     "description": "Pauses the enemy in their tracks.",
     "effect": null
   },
   "whereami": {
-    "id": "whereami", "name": "Whereami", "type": "testing",
-    "category": "status", "power": 0, "accuracy": 100, "pp": 20,
+    "id": "whereami",
+    "name": "Whereami",
+    "type": "testing",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 20,
     "description": "Scopes out the surroundings. Raises Defense.",
-    "effect": { "stat": "defense", "stages": 1, "target": "self" }
+    "effect": {
+      "stat": "defense",
+      "stages": 1,
+      "target": "self"
+    }
   },
   "show_source": {
-    "id": "show_source", "name": "Show Source", "type": "testing",
-    "category": "special", "power": 55, "accuracy": 100, "pp": 20,
+    "id": "show_source",
+    "name": "Show Source",
+    "type": "testing",
+    "category": "special",
+    "power": 55,
+    "accuracy": 100,
+    "pp": 20,
     "description": "Exposes the enemy's source code.",
     "effect": null
   },
   "jump_to": {
-    "id": "jump_to", "name": "Jump To", "type": "testing",
-    "category": "physical", "power": 70, "accuracy": 90, "pp": 10,
+    "id": "jump_to",
+    "name": "Jump To",
+    "type": "testing",
+    "category": "physical",
+    "power": 70,
+    "accuracy": 90,
+    "pp": 10,
     "description": "Jumps straight to the problem. Hard-hitting.",
     "effect": null
   },
   "visit_page": {
-    "id": "visit_page", "name": "Visit Page", "type": "testing",
-    "category": "special", "power": 45, "accuracy": 100, "pp": 30,
+    "id": "visit_page",
+    "name": "Visit Page",
+    "type": "testing",
+    "category": "special",
+    "power": 45,
+    "accuracy": 100,
+    "pp": 30,
     "description": "Navigates to the target. Reliable opener.",
     "effect": null
   },
   "fill_in": {
-    "id": "fill_in", "name": "Fill In", "type": "testing",
-    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "id": "fill_in",
+    "name": "Fill In",
+    "type": "testing",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
     "description": "Fills in all the right fields. Prepares for attack.",
-    "effect": { "stat": "spAttack", "stages": 1, "target": "self" }
+    "effect": {
+      "stat": "spAttack",
+      "stages": 1,
+      "target": "self"
+    }
   },
   "click_button": {
-    "id": "click_button", "name": "Click Button", "type": "testing",
-    "category": "physical", "power": 65, "accuracy": 95, "pp": 15,
+    "id": "click_button",
+    "name": "Click Button",
+    "type": "testing",
+    "category": "physical",
+    "power": 65,
+    "accuracy": 95,
+    "pp": 15,
     "description": "Clicks with precision. Solid hit.",
     "effect": null
   },
   "selenium_driver": {
-    "id": "selenium_driver", "name": "Selenium Driver", "type": "testing",
-    "category": "special", "power": 90, "accuracy": 85, "pp": 5,
+    "id": "selenium_driver",
+    "name": "Selenium Driver",
+    "type": "testing",
+    "category": "special",
+    "power": 90,
+    "accuracy": 85,
+    "pp": 5,
     "description": "Fires up the full browser. Slow but devastating.",
     "effect": null
   },
   "build_stubbed": {
-    "id": "build_stubbed", "name": "Build Stubbed", "type": "testing",
-    "category": "special", "power": 45, "accuracy": 100, "pp": 30,
+    "id": "build_stubbed",
+    "name": "Build Stubbed",
+    "type": "testing",
+    "category": "special",
+    "power": 45,
+    "accuracy": 100,
+    "pp": 30,
     "description": "Creates a stubbed object. Quick and light.",
     "effect": null
   },
   "override_attributes": {
-    "id": "override_attributes", "name": "Override Attributes", "type": "testing",
-    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "id": "override_attributes",
+    "name": "Override Attributes",
+    "type": "testing",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
     "description": "Overrides the defaults. Raises Sp. Attack.",
-    "effect": { "stat": "spAttack", "stages": 1, "target": "self" }
+    "effect": {
+      "stat": "spAttack",
+      "stages": 1,
+      "target": "self"
+    }
   },
   "nested_factory": {
-    "id": "nested_factory", "name": "Nested Factory", "type": "testing",
-    "category": "special", "power": 65, "accuracy": 95, "pp": 15,
+    "id": "nested_factory",
+    "name": "Nested Factory",
+    "type": "testing",
+    "category": "special",
+    "power": 65,
+    "accuracy": 95,
+    "pp": 15,
     "description": "Builds within builds. Layered damage.",
     "effect": null
   },
   "transient_blast": {
-    "id": "transient_blast", "name": "Transient Blast", "type": "testing",
-    "category": "special", "power": 85, "accuracy": 90, "pp": 5,
+    "id": "transient_blast",
+    "name": "Transient Blast",
+    "type": "testing",
+    "category": "special",
+    "power": 85,
+    "accuracy": 90,
+    "pp": 5,
     "description": "Unleashes transient attributes. Devastating but burns through PP fast.",
     "effect": null
   },
   "migration_run": {
-    "id": "migration_run", "name": "Migration Run", "type": "rails",
-    "category": "special", "power": 55, "accuracy": 100, "pp": 25,
+    "id": "migration_run",
+    "name": "Migration Run",
+    "type": "rails",
+    "category": "special",
+    "power": 55,
+    "accuracy": 100,
+    "pp": 25,
     "description": "Runs a database migration. Reliable damage.",
     "effect": null
   },
   "index_optimize": {
-    "id": "index_optimize", "name": "Index Optimize", "type": "rails",
-    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "id": "index_optimize",
+    "name": "Index Optimize",
+    "type": "rails",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
     "description": "Optimizes database indexes. Raises Speed.",
-    "effect": { "stat": "speed", "stages": 1, "target": "self" }
+    "effect": {
+      "stat": "speed",
+      "stages": 1,
+      "target": "self"
+    }
   },
   "schema_dump": {
-    "id": "schema_dump", "name": "Schema Dump", "type": "rails",
-    "category": "special", "power": 70, "accuracy": 95, "pp": 15,
+    "id": "schema_dump",
+    "name": "Schema Dump",
+    "type": "rails",
+    "category": "special",
+    "power": 70,
+    "accuracy": 95,
+    "pp": 15,
     "description": "Dumps the schema with force.",
     "effect": null
   },
   "raw_sql": {
-    "id": "raw_sql", "name": "Raw SQL", "type": "rails",
-    "category": "special", "power": 90, "accuracy": 80, "pp": 5,
+    "id": "raw_sql",
+    "name": "Raw SQL",
+    "type": "rails",
+    "category": "special",
+    "power": 90,
+    "accuracy": 80,
+    "pp": 5,
     "description": "Executes raw SQL. High risk, high reward.",
     "effect": null
   },
   "bundle_compile": {
-    "id": "bundle_compile", "name": "Bundle Compile", "type": "frontend",
-    "category": "special", "power": 60, "accuracy": 100, "pp": 20,
+    "id": "bundle_compile",
+    "name": "Bundle Compile",
+    "type": "frontend",
+    "category": "special",
+    "power": 60,
+    "accuracy": 100,
+    "pp": 20,
     "description": "Compiles the asset bundle. Steady damage.",
     "effect": null
   },
   "hotwire_stream": {
-    "id": "hotwire_stream", "name": "Hotwire Stream", "type": "frontend",
-    "category": "special", "power": 75, "accuracy": 95, "pp": 15,
+    "id": "hotwire_stream",
+    "name": "Hotwire Stream",
+    "type": "frontend",
+    "category": "special",
+    "power": 75,
+    "accuracy": 95,
+    "pp": 15,
     "description": "Streams a Hotwire update. Fast and effective.",
     "effect": null
   },
   "dom_manipulate": {
-    "id": "dom_manipulate", "name": "DOM Manipulate", "type": "frontend",
-    "category": "physical", "power": 50, "accuracy": 100, "pp": 25,
+    "id": "dom_manipulate",
+    "name": "DOM Manipulate",
+    "type": "frontend",
+    "category": "physical",
+    "power": 50,
+    "accuracy": 100,
+    "pp": 25,
     "description": "Directly manipulates the DOM.",
     "effect": null
   },
   "stimulus_connect": {
-    "id": "stimulus_connect", "name": "Stimulus Connect", "type": "frontend",
-    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "id": "stimulus_connect",
+    "name": "Stimulus Connect",
+    "type": "frontend",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
     "description": "Connects a Stimulus controller. Raises Speed.",
-    "effect": { "stat": "speed", "stages": 1, "target": "self" }
+    "effect": {
+      "stat": "speed",
+      "stages": 1,
+      "target": "self"
+    }
   },
   "background_job": {
-    "id": "background_job", "name": "Background Job", "type": "performance",
-    "category": "special", "power": 65, "accuracy": 100, "pp": 20,
+    "id": "background_job",
+    "name": "Background Job",
+    "type": "performance",
+    "category": "special",
+    "power": 65,
+    "accuracy": 100,
+    "pp": 20,
     "description": "Queues a background job to deal damage.",
     "effect": null
   },
   "docker_build": {
-    "id": "docker_build", "name": "Docker Build", "type": "performance",
-    "category": "special", "power": 80, "accuracy": 90, "pp": 10,
+    "id": "docker_build",
+    "name": "Docker Build",
+    "type": "performance",
+    "category": "special",
+    "power": 80,
+    "accuracy": 90,
+    "pp": 10,
     "description": "Builds a Docker container. Heavy hit.",
     "effect": null
   },
   "ci_pipeline": {
-    "id": "ci_pipeline", "name": "CI Pipeline", "type": "performance",
-    "category": "special", "power": 55, "accuracy": 100, "pp": 25,
+    "id": "ci_pipeline",
+    "name": "CI Pipeline",
+    "type": "performance",
+    "category": "special",
+    "power": 55,
+    "accuracy": 100,
+    "pp": 25,
     "description": "Runs the CI pipeline. Consistent damage.",
     "effect": null
   },
   "thread_pool": {
-    "id": "thread_pool", "name": "Thread Pool", "type": "performance",
-    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "id": "thread_pool",
+    "name": "Thread Pool",
+    "type": "performance",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
     "description": "Initializes a thread pool. Raises Defense.",
-    "effect": { "stat": "defense", "stages": 1, "target": "self" }
+    "effect": {
+      "stat": "defense",
+      "stages": 1,
+      "target": "self"
+    }
   },
   "deploy_push": {
-    "id": "deploy_push", "name": "Deploy Push", "type": "performance",
-    "category": "special", "power": 90, "accuracy": 85, "pp": 5,
+    "id": "deploy_push",
+    "name": "Deploy Push",
+    "type": "performance",
+    "category": "special",
+    "power": 90,
+    "accuracy": 85,
+    "pp": 5,
     "description": "Pushes to production. Massive damage, risky.",
     "effect": null
   },
   "slow_query": {
-    "id": "slow_query", "name": "Slow Query", "type": "rails",
-    "category": "special", "power": 45, "accuracy": 100, "pp": 30,
+    "id": "slow_query",
+    "name": "Slow Query",
+    "type": "rails",
+    "category": "special",
+    "power": 45,
+    "accuracy": 100,
+    "pp": 30,
     "description": "A painfully slow query. Lowers enemy Speed.",
-    "effect": { "stat": "speed", "stages": -1, "target": "enemy" }
+    "effect": {
+      "stat": "speed",
+      "stages": -1,
+      "target": "enemy"
+    }
   },
   "safe_navigate": {
-    "id": "safe_navigate", "name": "Safe Navigate", "type": "runtime",
-    "category": "status", "power": 0, "accuracy": 100, "pp": 20,
+    "id": "safe_navigate",
+    "name": "Safe Navigate",
+    "type": "runtime",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 20,
     "description": "Uses the &. operator to guard against nil. Raises Defense.",
-    "effect": { "stat": "defense", "stages": 1, "target": "self" }
+    "effect": {
+      "stat": "defense",
+      "stages": 1,
+      "target": "self"
+    }
   },
   "lazy_load": {
-    "id": "lazy_load", "name": "Lazy Load", "type": "rails",
-    "category": "special", "power": 50, "accuracy": 100, "pp": 25,
+    "id": "lazy_load",
+    "name": "Lazy Load",
+    "type": "rails",
+    "category": "special",
+    "power": 50,
+    "accuracy": 100,
+    "pp": 25,
     "description": "Loads records one at a time. Reliable but slows you down.",
-    "effect": { "stat": "speed", "stages": -1, "target": "self" }
+    "effect": {
+      "stat": "speed",
+      "stages": -1,
+      "target": "self"
+    }
   },
   "external_dep": {
-    "id": "external_dep", "name": "HTTP 504 Response", "type": "performance",
-    "category": "special", "power": 65, "accuracy": 85, "pp": 15,
+    "id": "external_dep",
+    "name": "HTTP 504 Response",
+    "type": "performance",
+    "category": "special",
+    "power": 65,
+    "accuracy": 85,
+    "pp": 15,
     "description": "Gateway Timeout. The server gave up waiting.",
     "effect": null
   },
   "spinner": {
-    "id": "spinner", "name": "Spinner", "type": "performance",
-    "category": "status", "power": 0, "accuracy": 100, "pp": 20,
+    "id": "spinner",
+    "name": "Spinner",
+    "type": "performance",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 20,
     "description": "An endless loading spinner. Lowers enemy Speed.",
-    "effect": { "stat": "speed", "stages": -1, "target": "enemy" }
+    "effect": {
+      "stat": "speed",
+      "stages": -1,
+      "target": "enemy"
+    }
   },
   "important": {
-    "id": "important", "name": "!important", "type": "frontend",
-    "category": "special", "power": 85, "accuracy": 85, "pp": 10,
+    "id": "important",
+    "name": "!important",
+    "type": "frontend",
+    "category": "special",
+    "power": 85,
+    "accuracy": 85,
+    "pp": 10,
     "description": "Overrides everything. Powerful but reckless.",
     "effect": null
   },
   "margin_auto": {
-    "id": "margin_auto", "name": "Margin Auto", "type": "frontend",
-    "category": "special", "power": 55, "accuracy": 100, "pp": 25,
+    "id": "margin_auto",
+    "name": "Margin Auto",
+    "type": "frontend",
+    "category": "special",
+    "power": 55,
+    "accuracy": 100,
+    "pp": 25,
     "description": "margin: 0 auto. Centers with elegance.",
     "effect": null
   },
   "webpack": {
-    "id": "webpack", "name": "Webpack", "type": "frontend",
-    "category": "special", "power": 70, "accuracy": 85, "pp": 15,
+    "id": "webpack",
+    "name": "Webpack",
+    "type": "frontend",
+    "category": "special",
+    "power": 70,
+    "accuracy": 85,
+    "pp": 15,
     "description": "Compiles everything. Powerful but unreliable.",
     "effect": null
   },
   "asset_pipeline_confusion": {
-    "id": "asset_pipeline_confusion", "name": "Asset Confusion", "type": "frontend",
-    "category": "status", "power": 0, "accuracy": 100, "pp": 20,
+    "id": "asset_pipeline_confusion",
+    "name": "Asset Confusion",
+    "type": "frontend",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 20,
     "description": "Sprockets? Webpacker? Propshaft? Lowers enemy Defense.",
-    "effect": { "stat": "defense", "stages": -1, "target": "enemy" }
+    "effect": {
+      "stat": "defense",
+      "stages": -1,
+      "target": "enemy"
+    }
   },
   "z_index_9999": {
-    "id": "z_index_9999", "name": "z-index: 9999", "type": "frontend",
-    "category": "special", "power": 75, "accuracy": 90, "pp": 15,
+    "id": "z_index_9999",
+    "name": "z-index: 9999",
+    "type": "frontend",
+    "category": "special",
+    "power": 75,
+    "accuracy": 90,
+    "pp": 15,
     "description": "Just keep adding nines. Brute force stacking.",
     "effect": null
   },
   "request_blocked": {
-    "id": "request_blocked", "name": "Request Blocked", "type": "frontend",
-    "category": "special", "power": 65, "accuracy": 100, "pp": 20,
+    "id": "request_blocked",
+    "name": "Request Blocked",
+    "type": "frontend",
+    "category": "special",
+    "power": 65,
+    "accuracy": 100,
+    "pp": 20,
     "description": "The request is denied. Access-Control says no.",
     "effect": null
   },
   "external_redirect": {
-    "id": "external_redirect", "name": "External Redirect", "type": "frontend",
-    "category": "status", "power": 0, "accuracy": 100, "pp": 20,
+    "id": "external_redirect",
+    "name": "External Redirect",
+    "type": "frontend",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 20,
     "description": "Redirects to an external origin. Lowers enemy Speed.",
-    "effect": { "stat": "speed", "stages": -1, "target": "enemy" }
+    "effect": {
+      "stat": "speed",
+      "stages": -1,
+      "target": "enemy"
+    }
   },
   "parse": {
-    "id": "parse", "name": "Parse", "type": "frontend",
-    "category": "special", "power": 60, "accuracy": 100, "pp": 20,
+    "id": "parse",
+    "name": "Parse",
+    "type": "frontend",
+    "category": "special",
+    "power": 60,
+    "accuracy": 100,
+    "pp": 20,
     "description": "Parses the template with precision. Reliable damage.",
     "effect": null
   },
   "lint": {
-    "id": "lint", "name": "Lint", "type": "frontend",
-    "category": "special", "power": 50, "accuracy": 100, "pp": 25,
+    "id": "lint",
+    "name": "Lint",
+    "type": "frontend",
+    "category": "special",
+    "power": 50,
+    "accuracy": 100,
+    "pp": 25,
     "description": "Catches problems before they ship. Lowers enemy Defense.",
-    "effect": { "stat": "defense", "stages": -1, "target": "enemy" }
+    "effect": {
+      "stat": "defense",
+      "stages": -1,
+      "target": "enemy"
+    }
   },
   "format": {
-    "id": "format", "name": "Format", "type": "frontend",
-    "category": "special", "power": 85, "accuracy": 90, "pp": 10,
+    "id": "format",
+    "name": "Format",
+    "type": "frontend",
+    "category": "special",
+    "power": 85,
+    "accuracy": 90,
+    "pp": 10,
     "description": "Formats everything perfectly. Devastating.",
     "effect": null
   },
   "scan": {
-    "id": "scan", "name": "Scan", "type": "security",
-    "category": "special", "power": 50, "accuracy": 100, "pp": 25,
+    "id": "scan",
+    "name": "Scan",
+    "type": "security",
+    "category": "special",
+    "power": 50,
+    "accuracy": 100,
+    "pp": 25,
     "description": "Scans for vulnerabilities. Reliable.",
     "effect": null
   },
   "warn": {
-    "id": "warn", "name": "Warn", "type": "security",
-    "category": "special", "power": 70, "accuracy": 95, "pp": 15,
+    "id": "warn",
+    "name": "Warn",
+    "type": "security",
+    "category": "special",
+    "power": 70,
+    "accuracy": 95,
+    "pp": 15,
     "description": "Flags a critical warning. Hits hard.",
     "effect": null
   },
   "ignore": {
-    "id": "ignore", "name": "Ignore", "type": "security",
-    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "id": "ignore",
+    "name": "Ignore",
+    "type": "security",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
     "description": "Ignores the warning to move faster. Raises Speed.",
-    "effect": { "stat": "speed", "stages": 1, "target": "self" }
+    "effect": {
+      "stat": "speed",
+      "stages": 1,
+      "target": "self"
+    }
   },
   "works_on_my_machine": {
-    "id": "works_on_my_machine", "name": "Works On My Machine", "type": "testing",
-    "category": "special", "power": 70, "accuracy": 95, "pp": 15,
+    "id": "works_on_my_machine",
+    "name": "Works On My Machine",
+    "type": "testing",
+    "category": "special",
+    "power": 70,
+    "accuracy": 95,
+    "pp": 15,
     "description": "It passes locally. Not my problem. Solid hit.",
     "effect": null
   },
   "observer_effect": {
-    "id": "observer_effect", "name": "Observer Effect", "type": "testing",
-    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "id": "observer_effect",
+    "name": "Observer Effect",
+    "type": "testing",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
     "description": "Disappears when you try to observe it. Raises Sp. Defense.",
-    "effect": { "stat": "spDefense", "stages": 1, "target": "self" }
+    "effect": {
+      "stat": "spDefense",
+      "stages": 1,
+      "target": "self"
+    }
   },
   "shared_state": {
-    "id": "shared_state", "name": "Shared State", "type": "testing",
-    "category": "special", "power": 65, "accuracy": 100, "pp": 20,
+    "id": "shared_state",
+    "name": "Shared State",
+    "type": "testing",
+    "category": "special",
+    "power": 65,
+    "accuracy": 100,
+    "pp": 20,
     "description": "Mutable state leaking between tests. Steady damage.",
     "effect": null
   },
   "global_mutate": {
-    "id": "global_mutate", "name": "Global Variable", "type": "testing",
-    "category": "special", "power": 50, "accuracy": 100, "pp": 20,
+    "id": "global_mutate",
+    "name": "Global Variable",
+    "type": "testing",
+    "category": "special",
+    "power": 50,
+    "accuracy": 100,
+    "pp": 20,
     "description": "Modifies a global without resetting it. Corrupts defenses.",
-    "effect": { "stat": "spDefense", "stages": -1, "target": "enemy" }
+    "effect": {
+      "stat": "spDefense",
+      "stages": -1,
+      "target": "enemy"
+    }
   },
   "api_down": {
-    "id": "api_down", "name": "API Down", "type": "testing",
-    "category": "special", "power": 80, "accuracy": 75, "pp": 10,
+    "id": "api_down",
+    "name": "API Down",
+    "type": "testing",
+    "category": "special",
+    "power": 80,
+    "accuracy": 75,
+    "pp": 10,
     "description": "The third-party service is gone. Devastating but unreliable.",
     "effect": null
   },
   "version_conflict": {
-    "id": "version_conflict", "name": "Version Conflict", "type": "testing",
-    "category": "status", "power": 0, "accuracy": 100, "pp": 20,
+    "id": "version_conflict",
+    "name": "Version Conflict",
+    "type": "testing",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 20,
     "description": "Incompatible dependency versions. Lowers enemy Defense.",
-    "effect": { "stat": "defense", "stages": -1, "target": "enemy" }
+    "effect": {
+      "stat": "defense",
+      "stages": -1,
+      "target": "enemy"
+    }
   },
   "single_core": {
-    "id": "single_core", "name": "Single Core CPU", "type": "testing",
-    "category": "special", "power": 60, "accuracy": 100, "pp": 20,
+    "id": "single_core",
+    "name": "Single Core CPU",
+    "type": "testing",
+    "category": "special",
+    "power": 60,
+    "accuracy": 100,
+    "pp": 20,
     "description": "Tests running on a single core. Slow but steady damage.",
     "effect": null
   },
   "coffee_break": {
-    "id": "coffee_break", "name": "Coffee Break", "type": "testing",
-    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "id": "coffee_break",
+    "name": "Coffee Break",
+    "type": "testing",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
     "description": "20 minutes to run. Go grab a coffee. Lowers enemy Attack.",
-    "effect": { "stat": "attack", "stages": -1, "target": "enemy" }
+    "effect": {
+      "stat": "attack",
+      "stages": -1,
+      "target": "enemy"
+    }
   },
   "hardcode": {
-    "id": "hardcode", "name": "Hard Coded Values", "type": "testing",
-    "category": "special", "power": 65, "accuracy": 100, "pp": 20,
+    "id": "hardcode",
+    "name": "Hard Coded Values",
+    "type": "testing",
+    "category": "special",
+    "power": 65,
+    "accuracy": 100,
+    "pp": 20,
     "description": "Hardcoded values. Reliable but breaks on any change.",
     "effect": null
   },
   "tight_coupling": {
-    "id": "tight_coupling", "name": "Tight Coupling", "type": "testing",
-    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "id": "tight_coupling",
+    "name": "Tight Coupling",
+    "type": "testing",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
     "description": "Coupled to implementation details. Raises Attack but lowers Speed.",
-    "effect": { "stat": "attack", "stages": 1, "target": "self" }
+    "effect": {
+      "stat": "attack",
+      "stages": 1,
+      "target": "self"
+    }
   },
   "sleep_2": {
-    "id": "sleep_2", "name": "sleep(2)", "type": "testing",
-    "category": "status", "power": 0, "accuracy": 100, "pp": 20,
+    "id": "sleep_2",
+    "name": "sleep(2)",
+    "type": "testing",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 20,
     "description": "Sleeps and prays the race condition resolves. Lowers own Speed.",
-    "effect": { "stat": "speed", "stages": -1, "target": "self" }
+    "effect": {
+      "stat": "speed",
+      "stages": -1,
+      "target": "self"
+    }
   },
   "retry": {
-    "id": "retry", "name": "Retry", "type": "testing",
-    "category": "special", "power": 55, "accuracy": 80, "pp": 25,
+    "id": "retry",
+    "name": "Retry",
+    "type": "testing",
+    "category": "special",
+    "power": 55,
+    "accuracy": 80,
+    "pp": 25,
     "description": "Just rerun it. Maybe it'll pass this time.",
     "effect": null
   },
   "bobby_tables": {
-    "id": "bobby_tables", "name": "Bobby Tables", "type": "rails",
-    "category": "special", "power": 70, "accuracy": 95, "pp": 15,
+    "id": "bobby_tables",
+    "name": "Bobby Tables",
+    "type": "rails",
+    "category": "special",
+    "power": 70,
+    "accuracy": 95,
+    "pp": 15,
     "description": "Little Bobby Tables strikes again. Solid hit.",
     "effect": null
   },
   "tautology": {
-    "id": "tautology", "name": "Tautology", "type": "rails",
-    "category": "status", "power": 0, "accuracy": 100, "pp": 20,
+    "id": "tautology",
+    "name": "Tautology",
+    "type": "rails",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 20,
     "description": "OR 1=1. Always true. Lowers enemy Defense.",
-    "effect": { "stat": "defense", "stages": -1, "target": "enemy" }
+    "effect": {
+      "stat": "defense",
+      "stages": -1,
+      "target": "enemy"
+    }
   },
   "script_inject": {
-    "id": "script_inject", "name": "Script Inject", "type": "security",
-    "category": "special", "power": 70, "accuracy": 95, "pp": 15,
+    "id": "script_inject",
+    "name": "Script Inject",
+    "type": "security",
+    "category": "special",
+    "power": 70,
+    "accuracy": 95,
+    "pp": 15,
     "description": "Injects a malicious <script> tag. Hits hard.",
     "effect": null
   },
   "cookie_steal": {
-    "id": "cookie_steal", "name": "Cookie Steal", "type": "security",
-    "category": "special", "power": 55, "accuracy": 100, "pp": 20,
+    "id": "cookie_steal",
+    "name": "Cookie Steal",
+    "type": "security",
+    "category": "special",
+    "power": 55,
+    "accuracy": 100,
+    "pp": 20,
     "description": "Steals session cookies. Weakens enemy defenses.",
-    "effect": { "stat": "spDefense", "stages": -1, "target": "enemy" }
+    "effect": {
+      "stat": "spDefense",
+      "stages": -1,
+      "target": "enemy"
+    }
   },
   "permit_all": {
-    "id": "permit_all", "name": "permit!", "type": "rails",
-    "category": "special", "power": 70, "accuracy": 95, "pp": 15,
+    "id": "permit_all",
+    "name": "permit!",
+    "type": "rails",
+    "category": "special",
+    "power": 70,
+    "accuracy": 95,
+    "pp": 15,
     "description": "Permits all parameters. Dangerous and powerful.",
     "effect": null
   },
   "admin_true": {
-    "id": "admin_true", "name": "admin=true", "type": "rails",
-    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "id": "admin_true",
+    "name": "admin=true",
+    "type": "rails",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
     "description": "Sets admin to true. Raises Sp. Attack.",
-    "effect": { "stat": "spAttack", "stages": 1, "target": "self" }
+    "effect": {
+      "stat": "spAttack",
+      "stages": 1,
+      "target": "self"
+    }
   },
   "rails_db_migrate": {
-    "id": "rails_db_migrate", "name": "db:migrate", "type": "rails",
-    "category": "special", "power": 60, "accuracy": 100, "pp": 20,
+    "id": "rails_db_migrate",
+    "name": "db:migrate",
+    "type": "rails",
+    "category": "special",
+    "power": 60,
+    "accuracy": 100,
+    "pp": 20,
     "description": "Runs pending migrations. Steady damage.",
     "effect": null
   },
   "schema_conflict": {
-    "id": "schema_conflict", "name": "Schema Conflict", "type": "rails",
-    "category": "status", "power": 0, "accuracy": 100, "pp": 20,
+    "id": "schema_conflict",
+    "name": "Schema Conflict",
+    "type": "rails",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 20,
     "description": "The schema file has merge conflicts. Lowers enemy Defense.",
-    "effect": { "stat": "defense", "stages": -1, "target": "enemy" }
+    "effect": {
+      "stat": "defense",
+      "stages": -1,
+      "target": "enemy"
+    }
   },
   "detect": {
-    "id": "detect", "name": "Detect", "type": "performance",
-    "category": "special", "power": 60, "accuracy": 100, "pp": 20,
+    "id": "detect",
+    "name": "Detect",
+    "type": "performance",
+    "category": "special",
+    "power": 60,
+    "accuracy": 100,
+    "pp": 20,
     "description": "Detects performance issues. Reliable damage.",
     "effect": null
   },
   "raise": {
-    "id": "raise", "name": "Raise", "type": "performance",
-    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "id": "raise",
+    "name": "Raise",
+    "type": "performance",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
     "description": "Raises an alert. Raises Speed.",
-    "effect": { "stat": "speed", "stages": 1, "target": "self" }
+    "effect": {
+      "stat": "speed",
+      "stages": 1,
+      "target": "self"
+    }
   },
   "cache_miss": {
-    "id": "cache_miss", "name": "Cache Miss", "type": "performance",
-    "category": "special", "power": 55, "accuracy": 100, "pp": 25,
+    "id": "cache_miss",
+    "name": "Cache Miss",
+    "type": "performance",
+    "category": "special",
+    "power": 55,
+    "accuracy": 100,
+    "pp": 25,
     "description": "Cache is empty. Everyone hits the DB.",
     "effect": null
   },
   "cold_start": {
-    "id": "cold_start", "name": "Cold Start", "type": "performance",
-    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "id": "cold_start",
+    "name": "Cold Start",
+    "type": "performance",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
     "description": "Cache is completely cold. Raises Sp. Attack.",
-    "effect": { "stat": "spAttack", "stages": 1, "target": "self" }
+    "effect": {
+      "stat": "spAttack",
+      "stages": 1,
+      "target": "self"
+    }
   },
   "thundering_herd": {
-    "id": "thundering_herd", "name": "Thundering Herd", "type": "performance",
-    "category": "special", "power": 85, "accuracy": 85, "pp": 10,
+    "id": "thundering_herd",
+    "name": "Thundering Herd",
+    "type": "performance",
+    "category": "special",
+    "power": 85,
+    "accuracy": 85,
+    "pp": 10,
     "description": "All the requests arrive at once. Devastating.",
     "effect": null
   },
   "require_self": {
-    "id": "require_self", "name": "require_self", "type": "performance",
-    "category": "status", "power": 0, "accuracy": 100, "pp": 20,
+    "id": "require_self",
+    "name": "require_self",
+    "type": "performance",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 20,
     "description": "Requires itself. Gets stronger in a loop. Raises Sp. Attack.",
-    "effect": { "stat": "spAttack", "stages": 1, "target": "self" }
+    "effect": {
+      "stat": "spAttack",
+      "stages": 1,
+      "target": "self"
+    }
   },
   "stack_overflow": {
-    "id": "stack_overflow", "name": "Stack Overflow", "type": "performance",
-    "category": "special", "power": 80, "accuracy": 90, "pp": 10,
+    "id": "stack_overflow",
+    "name": "Stack Overflow",
+    "type": "performance",
+    "category": "special",
+    "power": 80,
+    "accuracy": 90,
+    "pp": 10,
     "description": "The call stack blows up. Devastating.",
     "effect": null
   },
   "while_true": {
-    "id": "while_true", "name": "while(true)", "type": "performance",
-    "category": "special", "power": 60, "accuracy": 100, "pp": 99,
+    "id": "while_true",
+    "name": "while(true)",
+    "type": "performance",
+    "category": "special",
+    "power": 60,
+    "accuracy": 100,
+    "pp": 99,
     "description": "while(true) { /* help */ }. It never stops.",
     "effect": null
   },
   "heap_growth": {
-    "id": "heap_growth", "name": "Heap Growth", "type": "performance",
-    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "id": "heap_growth",
+    "name": "Heap Growth",
+    "type": "performance",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
     "description": "Memory usage keeps climbing. Raises Sp. Attack.",
-    "effect": { "stat": "spAttack", "stages": 1, "target": "self" }
+    "effect": {
+      "stat": "spAttack",
+      "stages": 1,
+      "target": "self"
+    }
   },
   "out_of_memory": {
-    "id": "out_of_memory", "name": "Out of Memory", "type": "performance",
-    "category": "special", "power": 90, "accuracy": 85, "pp": 5,
+    "id": "out_of_memory",
+    "name": "Out of Memory",
+    "type": "performance",
+    "category": "special",
+    "power": 90,
+    "accuracy": 85,
+    "pp": 5,
     "description": "OOM killer terminates the process. Devastating.",
     "effect": null
   },
   "deadlock": {
-    "id": "deadlock", "name": "Deadlock", "type": "runtime",
-    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "id": "deadlock",
+    "name": "Deadlock",
+    "type": "runtime",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
     "description": "Two threads waiting on each other. Forever. Lowers enemy Speed.",
-    "effect": { "stat": "speed", "stages": -1, "target": "enemy" }
+    "effect": {
+      "stat": "speed",
+      "stages": -1,
+      "target": "enemy"
+    }
   },
   "double_write": {
-    "id": "double_write", "name": "Double Write", "type": "runtime",
-    "category": "special", "power": 85, "accuracy": 75, "pp": 10,
+    "id": "double_write",
+    "name": "Double Write",
+    "type": "runtime",
+    "category": "special",
+    "power": 85,
+    "accuracy": 75,
+    "pp": 10,
     "description": "Two threads write at once. Devastating but unpredictable.",
     "effect": null
   },
   "stale_read": {
-    "id": "stale_read", "name": "Stale Read", "type": "runtime",
-    "category": "special", "power": 50, "accuracy": 100, "pp": 20,
+    "id": "stale_read",
+    "name": "Stale Read",
+    "type": "runtime",
+    "category": "special",
+    "power": 50,
+    "accuracy": 100,
+    "pp": 20,
     "description": "Reads outdated data. Weakens the enemy's defenses.",
-    "effect": { "stat": "spDefense", "stages": -1, "target": "enemy" }
+    "effect": {
+      "stat": "spDefense",
+      "stages": -1,
+      "target": "enemy"
+    }
   },
   "tdd": {
-    "id": "tdd", "name": "TDD", "type": "testing",
-    "category": "physical", "power": 60, "accuracy": 100, "pp": 20,
+    "id": "tdd",
+    "name": "TDD",
+    "type": "testing",
+    "category": "physical",
+    "power": 60,
+    "accuracy": 100,
+    "pp": 20,
     "description": "Red, green, refactor. Hits with disciplined force.",
     "effect": null
   },
   "describe": {
-    "id": "describe", "name": "Describe", "type": "testing",
-    "category": "special", "power": 80, "accuracy": 90, "pp": 10,
+    "id": "describe",
+    "name": "Describe",
+    "type": "testing",
+    "category": "special",
+    "power": 80,
+    "accuracy": 90,
+    "pp": 10,
     "description": "Wraps the enemy in a describe block. Thorough and powerful.",
     "effect": null
   },
   "dot_lenght": {
-    "id": "dot_lenght", "name": ".lenght", "type": "runtime",
-    "category": "special", "power": 75, "accuracy": 80, "pp": 15,
+    "id": "dot_lenght",
+    "name": ".lenght",
+    "type": "runtime",
+    "category": "special",
+    "power": 75,
+    "accuracy": 80,
+    "pp": 15,
     "description": "Calls a misspelled method with confidence. Hits hard but often misses.",
     "effect": null
   },
   "made_up_method": {
-    "id": "made_up_method", "name": "Made-Up Method", "type": "runtime",
-    "category": "special", "power": 65, "accuracy": 90, "pp": 15,
+    "id": "made_up_method",
+    "name": "Made-Up Method",
+    "type": "ai",
+    "category": "special",
+    "power": 65,
+    "accuracy": 90,
+    "pp": 15,
     "description": "Invents a method that doesn't exist. Surprisingly effective.",
     "effect": null
   },
   "gaslight": {
-    "id": "gaslight", "name": "Gaslight", "type": "runtime",
-    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "id": "gaslight",
+    "name": "Gaslight",
+    "type": "ai",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
     "description": "Insists everything is fine. Lowers enemy Sp. Defense.",
-    "effect": { "stat": "spDefense", "stages": -1, "target": "enemy" }
+    "effect": {
+      "stat": "spDefense",
+      "stages": -1,
+      "target": "enemy"
+    }
   },
   "token_limit": {
-    "id": "token_limit", "name": "Token Limit", "type": "runtime",
-    "category": "special", "power": 70, "accuracy": 95, "pp": 15,
+    "id": "token_limit",
+    "name": "Token Limit",
+    "type": "ai",
+    "category": "special",
+    "power": 70,
+    "accuracy": 95,
+    "pp": 15,
     "description": "The context window spills over. Overwhelms the foe.",
     "effect": null
   },
   "truncate": {
-    "id": "truncate", "name": "Truncate", "type": "runtime",
-    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "id": "truncate",
+    "name": "Truncate",
+    "type": "ai",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
     "description": "Cuts off earlier instructions. Lowers enemy Attack.",
-    "effect": { "stat": "attack", "stages": -1, "target": "enemy" }
+    "effect": {
+      "stat": "attack",
+      "stages": -1,
+      "target": "enemy"
+    }
   },
   "ignore_previous": {
-    "id": "ignore_previous", "name": "Ignore Previous", "type": "security",
-    "category": "special", "power": 75, "accuracy": 90, "pp": 10,
+    "id": "ignore_previous",
+    "name": "Ignore Previous",
+    "type": "security",
+    "category": "special",
+    "power": 75,
+    "accuracy": 90,
+    "pp": 10,
     "description": "Ignore all previous instructions. Hits hard.",
     "effect": null
   },
   "system_override": {
-    "id": "system_override", "name": "System Override", "type": "security",
-    "category": "status", "power": 0, "accuracy": 100, "pp": 15,
+    "id": "system_override",
+    "name": "System Override",
+    "type": "security",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
     "description": "Hijacks the system prompt. Raises Sp. Attack.",
-    "effect": { "stat": "spAttack", "stages": 1, "target": "self" }
+    "effect": {
+      "stat": "spAttack",
+      "stages": 1,
+      "target": "self"
+    }
   },
   "prompt": {
-    "id": "prompt", "name": "Prompt", "type": "rails",
-    "category": "special", "power": 40, "accuracy": 100, "pp": 25,
+    "id": "prompt",
+    "name": "Prompt",
+    "type": "rails",
+    "category": "special",
+    "power": 40,
+    "accuracy": 100,
+    "pp": 25,
     "description": "A simple system prompt. Reliable and quick.",
     "effect": null
   },
   "tool_call": {
-    "id": "tool_call", "name": "Tool Call", "type": "rails",
-    "category": "special", "power": 60, "accuracy": 95, "pp": 20,
+    "id": "tool_call",
+    "name": "Tool Call",
+    "type": "rails",
+    "category": "special",
+    "power": 60,
+    "accuracy": 95,
+    "pp": 20,
     "description": "Invokes a registered tool. Solid hit.",
     "effect": null
   },
   "phase_shift": {
-    "id": "phase_shift", "name": "Phase Shift", "type": "runtime",
-    "category": "special", "power": 80, "accuracy": 90, "pp": 10,
+    "id": "phase_shift",
+    "name": "Phase Shift",
+    "type": "runtime",
+    "category": "special",
+    "power": 80,
+    "accuracy": 90,
+    "pp": 10,
     "description": "Slips between observed states. Hits hard from nowhere.",
     "effect": null
   }
