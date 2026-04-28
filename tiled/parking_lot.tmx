@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="40" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="20">
+<map version="1.10" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="40" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="21">
  <editorsettings>
   <export target="../assets/maps/parking_lot.json" format="json"/>
  </editorsettings>
@@ -172,6 +172,13 @@
     <property name="facing" value="right"/>
     <property name="spriteKey" value="npc17"/>
     <property name="trainerId" value="nadia_odunayo"/>
+   </properties>
+  </object>
+  <object id="20" name="Search Expert Jason" type="npc" x="632.5" y="281">
+   <properties>
+    <property name="dialog" value="Have you heard? Typesense passed 25k stars on Github this year! And of course we are also sponsoring Blastoff Rails!"/>
+    <property name="facing" value="left"/>
+    <property name="spriteKey" value="npc22"/>
    </properties>
   </object>
  </objectgroup>

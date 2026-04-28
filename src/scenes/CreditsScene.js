@@ -28,6 +28,7 @@ class CreditsScene extends Phaser.Scene {
       { text: 'Nate Berkopec', size: 8 },
       { text: 'David Heinemeier Hansson', size: 8 },
       { text: 'Neha Abraham', size: 8 },
+      { text: 'Jason Boscoe', size: 8 },
       { text: 'Justin Bowen', size: 8 },
       { text: 'Drew Bragg', size: 8 },
       { text: 'Jason Charnes', size: 8 },

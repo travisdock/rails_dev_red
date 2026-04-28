@@ -372,8 +372,36 @@
                  "type":"trainer",
                  "visible":true,
                  "width":0,
-                 "x":72.5833333333333,
-                 "y":168.416666666667
+                 "x":72.5833,
+                 "y":168.417
+                }, 
+                {
+                 "height":0,
+                 "id":20,
+                 "name":"Search Expert Jason",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"dialog",
+                         "type":"string",
+                         "value":"Have you heard? Typesense passed 25k stars on Github this year! And of course we are also sponsoring Blastoff Rails!"
+                        }, 
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"left"
+                        }, 
+                        {
+                         "name":"spriteKey",
+                         "type":"string",
+                         "value":"npc22"
+                        }],
+                 "rotation":0,
+                 "type":"npc",
+                 "visible":true,
+                 "width":0,
+                 "x":632.5,
+                 "y":281
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -519,7 +547,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":20,
+ "nextobjectid":21,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.12.0",
