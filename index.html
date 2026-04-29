@@ -181,6 +181,13 @@
     @media (pointer: coarse) {
       #mobile-controls { display: block; }
     }
+    /* Landscape mobile: hide chrome so the game canvas can use the full screen height */
+    @media (pointer: coarse) and (orientation: landscape) {
+      body { padding-top: 0; }
+      #conference-link { display: none; }
+      #page-nav { display: none; }
+      #controls-hint { display: none; }
+    }
   </style>
   <!-- Travalytics Analytics -->
   <script>
