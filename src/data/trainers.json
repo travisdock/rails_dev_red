@@ -170,7 +170,7 @@
     "name": "Friendly Dev Adrian",
     "class": "Indie Dev",
     "dialogBefore": "Don't worry, I'll be friendly.",
-    "dialogAfter": "That was a rush, thanks.",
+    "dialogAfter": "That was a rush, thanks. Don't forget your Ruby passport and make sure to check out Avo!",
     "party": [
       {
         "bugId": "memory_leak",
