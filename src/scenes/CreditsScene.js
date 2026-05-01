@@ -23,6 +23,7 @@ class CreditsScene extends Phaser.Scene {
       { text: 'maru-98', size: 8 },
       { text: '', size: 8 },
       { text: '- Featuring -', size: 8, color: '#888888' },
+      { text: 'Cindy Backman', size: 8 },
       { text: 'Jason Swett', size: 8 },
       { text: 'Marco Roth', size: 8 },
       { text: 'Nate Berkopec', size: 8 },

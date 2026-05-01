@@ -473,6 +473,34 @@
                  "width":0,
                  "x":167.5,
                  "y":55.5
+                }, 
+                {
+                 "height":0,
+                 "id":24,
+                 "name":"Con Freak Cindy",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"dialog",
+                         "type":"string",
+                         "value":"Even though it isn't on rubyevents I have definitely been to more conferences than you."
+                        }, 
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"down"
+                        }, 
+                        {
+                         "name":"spriteKey",
+                         "type":"string",
+                         "value":"pg15"
+                        }],
+                 "rotation":0,
+                 "type":"npc",
+                 "visible":true,
+                 "width":0,
+                 "x":183.681191148155,
+                 "y":183.791285311107
                 }],
          "opacity":1,
          "properties":[
@@ -508,7 +536,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":24,
+ "nextobjectid":25,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.12.0",
