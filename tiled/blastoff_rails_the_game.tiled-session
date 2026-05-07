@@ -1,6 +1,7 @@
 {
-    "activeFile": "",
+    "activeFile": "hotel.tmx",
     "expandedProjectPaths": [
+        "."
     ],
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
@@ -23,11 +24,11 @@
             "expandedObjectLayers": [
                 4
             ],
-            "scale": 2,
+            "scale": 3.7913,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 230.5,
-                "y": 130.75
+                "x": 212.3282251470472,
+                "y": 155.8832062880806
             }
         },
         "house.tsx": {
@@ -123,11 +124,12 @@
     "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
     "map.lastUsedFormat": "tmx",
     "openFiles": [
+        "hotel.tmx"
     ],
     "project": "blastoff_rails_the_game.tiled-project",
     "recentFiles": [
-        "venue.tmx",
         "hotel.tmx",
+        "venue.tmx",
         "parking_lot.tmx",
         "old_town.tmx",
         "park.tmx",

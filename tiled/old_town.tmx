@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="23">
+<map version="1.10" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="24">
  <editorsettings>
   <export target="../assets/maps/old_town.json" format="json"/>
  </editorsettings>
@@ -282,6 +282,13 @@
     <property name="facing" value="right"/>
     <property name="spriteKey" value="npc18"/>
     <property name="trainerId" value="stephen_mckeon"/>
+   </properties>
+  </object>
+  <object id="23" name="Judo Expert Adam" type="npc" x="456.121" y="40.0836">
+   <properties>
+    <property name="dialog" value="Look, it's not my fault you gave the kazoo to your kid! | Oh, sorry. Did you have a question about autoscaling?"/>
+    <property name="facing" value="down"/>
+    <property name="spriteKey" value="pg10"/>
    </properties>
   </object>
  </objectgroup>

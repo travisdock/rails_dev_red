@@ -569,8 +569,8 @@
                  "type":"trainer",
                  "visible":true,
                  "width":0,
-                 "x":407.681818181818,
-                 "y":264.871212121212
+                 "x":407.682,
+                 "y":264.871
                 }, 
                 {
                  "height":0,
@@ -599,6 +599,34 @@
                  "width":0,
                  "x":232,
                  "y":424
+                }, 
+                {
+                 "height":0,
+                 "id":23,
+                 "name":"Judo Expert Adam",
+                 "opacity":1,
+                 "properties":[
+                        {
+                         "name":"dialog",
+                         "type":"string",
+                         "value":"Look, it's not my fault you gave the kazoo to your kid! | Oh, sorry. Did you have a question about autoscaling?"
+                        }, 
+                        {
+                         "name":"facing",
+                         "type":"string",
+                         "value":"down"
+                        }, 
+                        {
+                         "name":"spriteKey",
+                         "type":"string",
+                         "value":"pg10"
+                        }],
+                 "rotation":0,
+                 "type":"npc",
+                 "visible":true,
+                 "width":0,
+                 "x":456.121404250323,
+                 "y":40.0835975108606
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -762,7 +790,7 @@
          "y":0
         }],
  "nextlayerid":9,
- "nextobjectid":23,
+ "nextobjectid":24,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.12.0",
