@@ -5,12 +5,12 @@
     "type": "testing",
     "description": "Behavior-driven development for Ruby. The gold standard.",
     "baseStats": {
-      "hp": 47,
-      "attack": 42,
-      "defense": 47,
-      "spAttack": 53,
-      "spDefense": 53,
-      "speed": 47
+      "hp": 50,
+      "attack": 45,
+      "defense": 50,
+      "spAttack": 55,
+      "spDefense": 55,
+      "speed": 50
     },
     "baseXP": 64,
     "learnset": [
@@ -39,12 +39,12 @@
     "type": "performance",
     "description": "Hunts down N+1 queries with precision.",
     "baseStats": {
-      "hp": 38,
-      "attack": 53,
-      "defense": 29,
-      "spAttack": 61,
-      "spDefense": 34,
-      "speed": 67
+      "hp": 40,
+      "attack": 55,
+      "defense": 30,
+      "spAttack": 65,
+      "spDefense": 35,
+      "speed": 70
     },
     "baseXP": 62,
     "learnset": [
@@ -69,12 +69,12 @@
     "type": "security",
     "description": "A static analysis security scanner for Rails. Finds vulnerabilities before they find you.",
     "baseStats": {
-      "hp": 53,
-      "attack": 29,
-      "defense": 61,
-      "spAttack": 53,
-      "spDefense": 57,
-      "speed": 38
+      "hp": 55,
+      "attack": 30,
+      "defense": 65,
+      "spAttack": 55,
+      "spDefense": 60,
+      "speed": 40
     },
     "baseXP": 64,
     "learnset": [
@@ -99,12 +99,12 @@
     "type": "security",
     "description": "A flexible authentication solution for Rails.",
     "baseStats": {
-      "hp": 47,
-      "attack": 34,
-      "defense": 53,
-      "spAttack": 57,
-      "spDefense": 61,
-      "speed": 38
+      "hp": 50,
+      "attack": 35,
+      "defense": 55,
+      "spAttack": 60,
+      "spDefense": 65,
+      "speed": 40
     },
     "baseXP": 64,
     "learnset": [
@@ -133,12 +133,12 @@
     "type": "security",
     "description": "Minimal authorization through OO design.",
     "baseStats": {
-      "hp": 42,
-      "attack": 29,
-      "defense": 57,
-      "spAttack": 53,
-      "spDefense": 67,
-      "speed": 34
+      "hp": 45,
+      "attack": 30,
+      "defense": 60,
+      "spAttack": 55,
+      "spDefense": 70,
+      "speed": 35
     },
     "baseXP": 60,
     "learnset": [
@@ -167,12 +167,12 @@
     "type": "security",
     "description": "Rock-solid password hashing. Slow but unbreakable.",
     "baseStats": {
-      "hp": 61,
-      "attack": 23,
-      "defense": 76,
-      "spAttack": 38,
-      "spDefense": 72,
-      "speed": 19
+      "hp": 65,
+      "attack": 25,
+      "defense": 80,
+      "spAttack": 40,
+      "spDefense": 75,
+      "speed": 20
     },
     "baseXP": 70,
     "learnset": [
@@ -201,12 +201,12 @@
     "type": "performance",
     "description": "Profiles every request. Sees all.",
     "baseStats": {
-      "hp": 53,
-      "attack": 38,
-      "defense": 42,
-      "spAttack": 57,
-      "spDefense": 47,
-      "speed": 53
+      "hp": 55,
+      "attack": 40,
+      "defense": 45,
+      "spAttack": 60,
+      "spDefense": 50,
+      "speed": 55
     },
     "baseXP": 65,
     "learnset": [
@@ -235,12 +235,12 @@
     "type": "testing",
     "description": "Simulates user interaction. Thorough and patient.",
     "baseStats": {
-      "hp": 57,
-      "attack": 34,
-      "defense": 53,
-      "spAttack": 47,
-      "spDefense": 57,
-      "speed": 34
+      "hp": 60,
+      "attack": 35,
+      "defense": 55,
+      "spAttack": 50,
+      "spDefense": 60,
+      "speed": 35
     },
     "baseXP": 63,
     "learnset": [
@@ -269,12 +269,12 @@
     "type": "testing",
     "description": "Builds test data with precision strategies.",
     "baseStats": {
-      "hp": 42,
-      "attack": 47,
-      "defense": 38,
-      "spAttack": 57,
-      "spDefense": 42,
-      "speed": 53
+      "hp": 45,
+      "attack": 50,
+      "defense": 40,
+      "spAttack": 60,
+      "spDefense": 45,
+      "speed": 55
     },
     "baseXP": 58,
     "learnset": [
@@ -303,12 +303,12 @@
     "type": "rails",
     "description": "The ORM at the heart of Rails. Powerful and versatile.",
     "baseStats": {
-      "hp": 67,
-      "attack": 47,
-      "defense": 47,
-      "spAttack": 53,
-      "spDefense": 47,
-      "speed": 29
+      "hp": 70,
+      "attack": 50,
+      "defense": 50,
+      "spAttack": 55,
+      "spDefense": 50,
+      "speed": 30
     },
     "baseXP": 72,
     "learnset": [
@@ -337,12 +337,12 @@
     "type": "performance",
     "description": "Simple, efficient background processing. Works hard so you don't have to.",
     "baseStats": {
-      "hp": 53,
-      "attack": 57,
-      "defense": 42,
-      "spAttack": 47,
-      "spDefense": 38,
-      "speed": 53
+      "hp": 55,
+      "attack": 60,
+      "defense": 45,
+      "spAttack": 50,
+      "spDefense": 40,
+      "speed": 55
     },
     "baseXP": 64,
     "learnset": [
@@ -371,12 +371,12 @@
     "type": "performance",
     "description": "A fast, concurrent web server for Ruby.",
     "baseStats": {
-      "hp": 57,
-      "attack": 42,
-      "defense": 47,
-      "spAttack": 38,
-      "spDefense": 47,
-      "speed": 57
+      "hp": 60,
+      "attack": 45,
+      "defense": 50,
+      "spAttack": 40,
+      "spDefense": 50,
+      "speed": 60
     },
     "baseXP": 62,
     "learnset": [
@@ -405,12 +405,12 @@
     "type": "frontend",
     "description": "The speed of a single-page app without the JavaScript.",
     "baseStats": {
-      "hp": 47,
-      "attack": 53,
-      "defense": 38,
-      "spAttack": 53,
-      "spDefense": 42,
-      "speed": 61
+      "hp": 50,
+      "attack": 55,
+      "defense": 40,
+      "spAttack": 55,
+      "spDefense": 45,
+      "speed": 65
     },
     "baseXP": 66,
     "learnset": [
@@ -439,12 +439,12 @@
     "type": "testing",
     "description": "A runtime developer console. Peers into the unknown.",
     "baseStats": {
-      "hp": 34,
-      "attack": 38,
-      "defense": 29,
-      "spAttack": 42,
-      "spDefense": 34,
-      "speed": 47
+      "hp": 35,
+      "attack": 40,
+      "defense": 30,
+      "spAttack": 45,
+      "spDefense": 35,
+      "speed": 50
     },
     "baseXP": 45,
     "learnset": [
@@ -473,12 +473,12 @@
     "type": "performance",
     "description": "A dark crystal of pure performance insight. Detects what others miss.",
     "baseStats": {
-      "hp": 47,
-      "attack": 38,
-      "defense": 42,
-      "spAttack": 67,
-      "spDefense": 53,
-      "speed": 67
+      "hp": 50,
+      "attack": 40,
+      "defense": 45,
+      "spAttack": 70,
+      "spDefense": 55,
+      "speed": 70
     },
     "baseXP": 72,
     "learnset": [
@@ -499,12 +499,12 @@
     "type": "frontend",
     "description": "A powerful view layer component engine. Beautiful and fast.",
     "baseStats": {
-      "hp": 53,
-      "attack": 38,
-      "defense": 47,
-      "spAttack": 72,
-      "spDefense": 57,
-      "speed": 61
+      "hp": 55,
+      "attack": 40,
+      "defense": 50,
+      "spAttack": 75,
+      "spDefense": 60,
+      "speed": 65
     },
     "baseXP": 72,
     "learnset": [
@@ -529,12 +529,12 @@
     "type": "rails",
     "description": "Agents as controllers, prompts as views. Rails-native AI.",
     "baseStats": {
-      "hp": 47,
-      "attack": 42,
-      "defense": 42,
-      "spAttack": 57,
-      "spDefense": 42,
-      "speed": 53
+      "hp": 50,
+      "attack": 45,
+      "defense": 45,
+      "spAttack": 60,
+      "spDefense": 45,
+      "speed": 55
     },
     "baseXP": 68,
     "learnset": [
