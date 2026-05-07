@@ -47,7 +47,8 @@ const SaveManager = {
       flags: {
         trainersDefeated: [...gameState.trainersDefeated],
         gymsCompleted: [...gameState.gymsCompleted],
-        storySeen: [...gameState.storySeen]
+        storySeen: [...gameState.storySeen],
+        peacefulMode: !!gameState.peacefulMode
       }
     };
     try {

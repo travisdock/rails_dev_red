@@ -513,21 +513,25 @@ class OverworldScene extends Phaser.Scene {
     }
 
     // Check trainer line of sight
-    for (const trainer of this.trainers) {
-      if (!trainer.defeated && trainer.canSeeTile(tileX, tileY)) {
-        this.startTrainerBattle(trainer);
-        return;
+    if (!ProgressManager.peacefulMode) {
+      for (const trainer of this.trainers) {
+        if (!trainer.defeated && trainer.canSeeTile(tileX, tileY)) {
+          this.startTrainerBattle(trainer);
+          return;
+        }
       }
     }
 
     // Check wild encounter
-    const grassTile = this.grassTiles.find(g => g.x === tileX && g.y === tileY);
-    if (grassTile) {
-      const zone = grassTile.zone || this.encounterZone;
-      if (zone) {
-        const bug = EncounterManager.check(zone);
-        if (bug) {
-          this.startWildBattle(bug);
+    if (!ProgressManager.peacefulMode) {
+      const grassTile = this.grassTiles.find(g => g.x === tileX && g.y === tileY);
+      if (grassTile) {
+        const zone = grassTile.zone || this.encounterZone;
+        if (zone) {
+          const bug = EncounterManager.check(zone);
+          if (bug) {
+            this.startWildBattle(bug);
+          }
         }
       }
     }
@@ -571,6 +575,10 @@ class OverworldScene extends Phaser.Scene {
 
         // Trainer battle check
         if (npc instanceof Trainer && !npc.defeated) {
+          if (ProgressManager.peacefulMode) {
+            this.showDialog(messages, null, npc.name);
+            return;
+          }
           // DHH only battles players who've earned the other three Boarding Passes
           if (npc.trainerId === 'dhh' && ProgressManager.badgeCount() < 3) {
             this.showDialog([

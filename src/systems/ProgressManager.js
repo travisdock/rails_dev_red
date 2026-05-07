@@ -3,6 +3,7 @@ const ProgressManager = {
   trainersDefeated: [],
   gymsCompleted: [],
   storySeen: [],
+  peacefulMode: false,
 
   init(saveData) {
     if (saveData) {
@@ -10,12 +11,19 @@ const ProgressManager = {
       this.trainersDefeated = saveData.flags.trainersDefeated || [];
       this.gymsCompleted = saveData.flags.gymsCompleted || [];
       this.storySeen = saveData.flags.storySeen || [];
+      this.peacefulMode = !!saveData.flags.peacefulMode;
     } else {
       this.badges = [];
       this.trainersDefeated = [];
       this.gymsCompleted = [];
       this.storySeen = [];
+      this.peacefulMode = false;
     }
+  },
+
+  setPeacefulMode(on) {
+    this.peacefulMode = !!on;
+    SaveManager.markDirty();
   },
 
   hasBadge(badgeId) {
@@ -71,7 +79,8 @@ const ProgressManager = {
       badges: [...this.badges],
       trainersDefeated: [...this.trainersDefeated],
       gymsCompleted: [...this.gymsCompleted],
-      storySeen: [...this.storySeen]
+      storySeen: [...this.storySeen],
+      peacefulMode: this.peacefulMode
     };
   }
 };

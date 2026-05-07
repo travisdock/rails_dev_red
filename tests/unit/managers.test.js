@@ -95,4 +95,66 @@ describe('ProgressManager', () => {
     ProgressManager.seeStory('intro');
     expect(ProgressManager.hasSeenStory('intro')).toBe(true);
   });
+
+  describe('peaceful mode', () => {
+    it('defaults to false on a new game', () => {
+      expect(ProgressManager.peacefulMode).toBe(false);
+    });
+
+    it('setPeacefulMode toggles the flag and coerces to boolean', () => {
+      ProgressManager.setPeacefulMode(true);
+      expect(ProgressManager.peacefulMode).toBe(true);
+      ProgressManager.setPeacefulMode(false);
+      expect(ProgressManager.peacefulMode).toBe(false);
+      ProgressManager.setPeacefulMode(1);
+      expect(ProgressManager.peacefulMode).toBe(true);
+      ProgressManager.setPeacefulMode(0);
+      expect(ProgressManager.peacefulMode).toBe(false);
+    });
+
+    it('setPeacefulMode marks the save dirty', () => {
+      SaveManager.dirty = false;
+      ProgressManager.setPeacefulMode(true);
+      expect(SaveManager.dirty).toBe(true);
+    });
+
+    it('init(null) resets peacefulMode to false', () => {
+      ProgressManager.peacefulMode = true;
+      ProgressManager.init(null);
+      expect(ProgressManager.peacefulMode).toBe(false);
+    });
+
+    it('init(saveData) restores peacefulMode = true from flags', () => {
+      ProgressManager.init({
+        player: { badges: [] },
+        flags: { trainersDefeated: [], gymsCompleted: [], storySeen: [], peacefulMode: true }
+      });
+      expect(ProgressManager.peacefulMode).toBe(true);
+    });
+
+    it('init(saveData) restores peacefulMode = false from flags', () => {
+      ProgressManager.peacefulMode = true;
+      ProgressManager.init({
+        player: { badges: [] },
+        flags: { trainersDefeated: [], gymsCompleted: [], storySeen: [], peacefulMode: false }
+      });
+      expect(ProgressManager.peacefulMode).toBe(false);
+    });
+
+    it('init(saveData) defaults peacefulMode to false when flag missing (older saves)', () => {
+      ProgressManager.peacefulMode = true;
+      ProgressManager.init({
+        player: { badges: [] },
+        flags: { trainersDefeated: [], gymsCompleted: [], storySeen: [] }
+      });
+      expect(ProgressManager.peacefulMode).toBe(false);
+    });
+
+    it('getState includes peacefulMode', () => {
+      ProgressManager.setPeacefulMode(true);
+      expect(ProgressManager.getState().peacefulMode).toBe(true);
+      ProgressManager.setPeacefulMode(false);
+      expect(ProgressManager.getState().peacefulMode).toBe(false);
+    });
+  });
 });

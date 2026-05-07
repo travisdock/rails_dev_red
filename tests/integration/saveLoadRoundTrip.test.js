@@ -64,4 +64,38 @@ describe('Save/Load Round Trip', () => {
     SaveManager.deleteSave();
     expect(SaveManager.hasSave()).toBe(false);
   });
+
+  describe('peaceful mode persistence', () => {
+    const baseState = {
+      playerName: 'Test',
+      position: { map: 'localhost', x: 0, y: 0, facing: 'down' },
+      badges: [], party: [], trainersDefeated: [], gymsCompleted: [], storySeen: [],
+      starterChosen: false
+    };
+
+    it('persists peacefulMode = true through save/load and ProgressManager.init', () => {
+      SaveManager.save({ ...baseState, peacefulMode: true });
+      const loaded = SaveManager.load();
+      expect(loaded.flags.peacefulMode).toBe(true);
+
+      ProgressManager.init(loaded);
+      expect(ProgressManager.peacefulMode).toBe(true);
+    });
+
+    it('persists peacefulMode = false through save/load and ProgressManager.init', () => {
+      SaveManager.save({ ...baseState, peacefulMode: false });
+      const loaded = SaveManager.load();
+      expect(loaded.flags.peacefulMode).toBe(false);
+
+      ProgressManager.peacefulMode = true;
+      ProgressManager.init(loaded);
+      expect(ProgressManager.peacefulMode).toBe(false);
+    });
+
+    it('coerces missing peacefulMode to false in save data', () => {
+      SaveManager.save(baseState);
+      const loaded = SaveManager.load();
+      expect(loaded.flags.peacefulMode).toBe(false);
+    });
+  });
 });

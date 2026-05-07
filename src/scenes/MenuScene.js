@@ -7,22 +7,31 @@ class MenuScene extends Phaser.Scene {
     // Semi-transparent overlay
     this.add.rectangle(GAME_WIDTH / 2, GAME_HEIGHT / 2, GAME_WIDTH, GAME_HEIGHT, 0x000000, 0.3);
 
-    // Menu box
-    this.menu = new MenuBox(this, GAME_WIDTH - 80, 8, [
-      { text: 'PARTY', value: 'party' },
-      { text: 'SAVE', value: 'save' },
-      { text: 'CLOSE', value: 'close' }
-    ], {
-      itemWidth: 60,
-      depth: 1000,
-      onSelect: (opt) => this.handleOption(opt.value),
-      onCancel: () => this.closeMenu()
-    });
+    this.buildMenu(0);
 
     // Show player info
     this.add.text(8, 8, `Passes: ${ProgressManager.badgeCount()}`, {
       ...TEXT_STYLE_WHITE
     }).setDepth(1000);
+  }
+
+  buildMenu(initialIndex) {
+    const peacefulLabel = ProgressManager.peacefulMode ? 'PEACEFUL ON' : 'PEACEFUL OFF';
+    this.menu = new MenuBox(this, GAME_WIDTH - 130, 8, [
+      { text: 'PARTY', value: 'party' },
+      { text: 'SAVE', value: 'save' },
+      { text: peacefulLabel, value: 'peaceful' },
+      { text: 'CLOSE', value: 'close' }
+    ], {
+      itemWidth: 110,
+      depth: 1000,
+      onSelect: (opt) => this.handleOption(opt.value),
+      onCancel: () => this.closeMenu()
+    });
+    if (initialIndex && initialIndex < this.menu.options.length) {
+      this.menu.selectedIndex = initialIndex;
+      this.menu.updateCursor();
+    }
   }
 
   handleOption(option) {
@@ -34,6 +43,12 @@ class MenuScene extends Phaser.Scene {
         break;
       case 'save':
         this.saveGame();
+        break;
+      case 'peaceful':
+        ProgressManager.setPeacefulMode(!ProgressManager.peacefulMode);
+        const previousIndex = this.menu.selectedIndex;
+        this.menu.destroy();
+        this.buildMenu(previousIndex);
         break;
       case 'close':
         this.closeMenu();
@@ -56,6 +71,7 @@ class MenuScene extends Phaser.Scene {
       trainersDefeated: ProgressManager.trainersDefeated,
       gymsCompleted: ProgressManager.gymsCompleted,
       storySeen: ProgressManager.storySeen,
+      peacefulMode: ProgressManager.peacefulMode,
       starterChosen: overworld.starterChosen,
       spriteKey: overworld.playerSpriteKey
     });
