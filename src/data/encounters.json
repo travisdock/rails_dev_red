@@ -2,19 +2,19 @@
   "parking_lot_easy": {
     "encounterRate": 0.14,
     "encounters": [
-      { "bugId": "no_method_error", "levelRange": [10, 12], "weight": 35 },
-      { "bugId": "request_timeout", "levelRange": [10, 12], "weight": 30 },
-      { "bugId": "n_plus_one", "levelRange": [10, 13], "weight": 35 }
+      { "bugId": "no_method_error", "levelRange": [6, 10], "weight": 35 },
+      { "bugId": "request_timeout", "levelRange": [6, 10], "weight": 30 },
+      { "bugId": "n_plus_one", "levelRange": [6, 11], "weight": 35 }
     ]
   },
   "parking_lot_hard": {
     "encounterRate": 0.16,
     "encounters": [
-      { "bugId": "n_plus_one", "levelRange": [15, 18], "weight": 25 },
-      { "bugId": "sql_injection", "levelRange": [15, 17], "weight": 20 },
-      { "bugId": "xss_attack", "levelRange": [15, 17], "weight": 20 },
-      { "bugId": "memory_leak", "levelRange": [15, 17], "weight": 20 },
-      { "bugId": "race_condition", "levelRange": [16, 18], "weight": 15 }
+      { "bugId": "n_plus_one", "levelRange": [12, 16], "weight": 25 },
+      { "bugId": "sql_injection", "levelRange": [12, 15], "weight": 20 },
+      { "bugId": "xss_attack", "levelRange": [12, 15], "weight": 20 },
+      { "bugId": "memory_leak", "levelRange": [12, 15], "weight": 20 },
+      { "bugId": "race_condition", "levelRange": [13, 16], "weight": 15 }
     ]
   },
   "old_town_easy": {

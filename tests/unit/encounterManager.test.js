@@ -20,8 +20,8 @@ describe('EncounterManager', () => {
     const bug = EncounterManager.check('parking_lot_easy');
     expect(bug).not.toBeNull();
     expect(bug).toBeInstanceOf(BugInstance);
-    expect(bug.level).toBeGreaterThanOrEqual(10);
-    expect(bug.level).toBeLessThanOrEqual(13);
+    expect(bug.level).toBeGreaterThanOrEqual(6);
+    expect(bug.level).toBeLessThanOrEqual(11);
   });
 
   it('returns bugs within the correct level range for park_hard', () => {
