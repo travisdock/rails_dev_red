@@ -29,7 +29,7 @@ class PreloadScene extends Phaser.Scene {
 
     // Load logo
     this.load.image('logo', 'assets/logo.png');
-    this.load.image('prof_ruby', 'assets/prof_ruby.png');
+    this.load.image('prof_ruby', 'assets/prof_ruby_alt.png');
 
     // Load sprites
     this.load.spritesheet('player', 'assets/sprites/player.png', {

@@ -19,12 +19,12 @@ class IntroScene extends Phaser.Scene {
   runIntro() {
     this.dialogManager.show([
       "Hello there!",
-      "My name is Professor Pine. I am a Rails enthusiast like yourself.",
+      "My name is Yukihiro Matsumoto, but everyone calls me Matz. I designed Ruby — the language that powers the rockets here.",
       "Welcome to Albuquerque!",
       "You're here for Blastoff Rails, the conference that's literally out of this world!",
       "To board the rocket, you'll need to earn Boarding Passes from four elite devs.",
       "But first, let's pick an avatar for you."
-    ], () => this.runSpriteSelection(), 'Professor Pine');
+    ], () => this.runSpriteSelection(), 'Professor Matz');
   }
 
   runSpriteSelection() {
@@ -47,7 +47,7 @@ class IntroScene extends Phaser.Scene {
       "A fine choice!",
       "Every Rails dev needs a trusty gem.",
       "Choose your first gem!"
-    ], () => this.runStarterMenu(), 'Professor Pine');
+    ], () => this.runStarterMenu(), 'Professor Matz');
   }
 
   runStarterMenu() {
@@ -73,7 +73,7 @@ class IntroScene extends Phaser.Scene {
         this.dialogManager.show([
           `You chose ${opt.value.name}!`,
           "Now go explore Albuquerque and earn those Boarding Passes!"
-        ], () => this.finish(), 'Professor Pine');
+        ], () => this.finish(), 'Professor Matz');
       },
       onCancel: () => {}
     });
